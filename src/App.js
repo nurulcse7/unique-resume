@@ -12,6 +12,12 @@ function App() {
         voluptatem, nam asperiores consectetur optio amet eaque sapiente labore
         incidunt modi! Atque.
       </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit sunt
+        tempora nesciunt provident debitis explicabo laudantium fuga
+        perferendis. Vitae, quia! Beatae porro ad culpa praesentium quasi
+        tempore quas harum nisi!
+      </p>
     </div>
   );
 }

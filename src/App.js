@@ -1,23 +1,12 @@
 import React from "react";
 
 import "./App.css";
+import Home from "./Pages/Home/Home";
 
 function App() {
   return (
     <div className="App">
-      <h1>Main </h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione
-        reiciendis, nesciunt possimus, nobis id consequatur a culpa ullam
-        voluptatem, nam asperiores consectetur optio amet eaque sapiente labore
-        incidunt modi! Atque.
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit sunt
-        tempora nesciunt provident debitis explicabo laudantium fuga
-        perferendis. Vitae, quia! Beatae porro ad culpa praesentium quasi
-        tempore quas harum nisi!
-      </p>
+      <Home></Home>
     </div>
   );
 }

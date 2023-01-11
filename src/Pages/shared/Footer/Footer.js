@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Row, Col } from "antd";
-import Link from "antd/es/typography/Link";
 
 const Footer = () => {
   return (
@@ -46,7 +45,7 @@ const Footer = () => {
         </div>
         <div className="bottom-bar mt-10">
           Ant Design ©2023 Created by Ant UED
-          <Link to="#">AFX</Link>
+          <a to="#">AFX</a>
         </div>
       </footer>
     </div>

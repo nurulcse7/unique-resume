@@ -4,18 +4,18 @@ const Faq = () => {
   return (
     <div>
       <div>
-        <section class="text-black ">
-          <div class="container py-5  mx-auto">
-            <div class="text-center mb-7">
-              <h1 class="sm:text-3xl text-4xl font-extrabold text-center title-font text-gray-900 mb-4">
+        <section className="text-black ">
+          <div className="container py-5  mx-auto">
+            <div className="text-center mb-7">
+              <h1 className="sm:text-3xl text-4xl font-extrabold text-center title-font text-gray-900 mb-4">
                 Frequently Asked Question
               </h1>
-              <p class="font-medium text-xl xl:w-2/4 lg:w-3/4 mx-auto">
+              <p className="font-medium text-xl xl:w-2/4 lg:w-3/4 mx-auto">
                 The most common questions about how our business works and what
                 can do for you.
               </p>
             </div>
-            <div class=" w-[70%] mx-auto sm:mb-2 ">
+            <div className=" w-[70%] mx-auto sm:mb-2 ">
               <details className="mb-4 text-left border-b-2 py-3 ">
                 <summary className="font-semibold text-xl ">
                   How can I use Resume.com for free?

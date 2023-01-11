@@ -1,17 +1,12 @@
 import React from "react";
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import Navbar from "./common/Navbar/Navbar";
-import CallToAction from "./components/CallToAction/CallToAction";
-import Features from "./components/Features/Features";
-import HowToWork from "./components/HowToWork/HowToWork";
+import { router } from "./routes/Routes";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <HowToWork />
-      <CallToAction />
-      <Features />
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }

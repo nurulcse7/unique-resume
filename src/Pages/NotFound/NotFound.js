@@ -6,7 +6,8 @@ const NotFound = () => {
     <div>
       <div className="flex flex-col items-center justify-center">
         {" "}
-        <img src={notFound} alt="" className=" w-4/6" />
+        <img src={notFound} alt="" className=" w-3/6" />
+        <h3 className="text-primary text-xl">NOT FOUND</h3>
         <Link to="/">
           {" "}
           <button className="bg-primary text-white px-3 py-3 rounded-md">

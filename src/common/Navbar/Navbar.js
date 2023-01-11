@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <div>
       <header className="fixed w-full mx-auto animate-in z-[100] mb-10">
-        <nav className="bg-primary lg:w-full backdrop-blur-sm dark:backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5">
+        <nav className="bg-blue-900/60 lg:w-full backdrop-blur-sm dark:backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" className="flex items-center">
               <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -66,7 +66,7 @@ const Navbar = () => {
                 ))}
                 <a href="/auth/login">
                   <button
-                    className="border border-secondary bg-secondary inline-block px-4 py-[5px]  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                    className="border border-primary bg-primary inline-block px-4 py-[5px]  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                   >

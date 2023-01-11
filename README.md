@@ -2,8 +2,8 @@
 
 #### Live link
 
-`Live website` [Click here]()
-<!-- `client-side` [Click here]() -->
+`Live website` [Click here](https://unique-resume.vercel.app/)
+<!-- `client-side` [Click here](https://unique-resume.vercel.app/) -->
 <!-- `server-side` [Click here]() -->
 
 #### Code link 
@@ -13,7 +13,7 @@
 `server-side` [Click here]()
 
 ### Description
-- This project implements for build your Resume and CV for 
+- This project implements for build your Resume and CV in the job sector.
 --- 
 
 ### Features 

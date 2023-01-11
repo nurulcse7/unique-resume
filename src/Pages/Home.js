@@ -6,7 +6,9 @@ import HowToWork from "../components/HowToWork/HowToWork";
 const Home = () => {
   return (
     <div>
+    
       <HowToWork />
+      <h1 className="text-4xl text-center m-8">Credit by Rabbi Sikder</h1>
       <CallToAction />
       <Features />
     </div>

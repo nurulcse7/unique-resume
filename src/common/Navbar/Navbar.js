@@ -1,34 +1,25 @@
 import React, { useState } from "react";
+import logo from "../../assets/unique resume favicon.png";
 const menuItems = [
   {
-    name: "Home",
-    path: "/",
-    id: 1,
-  },
-  {
-    name: "Services",
-    path: "/services",
+    name: "Resume Templetes",
+    path: "/resume-templetes",
     id: 2,
   },
   {
-    name: "Features",
-    path: "/features",
+    name: "Cv Templetes",
+    path: "/cv-templetes",
     id: 3,
   },
   {
-    name: "Teams",
+    name: "Cover letters",
     path: "/teams",
     id: 4,
   },
   {
-    name: "About Us",
-    path: "/about",
+    name: "Faq",
+    path: "/faq",
     id: 5,
-  },
-  {
-    name: "Contact",
-    path: "/contact",
-    id: 6,
   },
 ];
 const Navbar = () => {
@@ -39,14 +30,10 @@ const Navbar = () => {
   return (
     <div>
       <header className="fixed w-full mx-auto animate-in z-[100] mb-10">
-        <nav className="bg-[#00072d1b]/60 lg:w-full backdrop-blur-sm dark:backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5">
+        <nav className="bg-primary lg:w-full backdrop-blur-sm dark:backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" className="flex items-center">
-              <img
-                src="/assets/3dotit.svg"
-                className="mr-3 h-6 sm:h-9"
-                alt="Flowbite Logo"
-              />
+              <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
               {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                             3DotIt
                         </span> */}
@@ -77,6 +64,24 @@ const Navbar = () => {
                     </a>
                   </li>
                 ))}
+                <a href="/auth/login">
+                  <button
+                    className="border border-secondary bg-secondary inline-block px-4 py-[5px]  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                    Login
+                  </button>
+                </a>
+                <a href="/auth/register">
+                  <button
+                    className="border inline-block px-4  py-[5px] border-primary_btn hover:bg-primary_btndark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                    Register
+                  </button>
+                </a>
               </ul>
             </div>
             <div className="block lg:hidden pb-2">
@@ -136,7 +141,7 @@ const Navbar = () => {
                     <span className="flex flex-col lg:flex-row md:w-fit w-full justify-between items-center gap-3">
                       <a href="/auth/login">
                         <button
-                          className="border border-primary_btn bg-primary_btn inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out dark:text-black text-black md:w-fit"
+                          className="border border-secondary bg-secondary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
                           data-mdb-ripple="true"
                           data-mdb-ripple-color="light"
                         >
@@ -145,7 +150,7 @@ const Navbar = () => {
                       </a>
                       <a href="/auth/register">
                         <button
-                          className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
+                          className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-white  dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
                           data-mdb-ripple="true"
                           data-mdb-ripple-color="light"
                         >

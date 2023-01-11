@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HowToWork = () => {
   return (
@@ -19,12 +20,12 @@ const HowToWork = () => {
               Here’s your guide to the tech fest 2021 process. Go through all
               the steps to know the exact process of the fest.
             </p>
-            <a
-              href="#"
-              className="bg-primary mx-auto cursor-pointer hover:bg-primary text-white hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-primary hover:border-transparent"
+            <Link
+              to="/home"
+              className="bg-primary mx-auto cursor-pointer  text-white  rounded shadow hover:shadow-lg py-2 z-10 px-4 border border-primary hover:border-transparent"
             >
               Explore Now
-            </a>
+            </Link>
           </div>
           <div className="ml-0 md:ml-12 lg:w-2/3 text-primary dark:text-white  relative z-[10]">
             <div className="container mx-auto w-full h-full">

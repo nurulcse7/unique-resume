@@ -10,7 +10,7 @@ const CallToAction = () => {
               <div className="flex lg:py-12">
                 <img
                   src={resumeImg}
-                  className="w-full rounded-lg shadow-lg z-10 ml-11"
+                  className="w-full rounded-lg shadow-lg z-10 lg:ml-11"
                   alt=""
                 />
               </div>

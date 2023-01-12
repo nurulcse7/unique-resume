@@ -94,9 +94,9 @@ const HowToWork = () => {
               />
             </div>
           </div>
-          <div className="absolute z-[0] w-[20%] h-[35%] top-0 pink__gradient" />
+          {/* <div className="absolute z-[0] w-[20%] h-[35%] top-0 pink__gradient" />
           <div className="absolute z-[1] w-[60%] h-[80%] rounded-full white__gradient bottom-40" />
-          <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
+          <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" /> */}
         </div>
       </div>
     </div>

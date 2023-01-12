@@ -37,7 +37,7 @@ const featureContent = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet",
   },
   {
-    id: 5,
+    id: 6,
     title: " Simple & clean designs",
     icon: <BiCustomize />,
     description:

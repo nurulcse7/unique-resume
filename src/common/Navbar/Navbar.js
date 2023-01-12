@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
 const menuItems = [
   {
     name: "Resume Templetes",
     path: "/resume-templetes",
-    id: 2,
+    id: 1,
   },
   {
     name: "Cv Templetes",
     path: "/cv-templetes",
-    id: 3,
+    id: 2,
   },
   {
     name: "Cover letters",
     path: "/teams",
-    id: 4,
+    id: 3,
   },
   {
     name: "Faq",
     path: "/faq",
-    id: 5,
+    id: 4,
   },
 ];
 const Navbar = () => {
@@ -33,21 +33,20 @@ const Navbar = () => {
       <header className="fixed w-full mx-auto animate-in z-[100] mb-10">
         <nav className="bg-blue-900/60 lg:w-full backdrop-blur-sm dark:backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <a href="/" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img
                 src={logo}
                 className="mr-3 h-6 sm:h-9"
                 alt="Unique Resume Logo"
               />
-              <Link to="/">
-                <button data-text="Awesome" className="button">
-                  <span className="actual-text">&nbsp;UniqueResume&nbsp;</span>
-                  <span className="hover-text" aria-hidden="true">
-                    &nbsp;UniqueResume&nbsp;
-                  </span>
-                </button>
-              </Link>
-            </a>
+
+              <button data-text="Awesome" className="button">
+                <span className="actual-text">&nbsp;UniqueResume&nbsp;</span>
+                <span className="hover-text" aria-hidden="true">
+                  &nbsp;UniqueResume&nbsp;
+                </span>
+              </button>
+            </Link>
 
             {/* dektop menu */}
             <div
@@ -59,16 +58,16 @@ const Navbar = () => {
               >
                 {menuItems.map((item) => (
                   <li key={item.id}>
-                    <a
-                      href={`${item.path}`}
+                    <NavLink
+                      to={item.path}
                       className={` block py-2 pr-4 pl-3 font-medium text-sm text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
                       aria-current="page"
                     >
                       {item.name}
-                    </a>
+                    </NavLink>
                   </li>
                 ))}
-                <a href="/auth/login">
+                <Link to="/login">
                   <button
                     className="border border-primary bg-primary inline-block px-4 py-[5px]  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
                     data-mdb-ripple="true"
@@ -76,8 +75,8 @@ const Navbar = () => {
                   >
                     Login
                   </button>
-                </a>
-                <a href="/auth/register">
+                </Link>
+                <Link to="/register">
                   <button
                     className="border inline-block px-4  py-[5px] border-primary_btn hover:bg-primary_btndark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
                     data-mdb-ripple="true"
@@ -85,7 +84,7 @@ const Navbar = () => {
                   >
                     Register
                   </button>
-                </a>
+                </Link>
               </ul>
             </div>
             <div className="block lg:hidden pb-2">
@@ -123,7 +122,7 @@ const Navbar = () => {
               <div
                 className={`h-screen flex justify-between border-t-2 border-primary_btn  w-full mx-auto lg:hidden ${
                   isMenu
-                    ? "animate-in slide-in-from-left duration-300"
+                    ? "slide-right"
                     : "animate-out slide-out-from-left duration-300"
                 } `}
               >
@@ -132,27 +131,27 @@ const Navbar = () => {
                 >
                   {menuItems.map((item) => (
                     <li key={item.id}>
-                      <a
-                        href={`${item.path}`}
+                      <Link
+                        to={`${item.path}`}
                         className={` block py-2 pr-4 pl-3 text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
                         aria-current="page"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                   <li>
                     <span className="flex flex-col lg:flex-row md:w-fit w-full justify-between items-center gap-3">
-                      <a href="/auth/login">
+                      <Link to="/auth/login">
                         <button
-                          className="border border-secondary bg-secondary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                          className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
                           data-mdb-ripple="true"
                           data-mdb-ripple-color="light"
                         >
                           Login
                         </button>
-                      </a>
-                      <a href="/auth/register">
+                      </Link>
+                      <Link to="/register">
                         <button
                           className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-white  dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
                           data-mdb-ripple="true"
@@ -160,7 +159,7 @@ const Navbar = () => {
                         >
                           Register
                         </button>
-                      </a>
+                      </Link>
                     </span>
                   </li>
                 </ul>

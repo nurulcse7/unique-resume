@@ -12,6 +12,7 @@ const Login = () => {
     <section className="h-screen w-full text-left bg-gray-100  flex justify-center items-center">
       <div className=" bg-[#7889B9] md:border-2 border-black shadow-xl rounded-3xl grid grid-cols-2">
         <div className="px-6 py-4 hidden md:block">
+          //!logo
           <a href="/" className="flex items-center">
             <img src={logo} className="mr-3 h-14 sm:h-12" alt="Flowbite Logo" />
             <button data-text="Awesome" className="button">
@@ -21,7 +22,6 @@ const Login = () => {
               </span>
             </button>
           </a>
-
           <div className="h-full w-full flex justify-center items-center">
             <img src={resume} alt="Resume" className="w-full md:w-[450px]" />
           </div>

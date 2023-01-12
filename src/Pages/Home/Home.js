@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
-      {/* faq section Added*/}
+
       <Faq />
     </div>
   );

@@ -16,30 +16,34 @@ const socialLink = [
   {
     id: 3,
     icon: <BsInstagram />,
-    to: "https://facebook.com",
+    to: "https://instagram.com",
   },
   {
     id: 4,
     icon: <BsGithub />,
-    to: "https://facebook.com",
+    to: "https://github.com",
   },
 ];
 
 const services = [
   {
     id: 1,
+    to: "create-resume",
     title: "create a resume",
   },
   {
     id: 2,
+    to: "resume-example",
     title: "Resume Examples",
   },
   {
     id: 3,
+    to: "resume-templates",
     title: "Resume Templates",
   },
   {
     id: 4,
+    to: "cover-templates",
     title: "Cover Letter Templates",
   },
 ];
@@ -52,12 +56,16 @@ const Footer = () => {
             <div>
               <div className="flex gap-2 items-center">
                 <img src={logo} alt="footer-logo" className="w-11" />
-                <button data-text="Awesome" className="button">
-                  <span className="actual-text">&nbsp;UniqueResume&nbsp;</span>
-                  <span className="hover-text" aria-hidden="true">
-                    &nbsp;UniqueResume&nbsp;
-                  </span>
-                </button>
+                <Link to="/">
+                  <button data-text="Awesome" className="button">
+                    <span className="actual-text">
+                      &nbsp;UniqueResume&nbsp;
+                    </span>
+                    <span className="hover-text" aria-hidden="true">
+                      &nbsp;UniqueResume&nbsp;
+                    </span>
+                  </button>
+                </Link>
               </div>
 
               <p className="max-w-xs mt-4 text-left text-white">
@@ -67,9 +75,14 @@ const Footer = () => {
 
               <ul className="flex gap-6 mt-8">
                 {socialLink.map((s) => (
-                  <Link to={s.to} className="text-white text-3xl">
+                  <a
+                    key={s.id}
+                    href={s.to}
+                    rel="noreferrer"
+                    className="text-white text-3xl"
+                  >
                     {s.icon}
-                  </Link>
+                  </a>
                 ))}
               </ul>
             </div>
@@ -86,7 +99,7 @@ const Footer = () => {
                       <Link
                         className=" capitalize text-[15px] text-white text-left flex flex-col gap-2 transition hover:opacity-75 "
                         key={service.id}
-                        to={`/services`}
+                        to={service.to}
                       >
                         <li>{service.title}</li>
                       </Link>
@@ -153,7 +166,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <p className="text-xs text-gray-500 dark:text-gray-400">
+          <p className="text-xs text-white ">
             &copy; 2023. Unique Resume. All rights reserved.
           </p>
         </div>

@@ -4,7 +4,7 @@ const featureContent = [
   {
     id: 1,
     title: " elegant Dark Mode",
-    icon: <BiCustomize className="text-secondary" />,
+    icon: <BiCustomize />,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet",
   },
@@ -25,7 +25,14 @@ const featureContent = [
   {
     id: 4,
     title: " Simple & clean designs",
-    icon: <BiCustomize className="text-secondary" />,
+    icon: <BiCustomize />,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet",
+  },
+  {
+    id: 5,
+    title: " Simple & clean designs",
+    icon: <BiCustomize />,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet",
   },
@@ -48,7 +55,7 @@ const Features = () => {
             <span className="underline decoration-primary">Features</span>
           </h1>
 
-          <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
+          <p className="mt-4 text-white xl:mt-6 ">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
             quam voluptatibus
           </p>
@@ -59,7 +66,7 @@ const Features = () => {
                 key={feature.id}
                 className="p-8 space-y-3 border-2  border-blue-400 dark:border-blue-300 rounded-xl"
               >
-                <span className="inline-block text-[45px] text-blue-800 ">
+                <span className="inline-block text-[45px] text-[#CAF0F8] ">
                   {feature.icon}
                 </span>
 
@@ -67,9 +74,7 @@ const Features = () => {
                   {feature.title}
                 </h1>
 
-                <p className="text-gray-500 dark:text-gray-300">
-                  {feature.description}
-                </p>
+                <p className=" text-gray-300">{feature.description}</p>
               </div>
             ))}
           </div>

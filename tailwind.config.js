@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -11,11 +10,5 @@ module.exports = {
         dimBlue: "rgba(9, 151, 124, 0.1)",
       },
     },
-
-  content: ["./src/**/*.{html,js}"],
-  theme: {
-    extend: {},
-
   },
-  plugins: [],
 };

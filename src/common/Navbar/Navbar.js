@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
 const menuItems = [
   {
@@ -33,16 +34,19 @@ const Navbar = () => {
         <nav className="bg-blue-900/60 lg:w-full backdrop-blur-sm dark:backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" className="flex items-center">
-              <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-              {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                            3DotIt
-                        </span> */}
-              <button data-text="Awesome" className="button">
-                <span className="actual-text">&nbsp;UniqueResume&nbsp;</span>
-                <span className="hover-text" aria-hidden="true">
-                  &nbsp;UniqueResume&nbsp;
-                </span>
-              </button>
+              <img
+                src={logo}
+                className="mr-3 h-6 sm:h-9"
+                alt="Unique Resume Logo"
+              />
+              <Link to="/">
+                <button data-text="Awesome" className="button">
+                  <span className="actual-text">&nbsp;UniqueResume&nbsp;</span>
+                  <span className="hover-text" aria-hidden="true">
+                    &nbsp;UniqueResume&nbsp;
+                  </span>
+                </button>
+              </Link>
             </a>
 
             {/* dektop menu */}

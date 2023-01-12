@@ -1,10 +1,89 @@
-# Getting Started with Create React App and Redux
+# Unique Resume
 
-# Shohag
+#### Live link
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+`Live website` [Click here](https://unique-resume.vercel.app/)
+<!-- `client-side` [Click here](https://unique-resume.vercel.app/) -->
+<!-- `server-side` [Click here]() -->
+
+#### Code link 
+
+<!-- `GitHub` [Click here]() -->
+`client-side` [Click here]()
+`server-side` [Click here]()
+
+### Description
+- This project implements for build your Resume and CV in the job sector.
+--- 
+
+### Features 
+- Custom Design 
+- SEO Friendly 
+- Mobile and PC, Tablet Responsive 
+- Doctors Management 
+- Customers Management 
+- Add to Cart / Book Appointment 
+- Payment Gateway 
+- Email services 
+<!-- - Shipping Management  -->
+<!-- - Invoice Printing  -->
+
+#### Front-end Technology
+
+- Firebase for authentication and deploy (hosting)
+- Tailwind CSS
+- daisyUI
+- JavaScript
+- ReactJS
+- React Query 
+- React Router - (npm install react-router-dom)
+- React-Context (AuthProvider)
+- React Hook Form (npm install react-hook-form)
+- React-Hot-Toast (npm install react-hot-toast) [Docs](https://react-hot-toast.com/docs)
+- React-Toastify (npm i react-toastify)
+- React Icons (npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
+
+- React Day Picker (npm install react-day-picker date-fns)
+- TypewriterJS (npm i typewriter-effect)
+- StripeJS (npm install --save @stripe/react-stripe-js @stripe/stripe-js)
+- EmailJS (npm install @emailjs/browser --save) 
+- React-phone-number-input (npm i react-phone-number-input) [Docs](https://www.npmjs.com/package/react-phone-number-input)
+
+#### Back-end Technology
+
+- Node.JS
+- Nodemon (npm install -g nodemon)
+  for server live when coding [Docs1](https://nodemon.io/) and [Docs2](https://www.npmjs.com/package/nodemon)
+
+- MongoDB (Atlas, Cluster) for database [Docs](https://cloud.mongodb.com/)
+
+- React Query/ TanStack Query (npm i @tanstack/react-query)
+<!-- 
+- JWT (JSON Web Token) for authorization (npm i jsonwebtoken) [Docs](https://www.npmjs.com/package/jsonwebtoken)
+
+- Stripe for payment get way (npm install --save stripe) [Docs1](https://stripe.com/docs/payments/quickstart) [Docs2](https://stripe.com/docs/testing)
+
+- Nodemailer (npm install nodemailer) [Docs](https://nodemailer.com/about/)
+- Mailgun () [Docs](https://app.mailgun.com/mg/dashboard) (https://www.npmjs.com/package/nodemailer-mailgun-transport) (npm i nodemailer-mailgun-transport) -->
+
+#### Deploy (Hosting)
+<!-- - Deploy frontend in Firebase (Client) [Docs](https://console.firebase.google.com/) -->
+- Deploy backend in Vercel (server) [Docs](https://vercel.com/dashboard)
+
+
+
+---
+
+
+
+<!-- 
+# Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+
+In the project directory, you can run:
 
 ### `npm start`
 
@@ -44,3 +123,29 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+ -->

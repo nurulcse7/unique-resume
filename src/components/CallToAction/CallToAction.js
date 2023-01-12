@@ -3,14 +3,14 @@ import resumeImg from "../../assets/resume.png";
 const CallToAction = () => {
   return (
     <div>
-      <div className="container my-24  mx-auto">
+      <div className="container my-24 px-6 mx-auto">
         <section className="mb-32">
           <div className="flex flex-wrap">
             <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 mb-12 lg:mb-0">
               <div className="flex lg:py-12">
                 <img
                   src={resumeImg}
-                  className="w-full rounded-lg shadow-lg z-10 ml-11"
+                  className="w-full rounded-lg shadow-lg z-10 lg:ml-11"
                   alt=""
                 />
               </div>

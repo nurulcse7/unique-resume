@@ -87,7 +87,7 @@ const Navbar = () => {
             <div className="block lg:hidden pb-2">
               <div className="relative flex justify-end items-center gap-3 sm:max-w-xl mx-auto">
                 <button
-                  className="text-gray-200 dark:text-white w-10 h-10 relative focus:outline-none bg-transparent"
+                  className=" text-white w-10 h-10 relative focus:outline-none bg-transparent"
                   onClick={toggleMenu}
                 >
                   <span className="sr-only">Open main menu</span>
@@ -118,9 +118,7 @@ const Navbar = () => {
             {isMenu && (
               <div
                 className={`h-screen flex justify-between border-t-2 border-primary_btn  w-full mx-auto lg:hidden ${
-                  isMenu
-                    ? "animate-in slide-in-from-left duration-300"
-                    : "animate-out slide-out-from-left duration-300"
+                  isMenu ? "slide-right" : "slide-left"
                 } `}
               >
                 <ul

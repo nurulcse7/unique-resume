@@ -14,9 +14,6 @@ const Login = () => {
         <div className="px-6 py-4 hidden md:block">
           <a href="/" className="flex items-center">
             <img src={logo} className="mr-3 h-14 sm:h-12" alt="Flowbite Logo" />
-            {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                            3DotIt
-                        </span> */}
             <button data-text="Awesome" className="button">
               <span className="actual-text">&nbsp;UniqueResume&nbsp;</span>
               <span className="hover-text" aria-hidden="true">

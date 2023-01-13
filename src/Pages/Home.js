@@ -12,7 +12,7 @@ const Home = () => {
       <HeroSection />
       <Slider />
       <HowToWork />
-      <h1 className="text-4xl text-center m-8">Credit by Rabbi Sikder</h1>
+
       <CallToAction />
       <Features />
       <Faq></Faq>

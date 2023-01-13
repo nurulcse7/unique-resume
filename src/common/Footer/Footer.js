@@ -69,8 +69,7 @@ const Footer = () => {
               </div>
 
               <p className="max-w-xs mt-4 text-left text-white">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
-                non cupiditate quae nam molestias.
+                Connect With Us On different types of Social Media
               </p>
 
               <ul className="flex gap-6 mt-8">

@@ -18,12 +18,12 @@ const Faq = () => {
             <div class=" w-[70%] mx-auto sm:mb-2 ">
               <details className="mb-4 text-left border-b-2 py-3 ">
                 <summary className="font-semibold text-xl ">
-                  How can I use Resume.com for free?
+                  How can I use UNIQUERESUME for free?
                 </summary>
 
                 <span className="font-thin text-lg">
-                  Resume.com has a few different tools you can use 100% for free
-                  without entering any credit card details.
+                  has a few different tools you can use 100% for free without
+                  entering any credit card details.
                 </span>
               </details>
               <details className="mb-4 text-left border-b-2 py-3 ">
@@ -56,10 +56,10 @@ const Faq = () => {
                 </summary>
 
                 <span className="font-thin text-lg">
-                  You can cancel a Resume.io subscription right from our website
-                  without even logging into the app. To do that visit our{" "}
-                  <a href="#"> Contact Us</a> page and then click the "Cancel
-                  Subscription" option from the menu.
+                  You can cancel a UNIQUERESUME subscription right from our
+                  website without even logging into the app. To do that visit
+                  our <a href="#"> Contact Us</a> page and then click the
+                  "Cancel Subscription" option from the menu.
                 </span>
               </details>
             </div>

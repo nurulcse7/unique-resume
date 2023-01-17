@@ -72,3 +72,9 @@ code {
     transform: translateX(0px);
   }
 }
+
+.bg-image {
+  background-image: url("../src/assets/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

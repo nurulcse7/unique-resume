@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import axios from "axios";
+import { Notify } from "notiflix";
+import React, { useContext, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
+import { AuthContext } from "../../Context/AuthProvider";
 const menuItems = [
   {
     name: "Resume Templetes",
@@ -24,7 +27,21 @@ const menuItems = [
   },
 ];
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenu, setIsMenu] = useState(false);
+  const { user, setUser } = useContext(AuthContext);
+  const logOut = async () => {
+    axios
+      .get("/api/logout")
+      .then(() => {
+        Notify.success("Successfully logged out.");
+        setUser("");
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const toggleMenu = () => {
     setIsMenu(!isMenu);
   };
@@ -69,24 +86,37 @@ const Navbar = () => {
                     </NavLink>
                   </li>
                 ))}
-                <Link to="/login">
+                {user ? (
                   <button
-                    className="border border-primary bg-primary inline-block px-4 py-[5px]  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                    onClick={logOut}
+                    className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                   >
-                    Login
+                    Log Out
                   </button>
-                </Link>
-                <Link to="/register">
-                  <button
-                    className="border inline-block px-4  py-[5px] border-primary_btn hover:bg-primary_btndark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                  >
-                    Register
-                  </button>
-                </Link>
+                ) : (
+                  <>
+                    <Link to="/login">
+                      <button
+                        className="border border-primary bg-primary inline-block px-4 py-[5px]  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                      >
+                        Login
+                      </button>
+                    </Link>
+                    <Link to="/register">
+                      <button
+                        className="border inline-block px-4  py-[5px] border-primary_btn hover:bg-primary_btndark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                      >
+                        Register
+                      </button>
+                    </Link>
+                  </>
+                )}
               </ul>
             </div>
             <div className="block lg:hidden pb-2">
@@ -143,26 +173,39 @@ const Navbar = () => {
                     </li>
                   ))}
                   <li>
-                    <span className="flex flex-col lg:flex-row md:w-fit w-full justify-between items-center gap-3">
-                      <Link to="/auth/login">
-                        <button
-                          className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
-                          data-mdb-ripple="true"
-                          data-mdb-ripple-color="light"
-                        >
-                          Login
-                        </button>
-                      </Link>
-                      <Link to="/register">
-                        <button
-                          className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-white  dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
-                          data-mdb-ripple="true"
-                          data-mdb-ripple-color="light"
-                        >
-                          Register
-                        </button>
-                      </Link>
-                    </span>
+                    {user ? (
+                      <button
+                        onClick={logOut}
+                        className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                      >
+                        Log Out
+                      </button>
+                    ) : (
+                      <>
+                        <span className="flex flex-col lg:flex-row md:w-fit w-full justify-between items-center gap-3">
+                          <Link to="/auth/login">
+                            <button
+                              className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                              data-mdb-ripple="true"
+                              data-mdb-ripple-color="light"
+                            >
+                              Login
+                            </button>
+                          </Link>
+                          <Link to="/register">
+                            <button
+                              className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-white  dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
+                              data-mdb-ripple="true"
+                              data-mdb-ripple-color="light"
+                            >
+                              Register
+                            </button>
+                          </Link>
+                        </span>
+                      </>
+                    )}
                   </li>
                 </ul>
               </div>

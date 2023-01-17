@@ -1,18 +1,40 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Notify } from "notiflix";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/hero1.png";
 import resume from "../../assets/resume.png";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Login = () => {
   const [viewPassword, setViewPassword] = useState(false);
-  const userLoginHandelar = (e) => {
-    e.preventdefault();
+  const { setUser, setLoading } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+  });
+  const handleLogin = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    try {
+      await axios
+        .post("/api/login", userInfo)
+        .then((response) => setUser(response.data));
+      Notify.success("login Success");
+      setLoading(false);
+
+      navigate("/");
+    } catch (error) {
+      Notify.failure("failed to login");
+      setLoading(false);
+    }
   };
+
   return (
-    <section className="h-screen w-full text-left bg-gray-100  flex justify-center items-center">
+    <section className=" py-[20%] md:py-[10%]  w-full text-left bg-gray-100  flex justify-center items-center">
       <div className=" bg-[#7889B9] md:border-2 border-black shadow-xl rounded-3xl grid grid-cols-2">
         <div className="px-6 py-4 hidden md:block">
-          //!logo
           <a href="/" className="flex items-center">
             <img src={logo} className="mr-3 h-14 sm:h-12" alt="Flowbite Logo" />
             <button data-text="Awesome" className="button">
@@ -41,11 +63,8 @@ const Login = () => {
                     <img
                       src={logo}
                       className="mr-3 h-14 sm:h-12"
-                      alt="Flowbite Logo"
+                      alt="Unique Resume Logo"
                     />
-                    {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                            3DotIt
-                        </span> */}
                     <button data-text="Awesome" className="button">
                       <span className="actual-text">
                         &nbsp;UniqueResume&nbsp;
@@ -57,18 +76,22 @@ const Login = () => {
                   </a>
                 </div>
               </div>
-              <form
-                onSubmit={(e) => userLoginHandelar(e)}
-                className="w-full pt-7 px-6"
-              >
+
+              <form onSubmit={handleLogin} className="w-full pt-7 px-6">
                 <div className="space-y-1 my-3 text-sm">
-                  <label for="username" className="block dark:text-gray-400">
+                  <label
+                    htmlFor="username"
+                    className="block dark:text-gray-400"
+                  >
                     Email
                   </label>
                   <input
                     type="email"
                     name="email"
                     required
+                    onChange={(e) =>
+                      setUserInfo({ ...userInfo, email: e.target.value })
+                    }
                     placeholder="Email"
                     className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                   />
@@ -80,6 +103,9 @@ const Login = () => {
                   <input
                     name="password"
                     type={viewPassword ? "text" : "password"}
+                    onChange={(e) =>
+                      setUserInfo({ ...userInfo, password: e.target.value })
+                    }
                     placeholder="******"
                     className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                   />

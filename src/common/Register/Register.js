@@ -1,22 +1,49 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
 import resume from "../../assets/resume.png";
+import axios from "axios";
+import { Notify } from "notiflix";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [viewPassword, setViewPassword] = useState(false);
-  const userSignupHandelar = (e) => {
-    e.preventdefault();
+  const { setLoading, setUser } = useContext(AuthContext);
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+    name: "",
+  });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("/api/register", userInfo).then((res) => {
+        console.log(res.data);
+        setUser(res.data);
+      });
+      Notify.success("login Success");
+      setLoading(false);
+
+      navigate("/");
+    } catch (error) {
+      Notify.failure("failed to login");
+      setLoading(false);
+    }
   };
+
   return (
-    <section className="h-screen w-full text-left bg-gray-100  flex justify-center items-center">
+    <section
+      className={`py-[20%] md:py-[10%] w-full text-left bg-gray-100  flex justify-center items-center`}
+    >
       <div className=" bg-[#7889B9] md:border-2 border-black shadow-xl rounded-3xl grid grid-cols-2">
         <div className="px-6 py-4 hidden md:block">
           <a href="/" className="flex items-center">
-            <img src={logo} className="mr-3 h-14 sm:h-12" alt="Flowbite Logo" />
-            {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                            3DotIt
-                        </span> */}
+            <img
+              src={logo}
+              className="mr-3 h-14 sm:h-12"
+              alt="unique resume Logo"
+            />
             <button data-text="Awesome" className="button">
               <span className="actual-text">&nbsp;UniqueResume&nbsp;</span>
               <span className="hover-text" aria-hidden="true">
@@ -25,15 +52,18 @@ const Register = () => {
             </button>
           </a>
 
-          <div className="h-full w-full flex justify-center items-center">
-            <img src={resume} alt="Resume" className="w-full md:w-[450px]" />
+          <div className=" w-full flex justify-center items-center">
+            <img
+              src={resume}
+              alt="Resume"
+              className="w-full rounded-xl md:w-[450px]"
+            />
           </div>
         </div>
         <div>
           <div className="flex w-[100vw] md:w-[500px]  justify-center items-center">
             <div className="w-full bg-white flex-col rounded-3xl md:rounded-r-3xl md:rounded-l-none justify-center items-center ">
               <div className="w-full">
-                {/* <img src={logo1} alt="Logo.." /> */}
                 <h2 className="text-2xl py-3 px-6 hidden md:block font-semibold">
                   Let’s get started <br />
                   with a few simple steps
@@ -43,11 +73,8 @@ const Register = () => {
                     <img
                       src={logo}
                       className="mr-3 h-14 sm:h-12"
-                      alt="Flowbite Logo"
+                      alt="unique resume Logo"
                     />
-                    {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                            3DotIt
-                        </span> */}
                     <button data-text="Awesome" className="button">
                       <span className="actual-text">
                         &nbsp;UniqueResume&nbsp;
@@ -59,10 +86,7 @@ const Register = () => {
                   </a>
                 </div>
               </div>
-              <form
-                onSubmit={(e) => userSignupHandelar(e)}
-                className="w-full pt-7 px-6"
-              >
+              <form onSubmit={handleSubmit} className="w-full pt-7 px-6">
                 <div className="space-y-1 my-3 text-sm">
                   <label for="username" className="block dark:text-gray-400">
                     Full Name
@@ -70,6 +94,9 @@ const Register = () => {
                   <input
                     type="text"
                     name="name"
+                    onChange={(e) =>
+                      setUserInfo({ ...userInfo, name: e.target.value })
+                    }
                     required
                     placeholder="Name"
                     className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
@@ -82,6 +109,9 @@ const Register = () => {
                   <input
                     type="email"
                     name="email"
+                    onChange={(e) =>
+                      setUserInfo({ ...userInfo, email: e.target.value })
+                    }
                     required
                     placeholder="Email"
                     className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
@@ -93,6 +123,9 @@ const Register = () => {
                   </label>
                   <input
                     name="password"
+                    onChange={(e) =>
+                      setUserInfo({ ...userInfo, password: e.target.value })
+                    }
                     type={viewPassword ? "text" : "password"}
                     placeholder="******"
                     className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"

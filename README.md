@@ -8,8 +8,8 @@
 
 #### Code link 
 
-<!-- `GitHub` [Click here]() -->
-`client-side` [Click here]()
+<!-- `GitHub` [Click here](https://github.com/nurulcse7/unique-resume) -->
+`client-side` [Click here](https://github.com/nurulcse7/unique-resume)
 `server-side` [Click here]()
 
 ### Description

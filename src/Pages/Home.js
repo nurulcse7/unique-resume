@@ -12,7 +12,6 @@ const Home = () => {
       <HeroSection />
       <Slider />
       <HowToWork />
-
       <CallToAction />
       <Features />
       <Faq></Faq>

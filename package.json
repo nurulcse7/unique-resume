@@ -10,6 +10,7 @@
     "antd": "^5.1.4",
     "axios": "^1.2.2",
     "notiflix": "^3.2.6",
+    "protected-route-react": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
@@ -46,5 +47,5 @@
   "devDependencies": {
     "tailwindcss": "^3.2.4"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://unique-resume.onrender.com"
 }

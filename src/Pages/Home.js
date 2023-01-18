@@ -3,8 +3,8 @@ import CallToAction from "../components/CallToAction/CallToAction";
 import Features from "../components/Features/Features";
 import HowToWork from "../components/HowToWork/HowToWork";
 import Slider from "../components/Slider/Slider";
-import Faq from "./Home/HomeComponents/FAQ/Faq";
-import HeroSection from "./Home/HomeComponents/HeroSection/HeroSection";
+import Faq from "../components/FAQ/Faq";
+import HeroSection from "../components/HeroSection";
 
 const Home = () => {
   return (
@@ -12,7 +12,6 @@ const Home = () => {
       <HeroSection />
       <Slider />
       <HowToWork />
-
       <CallToAction />
       <Features />
       <Faq></Faq>

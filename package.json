@@ -46,6 +46,5 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.2.4"
-  },
-  "proxy": "https://unique-resume.onrender.com"
+  }
 }

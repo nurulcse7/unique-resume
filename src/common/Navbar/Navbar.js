@@ -184,7 +184,7 @@ const Navbar = ({ iaAuthenticated }) => {
                     ) : (
                       <>
                         <span className="flex flex-col lg:flex-row md:w-fit w-full justify-between items-center gap-3">
-                          <Link to="/auth/login">
+                          <Link to="login">
                             <button
                               className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
                               data-mdb-ripple="true"

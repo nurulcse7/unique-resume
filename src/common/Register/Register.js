@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
 import resume from "../../assets/resume.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/action/user";
 const Register = () => {
+  const navigate = useNavigate();
+  const { iaAuthenticated, loading } = useSelector((state) => state.user);
   const [viewPassword, setViewPassword] = useState(false);
-  // const { setLoading, setUser } = useContext(AuthContext);
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -17,7 +18,9 @@ const Register = () => {
     e.preventDefault();
     dispatch(register(userInfo));
   };
-
+  useEffect(() => {
+    iaAuthenticated && navigate("/");
+  }, [iaAuthenticated, navigate]);
   return (
     <section
       className={`py-[20%] md:py-[10%] w-full text-left bg-gray-100  flex justify-center items-center`}
@@ -175,10 +178,7 @@ const Register = () => {
                 <div>
                   <p className="label-text text-center mt-2">
                     Already have an Account!
-                    <Link
-                      to="../login"
-                      className="text-[#00B4D8] pl-2 font-bold"
-                    >
+                    <Link to="/login" className="text-[#00B4D8] pl-2 font-bold">
                       Login
                     </Link>
                   </p>

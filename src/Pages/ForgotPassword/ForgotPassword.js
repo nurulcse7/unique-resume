@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +21,9 @@ const ForgotPassword = () => {
       navigate("/login");
     }
   }, [success, navigate]);
+  useEffect(() => {
+    axios.get("/api/allusers").then((res) => console.log(res.data));
+  }, []);
   return (
     <div className="py-[20%] flex justify-center">
       <form

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/hero1.png";
 import resume from "../../assets/resume.png";
+import Loader from "../../components/Loader/Loader";
 import { login } from "../../redux/action/user";
 
 const Login = () => {
@@ -25,7 +26,7 @@ const Login = () => {
   return (
     <section className=" py-[20%] md:py-[10%]  w-full text-left bg-gray-100  flex justify-center items-center">
       {loading ? (
-        <h1>loading...</h1>
+        <Loader />
       ) : (
         <div className=" bg-[#7889B9] md:border-2 border-black shadow-xl rounded-3xl grid grid-cols-2">
           <div className="px-6 py-4 hidden md:block">
@@ -169,7 +170,7 @@ const Login = () => {
                     <p className="label-text text-center mt-2">
                       New to resume.com?
                       <Link
-                        to="../signup"
+                        to="/register"
                         className="text-[#00B4D8] pl-2 font-bold"
                       >
                         Create new account

@@ -22,8 +22,8 @@ import {
 // .......................................content-none
 
 const CVTempletes = () => {
-  const [mainData, setMainData] = useState("");
-
+  const [mainData, setMainData] = useState([]);
+  console.log(mainData);
   // .....................
   const onFinish = (values) => {
     console.log("Received values of form:", values);
@@ -38,7 +38,6 @@ const CVTempletes = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     setMainData(data);
   };
 
@@ -47,8 +46,6 @@ const CVTempletes = () => {
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
-
-  console.log("image", fileList[0]);
   const onPreview = async (file) => {
     let src = file.url;
     if (!src) {

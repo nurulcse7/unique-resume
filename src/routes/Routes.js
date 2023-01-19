@@ -4,6 +4,7 @@ import Register from "../common/Register/Register";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import CoverLetter from "../Pages/CoverLetter/CoverLetter";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/cover-letter",
+        element: <CoverLetter />,
       },
       {
         path: "/register",

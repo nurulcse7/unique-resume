@@ -17,7 +17,7 @@ const menuItems = [
   },
   {
     name: "Cover letters",
-    path: "/teams",
+    path: "/cover-letter",
     id: 3,
   },
   {

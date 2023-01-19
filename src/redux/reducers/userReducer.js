@@ -56,6 +56,21 @@ export const userReducer = createReducer(
       state.iaAuthenticated = false;
       state.error = action.payload;
     },
+    forgotPassRequest: (state, action) => {
+      state.loading = true;
+    },
+    forgotPassSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload.message;
+      state.iaAuthenticated = null;
+      state.success = true;
+    },
+    forgotPassFail: (state, action) => {
+      state.loading = false;
+      state.iaAuthenticated = false;
+      state.error = action.payload.data;
+      state.success = false;
+    },
     clearError: (state) => {
       state.error = null;
     },

@@ -8,7 +8,6 @@ import { login } from "../../redux/action/user";
 const Login = () => {
   const [viewPassword, setViewPassword] = useState(false);
   const dispatch = useDispatch();
-  // const { setUser, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({
     email: "",
@@ -51,7 +50,6 @@ const Login = () => {
             <div className="flex w-[100vw] md:w-[500px]  justify-center items-center">
               <div className="w-full bg-white flex-col rounded-3xl md:rounded-r-3xl md:rounded-l-none justify-center items-center ">
                 <div className="w-full">
-                  {/* <img src={logo1} alt="Logo.." /> */}
                   <h2 className="text-2xl py-3 px-6 hidden md:block font-semibold">
                     Welcome Back!
                     <br />
@@ -109,9 +107,6 @@ const Login = () => {
                       className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                     />
 
-                    <label className="label">
-                      <span className="label-text">Forgot Password ?</span>
-                    </label>
                     <div
                       onClick={() => setViewPassword(!viewPassword)}
                       className="absolute cursor-pointer duration-300 text-gray-400 hover:text-gray-700 text-xl right-3 top-8"
@@ -158,6 +153,9 @@ const Login = () => {
                       )}
                     </div>
                   </div>
+                  <span className="text-sm">
+                    <Link to="/forgot-password">Forgotten Password?</Link>
+                  </span>
 
                   <div className="mt-4">
                     <button

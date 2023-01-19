@@ -28,7 +28,7 @@ const CVTemplate = () => {
         </Link>
       </div>
       <div className="grid grid-cols-4 gap-10 m-20">
-        <Link to="/cv-templetes">
+        <Link to="/cv-templates">
           {" "}
           <Card
             hoverable
@@ -46,7 +46,7 @@ const CVTemplate = () => {
             {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
           </Card>
         </Link>
-        <Link to="/cv-templetes">
+        <Link to="/cv-templete">
           {" "}
           <Card
             hoverable

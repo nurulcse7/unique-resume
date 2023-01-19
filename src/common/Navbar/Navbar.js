@@ -6,13 +6,13 @@ import { signOut } from "../../redux/action/user";
 
 const menuItems = [
   {
-    name: "Resume Templetes",
-    path: "/resume-templetes",
+    name: "Resume Templates",
+    path: "/resume-Templates",
     id: 1,
   },
   {
-    name: "Cv Templetes",
-    path: "/cv-templetes",
+    name: "CV Templates",
+    path: "/cv-Templates",
     id: 2,
   },
   {
@@ -21,8 +21,8 @@ const menuItems = [
     id: 3,
   },
   {
-    name: "Faq",
-    path: "/faq",
+    name: "Contact",
+    path: "/contact",
     id: 4,
   },
 ];

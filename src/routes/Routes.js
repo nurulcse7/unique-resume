@@ -4,6 +4,7 @@ import Register from "../common/Register/Register";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import CoverLetter from "../Pages/CoverLetter/CoverLetter";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
@@ -45,7 +46,11 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/forgot-password",
+        path: "/cover-letter",
+        element: <CoverLetter />,
+      },
+      {
+       path: "/forgot-password",
         element: <ForgotPassword />,
       },
       {

@@ -29,8 +29,8 @@ const ForgotPassword = () => {
   return (
     <div className="py-[20%] flex justify-center">
       <ul>
-        {data.map((d) => (
-          <li>{d.name}</li>
+        {data?.map((d) => (
+          <li>{d?.name}</li>
         ))}
       </ul>
       <form

@@ -47,3 +47,28 @@ code {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
+
+.slide-right {
+  -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-500px);
+    transform: translateX(-500px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-500px);
+    transform: translateX(-500px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}

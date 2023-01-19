@@ -9,10 +9,10 @@ const Slider = () => {
     <div className="hidden lg:block">
       <Carousel autoplay>
         <div className="container  mx-auto">
-          <section className="mb-32  ">
+          <section className="mb-5">
             <div className="flex flex-wrap">
-              <div className="grow-0  basis-auto w-full lg:w-5/12 mb-12 lg:mb-0">
-                <div className="flex lg:py-12">
+              <div className="grow-0  basis-auto w-full lg:w-5/12  lg:mb-0">
+                <div className="flex ">
                   <img
                     src={img1}
                     className="w-full rounded-lg  z-10 ml-11"
@@ -49,10 +49,10 @@ const Slider = () => {
         </div>
 
         <div className="container  mx-auto">
-          <section className="mb-32  ">
+          <section className="mb-5  ">
             <div className="flex flex-wrap">
-              <div className="grow-0  basis-auto w-full lg:w-5/12 mb-12 lg:mb-0">
-                <div className="flex lg:py-12">
+              <div className="grow-0  basis-auto w-full lg:w-5/12 lg:mb-0">
+                <div className="flex ">
                   <img
                     src={img2}
                     className="w-full rounded-lg  z-10 ml-11"
@@ -88,10 +88,10 @@ const Slider = () => {
           </section>
         </div>
         <div className="container  mx-auto">
-          <section className="mb-32  ">
+          <section className="mb-5  ">
             <div className="flex flex-wrap">
-              <div className="grow-0  basis-auto w-full lg:w-5/12 mb-12 lg:mb-0">
-                <div className="flex lg:py-12">
+              <div className="grow-0  basis-auto w-full lg:w-5/12 lg:mb-0">
+                <div className="flex ">
                   <img
                     src={img3}
                     className="w-full rounded-lg  z-10 ml-11"

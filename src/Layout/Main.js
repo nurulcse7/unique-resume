@@ -8,7 +8,7 @@ const Main = () => {
     <div>
       <Navbar />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -14,11 +14,11 @@ const HowToWork = () => {
               Working Process
             </p>
             <p className="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">
-              Working Process of Fest
+              Working Process of UNIQUE RESUME
             </p>
             <p className="text-sm md:text-base mb-4">
-              Here’s your guide to the tech fest 2021 process. Go through all
-              the steps to know the exact process of the fest.
+              Here’s your guide to the tech UNIQUE RESUME 2021 process. Go
+              through all the steps to know the exact process of the fest.
             </p>
             <Link
               to="/home"
@@ -39,9 +39,8 @@ const HowToWork = () => {
                       Pick a Template
                     </h4>
                     <p className="text-sm md:text-base leading-snug  text-opacity-100">
-                      Don't sabotage your job search before it has even begun.
-                      Choose from our ATS-friendly, hand-crafted resume
-                      templates
+                      Professionally-designed resume templates and examples
+                      (+guides). Just edit and download in 5 minutes.
                     </p>
                   </div>
                 </div>
@@ -94,9 +93,9 @@ const HowToWork = () => {
               />
             </div>
           </div>
-          <div className="absolute z-[0] w-[20%] h-[35%] top-0 pink__gradient" />
+          {/* <div className="absolute z-[0] w-[20%] h-[35%] top-0 pink__gradient" />
           <div className="absolute z-[1] w-[60%] h-[80%] rounded-full white__gradient bottom-40" />
-          <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
+          <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" /> */}
         </div>
       </div>
     </div>

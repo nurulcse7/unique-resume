@@ -1,12 +1,12 @@
 import React from "react";
 import Faq from "./HomeComponents/FAQ/Faq";
+import HeroSection from "./HomeComponents/HeroSection/HeroSection";
 
 const Home = () => {
   return (
     <div>
-      <h1>This is Home page</h1>
+      <HeroSection />
 
-      {/* faq section Added*/}
       <Faq />
     </div>
   );

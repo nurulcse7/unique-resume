@@ -97,16 +97,16 @@ const ResumeTemplate = () => {
           backgroundColor: "white",
         }}
       >
-        <div className="max-w-[1440px] text-left mx-auto relative">
+        <div className="lg:max-w-[1024px] xl:max-w-[1440px] text-left mx-auto relative">
           <div className="p-10">
-            <p className="text-5xl font-bold text-[#030660]">
+            <p className="md:text-5xl text-2xl font-bold text-[#030660]">
               Resume Templates
             </p>
             <p className="font-semibold">
               /Freshers & experienced Both people can create resumes.
             </p>
           </div>
-          <div className="grid grid-cols-2 ">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 mx-3 ">
             <div className={`flex justify-between items-center `}>
               <img className="w-1/2" src={leftBG} alt="" />
             </div>
@@ -115,22 +115,62 @@ const ResumeTemplate = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-[-280px] rounded-2xl  shadow-xl h-[300px]  bg-white/80 w-full">
-            <div className="grid grid-cols-2 h-full">
-              <div className="w-full h-full p-10">
-                <h2 className="text-4xl font-bold">Resumes</h2>
-                <div className="text-xl font-semibold text-white pt-2 pb-10">
-                  <button className="bg-blue-800 py-2 w-[200px] rounded-xl shadow-lg">
-                    Junior/Fresher
-                  </button>
+          <div className="">
+            <div className="absolute lg:bottom-[-280px] rounded-2xl  shadow-xl md:h-[300px]   bg-white/80 w-full">
+              <div className="flex lg:grid grid-cols-2 h-full">
+                <div className="w-full h-full px-10 lg:p-10">
+                  <h2 className="text-xl md:text-4xl font-bold">Resumes</h2>
+                  <div className="text-md lg:text-xl font-semibold text-white pt-2 pb-10 grid grid-cols-1 md:grid-cols-3 gap-2  ">
+                    <button className="bg-blue-800 py-2 md:w-[130px] xl:w-[200px] rounded-lg shadow-lg">
+                      Fresher
+                    </button>
 
-                  <button className="bg-blue-800 py-2 mx-2 w-[200px] rounded-xl shadow-lg">
-                    Mid Level
-                  </button>
-                  <button className="bg-blue-800 py-2 w-[200px] rounded-xl shadow-lg">
-                    Senior/Experience
-                  </button>
+                    <button className="bg-blue-800 py-2 md:w-[130px] xl:w-[200px] rounded-lg  shadow-lg">
+                      Mid Level
+                    </button>
+                    <button className="bg-blue-800 py-2 md:w-[130px] xl:w-[200px] rounded-lg shadow-lg">
+                      Experience
+                    </button>
+                  </div>
+                  <div className="hidden md:block">
+                    <h3 className="text-2xl font-semibold">
+                      Pick from 10+ free Resume Templates
+                    </h3>
+                    <div>
+                      <p>
+                        Pick one of our free resume templates, fill it out, and
+                        land that dream job!
+                      </p>
+                      <p>
+                        Create and download your professional resume in less
+                        than 5 minutes.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+
+                <div className="flex  items-center ">
+                  <div className="relative">
+                    <div className=" top-0 ">
+                      <img
+                        className="w-[350px] -mt-12 p-1"
+                        src="https://www.pngmart.com/files/7/Secretary-PNG-File.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div className=" hidden lg:block lg:p-6 lg:text-xl text-md  font-semibold w-full">
+                    <p className="text-center">
+                      Choosing the Best & <br />
+                      <span className="md:text-4xl text-2xl font-bold">
+                        Create now!
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:hidden block pb-3 px-3">
                 <h3 className="text-2xl font-semibold">
                   Pick from 10+ free Resume Templates
                 </h3>
@@ -145,31 +185,13 @@ const ResumeTemplate = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="flex  items-center ">
-                <div className="relative">
-                  <div className=" top-0">
-                    <img
-                      className=" w-[350px] -mt-12 p-1"
-                      src="https://www.pngmart.com/files/7/Secretary-PNG-File.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="p-10 text-xl text-center font-semibold">
-                  <p>
-                    Choosing the Best & <br />{" "}
-                    <span className="text-4xl font-bold">Create now!</span>
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-[1440px] mt-0 mx-auto ">
-        <div className="w-full grid grid-cols-4 gap-2">
+      <div className="lg:max-w-[1024px] xl:max-w-[1440px] mt-[-280px] sm:mt-[-380px] md:mt-[-130px] lg:mt-[-50px] xl:mt-0 mx-auto ">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2">
           {resumeTemplateData.map((template) => (
             <div key={template.id} className="m-2">
               <div className="m-1 flex justify-center ">

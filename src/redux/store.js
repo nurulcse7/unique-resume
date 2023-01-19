@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { loadUser } from "./reducers/loadUser";
 import { userReducer } from "./reducers/userReducer";
-
-export const server = "http://localhost:5000/api";
 
 const store = configureStore({
   reducer: {
     user: userReducer,
+    userData: loadUser,
   },
 });
 

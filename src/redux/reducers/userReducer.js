@@ -61,14 +61,14 @@ export const userReducer = createReducer(
     },
     forgotPassSuccess: (state, action) => {
       state.loading = false;
-      state.message = action.payload.message;
+      // state.message = action.payload.data.message;
       state.iaAuthenticated = null;
       state.success = true;
     },
     forgotPassFail: (state, action) => {
       state.loading = false;
       state.iaAuthenticated = false;
-      state.error = action.payload.data;
+      state.error = action.payload.data.message;
       state.success = false;
     },
     clearError: (state) => {

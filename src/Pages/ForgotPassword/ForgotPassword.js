@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -5,6 +6,7 @@ import { forgotPass } from "../../redux/action/user";
 
 const ForgotPassword = () => {
   const { success } = useSelector((state) => state.user);
+  const [data, setData] = useState(null);
   const [userInfo, setUserInfo] = useState({
     email: "",
   });
@@ -16,12 +18,21 @@ const ForgotPassword = () => {
   };
 
   useEffect(() => {
+    axios.get("/api/allusers").then((res) => setData(res.data));
+  }, []);
+
+  useEffect(() => {
     if (success) {
       navigate("/login");
     }
   }, [success, navigate]);
   return (
     <div className="py-[20%] flex justify-center">
+      <ul>
+        {data?.map((d) => (
+          <li>{d?.name}</li>
+        ))}
+      </ul>
       <form
         onSubmit={handleSubmit}
         className="md:w-1/3 w-2/3 rounded-xl bg-secondary p-10"

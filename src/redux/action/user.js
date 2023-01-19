@@ -67,7 +67,19 @@ export const forgotPass = (userInfo) => async (dispatch) => {
 
     dispatch({ type: "forgotPassSuccess", payload: data });
   } catch (error) {
-    console.log(error);
+    dispatch({ type: "forgotPassFail", payload: error.response });
+  }
+};
+
+export const userData = () => async (dispatch) => {
+  try {
+    dispatch({ type: "forgotPassRequest" });
+    const { data } = await axios.get(`api/allusers`, {
+      withCredentials: true,
+    });
+
+    dispatch({ type: "forgotPassSuccess", payload: data });
+  } catch (error) {
     dispatch({ type: "forgotPassFail", payload: error.response });
   }
 };

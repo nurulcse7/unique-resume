@@ -1,18 +1,18 @@
-import axios from "axios";
-import { Notify } from "notiflix";
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
-import { AuthContext } from "../../Context/AuthProvider";
+import { signOut } from "../../redux/action/user";
+
 const menuItems = [
   {
-    name: "Resume Templetes",
-    path: "/resume-templetes",
+    name: "Resume Templates",
+    path: "/resume-Templates",
     id: 1,
   },
   {
-    name: "Cv Templetes",
-    path: "/cv-templetes",
+    name: "CV Templates",
+    path: "/cv-Templates",
     id: 2,
   },
   {
@@ -21,27 +21,26 @@ const menuItems = [
     id: 3,
   },
   {
-    name: "Faq",
-    path: "/faq",
+    name: "Contact",
+    path: "/contact",
     id: 4,
   },
 ];
-const Navbar = () => {
+const Navbar = ({ iaAuthenticated }) => {
   const navigate = useNavigate();
   const [isMenu, setIsMenu] = useState(false);
-  const { user, setUser } = useContext(AuthContext);
-  const logOut = async () => {
-    axios
-      .get("/api/logout")
-      .then(() => {
-        Notify.success("Successfully logged out.");
-        setUser("");
-        navigate("/login");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const { message } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const logOut = () => {
+    dispatch(signOut());
   };
+
+  useEffect(() => {
+    if (message === "Logged out successfully") {
+      navigate("/login");
+    }
+  }, [message, navigate]);
+
   const toggleMenu = () => {
     setIsMenu(!isMenu);
   };
@@ -86,7 +85,7 @@ const Navbar = () => {
                     </NavLink>
                   </li>
                 ))}
-                {user ? (
+                {iaAuthenticated ? (
                   <button
                     onClick={logOut}
                     className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
@@ -173,7 +172,7 @@ const Navbar = () => {
                     </li>
                   ))}
                   <li>
-                    {user ? (
+                    {iaAuthenticated ? (
                       <button
                         onClick={logOut}
                         className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"

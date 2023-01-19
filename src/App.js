@@ -22,9 +22,9 @@ function App() {
     }
   }, [dispatch, error, message]);
 
-  // useEffect(() => {
-  //   dispatch(getMyProfile());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getMyProfile());
+  }, [dispatch]);
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>

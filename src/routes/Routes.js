@@ -6,6 +6,8 @@ import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound/NotFound";
+import { ProtectedRoute } from "protected-route-react";
+import { useSelector } from "react-redux";
 
 export const router = createBrowserRouter([
   {

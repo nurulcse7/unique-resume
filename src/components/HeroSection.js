@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import hero1 from "../../../../assets/hero.png";
-import style from "../../../../style";
+import hero1 from "../assets/hero.png";
+import style from "../style";
+
 const HeroSection = () => {
   return (
     <div>
@@ -30,15 +31,15 @@ const HeroSection = () => {
                 >
                   Choose Template
                 </button>
-                <Link to='/contact'>
-                <button
-                  type="button"
-                  className="inline-block px-5 py-3 border-[1px] border-white text-white font-medium text-sm leading-snug uppercase rounded-md hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                >
-                  Contact Us
-                </button>
+                <Link to="/contact">
+                  <button
+                    type="button"
+                    className="inline-block px-5 py-3 border-[1px] border-white text-white font-medium text-sm leading-snug uppercase rounded-md hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                    Contact Us
+                  </button>
                 </Link>
               </div>
             </div>

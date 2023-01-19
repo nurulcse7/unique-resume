@@ -1,35 +1,21 @@
-import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
 import resume from "../../assets/resume.png";
-import axios from "axios";
-import { Notify } from "notiflix";
-import { AuthContext } from "../../Context/AuthProvider";
-
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/action/user";
 const Register = () => {
-  const navigate = useNavigate();
   const [viewPassword, setViewPassword] = useState(false);
-  const { setLoading, setUser } = useContext(AuthContext);
+  // const { setLoading, setUser } = useContext(AuthContext);
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
     name: "",
   });
+  const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post("/api/register", userInfo).then((res) => {
-        console.log(res.data);
-        setUser(res.data);
-      });
-      Notify.success("login Success");
-      setLoading(false);
-
-      navigate("/");
-    } catch (error) {
-      Notify.failure("failed to login");
-      setLoading(false);
-    }
+    dispatch(register(userInfo));
   };
 
   return (

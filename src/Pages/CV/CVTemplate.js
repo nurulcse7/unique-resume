@@ -6,7 +6,7 @@ import cv2 from "../../assets/CV/02.jpg";
 import cv3 from "../../assets/CV/03.png";
 import cv4 from "../../assets/CV/04.png";
 
-const CVTemplate = () => {
+const CvTemplate = () => {
   return (
     <div className="pt-20">
       <div>
@@ -81,7 +81,7 @@ const CVTemplate = () => {
             {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
           </Card>
         </Link>
-        <Link to="/cv-templetes">
+        <Link to="/cv-templates">
           <Card
             hoverable
             //   style={{
@@ -103,4 +103,4 @@ const CVTemplate = () => {
   );
 };
 
-export default CVTemplate;
+export default CvTemplate;

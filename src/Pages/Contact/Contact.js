@@ -1,79 +1,95 @@
-import React, { useRef } from 'react';
-import useTitle from '../../hooks/useTitle';
-import emailjs from '@emailjs/browser';
-import { toast } from 'react-hot-toast';
+import React from 'react';
+import { connect } from 'react-redux';
+import Contact from '../../assets/contact.jpg'
+// import Background from '../../assets/wave.png'
 
-const Contact = () => {
-  useTitle('ContactUs');
-
-  const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        'service_36vclrk',
-        'template_uib0ack',
-        form.current,
-        'y3HJdYXyeuv1sR5i4'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success('Congrats! Successfully sent message');
-        },
-        (error) => {
-          toast.error(error.message);
-        }
-      );
-    e.target.reset();
-  };
-
+const ContactPage = ({ UniqueResume }) => {
   return (
-    <section className='hero my-12 shadow-2xl'>
-      <form ref={form} onSubmit={sendEmail} className='form-control p-12'>
-        <h4 className='text-center text-3xl text-secondary'>Contact Us</h4>
-        <h1 className='text-center text-white text-xl my-4'>
-          Have any queries? Send a message now.
-        </h1>
-        <label className='label text-lg mt-2'>Name</label>
-        <input
-          type='text'
-          name='user_name'
-          placeholder='Your Full Name'
-          className='input input-bordered input-accent w-full max-w-sm'
-          required
-        />
-        <label className='label text-lg mt-2'>Email</label>
-        <input
-          type='email'
-          name='user_email'
-          placeholder='Email Address'
-          className='input input-bordered input-accent w-full max-w-sm'
-          required
-        />
-        <label className='label text-lg mt-2'>Address</label>
-        <input
-          type='text'
-          name='user_address'
-          placeholder='Your address'
-          className='input input-bordered input-accent w-full max-w-sm my-2'
-        />
-        <label className='label text-lg'>Type message</label>
-        <textarea
-          name='message'
-          placeholder='Your message'
-          className='textarea textarea-accent'
-          required
-        ></textarea>
-        <input
-          type='submit'
-          value='Send Message'
-          className='btn bg-gradient-to-r from-accent to-secondary text-xl text-white capitalize mt-4'
-        />
+    <div className='bg-gradient-to-r from-blue-400 via-teal-500 to-blue-300'>
+      <form class='w-100 max-w-lg p-24'>
+        <div class='flex flex-wrap -mx-3 mb-6'>
+          <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+            <label
+              class='block Capitalize tracking-wide   font-bold mb-2'
+              for='grid-first-name'
+            >
+              First Name
+            </label>
+            <input
+              class=' block w-full   border border-blue-800 rounded-xl py-3 px-4 mb-3 leading-tight focus:outline-none '
+              id='grid-first-name'
+              type='text'
+              placeholder='Jane'
+            />
+          </div>
+          <div class='w-full md:w-1/2 px-3'>
+            <label
+              class='block Capitalize tracking-wide   font-bold mb-2'
+              for='grid-last-name'
+            >
+              Last Name
+            </label>
+            <input
+              class=' block w-full   border border-blue-800 rounded-xl py-3 px-4 leading-tight '
+              id='grid-last-name'
+              type='text'
+              placeholder='Doe'
+            />
+          </div>
+        </div>
+        <div class='flex flex-wrap -mx-3 mb-6'>
+          <div class='w-full px-3'>
+            <label
+              class='block Capitalize tracking-wide   font-bold mb-2'
+              for='grid-password'
+            >
+              E-mail
+            </label>
+            <input
+              class=' block w-full   border border-blue-800 rounded-xl py-3 px-4 mb-3 leading-tight '
+              id='email'
+              type='email'
+              placeholder='doe@domain.com'
+            />
+          </div>
+        </div>
+        <div class='flex flex-wrap -mx-3 mb-6'>
+          <div class='w-full px-3'>
+            <label
+              class='block Capitalize tracking-wide text-le  font-bold mb-2'
+              for='grid-password'
+            >
+              Message
+            </label>
+            <textarea
+              class=' no-resize  block w-full   border border-blue-800 rounded-xl py-3 px-4 mb-3 leading-tight  h-48 resize-none'
+              id='message'
+              placeholder='Type your message'
+            ></textarea>
+          </div>
+        </div>
+        <div class='md:flex md:items-center'>
+          <div class='md:w-1/3'>
+            <button
+              class='shadow bg-blue-800 hover:bg-blue-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-xl'
+              type='button'
+            >
+              Submit
+            </button>
+          </div>
+          
+        </div>
       </form>
-    </section>
+    </div>
   );
 };
 
-export default Contact;
+const mapStateToProps = (state) => {
+  return {
+    UniqueResume: state.UniqueResume,
+  };
+};
+
+export default connect(mapStateToProps)(ContactPage);
+
+// style={{background: `url(${Background})`}}

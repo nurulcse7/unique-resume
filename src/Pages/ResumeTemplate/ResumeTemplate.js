@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import rightBG from "../../assets/Resume/Recume-review.png";
 import leftBG from "../../assets/Resume/Artboard-1-copy-2-1-1024x1024.webp";
 import banarBG from "../../assets/Resume/banar-bg.png";
+import { Link } from "react-router-dom";
 
 const ResumeTemplate = () => {
   const [hover, setHover] = useState(0);
@@ -10,83 +11,85 @@ const ResumeTemplate = () => {
   const resumeTemplateData = [
     {
       id: 1,
-      type: "premium",
-      image: "https://i.ibb.co/47MKFqL/1.png",
+      type: "free",
+      image: "https://i.ibb.co/RYRb4Mz/15.png",
     },
+
     {
       id: 2,
-      type: "premium",
-      image: "https://i.ibb.co/1fShcwn/2.png",
+      type: "free",
+      image: "https://i.ibb.co/Wgxv60G/13.png",
     },
     {
       id: 3,
-      type: "premium",
-      image: "https://i.ibb.co/KGJ6y3j/3.png",
+      type: "free",
+      image: "https://i.ibb.co/mbhYnrJ/14.png",
     },
     {
       id: 4,
       type: "premium",
-      image: "https://i.ibb.co/Jnx4MYP/4.png",
+      image: "https://i.ibb.co/47MKFqL/1.png",
     },
     {
       id: 5,
       type: "premium",
-      image: "https://i.ibb.co/6D2tCz8/5.png",
+      image: "https://i.ibb.co/1fShcwn/2.png",
     },
     {
       id: 6,
       type: "premium",
-      image: "https://i.ibb.co/47fTyrV/7.png",
+      image: "https://i.ibb.co/KGJ6y3j/3.png",
     },
     {
       id: 7,
-      type: "premium",
-      image: "https://i.ibb.co/TqJ1psX/8.png",
+      type: "free",
+      image: "https://i.ibb.co/Jnx4MYP/4.png",
     },
     {
       id: 8,
       type: "premium",
-      image: "https://i.ibb.co/cQpw7W0/9.png",
+      image: "https://i.ibb.co/6D2tCz8/5.png",
     },
     {
       id: 9,
       type: "premium",
-      image: "https://i.ibb.co/vhhz7yT/10.png",
+      image: "https://i.ibb.co/47fTyrV/7.png",
     },
     {
       id: 10,
-      type: "premium",
-      image: "https://i.ibb.co/cQpw7W0/9.png",
+      type: "free",
+      image: "https://i.ibb.co/TqJ1psX/8.png",
     },
     {
       id: 11,
       type: "premium",
-      image: "https://i.ibb.co/6YSjnjs/12.png",
+      image: "https://i.ibb.co/cQpw7W0/9.png",
     },
     {
       id: 12,
-      type: "premium",
-      image: "https://i.ibb.co/Wgxv60G/13.png",
+      type: "free",
+      image: "https://i.ibb.co/vhhz7yT/10.png",
     },
     {
       id: 13,
       type: "premium",
-      image: "https://i.ibb.co/mbhYnrJ/14.png",
+      image: "https://i.ibb.co/cQpw7W0/9.png",
     },
     {
       id: 14,
       type: "premium",
-      image: "https://i.ibb.co/RYRb4Mz/15.png",
+      image: "https://i.ibb.co/6YSjnjs/12.png",
     },
+
     {
       id: 15,
-      type: "its free",
+      type: "free",
       image: "https://i.ibb.co/mc1hwdh/6.png",
     },
   ];
 
   return (
-    <section className="bg-[#08A4E9] relative">
+    <section className="bg-[#08A4E9] relative  pt-[10vh] xl:pt-[5vh] md:pt-[5vh] sm:pt-6vh ">
       <div
         className=""
         style={{
@@ -194,7 +197,7 @@ const ResumeTemplate = () => {
         <div className="w-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2">
           {resumeTemplateData.map((template) => (
             <div key={template.id} className="m-2">
-              <div className="m-1 flex justify-center ">
+              {/* <div className="m-1 flex justify-center ">
                 <button className="  py-1 px-4 bg-white rounded-md flex items-center  shadow-xl">
                   <span className="text-white bg-blue-400 p-1 text-center rounded-full">
                     <svg
@@ -216,9 +219,9 @@ const ResumeTemplate = () => {
                     {template.type}!
                   </span>
                 </button>
-              </div>
+              </div> */}
               <div className="cursor-pointer shadow-xl relative  overflow-hidden">
-                <div className="absolute top-0 right-0 m-2 bg-[#030660] rounded-full text-white">
+                <div className="absolute top-0 z-20 right-0 m-2 bg-[#030660] rounded-full text-white">
                   <button
                     onClick={() => setViewResume(template.image)}
                     className="h-10 z-50 w-10 flex justify-center items-center text-xl"
@@ -255,9 +258,37 @@ const ResumeTemplate = () => {
                   } duration-500 top-0  w-full h-full bg-black/50 rounded-lg`}
                 >
                   <div className="flex justify-center items-center w-full h-full">
-                    <button className="font-bold text-white text-2xl py-2 border-2 border-white px-6 rounded-xl bg-black">
+                    <Link
+                      to={`../create-resume/${template.id}`}
+                      onClick={() => console.log(template.id)}
+                      className="font-bold text-white text-2xl py-2 border-2 border-white px-6 rounded-xl bg-black"
+                    >
                       Create Resume
-                    </button>
+                    </Link>
+                  </div>
+                </div>
+
+                <div
+                  onMouseOver={() => setHover(template.id)}
+                  onMouseOut={() => setHover(0)}
+                  className={` ${
+                    hover === template.id ? "hidden" : "absolute"
+                  } duration-500 top-0  w-full h-full  rounded-lg`}
+                >
+                  <div className="flex justify-center items-center w-full h-full">
+                    {template.type === "free" ? (
+                      <img
+                        className="w-1/2"
+                        src="https://pngimg.com/d/free_PNG90763.png"
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        className="w-1/2"
+                        src="https://d28wu8o6itv89t.cloudfront.net/images/achatpremiumnomdedomainepointp-1539465350573.png"
+                        alt=""
+                      />
+                    )}
                   </div>
                 </div>
               </div>
@@ -266,20 +297,28 @@ const ResumeTemplate = () => {
         </div>
       </div>
       {viewResume && (
-        <div className=" fixed  top-0 left-0 bg-black/75 w-full h-[29.7cm] ">
-          <div className="h-full w-full flex justify-center ">
-            <div className="mt-[100px]">
+        <div className="z-50 fixed  top-0 left-0 h-screen bg-black/75 w-full md:h-[29.7cm] ">
+          <div className="h-full w-full flex justify-center items-center md:items-start ">
+            <div className="md:mt-[100px]">
               <div className=" relative">
                 <div className=" text-red-600 absolute -right-28 top-0 rounded-full font-bold bg-white">
                   <button
                     onClick={() => setViewResume("")}
-                    className=" py-2 px-4  text-center  text-3xl"
+                    className="hidden md:block  py-2 px-4  text-center  text-3xl"
                   >
                     Close
                   </button>
                 </div>
               </div>
-              <img className="h-[22cm] " src={viewResume} alt="" />
+              <img className="md:h-[22cm] " src={viewResume} alt="" />
+              <div className="md:hidden block w-full my-3 ">
+                <button
+                  onClick={() => setViewResume("")}
+                  className=" bg-white text-red-600 rounded-lg border-2 border-red-600  py-2 px-4  text-center  text-3xl"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>

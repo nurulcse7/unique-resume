@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Contact from '../../assets/contact.jpg'
+// import Contact from '../../assets/contact.jpg'
 // import Background from '../../assets/wave.png'
 
 const ContactPage = ({ UniqueResume }) => {

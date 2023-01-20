@@ -3,12 +3,16 @@ import axios from "axios";
 export const login = (userInfo) => async (dispatch) => {
   try {
     dispatch({ type: "loginRequest" });
-    const { data } = await axios.post(`/api/login`, userInfo, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    });
+    const { data } = await axios.post(
+      `/api/login`,
+      userInfo,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
 
     dispatch({ type: "loginSuccess", payload: data });
   } catch (error) {
@@ -19,12 +23,16 @@ export const login = (userInfo) => async (dispatch) => {
 export const register = (userInfo) => async (dispatch) => {
   try {
     dispatch({ type: "registerRequest" });
-    const { data } = await axios.post(`/api/register`, userInfo, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    });
+    const { data } = await axios.post(
+      `/api/register`,
+      userInfo,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
 
     dispatch({ type: "registerSuccess", payload: data });
   } catch (error) {
@@ -46,9 +54,12 @@ export const signOut = () => async (dispatch) => {
 export const getMyProfile = () => async (dispatch) => {
   try {
     dispatch({ type: "loadUserRequest" });
-    const { data } = await axios.get(`/api/user-details`, {
-      withCredentials: true,
-    });
+    const { data } = await axios.get(
+      `/api/user-details`,
+      {
+        withCredentials: true,
+      }
+    );
 
     dispatch({ type: "loadUserSuccess", payload: data.user });
   } catch (error) {
@@ -58,12 +69,16 @@ export const getMyProfile = () => async (dispatch) => {
 export const forgotPass = (userInfo) => async (dispatch) => {
   try {
     dispatch({ type: "forgotPassRequest" });
-    const { data } = await axios.post(`/api/password/forgot`, userInfo, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    });
+    const { data } = await axios.post(
+      `/api/password/forgot`,
+      userInfo,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
 
     dispatch({ type: "forgotPassSuccess", payload: data });
   } catch (error) {

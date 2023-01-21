@@ -6,24 +6,29 @@ import { signOut } from "../../redux/action/user";
 
 const menuItems = [
   {
-    name: "Resume Templetes",
-    path: "/resume-templetes",
+    name: "Resume Templates",
+    path: "/resume-Templates",
     id: 1,
   },
   {
-    name: "Cv Templetes",
-    path: "/cv-templetes",
+    name: "CV Templates",
+    path: "/cv-Templates",
     id: 2,
   },
   {
     name: "Cover letters",
-    path: "/teams",
+    path: "/cover-letter",
     id: 3,
   },
   {
-    name: "Faq",
-    path: "/faq",
+    name: "About",
+    path: "/about",
     id: 4,
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+    id: 5,
   },
 ];
 const Navbar = ({ iaAuthenticated }) => {
@@ -45,8 +50,8 @@ const Navbar = ({ iaAuthenticated }) => {
     setIsMenu(!isMenu);
   };
   return (
-    <div>
-      <header className="fixed w-full mx-auto animate-in z-[100] mb-10">
+    <div className="bg-primary sticky z-50 top-0">
+      <header className="w-full mx-auto">
         <nav className="bg-blue-900/60 lg:w-full backdrop-blur-sm dark:backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <Link to="/" className="flex items-center">
@@ -217,3 +222,5 @@ const Navbar = ({ iaAuthenticated }) => {
 };
 
 export default Navbar;
+
+// <header className="fixed w-full mx-auto animate-in z-[100] mb-10">

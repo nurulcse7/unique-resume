@@ -37,10 +37,8 @@
 - ReactJS
 - React Query 
 - React Router - (npm install react-router-dom)
-- React-Context (AuthProvider)
 - React Hook Form (npm install react-hook-form)
 - React-Hot-Toast (npm install react-hot-toast) [Docs](https://react-hot-toast.com/docs)
-- React-Toastify (npm i react-toastify)
 - React Icons (npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
 
 - React Day Picker (npm install react-day-picker date-fns)

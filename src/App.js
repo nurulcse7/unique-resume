@@ -17,7 +17,6 @@ function App() {
     }
     if (message) {
       toast.success(message);
-
       dispatch({ type: "clearMessage" });
     }
     if (loading) {

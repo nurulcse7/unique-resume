@@ -1,15 +1,16 @@
-import axios from "axios";
-const server = "https://unique-resume.onrender.com";
+import axiosInstance from "../../utils/axiosInstance";
 export const login = (userInfo) => async (dispatch) => {
   try {
     dispatch({ type: "loginRequest" });
-    const { data } = await axios.post(server + `/api/login`, userInfo, {
+    const { data } = await axiosInstance.post(`/api/login`, userInfo, {
       headers: {
         "Content-Type": "application/json",
       },
       withCredentials: true,
     });
-
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+    }
     dispatch({ type: "loginSuccess", payload: data });
   } catch (error) {
     console.log(error.response);
@@ -19,7 +20,7 @@ export const login = (userInfo) => async (dispatch) => {
 export const register = (userInfo) => async (dispatch) => {
   try {
     dispatch({ type: "registerRequest" });
-    const { data } = await axios.post(server + `/api/register`, userInfo, {
+    const { data } = await axiosInstance.post(`/api/register`, userInfo, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -34,10 +35,12 @@ export const register = (userInfo) => async (dispatch) => {
 export const signOut = () => async (dispatch) => {
   try {
     dispatch({ type: "logoutRequest" });
-    const { data } = await axios.get(server + `/api/logout`, {
+    const { data } = await axiosInstance.get(`/api/logout`, {
       withCredentials: true,
     });
-
+    if (data) {
+      localStorage.removeItem("token");
+    }
     dispatch({ type: "logoutSuccess", payload: data });
   } catch (error) {
     dispatch({ type: "logoutFail", payload: error.response.data.error });
@@ -46,20 +49,23 @@ export const signOut = () => async (dispatch) => {
 export const getMyProfile = () => async (dispatch) => {
   try {
     dispatch({ type: "loadUserRequest" });
-    const { data } = await axios.get(server + `/api/user-details`, {
+    const { data } = await axiosInstance.get(`/api/user-details`, {
+      headers: {
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
       withCredentials: true,
     });
-
+    console.log(data);
     dispatch({ type: "loadUserSuccess", payload: data.user });
   } catch (error) {
-    dispatch({ type: "loadUserFail", payload: error.response.data });
+    dispatch({ type: "loadUserFail" });
   }
 };
 export const forgotPass = (userInfo) => async (dispatch) => {
   try {
     dispatch({ type: "forgotPassRequest" });
-    const { data } = await axios.post(
-      server + `/api/password/forgot`,
+    const { data } = await axiosInstance.post(
+      `/api/password/forgot`,
       userInfo,
       {
         headers: {
@@ -78,7 +84,7 @@ export const forgotPass = (userInfo) => async (dispatch) => {
 export const userData = () => async (dispatch) => {
   try {
     dispatch({ type: "forgotPassRequest" });
-    const { data } = await axios.get(server + `/api/allusers`, {
+    const { data } = await axiosInstance.get(`/api/allusers`, {
       withCredentials: true,
     });
 

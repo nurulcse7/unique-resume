@@ -36,6 +36,7 @@ export const userReducer = createReducer(
       state.loading = false;
       state.iaAuthenticated = true;
       state.user = action.payload.user;
+      state.message = action.payload.message;
     },
     registerFail: (state, action) => {
       state.loading = false;

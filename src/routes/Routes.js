@@ -29,9 +29,13 @@ export const router = createBrowserRouter([
         path: '/cv-template',
         element: <CvTemplates />,
       },
+      {
+        path: '/cv-templates',
+        element: <CvTemplate />,
+      },
 
       {
-        path: '/resume-Templates',
+        path: '/resume-templates',
         element: <ResumeTemplate />,
       },
 

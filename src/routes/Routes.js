@@ -11,6 +11,7 @@ import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
 import ResumeTemplate from "../Pages/ResumeTemplate/ResumeTemplate";
 
 import CvTemplates from "../Pages/CV/CvTemplates";
+import Template2 from "../Pages/ResumeTemplate/Template2";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "/resume-Templates",
         element: <ResumeTemplate />,
+      },
+      {
+        path: "/resume-Template2",
+        element: <Template2 />,
       },
 
       {

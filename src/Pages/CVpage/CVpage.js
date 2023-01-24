@@ -1,93 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../../style";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../utils/axiosInstance";
 const CVpage = () => {
+  const [works, setWorks] = useState();
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
-  const resumeTemplateData = [
-    {
-      id: 1,
-      type: "free",
-      image: "https://i.ibb.co/RYRb4Mz/15.png",
-    },
-
-    {
-      id: 2,
-      type: "free",
-      image: "https://i.ibb.co/Wgxv60G/13.png",
-    },
-    {
-      id: 3,
-      type: "free",
-      image: "https://i.ibb.co/mbhYnrJ/14.png",
-    },
-    {
-      id: 4,
-      type: "premium",
-      image: "https://i.ibb.co/47MKFqL/1.png",
-    },
-    {
-      id: 5,
-      type: "premium",
-      image: "https://i.ibb.co/1fShcwn/2.png",
-    },
-    {
-      id: 6,
-      type: "premium",
-      image: "https://i.ibb.co/KGJ6y3j/3.png",
-    },
-    {
-      id: 7,
-      type: "free",
-      image: "https://i.ibb.co/Jnx4MYP/4.png",
-    },
-    {
-      id: 8,
-      type: "premium",
-      image: "https://i.ibb.co/6D2tCz8/5.png",
-    },
-    {
-      id: 9,
-      type: "premium",
-      image: "https://i.ibb.co/47fTyrV/7.png",
-    },
-    {
-      id: 10,
-      type: "free",
-      image: "https://i.ibb.co/TqJ1psX/8.png",
-    },
-    {
-      id: 11,
-      type: "premium",
-      image: "https://i.ibb.co/cQpw7W0/9.png",
-    },
-    {
-      id: 12,
-      type: "free",
-      image: "https://i.ibb.co/vhhz7yT/10.png",
-    },
-    {
-      id: 13,
-      type: "premium",
-      image: "https://i.ibb.co/cQpw7W0/9.png",
-    },
-    {
-      id: 14,
-      type: "premium",
-      image: "https://i.ibb.co/6YSjnjs/12.png",
-    },
-
-    {
-      id: 15,
-      type: "free",
-      image: "https://i.ibb.co/mc1hwdh/6.png",
-    },
-  ];
-
-  const [works, setWorks] = useState(resumeTemplateData);
+  useEffect(() => {
+    axiosInstance.get("/api/cv").then((res) => {
+      setFilterWork(res.data);
+      setWorks(res.data);
+    });
+  }, []);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);

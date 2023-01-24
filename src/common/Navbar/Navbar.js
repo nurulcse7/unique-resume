@@ -7,12 +7,12 @@ import { signOut } from "../../redux/action/user";
 const menuItems = [
   {
     name: "Resume Templates",
-    path: "/resume-Templates",
+    path: "/resume-templates",
     id: 1,
   },
   {
     name: "CV Templates",
-    path: "/cv-Templates",
+    path: "/cv-templates",
     id: 2,
   },
   {

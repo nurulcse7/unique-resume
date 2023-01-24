@@ -4,7 +4,6 @@ import Register from "../common/Register/Register";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
-import CoverLetter from "../Pages/CoverLetter/CoverLetter";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
@@ -12,6 +11,7 @@ import CvTemplates from "../Pages/CV/CvTemplates";
 import CVpage from "../Pages/CVpage/CVpage";
 import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
+import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
   {

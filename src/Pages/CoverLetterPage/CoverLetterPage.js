@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../../style";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import axiosInstance from "../../utils/axiosInstance";
 const CoverLetterPage = () => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
@@ -86,7 +88,12 @@ const CoverLetterPage = () => {
       image: "https://i.ibb.co/mc1hwdh/6.png",
     },
   ];
-
+  useEffect(() => {
+    axiosInstance.get("/api/cv").then((res) => {
+      setFilterWork(res.data);
+      setWorks(res.data);
+    });
+  }, []);
   const [works, setWorks] = useState(resumeTemplateData);
 
   const handleWorkFilter = (item) => {

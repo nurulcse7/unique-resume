@@ -1,4 +1,5 @@
 import axiosInstance from "../../utils/axiosInstance";
+
 export const login = (userInfo) => async (dispatch) => {
   try {
     dispatch({ type: "loginRequest" });
@@ -14,7 +15,7 @@ export const login = (userInfo) => async (dispatch) => {
     dispatch({ type: "loginSuccess", payload: data });
   } catch (error) {
     console.log(error.response);
-    dispatch({ type: "loginFail", payload: error.response.data.error });
+    dispatch({ type: "loginFail", payload: error.response.data });
   }
 };
 export const register = (userInfo) => async (dispatch) => {
@@ -26,10 +27,14 @@ export const register = (userInfo) => async (dispatch) => {
       },
       withCredentials: true,
     });
-
-    dispatch({ type: "registerSuccess", payload: data });
+    console.log(data);
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+    }
+    dispatch({ type: "registerSuccess", payload: data.user });
   } catch (error) {
-    dispatch({ type: "registerFail", payload: error.response.data });
+    console.log(error.message);
+    dispatch({ type: "registerFail" });
   }
 };
 export const signOut = () => async (dispatch) => {
@@ -55,7 +60,7 @@ export const getMyProfile = () => async (dispatch) => {
       },
       withCredentials: true,
     });
-    console.log(data);
+
     dispatch({ type: "loadUserSuccess", payload: data.user });
   } catch (error) {
     dispatch({ type: "loadUserFail" });

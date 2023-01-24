@@ -23,7 +23,7 @@ import {
 
 const CVTempletes = () => {
   const [mainData, setMainData] = useState([]);
-  console.log(mainData);
+
   // .....................
   const onFinish = (values) => {
     console.log("Received values of form:", values);

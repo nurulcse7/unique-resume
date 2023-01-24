@@ -13,7 +13,7 @@ const Register = () => {
     email: "",
     password: "",
     name: "",
-    userName: "golam88",
+    userName: "",
   });
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -90,6 +90,21 @@ const Register = () => {
                       name="name"
                       onChange={(e) =>
                         setUserInfo({ ...userInfo, name: e.target.value })
+                      }
+                      required
+                      placeholder="Name"
+                      className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
+                    />
+                  </div>
+                  <div className="space-y-1 my-3 text-sm">
+                    <label for="username" className="block dark:text-gray-400">
+                      User Name
+                    </label>
+                    <input
+                      type="text"
+                      name="userName"
+                      onChange={(e) =>
+                        setUserInfo({ ...userInfo, userName: e.target.value })
                       }
                       required
                       placeholder="Name"

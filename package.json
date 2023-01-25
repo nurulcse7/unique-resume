@@ -10,11 +10,8 @@
     "@testing-library/user-event": "^14.4.3",
     "antd": "^5.1.4",
     "axios": "^1.2.2",
-<<<<<<< HEAD
     "framer-motion": "^8.5.2",
-=======
     "daisyui": "^2.47.0",
->>>>>>> 6da67f469d62a62d5c122db8679b8ea6e637ef4d
     "notiflix": "^3.2.6",
     "protected-route-react": "^1.0.1",
     "react": "^18.2.0",

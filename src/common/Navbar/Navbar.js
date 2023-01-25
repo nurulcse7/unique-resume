@@ -7,12 +7,12 @@ import { signOut } from "../../redux/action/user";
 const menuItems = [
   {
     name: "Resume Templates",
-    path: "/resume-templates",
+    path: "/resume-Templates",
     id: 1,
   },
   {
     name: "CV Templates",
-    path: "/cv-templates",
+    path: "/cv-Templates",
     id: 2,
   },
   {
@@ -222,5 +222,3 @@ const Navbar = ({ iaAuthenticated }) => {
 };
 
 export default Navbar;
-
-// <header className="fixed w-full mx-auto animate-in z-[100] mb-10">

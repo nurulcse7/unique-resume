@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const AboutPage = ({ UniqueResume }) => {
   return (
     <div className='font-serif '>
-      <div className='min-h-screen bg-gradient-to-r from-blue-400 via-teal-500 to-blue-300'>
+      <div className='min-h-screen '>
         <h1 className='text-4xl py-6 font-bold'>About us {UniqueResume}</h1>
         <p className='text-lg font-bold pl-10 pr-10 font-sans'>
           <span className='text-3xl'>U</span>nique Resume is a website
@@ -58,3 +58,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(AboutPage);
 
 // style={{background: `url(${Background})`}}
+// bg-gradient-to-r from-blue-400 via-teal-500 to-blue-300

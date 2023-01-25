@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../../style";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../utils/axiosInstance";
 
 const ResumePage = () => {
   const [filterWork, setFilterWork] = useState([]);
@@ -10,12 +11,10 @@ const ResumePage = () => {
   const [works, setWorks] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/cv")
-      .then((res) => res.json())
-      .then((data) => {
-        setFilterWork(data);
-        setWorks(data);
-      });
+    axiosInstance.get("/api/cv").then((res) => {
+      setFilterWork(res.data);
+      setWorks(res.data);
+    });
   }, []);
 
   const handleWorkFilter = (item) => {

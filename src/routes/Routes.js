@@ -13,6 +13,11 @@ import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
 import PrivetRoute from "./PrivetRoute";
 
+import Template4 from "../Pages/ResumeTemplate/Template4";
+
+import CvTemplate from "../Pages/CV/CvTemplate";
+
+
 export const router = createBrowserRouter([
   {
     path: "*",
@@ -30,6 +35,14 @@ export const router = createBrowserRouter([
         path: "/cv-template",
         element: <CvTemplates />,
       },
+<<<<<<< HEAD
+=======
+      {
+        path: '/cv-templates',
+        element: <CvTemplate />,
+      },
+
+>>>>>>> 6da67f469d62a62d5c122db8679b8ea6e637ef4d
       {
         path: "/cv-templates",
         element: <CVpage />,
@@ -38,10 +51,13 @@ export const router = createBrowserRouter([
         path: "/resume-templates",
         element: <ResumePage />,
       },
+      {
+        path: "/resume-Template4",
+        element: <Template4 />,
+      },
 
       {
         path: "/about",
-
         element: <About />,
       },
       {

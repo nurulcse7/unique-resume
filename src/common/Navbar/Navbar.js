@@ -222,5 +222,3 @@ const Navbar = ({ iaAuthenticated }) => {
 };
 
 export default Navbar;
-
-// <header className="fixed w-full mx-auto animate-in z-[100] mb-10">

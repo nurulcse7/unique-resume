@@ -1,4 +1,5 @@
 import axiosInstance from "../../utils/axiosInstance";
+
 export const login = (userInfo) => async (dispatch) => {
   try {
     dispatch({ type: "loginRequest" });
@@ -14,7 +15,7 @@ export const login = (userInfo) => async (dispatch) => {
     dispatch({ type: "loginSuccess", payload: data });
   } catch (error) {
     console.log(error.response);
-    dispatch({ type: "loginFail", payload: error.response.data.error });
+    dispatch({ type: "loginFail", payload: error.response.data });
   }
 };
 export const register = (userInfo) => async (dispatch) => {
@@ -26,12 +27,34 @@ export const register = (userInfo) => async (dispatch) => {
       },
       withCredentials: true,
     });
-
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+    }
     dispatch({ type: "registerSuccess", payload: data });
   } catch (error) {
-    dispatch({ type: "registerFail", payload: error.response.data });
+    console.log(error.response);
+    dispatch({ type: "registerFail" });
   }
 };
+// export const register = (userInfo) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "registerRequest" });
+//     const { data } = await axiosInstance.post(`/api/register`, userInfo, {
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       withCredentials: true,
+//     });
+//     console.log(data);
+//     if (data.token) {
+//       localStorage.setItem("token", data.token);
+//     }
+//     dispatch({ type: "registerSuccess", payload: data.user });
+//   } catch (error) {
+//     console.log(error.message);
+//     dispatch({ type: "registerFail" });
+//   }
+// };
 export const signOut = () => async (dispatch) => {
   try {
     dispatch({ type: "logoutRequest" });
@@ -55,7 +78,7 @@ export const getMyProfile = () => async (dispatch) => {
       },
       withCredentials: true,
     });
-    console.log(data);
+
     dispatch({ type: "loadUserSuccess", payload: data.user });
   } catch (error) {
     dispatch({ type: "loadUserFail" });

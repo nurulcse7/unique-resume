@@ -3,11 +3,9 @@ import resumeImg from "../../assets/resume.png";
 const CallToAction = () => {
   return (
     <div>
-<<<<<<< HEAD
-      <div className="container my-24  mx-auto">
-=======
+
       <div className="container my-24 px-6 mx-auto">
->>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e
+
         <section className="mb-32">
           <div className="flex flex-wrap">
             <div className="grow-0 shrink-0 basis-auto w-full lg:w-5/12 mb-12 lg:mb-0">

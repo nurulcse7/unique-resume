@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -14,6 +15,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 /* button styling */
 .button {
   --border-right: 6px;
@@ -29,6 +31,7 @@ code {
   color: transparent;
   -webkit-text-stroke: 1px var(--text-stroke-color);
 }
+
 /* this is the text, when you hover on button */
 .hover-text {
   position: absolute;
@@ -42,6 +45,7 @@ code {
   transition: 0.5s;
   -webkit-text-stroke: 1px var(--animation-color);
 }
+
 /* hover */
 .button:hover .hover-text {
   width: 100%;
@@ -52,38 +56,32 @@ code {
   -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e
 @-webkit-keyframes slide-right {
   0% {
     -webkit-transform: translateX(-500px);
     transform: translateX(-500px);
   }
+
   100% {
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
-<<<<<<< HEAD
+
+
   }
 }
-=======
 
-
-}}
->>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e
 @keyframes slide-right {
   0% {
     -webkit-transform: translateX(-500px);
     transform: translateX(-500px);
   }
+
   100% {
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
   }
 }
-<<<<<<< HEAD
-=======
 
 .bg-image {
   background-image: url("../src/assets/hero.jpg");
@@ -136,6 +134,7 @@ code {
 }
 
 @keyframes scale {
+
   0%,
   40%,
   100% {
@@ -161,6 +160,7 @@ code {
   opacity: 0;
   transition: all 0.3s ease;
 }
+
 .app__work-hover div {
   color: #fff;
 
@@ -170,6 +170,7 @@ code {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .app__work-hover svg {
   width: 50%;
   height: 50%;
@@ -184,6 +185,7 @@ code {
   width: 100%;
   height: 100%;
 }
+
 .item-active {
   background-color: #4c86f9;
   color: #fff;
@@ -193,8 +195,8 @@ code {
   background-position: 50%;
   background-image: url("https://mdbootstrap.com/img/new/textures/full/154.jpg");
   height: 500px;
-    transform: translateX(0);
-  }
+  transform: translateX(0);
+}
 
 
 .slide-left {
@@ -207,20 +209,22 @@ code {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
+
   100% {
     -webkit-transform: translateX(-500px);
     transform: translateX(-500px);
   }
 }
+
 @keyframes slide-left {
   0% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
+
   100% {
     -webkit-transform: translateX(-500px);
     transform: translateX(-500px);
   }
 
 }
->>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e

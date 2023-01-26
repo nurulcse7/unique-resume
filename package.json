@@ -3,26 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@ant-design/icons": "^5.0.0",
-=======
     "@emailjs/browser": "^3.10.0",
->>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "antd": "^5.1.4",
-<<<<<<< HEAD
-    "draft-js": "^0.11.7",
-    "draftjs-to-html": "^0.9.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-draft-wysiwyg": "^1.15.0",
-    "react-hook-form": "^7.42.1",
-    "react-hot-toast": "^2.4.0",
-    "react-icons": "^4.7.1",
-=======
     "axios": "^1.2.2",
     "framer-motion": "^8.5.2",
     "daisyui": "^2.47.0",
@@ -34,7 +20,6 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-messenger-customer-chat": "^0.8.0",
->>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",

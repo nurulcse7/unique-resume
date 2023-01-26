@@ -59,13 +59,8 @@ const Faq = () => {
                 <span className="font-thin text-lg">
                   You can cancel a UNIQUERESUME subscription right from our
                   website without even logging into the app. To do that visit
-<<<<<<< HEAD:src/Pages/Home/HomeComponents/FAQ/Faq.js
-                  our <a href="#"> Contact Us</a> page and then click the
-                  "Cancel Subscription" option from the menu.
-=======
                   our <Link to="contact"> Contact Us</Link> page and then click
                   the "Cancel Subscription" option from the menu.
->>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e:src/components/FAQ/Faq.js
                 </span>
               </details>
             </div>

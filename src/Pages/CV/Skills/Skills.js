@@ -2,14 +2,9 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const Skills = ({ skills, setSkills }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     setSkills(data);
   };
   return (
@@ -36,7 +31,6 @@ const Skills = ({ skills, setSkills }) => {
               {/* Job Title */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">
-                  {" "}
                   <span className="label text-gray-400  text-lg ">Skill</span>
                 </label>
                 <input
@@ -48,7 +42,6 @@ const Skills = ({ skills, setSkills }) => {
               {/*  Employer */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">
-                  {" "}
                   <span className="label text-gray-400  text-lg ">
                     Level - Expert
                   </span>

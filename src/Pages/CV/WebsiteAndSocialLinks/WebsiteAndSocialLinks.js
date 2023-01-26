@@ -5,7 +5,7 @@ const WebsiteAndSocialLinks = ({
   websiteAndSocialLinks,
   setWebsiteAndSocialLinks,
 }) => {
-  console.log("websiteAndSocialLinks", websiteAndSocialLinks);
+  // console.log("websiteAndSocialLinks", websiteAndSocialLinks);
   const {
     register,
     handleSubmit,

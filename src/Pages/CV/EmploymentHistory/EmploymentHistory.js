@@ -6,8 +6,11 @@ import {
   PlusCircleOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
+import { useState } from "react";
 
 const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
+  const [count, setCount] = useState(0);
+  console.log("count", count);
   const {
     register,
     handleSubmit,
@@ -140,11 +143,12 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                   >
                     <details className="mb-4 border p-5 text-left border-b-2 py-3 ">
                       <summary className="font-semibold text-xl w-full justify-between">
-                        {employmentHistory?.jobTitle1 ? (
-                          <>{employmentHistory?.jobTitle1}</>
+                        {/* {employmentHistory?.jobTitle ? (
+                          <>{employmentHistory?.jobTitle}</>
                         ) : (
                           <>(Not specified)</>
-                        )}
+                        )} */}
+                        Please Add
                         <MinusCircleOutlined
                           className="ml-20"
                           onClick={() => remove(name)}
@@ -162,7 +166,7 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                           </label>
                           <input
                             type="text"
-                            {...register("jobTitle1", {})}
+                            {...register(`jobTitle${count}`, {})}
                             className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                           />
                         </div>
@@ -176,7 +180,7 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                           </label>
                           <input
                             type="text"
-                            {...register("jobCompany1", {})}
+                            {...register(`jobCompany${count}`, {})}
                             className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                           />
                         </div>
@@ -193,12 +197,12 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                           <div className="flex gap-3">
                             <input
                               type="date"
-                              {...register("jobStart1", {})}
+                              {...register(`jobStart${count}`, {})}
                               className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                             />
                             <input
                               type="date"
-                              {...register("jobEnd1", {})}
+                              {...register(`jobEnd${count}`, {})}
                               className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                             />
                           </div>
@@ -214,7 +218,7 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                           </label>
                           <input
                             type="text"
-                            {...register("jobCity1", {})}
+                            {...register(`jobCity${count}`, {})}
                             className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                           />
                         </div>
@@ -227,7 +231,7 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                           </span>
                         </label>
                         <textarea
-                          {...register("jobDescription1", {})}
+                          {...register(`jobDescription${count}`, {})}
                           className="w-4/5 px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                         />
                       </div>
@@ -235,15 +239,6 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                   </Space>
                 ))}
                 <Form.Item>
-                  {/* <p
-                        className="text-blue-400 hover:text-blue-900 font-bold"
-                        type="dashed"
-                        onClick={() => add()}
-                        block
-                        icon={<PlusOutlined />}
-                      >
-                        Add One more employment
-                      </p> */}
                   <div
                     type="dashed"
                     onClick={() => add()}
@@ -251,7 +246,11 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                     icon={<PlusOutlined />}
                     className="text-blue-400 hover:text-blue-900 hover:font-semibold text-lg my-5 flex justify-start items-center gap-3"
                   >
-                    <PlusCircleOutlined /> <p>Add One more employment</p>
+                    <PlusCircleOutlined />{" "}
+                    <div onClick={() => setCount(count + 1)}>
+                      {" "}
+                      Add One more employment
+                    </div>
                   </div>
                 </Form.Item>
               </>

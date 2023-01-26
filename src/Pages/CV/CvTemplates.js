@@ -82,7 +82,7 @@ const CvTemplates = () => {
     },
   ];
 
-  console.log("Totaldata", TotalData);
+  // console.log("Totaldata", TotalData);
 
   // const [mainData, setMainData] = useState("");
   const [data, setData] = useState(null);
@@ -94,52 +94,17 @@ const CvTemplates = () => {
     const userData = localStorage.getItem("userInfo");
     setData(userData);
   }, [TotalData]);
-  // .....................
 
-  // .....................
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data) => {
-    // console.log(data);
-    // setMainData(data);
+  const userSubmit = (event) => {
+    event.preventDefault();
+    // const { data } = await axiosInstance.post(`/api/user-update`, TotalData, {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     authorization: `bearer ${localStorage.getItem("token")}`,
+    //   },
+    // });
+    console.log("data", event);
   };
-
-  const userSubmit = async (e) => {
-    e.preventDefault();
-    const { data } = await axiosInstance.post(`/api/user-update`, TotalData, {
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    console.log(data);
-  };
-
-  //   image
-  // const [fileList, setFileList] = useState([]);
-  // const onChange = ({ fileList: newFileList }) => {
-  //   setFileList(newFileList);
-  // };
-
-  // const onPreview = async (file) => {
-  //   let src = file.url;
-  //   if (!src) {
-  //     src = await new Promise((resolve) => {
-  //       const reader = new FileReader();
-  //       reader.readAsDataURL(file.originFileObj);
-  //       reader.onload = () => resolve(reader.result);
-  //     });
-  //   }
-  //   const image = new Image();
-  //   image.src = src;
-  //   const imgWindow = window.open(src);
-  //   imgWindow?.document.write(image.outerHTML);
-  // };
 
   return (
     <section className="">
@@ -274,9 +239,9 @@ const CvTemplates = () => {
 
             <button
               type="submit"
-              className="inline-block my-5 px-5 py-3 border-[1px]  hover:bg-primary bg-secondary border-white text-white font-medium text-sm leading-snug uppercase rounded-md  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+              className="inline-block my-5 px-5 py-3 border-2 hover:bg-primary bg-secondary border-white text-white font-medium text-sm leading-snug uppercase rounded-md  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
             >
-              set Data
+              Submit
             </button>
           </div>
         </Col>

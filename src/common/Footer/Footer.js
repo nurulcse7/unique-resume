@@ -116,7 +116,11 @@ const Footer = () => {
                   <ul className="space-y-4 text-sm">
                     <li>
                       <Link
+<<<<<<< HEAD
                         to="/about-us"
+=======
+                        to="/about"
+>>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e
                         className=" capitalize text-[15px] text-white text-left flex flex-col gap-2 transition hover:opacity-75 "
                       >
                         About

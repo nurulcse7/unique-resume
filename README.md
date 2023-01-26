@@ -8,8 +8,13 @@
 
 #### Code link 
 
+<<<<<<< HEAD
 <!-- `GitHub` [Click here]() -->
 `client-side` [Click here]()
+=======
+<!-- `GitHub` [Click here](https://github.com/nurulcse7/unique-resume) -->
+`client-side` [Click here](https://github.com/nurulcse7/unique-resume)
+>>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e
 `server-side` [Click here]()
 
 ### Description
@@ -37,10 +42,15 @@
 - ReactJS
 - React Query 
 - React Router - (npm install react-router-dom)
+<<<<<<< HEAD
 - React-Context (AuthProvider)
 - React Hook Form (npm install react-hook-form)
 - React-Hot-Toast (npm install react-hot-toast) [Docs](https://react-hot-toast.com/docs)
 - React-Toastify (npm i react-toastify)
+=======
+- React Hook Form (npm install react-hook-form)
+- React-Hot-Toast (npm install react-hot-toast) [Docs](https://react-hot-toast.com/docs)
+>>>>>>> bed1e5d71a3687c46b18b4254a5cabc38e8d141e
 - React Icons (npm install react-icons --save) [Docs](https://react-icons.github.io/react-icons/)
 
 - React Day Picker (npm install react-day-picker date-fns)

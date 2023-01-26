@@ -1,0 +1,234 @@
+[
+  {
+    "id": 1,
+    "name": "Shohag Roy",
+    "designation": "MERN Stack Devoloper",
+    "teamPosition": "Team Member / Resume Section",
+    "image": "https://i.ibb.co/CnxsZjp/286008477-1135356060359745-4201379937679837964-n.jpg",
+    "mobile": "+8801760567555",
+    "gitLink": "https://github.com/shohagroy",
+    "linkedin": "https://www.linkedin.com/in/shohag-roy-850a82236/",
+    "portfolio": "https://portfolio-of-shohag-roy.web.app/",
+    "skills": [
+      "HTML",
+      "CSS",
+      "React",
+      "JavaScript",
+      "NodeJS",
+      "ExpressJS",
+      "Bootstrap",
+      "TailwindCSS",
+      "MongoDB",
+      "Firebase",
+      "GitHub",
+      "Figma"
+    ],
+    "projects": [
+      {
+        "name": "Mobile Mart – recondition mobile buy & sale website.",
+        "link": "https://mobile-mart-19b63.web.app/",
+        "img": "https://i.ibb.co/cg7Rdr1/1.png"
+      },
+      {
+        "name": "Travel Point Holiday - Travel Service Website",
+        "link": "https://travel-point-holiday.web.app/",
+        "img": "https://i.ibb.co/N7VCwr6/1.png"
+      },
+      {
+        "name": "Ghoori Learning– Online Course Platform Website",
+        "link": "https://ghoori-learning-course.web.app/",
+        "img": "https://i.ibb.co/M26X3W7/1.png"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Nurul Islam",
+    "designation": "MERN Stack Devoloper",
+    "teamPosition": "Team Leader",
+    "image": "https://source.unsplash.com/random/300x300/?2",
+    "mobile": "01712121212",
+    "gitLink": "github.com",
+    "linkedin": "linkedin.com",
+    "portfolio": "www.portfolio.com",
+    "skills": [
+      "HTML",
+      "CSS",
+      "React",
+      "JavaScript",
+      "NodeJS",
+      "MongoDB",
+      "Firebase",
+      "GitHub"
+    ],
+    "projects": [
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Rabbi Shilder",
+    "designation": "MERN Stack Devoloper",
+    "teamPosition": "Team Leader",
+    "image": "https://source.unsplash.com/random/300x300/?2",
+    "mobile": "01712121212",
+    "gitLink": "github.com",
+    "linkedin": "linkedin.com",
+    "portfolio": "www.portfolio.com",
+    "skills": [
+      "HTML",
+      "CSS",
+      "React",
+      "JavaScript",
+      "NodeJS",
+      "MongoDB",
+      "Firebase",
+      "GitHub"
+    ],
+    "projects": [
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Mostafuzur Rahman",
+    "designation": "MERN Stack Devoloper",
+    "teamPosition": "Team Leader",
+    "image": "https://source.unsplash.com/random/300x300/?2",
+    "mobile": "01712121212",
+    "gitLink": "github.com",
+    "linkedin": "linkedin.com",
+    "portfolio": "www.portfolio.com",
+    "skills": [
+      "HTML",
+      "CSS",
+      "React",
+      "JavaScript",
+      "NodeJS",
+      "MongoDB",
+      "Firebase",
+      "GitHub"
+    ],
+    "projects": [
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Abdur Rahman",
+    "designation": "MERN Stack Devoloper",
+    "teamPosition": "Team Leader",
+    "image": "https://source.unsplash.com/random/300x300/?2",
+    "mobile": "01712121212",
+    "gitLink": "github.com",
+    "linkedin": "linkedin.com",
+    "portfolio": "www.portfolio.com",
+    "skills": [
+      "HTML",
+      "CSS",
+      "React",
+      "JavaScript",
+      "NodeJS",
+      "MongoDB",
+      "Firebase",
+      "GitHub"
+    ],
+    "projects": [
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "www.projectsLink",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Shohag Roy",
+    "designation": "MERN Stack Devoloper",
+    "teamPosition": "Team Leader",
+    "image": "https://source.unsplash.com/random/300x300/?2",
+    "mobile": "01712121212",
+    "gitLink": "github.com",
+    "linkedin": "linkedin.com",
+    "portfolio": "www.portfolio.com",
+    "skills": [
+      "HTML",
+      "CSS",
+      "React",
+      "JavaScript",
+      "NodeJS",
+      "MongoDB",
+      "Firebase",
+      "GitHub"
+    ],
+    "projects": [
+      {
+        "name": "Unice Resume - Create Your Resume Easily",
+        "link": "https://travel-point-holiday.web.app/",
+        "img": "https://source.unsplash.com/random/300x300/?2"
+      },
+      {
+        "name": "jhhj",
+        "link": "https://travel-point-holiday.web.app/",
+        "img": "https://i.ibb.co/N7VCwr6/1.png"
+      },
+      {
+        "name": "Ghoori Learning– Online Course Platform Website",
+        "link": "https://ghoori-learning-course.web.app/",
+        "img": "https://i.ibb.co/M26X3W7/1.png"
+      }
+    ]
+  }
+]

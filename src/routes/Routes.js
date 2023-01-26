@@ -17,6 +17,8 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import DashboardResume from "../Pages/DashboardResume/DashboardResume";
 import DashboardCv from "../Pages/DashboardCv/DashboardCv";
 import DashboardCoverLetter from "../Pages/DashboardCoverLetter/DashboardCoverLetter";
+import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
+
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +76,32 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/about-team-member",
+        element: <ExploreTeamMember />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/dashboard/resume",
+        element: <DashboardResume></DashboardResume>,
+      },
+      {
+        path: "/dashboard/cv",
+        element: <DashboardCv />,
+      },
+      {
+        path: "/dashboard/coverletter",
+        element: <DashboardCoverLetter />,
       },
     ],
   },

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import "./App.css";
 import { RouterProvider } from "react-router-dom";
+import "./App.css";
 import { router } from "./routes/Routes";
 import { toast, Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,6 +27,7 @@ function App() {
   useEffect(() => {
     dispatch(getMyProfile());
   }, [dispatch]);
+
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>

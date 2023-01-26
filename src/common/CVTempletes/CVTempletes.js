@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 
-import { Col, Form, Progress, Row, Space, Upload } from "antd";
+import {
+  Button,
+  Col,
+  Collapse,
+  Form,
+  Input,
+  Progress,
+  Row,
+  Space,
+  Upload,
+} from "antd";
 import { useForm } from "react-hook-form";
 
-import "./CvTemplates.css";
+import ReactDOM from "react-dom";
+import { Editor, EditorState } from "draft-js";
+
+import "./CVTempletes.css";
 import {
   ApartmentOutlined,
   AuditOutlined,
@@ -22,8 +35,8 @@ import {
 // .......................................content-none
 
 const CVTempletes = () => {
-  const [mainData, setMainData] = useState([]);
-  console.log(mainData);
+  const [mainData, setMainData] = useState("");
+
   // .....................
   const onFinish = (values) => {
     console.log("Received values of form:", values);
@@ -38,6 +51,7 @@ const CVTempletes = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
     setMainData(data);
   };
 
@@ -46,6 +60,8 @@ const CVTempletes = () => {
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
+
+  console.log("image", fileList[0]);
   const onPreview = async (file) => {
     let src = file.url;
     if (!src) {

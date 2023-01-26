@@ -11,9 +11,8 @@ import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
 import ResumeTemplate from "../Pages/ResumeTemplate/ResumeTemplate";
 
 import CvTemplates from "../Pages/CV/CvTemplates";
-import Template4 from "../Pages/ResumeTemplate/Template4";
-import Template5 from "../Pages/ResumeTemplate/Template5";
 import Template6 from "../Pages/ResumeTemplate/Template6";
+import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: "/forgot-password",
         element: <ForgotPassword />,
+      },
+      {
+        path: "/about-team-member",
+        element: <ExploreTeamMember />,
       },
       {
         path: "/register",

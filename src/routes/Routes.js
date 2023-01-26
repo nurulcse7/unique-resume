@@ -12,6 +12,11 @@ import CVpage from "../Pages/CVpage/CVpage";
 import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
 import Template4 from "../Pages/ResumeTemplate/Template4";
+import DashboardLayout from "../Layout/DashboardLayout";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import DashboardResume from "../Pages/DashboardResume/DashboardResume";
+import DashboardCv from "../Pages/DashboardCv/DashboardCv";
+import DashboardCoverLetter from "../Pages/DashboardCoverLetter/DashboardCoverLetter";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +66,7 @@ export const router = createBrowserRouter([
         path: "/cover-letter",
         element: <CoverLetterPage />,
       },
+
       {
         path: "/forgot-password",
         element: <ForgotPassword />,
@@ -68,6 +74,28 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/dashboard/resume",
+        element: <DashboardResume></DashboardResume>,
+      },
+      {
+        path: "/dashboard/cv",
+        element: <DashboardCv />,
+      },
+      {
+        path: "/dashboard/coverletter",
+        element: <DashboardCoverLetter />,
       },
     ],
   },

@@ -27,6 +27,7 @@ function App() {
   useEffect(() => {
     dispatch(getMyProfile());
   }, [dispatch]);
+
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>

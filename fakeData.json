@@ -1,0 +1,82 @@
+[
+  {
+    "personalInformation": [
+      { "jobTitle": "web developer" },
+      { "photoUrl": "http://abc.com" },
+      { "fname": "golam" },
+      { "lname": "rabbi" },
+      { "userEmail": "golam@abc.com" },
+      { "phone": "012455445" },
+      { "country": "bangladesh" },
+      { "city": "barisal" },
+      { "postalCode": "8280" },
+      { "address": "barisal,bangladesh" },
+      { "drivingLicense": "5787878" },
+      { "nationality": "bangladeshi" },
+      { "placeOfBirth": "barisal" },
+      { "dateOfBirth": "01/02/2002" }
+    ]
+  },
+  { "professionalSummary": "lorem 50 words" },
+  {
+    "employmentHistory": [
+      { "jobTitle": "web developer" },
+      { "employer": "programming hreo" },
+      { "startDate": "02/22" },
+      { "endDate": "02/22" },
+      { "city": "dhaka" },
+      { "discription": "lorem 50 words" }
+    ]
+  },
+  {
+    "educationHistory": [
+      { "school": "web developer" },
+      { "degree": "programming hreo" },
+      { "startDate": "02/22" },
+      { "endDate": "02/22" },
+      { "city": "dhaka" },
+      { "discription": "lorem 50 words" }
+    ]
+  },
+  {
+    "websiteAndSocialLinks": [
+      { "label": "github" },
+      { "link": "https://github.com" }
+    ]
+  },
+  {
+    "skills": [{ "Skill": "react" }, { "level": "expert" }]
+  },
+  {
+    "hobbies": { "discription": "hobbies discription" }
+  },
+  {
+    "courses": [
+      { "course": "react a to z" },
+      { "institution": "PH" },
+      { "startDate": "02/22" },
+      { "endDate": "02/22" }
+    ]
+  },
+  {
+    "internShips": [
+      { "jobTitle": "web developer" },
+      { "employer": "PH" },
+      { "startDate": "02/22" },
+      { "endDate": "02/22" },
+      { "city": "dhaka" },
+      { "discription": "lorem 50 words" }
+    ]
+  },
+  {
+    "languages": [{ "language": "english" }, { "level": "Native speaker" }]
+  },
+  {
+    "references": [
+      { "referent'sFullName": "jhankar" },
+      { "company": "PH" },
+      { "phone": "0215245" },
+      { "email": "abc@example.com" }
+    ]
+  }
+]

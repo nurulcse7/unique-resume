@@ -2,21 +2,21 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../../style";
 import { Link } from "react-router-dom";
-import axiosInstance from "../../utils/axiosInstance";
+import { useDispatch, useSelector } from "react-redux";
+import { cvData } from "../../redux/action/data";
 
 const ResumePage = () => {
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState();
-
+  const dispatch = useDispatch();
+  const { data, loading } = useSelector((state) => state.cvdata);
   useEffect(() => {
-    axiosInstance.get("/api/cv").then((res) => {
-      setFilterWork(res.data);
-      setWorks(res.data);
-    });
-  }, []);
-
+    dispatch(cvData());
+    setWorks(data);
+    setFilterWork(data);
+  }, [data, dispatch]);
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
@@ -69,7 +69,7 @@ const ResumePage = () => {
           transition={{ duration: 0.5, delayChildren: 0.5 }}
           className=" grid md:grid-cols-3 grid-cols-1 gap-5"
         >
-          {filterWork.map((work, index) => (
+          {filterWork?.map((work, index) => (
             <Link to="/cv-template" key={index}>
               <div className="border rounded-md border-primary">
                 <div className="app__work-img ">

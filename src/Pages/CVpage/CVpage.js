@@ -62,13 +62,12 @@ const CVpage = () => {
             </div>
           </div>
         </div>
-
         <motion.div
           animate={animateCard}
           transition={{ duration: 0.5, delayChildren: 0.5 }}
           className=" grid md:grid-cols-3 grid-cols-1 gap-5"
         >
-          {filterWork.map((work, index) => (
+          {filterWork?.map((work, index) => (
             <Link to="/cv-template">
               <div className="border rounded-md border-primary" key={index}>
                 <div className="app__work-img ">

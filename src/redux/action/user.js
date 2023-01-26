@@ -36,25 +36,6 @@ export const register = (userInfo) => async (dispatch) => {
     dispatch({ type: "registerFail" });
   }
 };
-// export const register = (userInfo) => async (dispatch) => {
-//   try {
-//     dispatch({ type: "registerRequest" });
-//     const { data } = await axiosInstance.post(`/api/register`, userInfo, {
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       withCredentials: true,
-//     });
-//     console.log(data);
-//     if (data.token) {
-//       localStorage.setItem("token", data.token);
-//     }
-//     dispatch({ type: "registerSuccess", payload: data.user });
-//   } catch (error) {
-//     console.log(error.message);
-//     dispatch({ type: "registerFail" });
-//   }
-// };
 export const signOut = () => async (dispatch) => {
   try {
     dispatch({ type: "logoutRequest" });

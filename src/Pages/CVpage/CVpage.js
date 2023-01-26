@@ -38,7 +38,7 @@ const CVpage = () => {
             <h2 class="text-2xl font-extrabold text-black sm:text-4xl">
               <span class="block">Need to make a CV but </span>
               <span class="block text-secondary">
-                don't know how to make it?
+                don't know how to make it? yes
               </span>
             </h2>
             <p class="text-lg mt-4 max-w-md mx-auto text-gray-400">

@@ -72,6 +72,42 @@ const Languages = ({ languages, setLanguages }) => {
                 </select>
               </div>
             </div>
+            <div className="flex gap-10">
+              {/* Job Title */}
+              <div className="form-control mt-5 w-full max-w-xs">
+                <label className="label">
+                  {" "}
+                  <span className="label text-gray-400  text-lg ">
+                    Langualge
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  {...register("languageName1", {})}
+                  className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
+                />
+              </div>
+              {/*  Employer */}
+              <div className="form-control mt-5 w-full max-w-xs">
+                <label className="label">
+                  {" "}
+                  <span className="label text-gray-400  text-lg ">Level</span>
+                </label>
+                <select
+                  {...register("languageLevel1", {
+                    required: "Must be selected user",
+                  })}
+                  className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
+                >
+                  <option hidden selected>
+                    Select level
+                  </option>
+                  <option>Native speaker</option>
+                  <option>Highly proficient</option>
+                  <option>Very good command</option>
+                </select>
+              </div>
+            </div>
           </details>
         </section>
       </form>

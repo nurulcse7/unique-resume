@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-import { Col, Progress, Row } from "antd";
+import { Col, Row } from "antd";
 import { useForm } from "react-hook-form";
 
 import "./CvTemplates.css";
 import {
   ApartmentOutlined,
   AuditOutlined,
-  CalendarOutlined,
   ContactsOutlined,
   CrownOutlined,
-  EnvironmentOutlined,
 } from "@ant-design/icons";
 import axios from "axios";
 import axiosInstance from "../../utils/axiosInstance";
@@ -140,30 +138,16 @@ const CvTemplates = () => {
   };
 
   // Langualge
-  const handleLanguage = () => {
-    document.getElementById("laguageTitle").style.display = "none";
-    document.getElementById("laguageDetails").style.display = "block";
-  };
-  // Hobbies
-  const handleHobbies = () => {
-    document.getElementById("hobbiesTitle").style.display = "none";
-    document.getElementById("hobbiesDetails").style.display = "block";
-  };
-  // Reference
-  const handleReference = () => {
-    document.getElementById("referenceTitle").style.display = "none";
-    document.getElementById("referenceDetails").style.display = "block";
-  };
+  // const handleLanguage = () => {
+  //   document.getElementById("laguageTitle").style.display = "none";
+  //   document.getElementById("laguageDetails").style.display = "block";
+  // };
 
   return (
     <section className="">
       <Row className="px-20  w-full text-left bg-gray-100  flex justify-between items-top">
         <Col span={12} className="mb-20">
-          <form
-            className="mr-5 mt-20"
-            onSubmit={userSubmit}
-            onChange={handleSubmit(onSubmit)}
-          >
+          <div className="mr-5 mt-20">
             <PersonalInformation
               setPersonalInformation={setPersonalInformation}
             />
@@ -211,7 +195,13 @@ const CvTemplates = () => {
               </div>
               <div className="grid grid-cols-2 gap-4 ">
                 <h3
-                  onClick={handleLanguage}
+                  onClick={() =>
+                    (document.getElementById("laguageTitle").style.display =
+                      "none")(
+                      (document.getElementById("laguageDetails").style.display =
+                        "block")
+                    )
+                  }
                   id="laguageTitle"
                   className=" font-semibold "
                 >
@@ -243,7 +233,13 @@ const CvTemplates = () => {
                   </span>
                 </h3>
                 <h3
-                  onClick={handleHobbies}
+                  onClick={() =>
+                    (document.getElementById("hobbiesTitle").style.display =
+                      "none")(
+                      (document.getElementById("hobbiesDetails").style.display =
+                        "block")
+                    )
+                  }
                   id="hobbiesTitle"
                   className=" font-semibold items-center "
                 >
@@ -257,10 +253,16 @@ const CvTemplates = () => {
                 </h3>
                 <h3
                   id="referenceTitle"
-                  onClick={handleReference}
+                  onClick={() =>
+                    (document.getElementById("referenceTitle").style.display =
+                      "none")(
+                      (document.getElementById(
+                        "referenceDetails"
+                      ).style.display = "block")
+                    )
+                  }
                   className=" font-semibold items-center "
                 >
-                  {" "}
                   <span className="text-4xl text-blue-400 hover:text-blue-900">
                     <ContactsOutlined />
                   </span>
@@ -274,7 +276,7 @@ const CvTemplates = () => {
             <button type="submit" className="bg-green-500 py-3 px-4 text-xl">
               set Data
             </button>
-          </form>
+          </div>
         </Col>
         <Col span={12}>
           {/* <CVPageLayout />*/}

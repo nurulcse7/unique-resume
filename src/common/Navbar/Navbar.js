@@ -30,6 +30,10 @@ const menuItems = [
     path: "/contact",
     id: 5,
   },
+  {
+    name: "Dashboard",
+    path: "/dashboard",
+  },
 ];
 const Navbar = ({ iaAuthenticated }) => {
   const navigate = useNavigate();

@@ -41,10 +41,14 @@ const CvTemplates = () => {
   const [internShips, setInternShips] = useState("");
   const [languages, setLanguages] = useState("");
   const [references, setReferences] = useState("");
+  const [fileList, setFileList] = useState([]);
 
   const TotalData = [
     {
       personalInformation: [personalInformation],
+    },
+    {
+      photoUrl: [fileList[0]?.thumbUrl],
     },
     {
       professionalSummary: [professionalSummary],
@@ -80,16 +84,16 @@ const CvTemplates = () => {
 
   console.log("Totaldata", TotalData);
 
-  const [mainData, setMainData] = useState("");
+  // const [mainData, setMainData] = useState("");
   const [data, setData] = useState(null);
-  if (mainData) {
-    localStorage.setItem("userInfo", JSON.stringify(mainData));
+  if (TotalData) {
+    localStorage.setItem("userInfo", JSON.stringify(TotalData));
   }
 
   useEffect(() => {
     const userData = localStorage.getItem("userInfo");
     setData(userData);
-  }, [mainData]);
+  }, [TotalData]);
   // .....................
 
   // .....................
@@ -102,12 +106,12 @@ const CvTemplates = () => {
 
   const onSubmit = (data) => {
     // console.log(data);
-    setMainData(data);
+    // setMainData(data);
   };
 
   const userSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await axiosInstance.post(`/api/user-update`, mainData, {
+    const { data } = await axiosInstance.post(`/api/user-update`, TotalData, {
       headers: {
         "Content-Type": "application/json",
         authorization: `bearer ${localStorage.getItem("token")}`,
@@ -117,30 +121,24 @@ const CvTemplates = () => {
   };
 
   //   image
-  const [fileList, setFileList] = useState([]);
-  const onChange = ({ fileList: newFileList }) => {
-    setFileList(newFileList);
-  };
+  // const [fileList, setFileList] = useState([]);
+  // const onChange = ({ fileList: newFileList }) => {
+  //   setFileList(newFileList);
+  // };
 
-  const onPreview = async (file) => {
-    let src = file.url;
-    if (!src) {
-      src = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj);
-        reader.onload = () => resolve(reader.result);
-      });
-    }
-    const image = new Image();
-    image.src = src;
-    const imgWindow = window.open(src);
-    imgWindow?.document.write(image.outerHTML);
-  };
-
-  // Langualge
-  // const handleLanguage = () => {
-  //   document.getElementById("laguageTitle").style.display = "none";
-  //   document.getElementById("laguageDetails").style.display = "block";
+  // const onPreview = async (file) => {
+  //   let src = file.url;
+  //   if (!src) {
+  //     src = await new Promise((resolve) => {
+  //       const reader = new FileReader();
+  //       reader.readAsDataURL(file.originFileObj);
+  //       reader.onload = () => resolve(reader.result);
+  //     });
+  //   }
+  //   const image = new Image();
+  //   image.src = src;
+  //   const imgWindow = window.open(src);
+  //   imgWindow?.document.write(image.outerHTML);
   // };
 
   return (
@@ -150,6 +148,8 @@ const CvTemplates = () => {
           <div className="mr-5 mt-20">
             <PersonalInformation
               setPersonalInformation={setPersonalInformation}
+              fileList={fileList}
+              setFileList={setFileList}
             />
             {/* Professional Summary */}
             <ProfessionalSummary
@@ -178,7 +178,6 @@ const CvTemplates = () => {
 
             {/* Langulage */}
             <Languages languages={languages} setLanguages={setLanguages} />
-
             {/* References */}
             <References references={references} setReferences={setReferences} />
             {/* Internships */}
@@ -273,7 +272,10 @@ const CvTemplates = () => {
               </div>
             </section>
 
-            <button type="submit" className="bg-green-500 py-3 px-4 text-xl">
+            <button
+              type="submit"
+              className="inline-block my-5 px-5 py-3 border-[1px]  hover:bg-primary bg-secondary border-white text-white font-medium text-sm leading-snug uppercase rounded-md  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+            >
               set Data
             </button>
           </div>

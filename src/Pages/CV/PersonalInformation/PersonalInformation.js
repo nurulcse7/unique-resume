@@ -4,7 +4,11 @@ import { useForm } from "react-hook-form";
 import { DownOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
-const PersonalInformation = ({ setPersonalInformation }) => {
+const PersonalInformation = ({
+  setPersonalInformation,
+  fileList,
+  setFileList,
+}) => {
   const {
     register,
     handleSubmit,
@@ -12,12 +16,12 @@ const PersonalInformation = ({ setPersonalInformation }) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     setPersonalInformation(data);
   };
 
   //   image
-  const [fileList, setFileList] = useState([]);
+
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };

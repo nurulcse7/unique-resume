@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Col, Form, Progress, Row, Space, Upload } from "antd";
 import { useForm } from "react-hook-form";
 
-import "./CVTempletes.css";
+import "./CvTemplates.css";
 import {
   ApartmentOutlined,
   AuditOutlined,

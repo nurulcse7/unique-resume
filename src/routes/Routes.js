@@ -4,15 +4,14 @@ import Register from "../common/Register/Register";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
-import CoverLetter from "../Pages/CoverLetter/CoverLetter";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
-import ResumeTemplate from "../Pages/ResumeTemplate/ResumeTemplate";
-
 import CvTemplates from "../Pages/CV/CvTemplates";
-import Template6 from "../Pages/ResumeTemplate/Template6";
-import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
+import CVpage from "../Pages/CVpage/CVpage";
+import ResumePage from "../Pages/ResumePage/ResumePage";
+import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
+import Template4 from "../Pages/ResumeTemplate/Template4";
 
 export const router = createBrowserRouter([
   {
@@ -33,17 +32,20 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "/resume-Templates",
-        element: <ResumeTemplate />,
+        path: "/cv-templates",
+        element: <CVpage />,
       },
       {
-        path: "/resume-Template6",
-        element: <Template6 />,
+        path: "/resume-templates",
+        element: <ResumePage />,
+      },
+      {
+        path: "/resume-Template4",
+        element: <Template4 />,
       },
 
       {
         path: "/about",
-
         element: <About />,
       },
       {
@@ -57,15 +59,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/cover-letter",
-        element: <CoverLetter />,
+        element: <CoverLetterPage />,
       },
       {
         path: "/forgot-password",
         element: <ForgotPassword />,
-      },
-      {
-        path: "/about-team-member",
-        element: <ExploreTeamMember />,
       },
       {
         path: "/register",

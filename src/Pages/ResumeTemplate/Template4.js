@@ -178,35 +178,50 @@ const Template4 = ({ data }) => {
           </div>
         </div>
 
-        <div className="  w-[450px] p-8 h-full">
+        <div className="  max-w-[450px] p-8 h-full">
           <div>
-            <h3 className="text-semibold text-[#0f5b31] text-xl">
-              Director of Business Development
-            </h3>
+            {d?.personalInformation.map((p) => (
+              <h3 className="text-semibold text-[#0f5b31] text-xl">
+                {p.jobTitle}
+              </h3>
+            ))}
+
             <div className="grid grid-cols-2 leading-none">
-              <p>
-                <small>
-                  <i className="fa-solid pr-1 fa-phone"></i> (862) 7345-425
-                </small>
-              </p>
-              <p>
-                <small>
-                  <i className="fa-solid pr-1 fa-at"></i>{" "}
-                  timothy.duncan@gmail.com
-                </small>
-              </p>
+              {d?.personalInformation.map((p) => (
+                <p>
+                  <small>
+                    <i className="fa-solid pr-1 fa-phone"></i> {p.phone}
+                  </small>
+                </p>
+              ))}
+
+              {d?.personalInformation.map((p) => (
+                <p>
+                  <small className="flex">
+                    <i className="fa-solid pr-1 fa-at"></i>
+                    {p.userEmail}
+                  </small>
+                </p>
+              ))}
+
               <p>
                 <small>
                   <i className="fa-solid pr-1 fa-link"></i>
                   linkedin.com/in/timothy
                 </small>
               </p>
-              <p>
-                <small>
-                  <i className="fa-solid pr-1 fa-location-dot"></i>9
-                  Paterson.New Jersey
-                </small>
-              </p>
+              {d?.personalInformation.map((p) =>
+                p ? (
+                  <p>
+                    <small>
+                      <i className="fa-solid pr-1 fa-location-dot"></i>
+                      {p.address}
+                    </small>
+                  </p>
+                ) : (
+                  " "
+                )
+              )}
             </div>
 
             <div className="w-full mt-10 ">
@@ -219,10 +234,6 @@ const Template4 = ({ data }) => {
                     Data-driven business development director with 10 years of
                     experience working with Saas companies. Successfully secured
                     high-profile strategic partnerships that lead to a 130%
-                    increase in sales. Executed an 18-month marketing plan with
-                    a $250K budget, bringing in over 40 new customers. Excellent
-                    communicator and team leader. Seeking to leverage my
-                    business development expertise at HyperTarget.
                   </small>
                 </div>
               </div>
@@ -298,16 +309,12 @@ const Template4 = ({ data }) => {
                       <span>•</span>
                       <small className="pl-2">
                         Secured high-profile strategic partnerships that lead to
-                        a 130% increase in sales by representing Esycron in
-                        meetings with external parties and conferences
                       </small>
                     </p>
                     <p className="ml-2 mt-2">
                       <span>•</span>
                       <small className="pl-2">
                         Collaborated with product development teams and
-                        marketing specialists to improve our pricing structure
-                        and product design
                       </small>
                     </p>
                     <p className="ml-2 mt-2">
@@ -315,7 +322,6 @@ const Template4 = ({ data }) => {
                       <small className="pl-2">
                         Negotiated and closed seven major deals with
                         internationalclients and large US­ based companies with
-                        a total value of $1.35M
                       </small>
                     </p>
                   </div>
@@ -337,60 +343,29 @@ const Template4 = ({ data }) => {
                     <p>
                       <small className="font-semibold">
                         A fast-moving innovative Saas company powering online
-                        branded payment systems and services.
                       </small>
                     </p>
                     <p className="ml-2 mt-2">
                       <span>•</span>
                       <small className="pl-2">
                         Developed and executed a customer-focused growth plan,
-                        leading to a 72% increase in annual revenue within two
-                        years
                       </small>
                     </p>
                     <p className="ml-2 mt-2">
                       <span>•</span>
                       <small className="pl-2">
                         Boosted sales performance by hiring 18 new sales
-                        representatives and coaching underperforming sales
-                        associates
                       </small>
                     </p>
                     <p className="ml-2 mt-2">
                       <span>•</span>
                       <small className="pl-2">
-                        Led an 18-mont h marketing plan with a $250K budget,
-                        bringing in over 40 new customers and increasing brand
-                        awareness in the payment gateway market
+                        Led an 18-mont h marketing plan with a $250K budget
                       </small>
                     </p>
                   </div>
                 </div>
               </div>
-
-              {/* <div className="w-[420px] mr-10 mt-2 ">
-            <p className="font-bold">INDUSTRY EXPERTISE</p>
-            <hr className="border-t border-black" />
-
-            <div className="grid grid-cols-2 gap-x-4">
-              <div>
-                <small className="block pt-1">Agency</small>
-                <input value="90" className="w-full" type="range" />
-              </div>
-              <div>
-                <small className="block pt-1">Healthcare</small>
-                <input value="69" className="w-full" type="range" />
-              </div>
-              <div>
-                <small className="block pt-1">Traditonal print media</small>
-                <input value="50" className="w-full" type="range" />
-              </div>
-              <div>
-                <small className="block pt-1">Traditonal HR Software</small>
-                <input value="80" className="w-full" type="range" />
-              </div>
-            </div>
-          </div> */}
             </div>
           </div>
         </div>

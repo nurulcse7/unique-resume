@@ -70,7 +70,7 @@ const PersonalInformation = ({
               className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
             />
           </div>
-          <div className="ml-16">
+          {/* <div className="ml-16">
             <Upload
               action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
               listType="picture-card"
@@ -81,7 +81,7 @@ const PersonalInformation = ({
             >
               {fileList.length < 1 && "+ Upload"}
             </Upload>
-          </div>
+          </div> */}
         </div>
         <div className="flex gap-10">
           {/* First Name */}

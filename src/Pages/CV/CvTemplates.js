@@ -22,12 +22,6 @@ import Template4 from "../ResumeTemplate/Template4";
 import styles from "../../style";
 import { useDispatch, useSelector } from "react-redux";
 import { cvTemplate } from "../../redux/action/data";
-import Template3 from "../ResumeTemplate/Template3";
-import Template1 from "../ResumeTemplate/Template1";
-
-// .......................................
-
-// .......................................content-none
 
 const CvTemplates = () => {
   const [personalInformation, setPersonalInformation] = useState("");
@@ -72,8 +66,6 @@ const CvTemplates = () => {
     },
   ];
   const dispatch = useDispatch();
-  // console.log("Totaldata", TotalData);
-
   // const [mainData, setMainData] = useState("");
   const [data, setData] = useState(null);
   if (TotalData) {

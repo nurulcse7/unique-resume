@@ -1,9 +1,12 @@
 import React from 'react';
+import { createRef } from 'react';
+import ReactToPdf from 'react-to-pdf';
 
 const Template4 = ({ data }) => {
+  const ref = createRef();
   return data?.map((d) => (
     <section className=' m-10 border border-black rounded-md mx-auto text-left relative bg-gray-50 h-[29.7cm] shadow-2xl'>
-      <div className='flex'>
+      <div className='flex' ref={ref}>
         <div className=' bg-[#0f5b31] h-[29.7cm]  text-white p-12'>
           <div className='leading-none'>
             {d.personalInformation.map((p) => (
@@ -346,6 +349,16 @@ const Template4 = ({ data }) => {
           </div>
         </div>
       </div>
+      <ReactToPdf targetRef={ref} filename={`Template.pdf`}>
+        {({ toPdf }) => (
+          <button
+            className='mt-12 w-full bg-gradient-to-r from-primary to-secondary text-lg text-white px-3 py-2 rounded'
+            onClick={toPdf}
+          >
+            Download PDF
+          </button>
+        )}
+      </ReactToPdf>
     </section>
   ));
 };

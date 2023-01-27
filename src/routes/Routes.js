@@ -12,13 +12,13 @@ import CVpage from "../Pages/CVpage/CVpage";
 import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
 import Template4 from "../Pages/ResumeTemplate/Template4";
+import Template3 from "../Pages/ResumeTemplate/Template3";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import DashboardResume from "../Pages/DashboardResume/DashboardResume";
 import DashboardCv from "../Pages/DashboardCv/DashboardCv";
 import DashboardCoverLetter from "../Pages/DashboardCoverLetter/DashboardCoverLetter";
 import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
-
 
 export const router = createBrowserRouter([
   {
@@ -47,8 +47,12 @@ export const router = createBrowserRouter([
         element: <ResumePage />,
       },
       {
-        path: "/resume-Template4",
+        path: "/resume-template4",
         element: <Template4 />,
+      },
+      {
+        path: "/resume-template3",
+        element: <Template3 />,
       },
 
       {

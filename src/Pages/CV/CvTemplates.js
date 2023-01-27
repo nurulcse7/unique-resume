@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import { Col, Row } from "antd";
-import { useForm } from "react-hook-form";
-
 import "./CvTemplates.css";
 import {
   ApartmentOutlined,
@@ -10,7 +7,6 @@ import {
   ContactsOutlined,
   CrownOutlined,
 } from "@ant-design/icons";
-import axios from "axios";
 import axiosInstance from "../../utils/axiosInstance";
 import PersonalInformation from "./PersonalInformation/PersonalInformation";
 import ProfessionalSummary from "./ProfessionalSummary/ProfessionalSummary";
@@ -26,6 +22,8 @@ import Template4 from "../ResumeTemplate/Template4";
 import styles from "../../style";
 import { useDispatch, useSelector } from "react-redux";
 import { cvTemplate } from "../../redux/action/data";
+import Template3 from "../ResumeTemplate/Template3";
+import Template1 from "../ResumeTemplate/Template1";
 
 // .......................................
 
@@ -100,7 +98,7 @@ const CvTemplates = () => {
   return (
     <section className="">
       <div className="px-20  w-full text-left bg-gray-100  flex justify-between items-top ">
-        <div className="mb-20 flex-1">
+        <div className="mb-20  flex-1">
           <div className="mr-5 mt-20">
             <PersonalInformation
               setPersonalInformation={setPersonalInformation}

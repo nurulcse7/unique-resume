@@ -35,7 +35,6 @@ const Template1 = ({ resumeData, themes }) => {
               <img
                 alt=""
                 className=" w-full h-full rounded-full ring-2 ring-offset-2 ring-white ring-offset-white"
-                src={resumeData.picture}
               />
             </div>
           </div>

@@ -12,6 +12,7 @@ import CVpage from "../Pages/CVpage/CVpage";
 import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
 import Template4 from "../Pages/ResumeTemplate/Template4";
+import Template3 from "../Pages/ResumeTemplate/Template3";
 
 export const router = createBrowserRouter([
   {
@@ -40,8 +41,12 @@ export const router = createBrowserRouter([
         element: <ResumePage />,
       },
       {
-        path: "/resume-Template4",
+        path: "/resume-template4",
         element: <Template4 />,
+      },
+      {
+        path: "/resume-template3",
+        element: <Template3 />,
       },
 
       {

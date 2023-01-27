@@ -1,14 +1,17 @@
 import React from "react";
 
-const Template4 = () => {
-  return (
-    <section className="w-[21cm] m-10 border border-black rounded-md mx-auto text-left relative bg-gray-50 h-[29.7cm] shadow-2xl">
+const Template4 = ({ data }) => {
+  return data?.map((d) => (
+    <section className=" m-10 border border-black rounded-md mx-auto text-left relative bg-gray-50 h-[29.7cm] shadow-2xl">
       <div className="flex">
-        <div className="w-[350px] bg-[#0f5b31] h-[29.7cm]  text-white p-12">
+        <div className=" bg-[#0f5b31] h-[29.7cm]  text-white p-12">
           <div className="leading-none">
-            <h2 className=" leading-none uppercase text-4xl font-semibold">
-              timothy duncan
-            </h2>
+            {d.personalInformation.map((p) => (
+              <h2 className=" leading-none uppercase text-3xl font-semibold">
+                {p.fname} <br></br>
+                {p.lname}
+              </h2>
+            ))}
           </div>
           <div className="w-full ">
             <div className="w-full mt-10 ">
@@ -19,26 +22,12 @@ const Template4 = () => {
                 <div className="flex justify-between items-center">
                   <small className="">
                     Communication{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Customer-Oriented{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Leadership <span className="text-xl font-bold px-1">•</span>
-                    Team Coordination{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Nagotiation{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Business Intelligence{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Critical Thinking{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Creativity <span className="text-xl font-bold px-1">•</span>
-                    Sales & Marketing{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Pricing Strategy{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Time Management{" "}
-                    <span className="text-xl font-bold px-1">•</span>
-                    Hubspot
+                    {d.skills.map((s, index) => (
+                      <span>
+                        <span className="text-xl font-bold px-1">•</span>
+                        {s.skill}
+                      </span>
+                    ))}
                   </small>
                 </div>
               </div>
@@ -380,34 +369,34 @@ const Template4 = () => {
               </div>
 
               {/* <div className="w-[420px] mr-10 mt-2 ">
-                <p className="font-bold">INDUSTRY EXPERTISE</p>
-                <hr className="border-t border-black" />
+            <p className="font-bold">INDUSTRY EXPERTISE</p>
+            <hr className="border-t border-black" />
 
-                <div className="grid grid-cols-2 gap-x-4">
-                  <div>
-                    <small className="block pt-1">Agency</small>
-                    <input value="90" className="w-full" type="range" />
-                  </div>
-                  <div>
-                    <small className="block pt-1">Healthcare</small>
-                    <input value="69" className="w-full" type="range" />
-                  </div>
-                  <div>
-                    <small className="block pt-1">Traditonal print media</small>
-                    <input value="50" className="w-full" type="range" />
-                  </div>
-                  <div>
-                    <small className="block pt-1">Traditonal HR Software</small>
-                    <input value="80" className="w-full" type="range" />
-                  </div>
-                </div>
-              </div> */}
+            <div className="grid grid-cols-2 gap-x-4">
+              <div>
+                <small className="block pt-1">Agency</small>
+                <input value="90" className="w-full" type="range" />
+              </div>
+              <div>
+                <small className="block pt-1">Healthcare</small>
+                <input value="69" className="w-full" type="range" />
+              </div>
+              <div>
+                <small className="block pt-1">Traditonal print media</small>
+                <input value="50" className="w-full" type="range" />
+              </div>
+              <div>
+                <small className="block pt-1">Traditonal HR Software</small>
+                <input value="80" className="w-full" type="range" />
+              </div>
+            </div>
+          </div> */}
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  ));
 };
 
 export default Template4;

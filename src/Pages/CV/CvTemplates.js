@@ -22,8 +22,10 @@ import Hobbies from "./Hobbies/Hobbies";
 import Languages from "./Languages/Languages";
 import References from "./References/References";
 import InternShips from "./InternShips/InternShips";
-import CVPageLayout from "./CVPageLayout/CVPageLayout";
 import Template4 from "../ResumeTemplate/Template4";
+import styles from "../../style";
+import { useDispatch, useSelector } from "react-redux";
+import { cvTemplate } from "../../redux/action/data";
 
 // .......................................
 
@@ -42,46 +44,36 @@ const CvTemplates = () => {
   const [languages, setLanguages] = useState("");
   const [references, setReferences] = useState("");
   const [fileList, setFileList] = useState([]);
-
+  const { user } = useSelector((state) => state.user);
   const TotalData = [
     {
+      email: user?.email,
       personalInformation: [personalInformation],
-    },
-    {
+
       photoUrl: [fileList[0]?.thumbUrl],
-    },
-    {
+
       professionalSummary: [professionalSummary],
-    },
-    {
+
       employmentHistory: [employmentHistory],
-    },
-    {
+
       educationHistory: [educationHistory],
-    },
-    {
+
       websiteAndSocialLinks: [websiteAndSocialLinks],
-    },
-    {
+
       skills: [skills],
-    },
-    {
+
       hobbies: [hobbies],
-    },
-    {
+
       courses: [courses],
-    },
-    {
+
       internShips: [internShips],
-    },
-    {
+
       languages: [languages],
-    },
-    {
+
       references: [references],
     },
   ];
-
+  const dispatch = useDispatch();
   // console.log("Totaldata", TotalData);
 
   // const [mainData, setMainData] = useState("");
@@ -89,27 +81,26 @@ const CvTemplates = () => {
   if (TotalData) {
     localStorage.setItem("userInfo", JSON.stringify(TotalData));
   }
-
+  console.log(TotalData);
   useEffect(() => {
     const userData = localStorage.getItem("userInfo");
+    dispatch(cvTemplate());
     setData(userData);
-  }, [TotalData]);
+  }, [dispatch]);
 
-  const userSubmit = (event) => {
-    event.preventDefault();
-    // const { data } = await axiosInstance.post(`/api/user-update`, TotalData, {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     authorization: `bearer ${localStorage.getItem("token")}`,
-    //   },
-    // });
-    console.log("data", event);
+  const userSubmit = async () => {
+    const { data } = await axiosInstance.post(`/api/cvinformation`, TotalData, {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    });
   };
 
   return (
     <section className="">
-      <Row className="px-20  w-full text-left bg-gray-100  flex justify-between items-top">
-        <Col span={12} className="mb-20">
+      <div className="px-20  w-full text-left bg-gray-100  flex justify-between items-top ">
+        <div className="mb-20 flex-1">
           <div className="mr-5 mt-20">
             <PersonalInformation
               setPersonalInformation={setPersonalInformation}
@@ -239,17 +230,19 @@ const CvTemplates = () => {
 
             <button
               type="submit"
+              onClick={userSubmit}
               className="inline-block my-5 px-5 py-3 border-2 hover:bg-primary bg-secondary border-white text-white font-medium text-sm leading-snug uppercase rounded-md  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
             >
               Submit
             </button>
           </div>
-        </Col>
-        <Col span={12}>
-          {/* <CVPageLayout />*/}
-          <Template4 />
-        </Col>
-      </Row>
+        </div>
+        <div className="flex-1">
+          <div className={`${styles.padding}`}>
+            <Template4 data={TotalData} />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

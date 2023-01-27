@@ -15,5 +15,18 @@ export const dataReducer = createReducer(
       state.loading = false;
       state.error = action.payload;
     },
+
+    cvTemplateReq: (state, action) => {
+      state.loading = true;
+    },
+
+    cvTemplateSuccess: (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+    },
+    cvTemplateFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
   }
 );

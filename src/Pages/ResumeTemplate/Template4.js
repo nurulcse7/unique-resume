@@ -21,7 +21,7 @@ const Template4 = ({ data }) => {
               <div>
                 <div className="flex justify-between items-center">
                   <small className="">
-                    Communication{" "}
+                    
                     {d.skills.map((s, index) => (
                       <span>
                         <span className="text-xl font-bold px-1">•</span>
@@ -178,22 +178,35 @@ const Template4 = ({ data }) => {
           </div>
         </div>
 
-        <div className="  w-[450px] p-8 h-full">
+        <div className="p-8 h-full">
           <div>
             <h3 className="text-semibold text-[#0f5b31] text-xl">
-              Director of Business Development
+            {d?.personalInformation.map((p, index) => (
+              <h3 className="text-semibold text-[#0f5b31] text-xl">
+                {p.jobTitle}
+              </h3>
+            ))}
             </h3>
             <div className="grid grid-cols-2 leading-none">
               <p>
                 <small>
-                  <i className="fa-solid pr-1 fa-phone"></i> (862) 7345-425
+                {d?.personalInformation.map((p) => (
+                  <p>
+                    <small>
+                      <i className="fa-solid pr-1 fa-phone"></i> {p.phone}
+                    </small>
+                  </p>
+                ))}
                 </small>
               </p>
               <p>
-                <small>
-                  <i className="fa-solid pr-1 fa-at"></i>{" "}
-                  timothy.duncan@gmail.com
-                </small>
+              {d?.personalInformation.map((p) => (
+                <p>
+                  <small>
+                    <i className="fa-solid pr-1 fa-at"></i> {p.userEmail}
+                  </small>
+                </p>
+              ))}
               </p>
               <p>
                 <small>
@@ -202,10 +215,14 @@ const Template4 = ({ data }) => {
                 </small>
               </p>
               <p>
-                <small>
-                  <i className="fa-solid pr-1 fa-location-dot"></i>9
-                  Paterson.New Jersey
-                </small>
+              {d?.personalInformation.map((p) => (
+                <p>
+                  <small>
+                    <i className="fa-solid pr-1 fa-location-dot"></i>
+                    {p.address}
+                  </small>
+                </p>
+              ))}
               </p>
             </div>
 

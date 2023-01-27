@@ -4,97 +4,19 @@ import styles from "../../style";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import axiosInstance from "../../utils/axiosInstance";
+import Loader from "../../components/Loader/Loader";
 const CoverLetterPage = () => {
-  const [filterWork, setFilterWork] = useState([]);
+  const [filterWork, setFilterWork] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [works, setWorks] = useState(null);
 
-  const resumeTemplateData = [
-    {
-      id: 1,
-      type: "free",
-      image: "https://i.ibb.co/RYRb4Mz/15.png",
-    },
-
-    {
-      id: 2,
-      type: "free",
-      image: "https://i.ibb.co/Wgxv60G/13.png",
-    },
-    {
-      id: 3,
-      type: "free",
-      image: "https://i.ibb.co/mbhYnrJ/14.png",
-    },
-    {
-      id: 4,
-      type: "premium",
-      image: "https://i.ibb.co/47MKFqL/1.png",
-    },
-    {
-      id: 5,
-      type: "premium",
-      image: "https://i.ibb.co/1fShcwn/2.png",
-    },
-    {
-      id: 6,
-      type: "premium",
-      image: "https://i.ibb.co/KGJ6y3j/3.png",
-    },
-    {
-      id: 7,
-      type: "free",
-      image: "https://i.ibb.co/Jnx4MYP/4.png",
-    },
-    {
-      id: 8,
-      type: "premium",
-      image: "https://i.ibb.co/6D2tCz8/5.png",
-    },
-    {
-      id: 9,
-      type: "premium",
-      image: "https://i.ibb.co/47fTyrV/7.png",
-    },
-    {
-      id: 10,
-      type: "free",
-      image: "https://i.ibb.co/TqJ1psX/8.png",
-    },
-    {
-      id: 11,
-      type: "premium",
-      image: "https://i.ibb.co/cQpw7W0/9.png",
-    },
-    {
-      id: 12,
-      type: "free",
-      image: "https://i.ibb.co/vhhz7yT/10.png",
-    },
-    {
-      id: 13,
-      type: "premium",
-      image: "https://i.ibb.co/cQpw7W0/9.png",
-    },
-    {
-      id: 14,
-      type: "premium",
-      image: "https://i.ibb.co/6YSjnjs/12.png",
-    },
-
-    {
-      id: 15,
-      type: "free",
-      image: "https://i.ibb.co/mc1hwdh/6.png",
-    },
-  ];
   useEffect(() => {
     axiosInstance.get("/api/cv").then((res) => {
       setFilterWork(res.data);
       setWorks(res.data);
     });
   }, []);
-  const [works, setWorks] = useState(resumeTemplateData);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -142,46 +64,53 @@ const CoverLetterPage = () => {
             </div>
           </div>
         </div>
+        {filterWork === null ? (
+          <Loader />
+        ) : (
+          <motion.div
+            animate={animateCard}
+            transition={{ duration: 0.5, delayChildren: 0.5 }}
+            className=" grid md:grid-cols-3 grid-cols-1 gap-5"
+          >
+            {filterWork.map((work, index) => (
+              <Link to="/cv-template">
+                <div className="border rounded-md border-primary" key={index}>
+                  <div className="app__work-img ">
+                    <img src={work.image} alt={work.type} />
 
-        <motion.div
-          animate={animateCard}
-          transition={{ duration: 0.5, delayChildren: 0.5 }}
-          className=" grid md:grid-cols-3 grid-cols-1 gap-5"
-        >
-          {filterWork.map((work, index) => (
-            <Link to="/cv-template">
-              <div className="border rounded-md border-primary" key={index}>
-                <div className="app__work-img ">
-                  <img src={work.image} alt={work.type} />
-
-                  <motion.div
-                    whileHover={{ opacity: [0, 1] }}
-                    transition={{
-                      duration: 0.25,
-                      ease: "easeInOut",
-                      staggerChildren: 0.5,
-                    }}
-                    className="app__work-hover flex justify-center items-center "
-                  >
-                    <a href={work.projectLink} target="_blank" rel="noreferrer">
-                      <motion.div
-                        whileInView={{ scale: [0, 1] }}
-                        whileHover={{ scale: [1, 0.9] }}
-                        transition={{ duration: 0.25 }}
-                        className=" flex justify-center items-center"
+                    <motion.div
+                      whileHover={{ opacity: [0, 1] }}
+                      transition={{
+                        duration: 0.25,
+                        ease: "easeInOut",
+                        staggerChildren: 0.5,
+                      }}
+                      className="app__work-hover flex justify-center items-center "
+                    >
+                      <a
+                        href={work.projectLink}
+                        target="_blank"
+                        rel="noreferrer"
                       >
-                        <button className="bg-primary capitalize font-semibold px-3 py-2 rounded">
-                          {" "}
-                          Use {work.type} Template
-                        </button>
-                      </motion.div>
-                    </a>
-                  </motion.div>
+                        <motion.div
+                          whileInView={{ scale: [0, 1] }}
+                          whileHover={{ scale: [1, 0.9] }}
+                          transition={{ duration: 0.25 }}
+                          className=" flex justify-center items-center"
+                        >
+                          <button className="bg-primary capitalize font-semibold px-3 py-2 rounded">
+                            {" "}
+                            Use {work.type} Template
+                          </button>
+                        </motion.div>
+                      </a>
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </motion.div>
+              </Link>
+            ))}
+          </motion.div>
+        )}
       </section>
     </div>
   );

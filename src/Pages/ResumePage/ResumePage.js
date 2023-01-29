@@ -73,11 +73,10 @@ const ResumePage = () => {
             className=" grid md:grid-cols-3 grid-cols-1 gap-5"
           >
             {filterWork?.map((work, index) => (
-              <Link to="/cv-template" key={index}>
+              <Link to={`/resume-templates/${work.id}`} key={index}>
                 <div className="border rounded-md border-primary">
                   <div className="app__work-img ">
                     <img src={work.image} alt={work.type} />
-
                     <motion.div
                       whileHover={{ opacity: [0, 1] }}
                       transition={{

@@ -7,7 +7,7 @@ import Contact from "../Pages/Contact/Contact";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
-import CvTemplates from "../Pages/CV/CvTemplates";
+import CvEditor from "../Pages/CV/CvEditor";
 import CVpage from "../Pages/CVpage/CVpage";
 import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/cv-template",
-        element: <CvTemplates />,
+        element: <CvEditor />,
       },
 
       {
@@ -63,6 +63,7 @@ export const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      { path: "/resume-templates/:id", element: <CvEditor /> },
 
       {
         path: "/login",

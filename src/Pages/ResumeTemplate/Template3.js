@@ -2,7 +2,7 @@ import React from "react";
 
 const Template3 = () => {
   return (
-    <section className="w-[21cm] m-10 border border-black rounded-md mx-auto text-left relative bg-white h-[29.7cm] shadow-2xl p-8">
+    <section className=" m-10 border border-black rounded-md mx-auto text-left relative bg-white  shadow-2xl p-8">
       <div className="leading-none flex justify-between">
         <div>
           <h2 className="text-3xl font-bold">BELINDA MORALEZ</h2>
@@ -43,8 +43,8 @@ const Template3 = () => {
       </div>
 
       <div className=" my-4 flex justify-between">
-        <div className="w-[420px] ">
-          <div className="w-[420px] mr-10 ">
+        <div className=" ">
+          <div className="mr-10 ">
             <p className="font-bold">EXPERIENCE</p>
             <hr className="border-t border-black" />
 
@@ -77,12 +77,6 @@ const Template3 = () => {
                     Bernier consists of a decision support system for qualified
                     health professionals to quickly and efficiently perform the
                     pre-operative planning of any orthopaedic procedure in 3
-                    dimensions, using 2D image data from the patient. <br />
-                    Reformed CMS to boost content production by 45% while
-                    reducing employee turnover from 25% to 0% in the first year
-                    Defined strategy for communication that grew engagement by
-                    20% Reached 25% Comparable growth on the defined led
-                    downright market
                   </small>
                 </p>
               </div>
@@ -114,12 +108,8 @@ const Template3 = () => {
                   <small>
                     Formed and led an SEO and link-building team to grow organic
                     website traffic from 0 to 30K in 6 months. <br /> Created a
-                    new partnership program with local advertising agencies to
-                    improve ROI on advertising for all company's clients by 82%
-                    on average Led data-driven outreach campaign to scale up the
-                    number of features in top-level media, resulting in over 200
-                    local and national media mentions and publications in Forbes
-                    and Entrepreneur.
+                    al media mentions and publications in Forbes and
+                    Entrepreneur.
                   </small>
                 </p>
               </div>
@@ -150,14 +140,8 @@ const Template3 = () => {
                 <p>
                   <small>
                     Designed 2 yearly catalogs for the foreign markets, giving
-                    the brand identity and increasing brand recognizability
-                    dramatically Increased marketing profits by 20% within the
-                    first six months of employment
                     <br />
                     Designed 2 yearly catalogs for the foreign markets, giving
-                    the brand identity and increasing brand recognizability
-                    dramatically Increased marketing profits by 20% within the
-                    first six months.
                   </small>
                 </p>
               </div>
@@ -189,18 +173,13 @@ const Template3 = () => {
                     Harvey is a cloud-based HR software business. <br />
                     Restructured a 20-people marketing department to reduce
                     annual turnover by 60% and apply Agile methodology to
-                    increase speed to market for all pilot projects by 30%
-                    Formed a BA and data science division with in a marketing
-                    department that resulted in 75% increase in ROI for
-                    advertising budgets, 35% increase in customer satisfaction,
-                    and 20% in NPS
                   </small>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="w-[420px] mr-10 mt-2 ">
+          <div className=" mr-10 mt-2 ">
             <p className="font-bold">EDUCATION</p>
             <hr className="border-t border-black" />
 
@@ -239,7 +218,7 @@ const Template3 = () => {
             </div>
           </div>
 
-          <div className="w-[420px] mr-10 mt-2 ">
+          <div className=" mr-10 mt-2 ">
             <p className="font-bold">INDUSTRY EXPERTISE</p>
             <hr className="border-t border-black" />
 
@@ -264,7 +243,7 @@ const Template3 = () => {
           </div>
         </div>
 
-        <div className="w-[275px] ">
+        <div className=" ">
           <div className="w-full ">
             <p className="font-bold ">SUMMARY</p>
             <hr className="border-t border-black" />
@@ -278,10 +257,6 @@ const Template3 = () => {
                     boosted revenue by 64% for an e-commerce company via a
                     6-month content marketing campaign. Subsequently, took over
                     a 10 person B2B focused team, reformed their CMS to boost
-                    content production by 45% while reducing employee turnover
-                    from 25% to 0% in the first year.Subsequently, took over a
-                    10 person B2B focused team, content marketing campaign.
-                    Subsequently, took over a 10 person.
                   </small>
                 </p>
               </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { useNavigate, useParams } from "react-router-dom";
 import "./CvTemplates.css";
 import {
   ApartmentOutlined,
@@ -23,6 +23,7 @@ import styles from "../../style";
 import { useDispatch, useSelector } from "react-redux";
 import { cvTemplate } from "../../redux/action/data";
 import Template3 from "../ResumeTemplate/Template3";
+import Template2 from "../ResumeTemplate/Template2";
 import Template1 from "../ResumeTemplate/Template1";
 
 // .......................................
@@ -94,11 +95,27 @@ const CvTemplates = () => {
       },
     });
   };
+  const params = useParams();
+  const gettemplate = () => {
+    switch (params.id) {
+      case "1": {
+        return <Template1 />;
+      }
+      case "2": {
+        return <Template2 />;
+      }
+      case "3": {
+        return <Template3 />;
+      }
+      default:
+        return;
+    }
+  };
 
   return (
     <section className="">
-      <div className="px-20  w-full text-left bg-gray-100  flex justify-between items-top ">
-        <div className="mb-20  flex-1">
+      <div className="px-20  flex md:flex-row flex-col w-full text-left bg-gray-100   justify-between items-top ">
+        <div className="mb-20  max-w-[500px]  flex-1">
           <div className="mr-5 mt-20">
             <PersonalInformation
               setPersonalInformation={setPersonalInformation}
@@ -235,9 +252,9 @@ const CvTemplates = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1">
-          <div className={`${styles.padding}`}>
-            <Template4 data={TotalData} />
+        <div className="flex-1 fixed max-h-[800px] p-6 w-[50%] bg-gray-700 flex-nowrap  top-0 bottom-0 right-0 ">
+          <div className="absolute">
+            <div className={`${styles.padding}  `}>{gettemplate()}</div>
           </div>
         </div>
       </div>

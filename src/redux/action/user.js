@@ -57,7 +57,6 @@ export const getMyProfile = () => async (dispatch) => {
       headers: {
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
-      withCredentials: true,
     });
 
     dispatch({ type: "loadUserSuccess", payload: data.user });

@@ -28,22 +28,17 @@ const socialLink = [
 const services = [
   {
     id: 1,
-    to: "create-resume",
-    title: "create a resume",
-  },
-  {
-    id: 2,
-    to: "resume-example",
+    to: "resume-templates",
     title: "Resume Examples",
   },
   {
-    id: 3,
-    to: "resume-templates",
-    title: "Resume Templates",
+    id: 2,
+    to: "cv-templates",
+    title: "CV Templates",
   },
   {
-    id: 4,
-    to: "cover-templates",
+    id: 3,
+    to: "cover-letter",
     title: "Cover Letter Templates",
   },
 ];

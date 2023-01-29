@@ -73,8 +73,6 @@ const CvTemplates = () => {
     },
   ];
   const dispatch = useDispatch();
-  // console.log("Totaldata", TotalData);
-
   // const [mainData, setMainData] = useState("");
   const [data, setData] = useState(null);
   if (TotalData) {

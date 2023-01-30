@@ -5,17 +5,17 @@ const Template3 = () => {
     <section className=" m-10 border border-black rounded-md mx-auto text-left relative bg-white  shadow-2xl p-8">
       <div className="leading-none flex justify-between">
         <div>
-          <h2 className="text-3xl font-bold">BELINDA MORALEZ</h2>
-          <p className="font-semibold mb-1">
+          <h2 className="md:text-3xl text-xl font-bold">BELINDA MORALEZ</h2>
+          <p className="font-semibold md:text-sm text-[10px] mb-1">
             GA. Adwords. & Hubspot Certified Marketing Manager
           </p>
           <small>
-            <span>
+            <span className="md:text-sm text-[10px]">
               <i className="fa-solid fa-at"></i>
             </span>{" "}
             bmoralez2 10@gmail.com
           </small>
-          <small className="mx-2">
+          <small className="mx-2 md:text-sm text-[10px]">
             <span>
               <i className="fa-solid fa-link"></i>
             </span>{" "}
@@ -29,17 +29,17 @@ const Template3 = () => {
           </small>
         </div>
 
-        <div
+        {/* <div
           className=" object-center object-cover w-[100px] 
         h-[100px] "
         >
           <img
-            className=" rounded-full w-[100px] 
+            className=" rounded-full max-w-[100px] 
             h-[100px]"
             src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=170667a&w=0&k=20&c=MRMqc79PuLmQfxJ99fTfGqHL07EDHqHLWg0Tb4rPXQc="
             alt=""
           />
-        </div>
+        </div> */}
       </div>
 
       <div className=" my-4 flex justify-between">

@@ -19,7 +19,11 @@ import DashboardResume from "../Pages/DashboardResume/DashboardResume";
 import DashboardCv from "../Pages/DashboardCv/DashboardCv";
 import DashboardCoverLetter from "../Pages/DashboardCoverLetter/DashboardCoverLetter";
 import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
+
+import PrivetRoute from "./PrivetRoute";
+
 import CoverEditor from "../Pages/CoverLetter/CoverEditor/CoverEditor";
+
 
 export const router = createBrowserRouter([
   {
@@ -36,7 +40,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/cv-template",
-        element: <CvEditor />,
+        element: (
+          <PrivetRoute>
+            <CvEditor />
+          </PrivetRoute>
+        ),
       },
 
       {
@@ -64,7 +72,14 @@ export const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      { path: "/resume-templates/:id", element: <CvEditor /> },
+      {
+        path: "/resume-templates/:id",
+        element: (
+          <PrivetRoute>
+            <CvEditor />
+          </PrivetRoute>
+        ),
+      },
 
       {
         path: "/login",

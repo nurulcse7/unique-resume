@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cvData } from "../../redux/action/data";
 import Loader from "../../components/Loader/Loader";
+import axiosInstance from "../../utils/axiosInstance";
 
 const ResumePage = () => {
   const [filterWork, setFilterWork] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState();
-  const dispatch = useDispatch();
-  const { data } = useSelector((state) => state.cvdata);
   useEffect(() => {
-    dispatch(cvData());
-    setWorks(data);
-    setFilterWork(data);
-  }, [data, dispatch]);
+    axiosInstance.get("/api/cv").then((res) => {
+      setFilterWork(res.data);
+      setWorks(res.data);
+    });
+  }, []);
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);

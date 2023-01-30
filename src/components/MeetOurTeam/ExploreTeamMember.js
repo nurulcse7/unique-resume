@@ -101,7 +101,7 @@ const ExploreTeamMember = () => {
               Project
             </h3>
           </div>
-          <div className="grid grid-cols-1 p-4 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 p-4 md:grid-cols-2 gap-5">
             {selectMember?.projects?.map((project) => (
               <div
                 key={project.name}
@@ -114,9 +114,10 @@ const ExploreTeamMember = () => {
                 />
                 <div className="flex flex-col justify-between p-4 space-y-8">
                   <div className="space-y-2">
-                    <h2 className="text-2xl font-semibold tracking-wide">
+                    <h2 className="text-3xl font-semibold tracking-wide">
                       {project.name}
                     </h2>
+                    <p className="text-lg">{project.title}</p>
                   </div>
                   <a
                     className="hover:bg-primary bg-secondary border-white text-white p-2 rounded-md  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"

@@ -19,7 +19,12 @@ import DashboardResume from "../Pages/DashboardResume/DashboardResume";
 import DashboardCv from "../Pages/DashboardCv/DashboardCv";
 import DashboardCoverLetter from "../Pages/DashboardCoverLetter/DashboardCoverLetter";
 import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
+
 import PrivetRoute from "./PrivetRoute";
+
+import CoverEditor from "../Pages/CoverLetter/CoverEditor/CoverEditor";
+
+
 export const router = createBrowserRouter([
   {
     path: "*",
@@ -83,6 +88,10 @@ export const router = createBrowserRouter([
       {
         path: "/cover-letter",
         element: <CoverLetterPage />,
+      },
+      {
+        path: "/cover-letter-editors",
+        element: <CoverEditor />,
       },
 
       {

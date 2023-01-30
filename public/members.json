@@ -119,39 +119,50 @@
   },
   {
     "id": 4,
-    "name": "Mostafuzur Rahman",
+    "name": "Mostafizur Rahman",
     "designation": "MERN Stack Devoloper",
     "teamPosition": "Team Leader",
-    "image": "https://source.unsplash.com/random/300x300/?2",
-    "mobile": "01712121212",
-    "gitLink": "github.com",
-    "linkedin": "linkedin.com",
-    "portfolio": "www.portfolio.com",
+    "image": "https://i.ibb.co/tBstMt5/Mostafizur.jpg",
+    "mobile": "01950165017",
+    "gitLink": "https://github.com/Mostafizur-Pro",
+    "linkedin": "https://www.linkedin.com/in/mostafizur-pro/",
+    "portfolio": "https://mostafizur-rahman-d2b32.web.app/",
     "skills": [
       "HTML",
       "CSS",
-      "React",
       "JavaScript",
+      "React",
       "NodeJS",
       "MongoDB",
       "Firebase",
-      "GitHub"
+      "GitHub",
+      "Redux"
     ],
     "projects": [
+      
       {
-        "name": "Unice Resume - Create Your Resume Easily",
-        "link": "www.projectsLink",
-        "img": "https://source.unsplash.com/random/300x300/?2"
+        "name": "Unice Resume",
+        "title": "Create Your Resume Easily",
+        "link": "https://unique-resume.vercel.app/",
+        "img": "https://i.ibb.co/wBHZFJt/unique-resume.png"
       },
       {
-        "name": "Unice Resume - Create Your Resume Easily",
-        "link": "www.projectsLink",
-        "img": "https://source.unsplash.com/random/300x300/?2"
+        "name": "Computer Zone ",
+        "title": "Second-hand Product Buy & Sell",
+        "link": "https://computer-zone-a3f6f.web.app/",
+        "img": "https://i.ibb.co/gtXH3s7/computer-zone.png"
       },
       {
-        "name": "Unice Resume - Create Your Resume Easily",
-        "link": "www.projectsLink",
-        "img": "https://source.unsplash.com/random/300x300/?2"
+        "name": "TravelGuru",
+        "title": "Amazing adventure trips",
+        "link": "https://travelguru-a5553.web.app/",
+        "img": "https://i.ibb.co/1mwhMvd/Travel-Guru.png"
+      },
+      {
+        "name": "The Learn",
+        "title": "Online Programming Courses",
+        "link": "https://the-learn-db700.web.app",
+        "img": "https://i.ibb.co/N3JQv0p/The-Learn.png"
       }
     ]
   },

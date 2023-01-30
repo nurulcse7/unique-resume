@@ -32,7 +32,6 @@ server-side [Click here]()
 - Email services
   <!-- - Shipping Management  -->
   <!-- - Invoice Printing  -->
-  <!-- - Invoice Printing  -->
 
 #### Front-end Technology
 

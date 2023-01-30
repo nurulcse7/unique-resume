@@ -1,6 +1,7 @@
 import React from "react";
 
-const Template1 = ({ resumeData, themes }) => {
+const Template1 = ({ resumeData }) => {
+  const themes = "bg-blue-600";
   return (
     <section className="w-[21cm] text-left relative bg-white h-[29.7cm] shadow-2xl">
       <div
@@ -35,7 +36,7 @@ const Template1 = ({ resumeData, themes }) => {
               <img
                 alt=""
                 className=" w-full h-full rounded-full ring-2 ring-offset-2 ring-white ring-offset-white"
-                src={resumeData.picture}
+                src={resumeData?.picture}
               />
             </div>
           </div>
@@ -141,7 +142,7 @@ const Template1 = ({ resumeData, themes }) => {
             <div className="mt-4">
               <h3 className="text-2xl uppercase ">Education</h3>
               <div className="p-1">
-                {resumeData.education.map((degree, i) => (
+                {resumeData?.education?.map((degree, i) => (
                   <div key={i} className="flex mt-1 ">
                     <p className="font-bold">{i + 1}.</p>
                     <div className="text-lg ml-3">
@@ -211,7 +212,7 @@ const Template1 = ({ resumeData, themes }) => {
               <h2
                 className={`text-3xl  w-[400px] text-center py-3 pb-4 border-2 border-black uppercase font-semibold text-gray-900`}
               >
-                {resumeData.fullname}
+                Shohag Roy
               </h2>
 
               <h2 className="font-semibold absolute bottom-[-20px] bg-white px-3 py-1 text-2xl text-black">
@@ -222,28 +223,28 @@ const Template1 = ({ resumeData, themes }) => {
               <div className="pt-4 px-6">
                 <h3 className="text-2xl uppercase">Profile</h3>
                 <hr className=" my-2 w-[100px] border-t-2 border-black" />
-                <p>{resumeData.profile}</p>
+                <p>{resumeData?.profile}</p>
               </div>
 
               <div className="pt-2 px-6">
                 <h3 className="text-2xl uppercase">project</h3>
                 <hr className=" my-2 w-[100px] border-t-2 border-black" />
-                {resumeData.projects.map((project, i) => (
+                {resumeData?.projects.map((project, i) => (
                   <div className="flex mt-1">
                     <p className="font-bold mr-2">{i + 1}.</p>
                     <div>
-                      <p className="font-semibold">{project.name} </p>
+                      <p className="font-semibold">{project?.name} </p>
                       <p>
                         {" "}
                         <span>
                           <i class="fa-solid fa-calendar-days text-small"></i>
                         </span>{" "}
-                        Duration: {project.duration}
+                        Duration: {project?.duration}
                       </p>
                       <p>
                         <i class="fa-solid fa-diagram-project"></i> Feature:
                       </p>
-                      {project.features.map((feature) => (
+                      {project?.features.map((feature) => (
                         <div className="ml-6 flex items-center">
                           <span className="mr-4">
                             <svg
@@ -261,7 +262,7 @@ const Template1 = ({ resumeData, themes }) => {
                               />
                             </svg>
                           </span>
-                          <p className="">{feature.name}</p>
+                          <p className="">{feature?.name}</p>
                         </div>
                       ))}
 

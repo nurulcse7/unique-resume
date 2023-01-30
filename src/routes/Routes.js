@@ -7,18 +7,22 @@ import Contact from "../Pages/Contact/Contact";
 import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
-import CvTemplates from "../Pages/CV/CvTemplates";
+import CvEditor from "../Pages/CV/CvEditor";
 import CVpage from "../Pages/CVpage/CVpage";
 import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
-import Template1 from "../Pages/ResumeTemplate/Template1";
+import Template4 from "../Pages/ResumeTemplate/Template4";
+import Template3 from "../Pages/ResumeTemplate/Template3";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import DashboardResume from "../Pages/DashboardResume/DashboardResume";
 import DashboardCv from "../Pages/DashboardCv/DashboardCv";
 import DashboardCoverLetter from "../Pages/DashboardCoverLetter/DashboardCoverLetter";
 import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
-import CreateRessume from "../Pages/ResumeTemplate/CreateRessume";
+
+import PrivetRoute from "./PrivetRoute";
+
+import CoverEditor from "../Pages/CoverLetter/CoverEditor/CoverEditor";
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +39,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/cv-template",
-        element: <CvTemplates />,
+        element: (
+          <PrivetRoute>
+            <CvEditor />
+          </PrivetRoute>
+        ),
       },
 
       {
@@ -43,17 +51,16 @@ export const router = createBrowserRouter([
         element: <CVpage />,
       },
       {
-        path: "/resume-template2",
-        element: <Template1 />,
-      },
-      {
         path: "/resume-templates",
         element: <ResumePage />,
       },
-
       {
-        path: "/create-resume",
-        element: <CreateRessume />,
+        path: "/resume-template4",
+        element: <Template4 />,
+      },
+      {
+        path: "/resume-template3",
+        element: <Template3 />,
       },
 
       {
@@ -64,6 +71,14 @@ export const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/resume-templates/:id",
+        element: (
+          <PrivetRoute>
+            <CvEditor />
+          </PrivetRoute>
+        ),
+      },
 
       {
         path: "/login",
@@ -72,6 +87,10 @@ export const router = createBrowserRouter([
       {
         path: "/cover-letter",
         element: <CoverLetterPage />,
+      },
+      {
+        path: "/cover-letter-editors",
+        element: <CoverEditor />,
       },
 
       {

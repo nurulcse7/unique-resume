@@ -10,7 +10,6 @@ import { useState } from "react";
 
 const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
   const [count, setCount] = useState(0);
-  console.log("count", count);
   const {
     register,
     handleSubmit,

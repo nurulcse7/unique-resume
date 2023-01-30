@@ -22,7 +22,7 @@ export const userReducer = createReducer(
     loadUserSuccess: (state, action) => {
       state.loading = false;
       state.iaAuthenticated = true;
-      state.user = action.payload.user;
+      state.user = action.payload;
     },
     loadUserFail: (state, action) => {
       state.loading = false;

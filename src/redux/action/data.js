@@ -15,3 +15,18 @@ export const cvData = () => async (dispatch) => {
     dispatch({ type: "cvDataFail", payload: error.response.data });
   }
 };
+
+export const cvTemplate = () => async (dispatch) => {
+  try {
+    dispatch({ type: "cvTemplateReq" });
+    const { data } = await axiosInstance.get(`/api/getcv`, {
+      headers: {
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    dispatch({ type: "cvTemplateSuccess", payload: data });
+  } catch (error) {
+    console.log(error.response);
+    dispatch({ type: "cvTemplateFail", payload: error.response.data });
+  }
+};

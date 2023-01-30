@@ -4,19 +4,20 @@ import styles from "../../style";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cvData } from "../../redux/action/data";
+import Loader from "../../components/Loader/Loader";
+import axiosInstance from "../../utils/axiosInstance";
 
 const ResumePage = () => {
-  const [filterWork, setFilterWork] = useState([]);
+  const [filterWork, setFilterWork] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState();
-  const dispatch = useDispatch();
-  const { data, loading } = useSelector((state) => state.cvdata);
   useEffect(() => {
-    dispatch(cvData());
-    setWorks(data);
-    setFilterWork(data);
-  }, [data, dispatch]);
+    axiosInstance.get("/api/cv").then((res) => {
+      setFilterWork(res.data);
+      setWorks(res.data);
+    });
+  }, []);
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
@@ -63,46 +64,52 @@ const ResumePage = () => {
             </div>
           </div>
         </div>
-
-        <motion.div
-          animate={animateCard}
-          transition={{ duration: 0.5, delayChildren: 0.5 }}
-          className=" grid md:grid-cols-3 grid-cols-1 gap-5"
-        >
-          {filterWork?.map((work, index) => (
-            <Link to="/cv-template" key={index}>
-              <div className="border rounded-md border-primary">
-                <div className="app__work-img ">
-                  <img src={work.image} alt={work.type} />
-
-                  <motion.div
-                    whileHover={{ opacity: [0, 1] }}
-                    transition={{
-                      duration: 0.25,
-                      ease: "easeInOut",
-                      staggerChildren: 0.5,
-                    }}
-                    className="app__work-hover flex justify-center items-center "
-                  >
-                    <a href={work.projectLink} target="_blank" rel="noreferrer">
-                      <motion.div
-                        whileInView={{ scale: [0, 1] }}
-                        whileHover={{ scale: [1, 0.9] }}
-                        transition={{ duration: 0.25 }}
-                        className=" flex justify-center items-center"
+        {filterWork === null ? (
+          <Loader />
+        ) : (
+          <motion.div
+            animate={animateCard}
+            transition={{ duration: 0.5, delayChildren: 0.5 }}
+            className=" grid md:grid-cols-3 grid-cols-1 gap-5"
+          >
+            {filterWork?.map((work, index) => (
+              <Link to={`/resume-templates/${work.id}`} key={index}>
+                <div className="border rounded-md border-primary">
+                  <div className="app__work-img ">
+                    <img src={work.image} alt={work.type} />
+                    <motion.div
+                      whileHover={{ opacity: [0, 1] }}
+                      transition={{
+                        duration: 0.25,
+                        ease: "easeInOut",
+                        staggerChildren: 0.5,
+                      }}
+                      className="app__work-hover flex justify-center items-center "
+                    >
+                      <a
+                        href={work.projectLink}
+                        target="_blank"
+                        rel="noreferrer"
                       >
-                        <button className="bg-primary capitalize font-semibold px-3 py-2 rounded">
-                          {" "}
-                          Use {work.type} Template
-                        </button>
-                      </motion.div>
-                    </a>
-                  </motion.div>
+                        <motion.div
+                          whileInView={{ scale: [0, 1] }}
+                          whileHover={{ scale: [1, 0.9] }}
+                          transition={{ duration: 0.25 }}
+                          className=" flex justify-center items-center"
+                        >
+                          <button className="bg-primary capitalize font-semibold px-3 py-2 rounded">
+                            {" "}
+                            Use {work.type} Template
+                          </button>
+                        </motion.div>
+                      </a>
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </motion.div>
+              </Link>
+            ))}
+          </motion.div>
+        )}
       </section>
     </div>
   );

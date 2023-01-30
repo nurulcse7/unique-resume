@@ -1,5 +1,8 @@
-import React from "react";
 import { useForm } from "react-hook-form";
+
+import React from "react";
+
+import TextEditor from "../../../components/TextEditor/TextEditor";
 
 const LetterDetails = () => {
   const {
@@ -23,11 +26,16 @@ const LetterDetails = () => {
               3–4 paragraphs explaining why you're the perfect candidate for a
               specific job
             </p>
+            <div className=" px-4 py-3 h-64 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none">
+              <div className="editor">
+                <TextEditor />
+              </div>
+            </div>
 
-            <textarea
+            {/* <textarea
               {...register("summary", {})}
               className="w-4/5 px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
-            />
+            /> */}
           </div>
         </section>
       </form>

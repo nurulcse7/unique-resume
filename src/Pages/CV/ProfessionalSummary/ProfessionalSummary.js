@@ -19,8 +19,8 @@ const ProfessionalSummary = ({ setProfessionalSummary }) => {
       <form onChange={handleSubmit(onSubmit)}>
         <section>
           <h1 className="text-xl mt-5 font-semibold">Professional Summary</h1>
-          <div className="form-control mt-2 w-full max-w-3xl">
-            <p className="label text-xs text-gray-400 mb-3 text-base ">
+          <div className="form-control mt-2 w-full max-w-2xl">
+            <p className="label text-xs text-gray-400 mb-3  ">
               Write 2-4 short & energetic sentences to interest the reader!
               Mention your role, experience & most importantly - your biggest
               achievements, best qualities and skills.

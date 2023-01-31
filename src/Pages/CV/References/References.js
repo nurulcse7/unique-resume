@@ -33,7 +33,7 @@ const References = ({ references, setReferences }) => {
               </p>
             </summary>
 
-            <div className="flex  gap-10">
+            <div className="flex  gap-5">
               {/* References */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">
@@ -61,7 +61,7 @@ const References = ({ references, setReferences }) => {
                 />
               </div>
             </div>
-            <div className="flex  gap-10">
+            <div className="flex  gap-5">
               {/*  Phone */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">

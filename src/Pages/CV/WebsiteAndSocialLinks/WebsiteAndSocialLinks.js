@@ -18,19 +18,19 @@ const WebsiteAndSocialLinks = ({
   };
 
   return (
-    <div>
+    <div className="mt-2">
       <form onChange={handleSubmit(onSubmit)}>
         <section>
-          <h1 className="text-3xl font-semibold">Websites & Social Links</h1>
-          <div className="form-control mt-5 w-full ">
-            <p className="label text-gray-400 mb-3 text-base ">
+          <h1 className="text-xl font-semibold">Websites & Social Links</h1>
+          <div className="form-control mt-2 w-full ">
+            <p className="label text-gray-400 mb-3 text-xs ">
               You can add links to websites you want hiring managers to see!
               Perhaps It will be a link to your portfolio. LinkedIn profile, or
               personal website
             </p>
           </div>
           <details className="mb-4 border p-5 text-left border-b-2 py-3 ">
-            <summary className="font-semibold text-xl ">
+            <summary className="font-semibold text-lg ">
               {websiteAndSocialLinks?.label ? (
                 <>{websiteAndSocialLinks?.label}</>
               ) : (
@@ -45,12 +45,12 @@ const WebsiteAndSocialLinks = ({
               </p>
             </summary>
 
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* Job Title */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">Label</span>
+                  <span className="label text-gray-400  text-xs ">Label</span>
                 </label>
                 <input
                   type="text"
@@ -59,10 +59,10 @@ const WebsiteAndSocialLinks = ({
                 />
               </div>
               {/*  Employer */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">Link</span>
+                  <span className="label text-gray-400  text-xs ">Link</span>
                 </label>
                 <input
                   type="text"

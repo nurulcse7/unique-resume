@@ -18,9 +18,9 @@ const Hobbies = ({ setHobbies }) => {
       <form onChange={handleSubmit(onSubmit)}>
         {" "}
         <section id="hobbiesDetails" className="hidden">
-          <h1 className="text-3xl font-semibold">Hobbies</h1>
-          <div className="form-control mt-5 w-full ">
-            <p className="label text-gray-400 mb-3 text-base ">
+          <h1 className="text-xl font-semibold">Hobbies</h1>
+          <div className="form-control mt-2 w-full ">
+            <p className="label text-gray-400 mb-3 text-xs ">
               What do you like?
             </p>
           </div>

@@ -25,17 +25,17 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
   };
 
   return (
-    <div>
+    <div className="mt-5">
       <form onChange={handleSubmit(onSubmit)}>
         <section>
-          <h1 className="text-3xl font-semibold">Employment History</h1>
-          <div className="form-control mt-5 w-full ">
-            <p className="label text-gray-400 mb-3 text-base ">
+          <h1 className="text-xl font-semibold">Employment History</h1>
+          <div className="form-control mt-2 w-full ">
+            <p className="label text-xs text-gray-400 mb-3">
               Whow your relevant experience.
             </p>
           </div>
           <details className="mb-4 border p-5 text-left border-b-2 py-3 ">
-            <summary className="font-semibold text-xl ">
+            <summary className="font-semibold text-lg ">
               {employmentHistory?.jobTitle ? (
                 <>{employmentHistory?.jobTitle}</>
               ) : (
@@ -43,12 +43,12 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
               )}
             </summary>
 
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* Job Title */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">
+                  <span className="label text-gray-400  text-xs ">
                     Job Title
                   </span>
                 </label>
@@ -59,10 +59,10 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                 />
               </div>
               {/*  Employer */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">
+                  <span className="label text-gray-400  text-xs ">
                     Company Name
                   </span>
                 </label>
@@ -73,12 +73,12 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                 />
               </div>
             </div>
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* Job Title */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">
+                  <span className="label text-gray-400  text-xs ">
                     Start & End Date
                   </span>
                 </label>
@@ -97,10 +97,10 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
               </div>
 
               {/*  Employer */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">City</span>
+                  <span className="label text-gray-400  text-xs ">City</span>
                 </label>
                 <input
                   type="text"
@@ -109,16 +109,16 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                 />
               </div>
             </div>
-            <div className="form-control mt-5 w-full max-w-xs">
+            <div className="form-control mt-2 w-full max-w-xs ">
               <label className="label">
                 {" "}
-                <span className="label text-gray-400   text-lg ">
+                <span className="label text-gray-400  text-xs ">
                   Description
                 </span>
               </label>
               <textarea
                 {...register("jobDescription", {})}
-                className="w-4/5 px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
+                className="w-4/5 px-4 py-3 block border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
               />
             </div>
           </details>
@@ -154,12 +154,12 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                         />
                       </summary>
 
-                      <div className="flex gap-10">
+                      <div className="flex gap-5">
                         {/* Job Title */}
-                        <div className="form-control mt-5 w-full max-w-xs">
+                        <div className="form-control mt-2 w-full max-w-xs">
                           <label className="label">
                             {" "}
-                            <span className="label text-gray-400  text-lg ">
+                            <span className="label text-gray-400  text-xs ">
                               Job Title
                             </span>
                           </label>
@@ -169,11 +169,11 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                             className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                           />
                         </div>
-                        {/*  Employer */}
-                        <div className="form-control mt-5 w-full max-w-xs">
+                        {/*  Employer */}{" "}
+                        <div className="form-control mt-2 w-full max-w-xs">
                           <label className="label">
                             {" "}
-                            <span className="label text-gray-400  text-lg ">
+                            <span className="label text-gray-400  text-xs ">
                               Company Name
                             </span>
                           </label>
@@ -184,12 +184,12 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                           />
                         </div>
                       </div>
-                      <div className="flex gap-10">
+                      <div className="flex gap-5">
                         {/* Job Title */}
-                        <div className="form-control mt-5 w-full max-w-xs">
+                        <div className="form-control mt-2 w-full max-w-xs">
                           <label className="label">
                             {" "}
-                            <span className="label text-gray-400  text-lg ">
+                            <span className="label text-gray-400  text-xs ">
                               Start & End Date
                             </span>
                           </label>
@@ -208,10 +208,10 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                         </div>
 
                         {/*  Employer */}
-                        <div className="form-control mt-5 w-full max-w-xs">
+                        <div className="form-control mt-2 w-full max-w-xs">
                           <label className="label">
                             {" "}
-                            <span className="label text-gray-400  text-lg ">
+                            <span className="label text-gray-400  text-xs ">
                               City
                             </span>
                           </label>
@@ -222,16 +222,16 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                           />
                         </div>
                       </div>
-                      <div className="form-control mt-5 w-full max-w-xs">
+                      <div className="form-control mt-2 w-full max-w-xs">
                         <label className="label">
                           {" "}
-                          <span className="label text-gray-400   text-lg ">
+                          <span className="label text-gray-400   text-xs ">
                             Description
                           </span>
                         </label>
                         <textarea
                           {...register(`jobDescription${count}`, {})}
-                          className="w-4/5 px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
+                          className="w-4/5 px-4 block py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                         />
                       </div>
                     </details>

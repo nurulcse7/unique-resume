@@ -30,7 +30,7 @@ const InternShips = ({ internShips, setInternShips }) => {
               )}
             </summary>
 
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* Job Title */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">
@@ -58,7 +58,7 @@ const InternShips = ({ internShips, setInternShips }) => {
                 />
               </div>
             </div>
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* Job Title */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">

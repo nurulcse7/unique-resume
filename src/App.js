@@ -6,6 +6,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { getMyProfile } from "./redux/action/user";
 import Loader from "./components/Loader/Loader";
+import { resumeData } from "./redux/action/resumeData";
 
 function App() {
   const { error, message, loading } = useSelector((state) => state.user);
@@ -26,6 +27,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getMyProfile());
+    dispatch(resumeData());
   }, [dispatch]);
 
   return (

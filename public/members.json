@@ -217,20 +217,13 @@
     "name": "Abdur Sobur",
     "designation": "He is left from the team for personal issue",
     "teamPosition": "Team Member",
-    "image": "https://i.ibb.co/zxT5yt6/Unique-Resume.png",
-    "mobile": "01712121212",
-    "gitLink": "github.com",
-    "linkedin": "linkedin.com",
-    "portfolio": "www.portfolio.com",
+    "image": "https://i.ibb.co/Kr1cKyS/abdur-shobur.jpg",
+    "mobile": "",
+    "gitLink": "",
+    "linkedin": "",
+    "portfolio": "",
     "skills": [
-      "HTML",
-      "CSS",
-      "React",
-      "JavaScript",
-      "NodeJS",
-      "MongoDB",
-      "Firebase",
-      "GitHub"
+      
     ],
     "projects": [
       {

@@ -169,7 +169,7 @@ const CvTemplates = () => {
 
             {/* add section */}
             <section>
-              <h1 className="text-3xl font-semibold">Add Section</h1>
+              <h1 className="text-2xl mt-5 font-semibold">Add Section</h1>
               <div className="form-control mt-5 w-full ">
                 <p className="label text-gray-400 mb-3 text-base "></p>
               </div>

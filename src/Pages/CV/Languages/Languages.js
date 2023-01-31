@@ -21,7 +21,7 @@ const Languages = ({ languages, setLanguages }) => {
             <p className="label text-gray-400 mb-3 text-xs "></p>
           </div>
           <details className="mb-4 border p-5 text-left border-b-2 py-3 ">
-            <summary className="font-semibold text-xs ">
+            <summary className="font-semibold text-lg ">
               {languages?.languageName ? (
                 <>{languages?.languageName}</>
               ) : (

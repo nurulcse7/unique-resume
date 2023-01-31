@@ -20,7 +20,7 @@ const Skills = ({ skills, setSkills }) => {
             </p>
           </div>
           <details className="mb-4 border p-5 text-left border-b-2 py-3 ">
-            <summary className="font-semibold text-xs ">
+            <summary className="font-semibold text-lg ">
               {skills?.skill ? <>{skills?.skill}</> : <>(Not specified)</>}
               <p className="text-gray-400">
                 {skills?.labelLink ? <>{skills?.labelLink}</> : <></>}

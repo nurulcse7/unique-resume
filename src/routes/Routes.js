@@ -23,7 +23,9 @@ import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
 import PrivetRoute from "./PrivetRoute";
 
 import CoverEditor from "../Pages/CoverLetter/CoverEditor/CoverEditor";
-
+import PricingTable from "../Pages/PricingTable/PricingTable";
+import Chekout from "../Pages/PricingTable/Chekout";
+import Success from "../Pages/PricingTable/Success";
 
 export const router = createBrowserRouter([
   {
@@ -52,8 +54,20 @@ export const router = createBrowserRouter([
         element: <CVpage />,
       },
       {
+        path: "/select-plan",
+        element: (
+          <PrivetRoute>
+            <PricingTable />
+          </PrivetRoute>
+        ),
+      },
+      {
         path: "/resume-templates",
         element: <ResumePage />,
+      },
+      {
+        path: "/checkout/:id",
+        element: <Success />,
       },
       {
         path: "/resume-template4",
@@ -110,29 +124,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
-    children: [
-      {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
-      },
-      {
-        path: "/dashboard/resume",
-        element: <DashboardResume></DashboardResume>,
-      },
-      {
-        path: "/dashboard/cv",
-        element: <DashboardCv />,
-      },
-      {
-        path: "/dashboard/coverletter",
-        element: <DashboardCoverLetter />,
-      },
-    ],
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <PrivetRoute>
+        <DashboardLayout />
+      </PrivetRoute>
+    ),
     children: [
       {
         path: "/dashboard",

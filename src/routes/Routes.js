@@ -19,13 +19,13 @@ import DashboardResume from "../Pages/DashboardResume/DashboardResume";
 import DashboardCv from "../Pages/DashboardCv/DashboardCv";
 import DashboardCoverLetter from "../Pages/DashboardCoverLetter/DashboardCoverLetter";
 import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
-
 import PrivetRoute from "./PrivetRoute";
-
 import CoverEditor from "../Pages/CoverLetter/CoverEditor/CoverEditor";
 import PricingTable from "../Pages/PricingTable/PricingTable";
 import Chekout from "../Pages/PricingTable/Chekout";
 import Success from "../Pages/PricingTable/Success";
+import MeetOurTeam from "../components/MeetOurTeam/MeetOurTeam";
+import Faq from "../components/FAQ/Faq";
 
 export const router = createBrowserRouter([
   {
@@ -48,7 +48,6 @@ export const router = createBrowserRouter([
           </PrivetRoute>
         ),
       },
-
       {
         path: "/cv-templates",
         element: <CVpage />,
@@ -77,14 +76,21 @@ export const router = createBrowserRouter([
         path: "/resume-template3",
         element: <Template3 />,
       },
-
       {
         path: "/about",
         element: <About />,
       },
       {
+        path: "/meet",
+        element: <MeetOurTeam />,
+      },
+      {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/faq",
+        element: <Faq />,
       },
       {
         path: "/resume-templates/:id",
@@ -93,12 +99,7 @@ export const router = createBrowserRouter([
             <CvEditor />
           </PrivetRoute>
         ),
-      },
-
-      {
-        path: "/login",
-        element: <Login />,
-      },
+      },      
       {
         path: "/cover-letter",
         element: <CoverLetterPage />,
@@ -107,7 +108,6 @@ export const router = createBrowserRouter([
         path: "/cover-letter-editors",
         element: <CoverEditor />,
       },
-
       {
         path: "/forgot-password",
         element: <ForgotPassword />,
@@ -115,6 +115,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/about-team-member",

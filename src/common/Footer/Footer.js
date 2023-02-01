@@ -72,6 +72,7 @@ const Footer = () => {
                   <a
                     key={s.id}
                     href={s.to}
+                    target='_blank'
                     rel='noreferrer'
                     className='text-white text-3xl'
                   >

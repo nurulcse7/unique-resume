@@ -250,6 +250,25 @@ const CvTemplates = () => {
                     References
                   </span>
                 </h3>
+                <h3
+                  id="referenceTitle"
+                  onClick={() =>
+                    (document.getElementById("referenceTitle").style.display =
+                      "none")(
+                      (document.getElementById(
+                        "referenceDetails"
+                      ).style.display = "block")
+                    )
+                  }
+                  className=" font-semibold items-center "
+                >
+                  <span className="text-4xl text-blue-400 hover:text-blue-900">
+                    <ContactsOutlined />
+                  </span>
+                  <span className="ml-3 text-xl hover:text-blue-400">
+                    Extra-curricular Activities
+                  </span>
+                </h3>
               </div>
             </section>
 

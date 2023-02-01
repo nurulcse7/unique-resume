@@ -141,7 +141,7 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                     align="baseline"
                   >
                     <details className="mb-4 border p-5 text-left border-b-2 py-3 ">
-                      <summary className="font-semibold text-xl w-full  justify-between">
+                      <summary className="font-semibold text-lg w-full  justify-between">
                         {/* {employmentHistory?.jobTitle ? (
                           <>{employmentHistory?.jobTitle}</>
                         ) : (
@@ -248,7 +248,7 @@ const EmploymentHistory = ({ employmentHistory, setEmploymentHistory }) => {
                     className="text-blue-400 hover:text-blue-900 hover:font-semibold text-lg my-5 flex justify-start items-center gap-3"
                   >
                     <PlusCircleOutlined />{" "}
-                    <div onClick={() => setCount(count + 1)}>
+                    <div onClick={() => setCount(count + 0)}>
                       {" "}
                       Add One more employment
                     </div>

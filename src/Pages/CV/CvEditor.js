@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./CvTemplates.css";
 import {
   ApartmentOutlined,
@@ -102,7 +102,7 @@ const CvTemplates = () => {
     dispatch(cvTemplate());
     dispatch(resumeData());
     setData(userData);
-  }, [dispatch, userSubmit]);
+  }, [dispatch]);
 
   const params = useParams();
   const gettemplate = () => {
@@ -289,9 +289,15 @@ const CvTemplates = () => {
               >
                 Back
               </Button>
-              <Button className="mx-5" onClick={handlePrint}>
-                Print
-              </Button>
+              {user.role === "user" ? (
+                <Link to="/select-plan">
+                  <Button>print</Button>
+                </Link>
+              ) : (
+                <Button className="mx-5" onClick={handlePrint}>
+                  Print
+                </Button>
+              )}
             </div>
             <div className="px-12 h-[100%] bg-white" ref={componentRef}>
               {gettemplate()}

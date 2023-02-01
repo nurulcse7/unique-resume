@@ -66,8 +66,8 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/meet",
-        element: <MeetOurTeam />,
+        path: "/about-team-member",
+        element: <ExploreTeamMember />,
       },
       {
         path: "/contact",
@@ -104,10 +104,6 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
-      },
-      {
-        path: "/about-team-member",
-        element: <ExploreTeamMember />,
       },
     ],
   },

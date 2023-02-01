@@ -7,7 +7,7 @@ const ExploreTeamMember = () => {
     const query = window.location.search.substring(1);
     const id = query.split("&")[0].split("=")[1];
 
-    fetch("../members.json")
+    fetch("members.json")
       .then((res) => res.json())
       .then((data) => {
         setSelectMember(data.find((memebrs) => memebrs.id == id));
@@ -134,48 +134,48 @@ const ExploreTeamMember = () => {
 
         <div className="">
           <div className="flex justify-center md:mt-6 pt-6 ">
-            <h3 className=" text-2xl md:text-4xl font-bold border-b-2 border-black">
+            <h3 className="font-sans text-2xl md:text-4xl font-bold border-b-2 border-black">
               Available for Hire!
             </h3>
           </div>
-          <div className="flex justify-center bg-[#132579] rounded-md my-4">
+          <div className="flex justify-center bg-secondary rounded-md my-4">
             <form
               method="POST"
               action="https://getform.io/f/5255c9c4-ec4b-4fcb-aafb-6c14740263db"
               className="flex flex-col max-w-[600px] my-6 w-full"
             >
               <p className="text-center p-3 text-white">
-                // Submit the form below to send me a short message
+                Submit the form below to send me a short message
               </p>
               <input
-                className="bg-[white] mb-4 p-2"
+                className="bg-[white] mb-4 p-2 rounded-2xl"
                 type="text"
                 name="hireParson"
                 value={selectMember.name}
                 required
               />
               <input
-                className="bg-[white] p-2"
+                className="bg-[white] p-2  rounded-2xl"
                 type="text"
                 placeholder="Your Name"
                 name="name"
                 required
               />
               <input
-                className="my-4 p-2 bg-white"
+                className="my-4 p-2 bg-white  rounded-2xl"
                 type="email"
                 placeholder="Your Email"
                 name="email"
                 required
               />
               <textarea
-                className="bg-[white] p-2"
+                className="bg-[white] p-2  rounded-2xl"
                 name="massage"
-                rows="10"
+                rows="5"
                 placeholder="Message"
                 required
               ></textarea>
-              <button className="text-white border-2 hover:bg-primary bg-secondary px-4 py-3 my-8 mx-auto flex items-center">
+              <button className="text-white border-2 hover:bg-secondary bg-primary px-4 py-3 my-8 mx-auto flex items-center">
                 Let's Collaborate
               </button>
             </form>

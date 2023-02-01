@@ -120,7 +120,7 @@ const Footer = () => {
 
                     <li>
                       <Link
-                        to='/meet'
+                        to='/about'
                         className=' capitalize text-[15px] text-white text-left flex flex-col gap-2 transition hover:opacity-75 '
                       >
                         Meet Our Team

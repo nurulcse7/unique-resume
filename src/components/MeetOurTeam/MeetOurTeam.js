@@ -12,8 +12,8 @@ const MeetOurTeam = () => {
 
   return (
     <section>
-      <div className='w-full md:max-w-[1000px] my-6 p-4 mx-auto '>
-        <h1 className='sm:text-3xl text-4xl font-extrabold text-center title-font text-gray-900 mb-4'>
+      <div className='w-full md:max-w-[1000px] mx-auto '>
+        <h1 className='sm:text-3xl text-5xl font-extrabold text-center title-font text-white mb-5'>
           Meet Out Team
         </h1>
 
@@ -23,7 +23,7 @@ const MeetOurTeam = () => {
               onMouseOver={() => setHover(member.id)}
               onMouseOut={() => setHover(0)}
               key={member.id}
-              className='w-full rounded-md  shadow-xl border border-[#03045E] text-gray-800 relative'
+              className='w-full rounded-md  shadow-xl border border-[#03045E] text-white relative'
             >
               <img
                 src={member.image}
@@ -35,11 +35,11 @@ const MeetOurTeam = () => {
                   <h2 className='text-xl md:text-2xl uppercase font-semibold tracking-wide'>
                     {member.name}
                   </h2>
-                  <div className='leading-none'>
-                    <p className='text-gray-800 font-bold'>
+                  <div className='leading-none text-white font-sans'>
+                    <p className='font-bold'>
                       {member.teamPosition}
                     </p>
-                    <p className='text-gray-800 font-semibold'>
+                    <p className='mt-2 font-semibold'>
                       {member.designation}
                     </p>
                   </div>
@@ -53,7 +53,7 @@ const MeetOurTeam = () => {
               >
                 <div className='flex justify-center  items-center w-full h-full'>
                   <Link
-                    to={`about-team-member?id=${member.id}`}
+                    to={`../about-team-member?id=${member.id}`}
                     className='font-bold py-2 px-6 border border-white rounded-lg bg-[#03045E]'
                   >
                     Explore Member

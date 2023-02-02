@@ -11,7 +11,6 @@ import CvEditor from "../Pages/CV/CvEditor";
 import CVpage from "../Pages/CVpage/CVpage";
 import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
-import Template4 from "../Pages/ResumeTemplate/Template4";
 import Template1 from "../Pages/ResumeTemplate/Template1";
 import Template3 from "../Pages/ResumeTemplate/Template3";
 import DashboardLayout from "../Layout/DashboardLayout";
@@ -23,9 +22,7 @@ import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
 import PrivetRoute from "./PrivetRoute";
 import CoverEditor from "../Pages/CoverLetter/CoverEditor/CoverEditor";
 import PricingTable from "../Pages/PricingTable/PricingTable";
-import Chekout from "../Pages/PricingTable/Chekout";
 import Success from "../Pages/PricingTable/Success";
-import MeetOurTeam from "../components/MeetOurTeam/MeetOurTeam";
 import Faq from "../components/FAQ/Faq";
 
 export const router = createBrowserRouter([
@@ -100,7 +97,7 @@ export const router = createBrowserRouter([
             <CvEditor />
           </PrivetRoute>
         ),
-      },      
+      },
       {
         path: "/cover-letter",
         element: <CoverLetterPage />,

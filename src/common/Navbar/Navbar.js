@@ -90,6 +90,7 @@ const Navbar = ({ iaAuthenticated }) => {
                     </NavLink>
                   </li>
                 ))}
+
                 {iaAuthenticated ? (
                   <>
                     <li>

@@ -19,7 +19,6 @@ import Hobbies from "./Hobbies/Hobbies";
 import Languages from "./Languages/Languages";
 import References from "./References/References";
 import InternShips from "./InternShips/InternShips";
-import Template4 from "../ResumeTemplate/Template4";
 import styles from "../../style";
 import { useDispatch, useSelector } from "react-redux";
 import { cvTemplate } from "../../redux/action/data";
@@ -29,6 +28,7 @@ import Template1 from "../ResumeTemplate/Template1";
 import { Button, Modal } from "antd";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
+import Template4 from "../ResumeTemplate/Template4";
 import { resumeData } from "../../redux/action/resumeData";
 
 // .......................................
@@ -108,13 +108,16 @@ const CvTemplates = () => {
   const gettemplate = () => {
     switch (params.id) {
       case "1": {
-        return <Template1 />;
+        return <Template1 data={TotalData} />;
       }
       case "2": {
-        return <Template2 />;
+        return <Template2 data={TotalData} />;
       }
       case "3": {
-        return <Template3 />;
+        return <Template3 data={TotalData} />;
+      }
+      case "13": {
+        return <Template4 data={TotalData} />;
       }
       default:
         return;

@@ -12,6 +12,7 @@ import CVpage from "../Pages/CVpage/CVpage";
 import ResumePage from "../Pages/ResumePage/ResumePage";
 import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
 import Template4 from "../Pages/ResumeTemplate/Template4";
+import Template1 from "../Pages/ResumeTemplate/Template1";
 import Template3 from "../Pages/ResumeTemplate/Template3";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard";
@@ -70,7 +71,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/resume-template4",
-        element: <Template4 />,
+        element: <Template1 />,
       },
       {
         path: "/resume-template3",

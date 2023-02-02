@@ -97,3 +97,24 @@ export const userData = () => async (dispatch) => {
     dispatch({ type: "forgotPassFail", payload: error.response });
   }
 };
+
+export const updateProfile = (profileInfo) => async (dispatch) => {
+  try {
+    dispatch({ type: "updateUserRequest" });
+    const { data } = await axiosInstance.put(
+      `/api/update-profile`,
+      profileInfo,
+      {
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("token")}`,
+        },
+        withCredentials: true,
+      }
+    );
+
+    dispatch({ type: "updateUserSuccess", payload: data.user });
+  } catch (error) {
+    dispatch({ type: "updateUserFail" });
+  }
+};

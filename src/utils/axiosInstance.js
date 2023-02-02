@@ -1,6 +1,6 @@
 import axios from "axios";
 const axiosInstance = axios.create({
-  baseURL: "https://unique-resume.onrender.com",
+  baseURL: "https://unique-resumeserver.vercel.app",
 });
 
 export default axiosInstance;

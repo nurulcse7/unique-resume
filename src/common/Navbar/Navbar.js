@@ -33,7 +33,8 @@ const menuItems = [
   {
     name: "Dashboard",
     path: "/dashboard",
-  },
+    id:6
+  }
 ];
 const Navbar = ({ iaAuthenticated }) => {
   const navigate = useNavigate();
@@ -94,6 +95,8 @@ const Navbar = ({ iaAuthenticated }) => {
                     </NavLink>
                   </li>
                 ))}
+
+               
                 {iaAuthenticated ? (
                   <button
                     onClick={logOut}

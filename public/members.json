@@ -160,7 +160,7 @@
     "name": "Abdur Rahman",
     "designation": "MERN Stack Devoloper",
     "teamPosition": "Team Leader",
-    "image": "https://source.unsplash.com/random/300x300/?2",
+    "image": "https://i.ibb.co/WGwGZ7q/255441626-1507274009638664-8424893954465454171-n.jpg",
     "mobile": "01712121212",
     "gitLink": "github.com",
     "linkedin": "linkedin.com",
@@ -173,7 +173,9 @@
       "NodeJS",
       "MongoDB",
       "Firebase",
-      "GitHub"
+      "GitHub",
+      "ExpressJS"
+      
     ],
     "projects": [
       {

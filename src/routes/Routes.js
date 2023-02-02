@@ -85,28 +85,7 @@ export const router = createBrowserRouter([
         path: "/about-team-member",
         element: <ExploreTeamMember />,
       },
-    ],
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
-    children: [
-      {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
-      },
-      {
-        path: "/dashboard/resume",
-        element: <DashboardResume></DashboardResume>,
-      },
-      {
-        path: "/dashboard/cv",
-        element: <DashboardCv />,
-      },
-      {
-        path: "/dashboard/coverletter",
-        element: <DashboardCoverLetter />,
-      },
+      // Abdur Rahman
     ],
   },
   {

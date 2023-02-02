@@ -185,11 +185,6 @@ const Login = () => {
                   <p className="px-3 dark:text-gray-400">OR</p>
                   <hr className="w-full dark:text-gray-400" />
                 </div>
-                <div className="px-7">
-                  <button className="btn hover:bg-[#0077B6] mb-10 border-[#00B4D8] text-[#00B4D8] hover:text-white duration-300 border p-3 rounded-md w-full">
-                    CONTINUE WITH GOOGLE
-                  </button>
-                </div>
               </div>
             </div>
           </div>

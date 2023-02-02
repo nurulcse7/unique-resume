@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./CvTemplates.css";
 import {
   ApartmentOutlined,
@@ -29,6 +29,7 @@ import { Button, Modal } from "antd";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import Template4 from "../ResumeTemplate/Template4";
+import { resumeData } from "../../redux/action/resumeData";
 
 // .......................................
 
@@ -54,34 +55,33 @@ const CvTemplates = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  const TotalData = [
-    {
-      email: user?.email,
-      personalInformation: [personalInformation],
+  const TotalData = {
+    email: user?.email,
+    personalInformation: [personalInformation],
 
-      photoUrl: [fileList[0]?.thumbUrl],
+    photoUrl: [fileList[0]?.thumbUrl],
 
-      professionalSummary: [professionalSummary],
+    professionalSummary: [professionalSummary],
 
-      employmentHistory: [employmentHistory],
+    employmentHistory: [employmentHistory],
 
-      educationHistory: [educationHistory],
+    educationHistory: [educationHistory],
 
-      websiteAndSocialLinks: [websiteAndSocialLinks],
+    websiteAndSocialLinks: [websiteAndSocialLinks],
 
-      skills: [skills],
+    skills: [skills],
 
-      hobbies: [hobbies],
+    hobbies: [hobbies],
 
-      courses: [courses],
+    courses: [courses],
 
-      internShips: [internShips],
+    internShips: [internShips],
 
-      languages: [languages],
+    languages: [languages],
 
-      references: [references],
-    },
-  ];
+    references: [references],
+  };
+
   const dispatch = useDispatch();
   // const [mainData, setMainData] = useState("");
   const [data, setData] = useState(null);
@@ -89,20 +89,21 @@ const CvTemplates = () => {
     localStorage.setItem("userInfo", JSON.stringify(TotalData));
   }
   console.log(TotalData);
-  useEffect(() => {
-    const userData = localStorage.getItem("userInfo");
-    dispatch(cvTemplate());
-    setData(userData);
-  }, [dispatch]);
-
   const userSubmit = async () => {
-    const { data } = await axiosInstance.post(`/api/cvinformation`, TotalData, {
+    const { data } = await axiosInstance.post(`/api/resumeinfo`, TotalData, {
       headers: {
         "Content-Type": "application/json",
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
     });
   };
+  useEffect(() => {
+    const userData = localStorage.getItem("userInfo");
+    dispatch(cvTemplate());
+    dispatch(resumeData());
+    setData(userData);
+  }, [dispatch]);
+
   const params = useParams();
   const gettemplate = () => {
     switch (params.id) {
@@ -273,7 +274,7 @@ const CvTemplates = () => {
             className="btn-body fixed bottom-0 right-0"
             onClick={() => setOpen(true)}
           >
-            <button className="btn btn-hover">
+            <button onClick={userSubmit} className="btn btn-hover">
               <span className="btn-text">Preview & Download</span>
             </button>
           </div>
@@ -291,9 +292,15 @@ const CvTemplates = () => {
               >
                 Back
               </Button>
-              <Button className="mx-5" onClick={handlePrint}>
-                Print
-              </Button>
+              {user.role === "user" ? (
+                <Link to="/select-plan">
+                  <Button>print</Button>
+                </Link>
+              ) : (
+                <Button className="mx-5" onClick={handlePrint}>
+                  Print
+                </Button>
+              )}
             </div>
             <div className="px-12 h-[100%] bg-white" ref={componentRef}>
               {gettemplate()}

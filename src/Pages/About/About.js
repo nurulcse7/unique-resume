@@ -1,20 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import MeetOurTeam from '../../components/MeetOurTeam/MeetOurTeam';
 // import Background from '../../assets/wave.png'
 
 const AboutPage = ({ UniqueResume }) => {
   return (
-    <div className='font-serif '>
+    <div className='font-serif bg-secondary text-white'>
       <div className='min-h-screen '>
-        <h1 className='text-4xl py-6 font-bold'>About us {UniqueResume}</h1>
-        <p className='text-lg font-bold pl-10 pr-10 font-sans'>
+        <h1 className='text-5xl py-6 font-bold'>About us {UniqueResume}</h1>
+        <p className='text-lg font-bold pl-32 pr-32 font-sans'>
           <span className='text-3xl'>U</span>nique Resume is a website
           that helps job seekers create professional and unique resumes to stand
           out in the job market. 
           We offer a variety of templates, tools, and resources to help job
           seekers create a resume that showcases their skills and experience.
         </p>
-        <div className='mt-10 text-lg text-left p-12'>
+        <div className='mt-5 text-lg text-left p-12'>
         <p>
           Welcome to Unique Resume, the website dedicated to helping job seekers
           create stand-out resumes that will get them noticed by employers. We
@@ -44,7 +45,7 @@ const AboutPage = ({ UniqueResume }) => {
         </p>
       </div>
       </div>
-      
+      <MeetOurTeam/>
     </div>
   );
 };

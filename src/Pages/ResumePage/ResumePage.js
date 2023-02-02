@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cvData } from "../../redux/action/data";
 import Loader from "../../components/Loader/Loader";
+import axiosInstance from "../../utils/axiosInstance";
 
 const ResumePage = () => {
   const [filterWork, setFilterWork] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState();
-  const dispatch = useDispatch();
-  const { data } = useSelector((state) => state.cvdata);
   useEffect(() => {
-    dispatch(cvData());
-    setWorks(data);
-    setFilterWork(data);
-  }, [data, dispatch]);
+    axiosInstance.get("/api/cv").then((res) => {
+      setFilterWork(res.data);
+      setWorks(res.data);
+    });
+  }, []);
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
@@ -73,11 +73,10 @@ const ResumePage = () => {
             className=" grid md:grid-cols-3 grid-cols-1 gap-5"
           >
             {filterWork?.map((work, index) => (
-              <Link to="/cv-template" key={index}>
+              <Link to={`/resume-templates/${work.id}`} key={index}>
                 <div className="border rounded-md border-primary">
                   <div className="app__work-img ">
                     <img src={work.image} alt={work.type} />
-
                     <motion.div
                       whileHover={{ opacity: [0, 1] }}
                       transition={{

@@ -1,7 +1,192 @@
 import React from "react";
 
-const Template6 = () => {
-  return (
+const Template6 = ({ data }) => {
+  const userData = [
+    {
+      courses: [
+        {
+          course: "react a to z",
+          institution: "PH",
+          startDate: "02/22",
+          endDate: "02/22",
+        },
+      ],
+      educationHistory: [
+        {
+          school: "web developer",
+          degree: "programming hreo",
+          startDate: "Jan/2015",
+          endDate: "Dec/28",
+          city: "dhaka",
+          discription:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .",
+        },
+        {
+          school: "web developer",
+          degree: "programming hreo",
+          startDate: "Jan/2015",
+          endDate: "Dec/2018",
+          city: "dhaka",
+          discription:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .",
+        },
+      ],
+      email: "rr@gmail.com",
+      employmentHistory: [
+        {
+          jobTitle: "junior web developer",
+          employer: "programming hreo",
+          startDate: "02/22",
+          endDate: "02/22",
+          city: "dhaka",
+          discription: [
+            "Implemented new website features including conditional logic, data filters and pricing models",
+            "Increased revenue through upsells and cross-selling",
+            "Performed statistical analyses for reports and projects relating to potentially sensitive information loss, and clients",
+            "Organized and maintained data for all employees, including employee data, contact information and skills",
+            "Supervised the assistance of 3 new employees",
+          ],
+        },
+
+        {
+          jobTitle: "junior web developer",
+          employer: "programming hreo",
+          startDate: "02/22",
+          endDate: "02/22",
+          city: "dhaka",
+          discription: [
+            "Implemented new website features including conditional logic, data filters and pricing models",
+            "Increased revenue through upsells and cross-selling",
+            "Performed statistical analyses for reports and projects relating to potentially sensitive information loss, and clients",
+            "Organized and maintained data for all employees, including employee data, contact information and skills",
+            "Supervised the assistance of 3 new employees",
+          ],
+        },
+        {
+          jobTitle: "junior web developer",
+          employer: "programming hreo",
+          startDate: "02/22",
+          endDate: "02/22",
+          city: "dhaka",
+          discription: [
+            "Implemented new website features including conditional logic, data filters and pricing models",
+            "Increased revenue through upsells and cross-selling",
+            "Performed statistical analyses for reports and projects relating to potentially sensitive information loss, and clients",
+            "Organized and maintained data for all employees, including employee data, contact information and skills",
+            "Supervised the assistance of 3 new employees",
+          ],
+        },
+      ],
+      hobbies: [],
+      internShips: [
+        {
+          jobTitle: "web developer",
+          employer: "PH",
+          startDate: "02/22",
+          endDate: "02/22",
+          city: "dhaka",
+          discription: "lorem 50 words",
+        },
+      ],
+      languages: [
+        {
+          language: "Bangla",
+          level: 99,
+        },
+        {
+          language: "english",
+          level: 70,
+        },
+        {
+          language: "Hindi",
+          level: 70,
+        },
+      ],
+      personalInformation: [
+        {
+          jobTitle: "web j gtgtghtdeveloper",
+          photoUrl: "http://abc.com",
+          fname: "Shohag",
+          lname: "Roy",
+          email: "rr@gmail.com",
+          userEmail: "gola.com",
+          phone: "012455445",
+          country: "bangladesh",
+          city: "Rangpur",
+          postalCode: "5403",
+          address: "barisal,bangladesh",
+          drivingLicense: "5787878",
+          nationality: "bangladeshi",
+          placeOfBirth: "barisal",
+          dateOfBirth: "01/02/2002",
+        },
+      ],
+      professionalSummary: [
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+      ],
+      references: [
+        {
+          "referent'sFullName": "jhankar",
+          company: "PH",
+          phone: "0215245",
+          email: "abc@example.com",
+        },
+      ],
+      skills: [
+        {
+          Skill: "React JS",
+          level: 90,
+        },
+        {
+          Skill: "HTML",
+          level: 80,
+        },
+        {
+          Skill: "CSS",
+          level: 60,
+        },
+        {
+          Skill: "JavaScript",
+          level: 70,
+        },
+        {
+          Skill: "NodeJS",
+          level: 90,
+        },
+        {
+          Skill: "MongoDB",
+          level: 70,
+        },
+        {
+          Skill: "JavaScript",
+          level: 70,
+        },
+        {
+          Skill: "NodeJS",
+          level: 90,
+        },
+        {
+          Skill: "MongoDB",
+          level: 70,
+        },
+      ],
+      websiteAndSocialLinks: [
+        {
+          label: "github",
+          link: "https://github.com",
+        },
+        {
+          label: "Linkedin",
+          link: "https://github.com",
+        },
+        {
+          label: "Portfolio",
+          link: "https://github.com",
+        },
+      ],
+    },
+  ];
+  return data?.map((d, i) => (
     <section className="w-[21cm] m-10 border border-black rounded-md mx-auto text-left relative h-[29.7cm] shadow-2xl">
       <div className="flex w-full h-full ">
         <div className="w-[8cm] rounded-l-md  bg-gray-100 h-full ">
@@ -232,7 +417,7 @@ const Template6 = () => {
         </div>
       </div>
     </section>
-  );
+  ));
 };
 
 export default Template6;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/hero1.png";
 import resume from "../../assets/resume.png";
 import Loader from "../../components/Loader/Loader";
@@ -15,13 +15,15 @@ const Login = () => {
     password: "",
   });
   const { iaAuthenticated, loading } = useSelector((state) => state.user);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(login(userInfo));
+    dispatch(login(userInfo)).then({});
   };
   useEffect(() => {
-    iaAuthenticated && navigate("/");
-  }, [iaAuthenticated, navigate]);
+    iaAuthenticated && navigate(from, { replace: true });
+  }, [from, iaAuthenticated, navigate]);
 
   return (
     <section className=" py-[20%] md:py-[10%]  w-full text-left bg-gray-100  flex justify-center items-center">
@@ -182,11 +184,6 @@ const Login = () => {
                   <hr className="w-full dark:text-gray-400" />
                   <p className="px-3 dark:text-gray-400">OR</p>
                   <hr className="w-full dark:text-gray-400" />
-                </div>
-                <div className="px-7">
-                  <button className="btn hover:bg-[#0077B6] mb-10 border-[#00B4D8] text-[#00B4D8] hover:text-white duration-300 border p-3 rounded-md w-full">
-                    CONTINUE WITH GOOGLE
-                  </button>
                 </div>
               </div>
             </div>

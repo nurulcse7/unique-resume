@@ -57,12 +57,26 @@ export const getMyProfile = () => async (dispatch) => {
       headers: {
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
-      withCredentials: true,
     });
 
     dispatch({ type: "loadUserSuccess", payload: data.user });
   } catch (error) {
     dispatch({ type: "loadUserFail" });
+  }
+};
+export const updateProfile = (role) => async (dispatch) => {
+  try {
+    dispatch({ type: "updateProfileRequest" });
+    const { data } = await axiosInstance.put(`/api/update-profile`, role, {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    });
+
+    dispatch({ type: "updateProfileSuccess", payload: data.user });
+  } catch (error) {
+    dispatch({ type: "updateProfileFail" });
   }
 };
 export const forgotPass = (userInfo) => async (dispatch) => {
@@ -95,26 +109,5 @@ export const userData = () => async (dispatch) => {
     dispatch({ type: "forgotPassSuccess", payload: data });
   } catch (error) {
     dispatch({ type: "forgotPassFail", payload: error.response });
-  }
-};
-
-export const updateProfile = (profileInfo) => async (dispatch) => {
-  try {
-    dispatch({ type: "updateUserRequest" });
-    const { data } = await axiosInstance.put(
-      `/api/update-profile`,
-      profileInfo,
-      {
-        headers: {
-          "content-type": "application/json",
-          authorization: `bearer ${localStorage.getItem("token")}`,
-        },
-        withCredentials: true,
-      }
-    );
-
-    dispatch({ type: "updateUserSuccess", payload: data.user });
-  } catch (error) {
-    dispatch({ type: "updateUserFail" });
   }
 };

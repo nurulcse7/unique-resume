@@ -1,3 +1,4 @@
+import { Divider } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
@@ -10,6 +11,7 @@ const Main = () => {
     <div>
       <Navbar iaAuthenticated={iaAuthenticated} user={user} />
       <Outlet />
+      <Divider />
       <Footer />
     </div>
   );

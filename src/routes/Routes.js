@@ -27,6 +27,8 @@ import Chekout from "../Pages/PricingTable/Chekout";
 import Success from "../Pages/PricingTable/Success";
 import MeetOurTeam from "../components/MeetOurTeam/MeetOurTeam";
 import Faq from "../components/FAQ/Faq";
+import CoverLetterTemplate1 from "../components/CoverLetterTemplates/CoverLetterTemplate1";
+import Editor from "../Pages/Editor/Editor";
 
 export const router = createBrowserRouter([
   {
@@ -94,13 +96,21 @@ export const router = createBrowserRouter([
         element: <Faq />,
       },
       {
+        path: "/cover-letter",
+        element: <CoverLetterTemplate1 />,
+      },
+      {
+        path: "/editor",
+        element: <Editor />,
+      },
+      {
         path: "/resume-templates/:id",
         element: (
           <PrivetRoute>
             <CvEditor />
           </PrivetRoute>
         ),
-      },      
+      },
       {
         path: "/cover-letter",
         element: <CoverLetterPage />,

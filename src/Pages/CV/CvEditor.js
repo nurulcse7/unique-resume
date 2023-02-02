@@ -57,32 +57,34 @@ const CvTemplates = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  const TotalData = {
-    email: user?.email,
-    personalInformation: [personalInformation],
+  const TotalData = [
+    {
+      email: user?.email,
+      personalInformation: [personalInformation],
 
-    photoUrl: [fileList[0]?.thumbUrl],
+      photoUrl: [fileList[0]?.thumbUrl],
 
-    professionalSummary: [professionalSummary],
+      professionalSummary: [professionalSummary],
 
-    employmentHistory: [employmentHistory],
+      employmentHistory: [employmentHistory],
 
-    educationHistory: [educationHistory],
+      educationHistory: [educationHistory],
 
-    websiteAndSocialLinks: [websiteAndSocialLinks],
+      websiteAndSocialLinks: [websiteAndSocialLinks],
 
-    skills: [skills],
+      skills: [skills],
 
-    hobbies: [hobbies],
+      hobbies: [hobbies],
 
-    courses: [courses],
+      courses: [courses],
 
-    internShips: [internShips],
+      internShips: [internShips],
 
-    languages: [languages],
+      languages: [languages],
 
-    references: [references],
-  };
+      references: [references],
+    },
+  ];
 
   const dispatch = useDispatch();
   // const [mainData, setMainData] = useState("");
@@ -120,9 +122,6 @@ const CvTemplates = () => {
         return <Template3 data={TotalData} />;
       }
       case "13": {
-        return <Template4 data={TotalData} />;
-      }
-      case "4": {
         return <Template4 data={TotalData} />;
       }
       case "5": {

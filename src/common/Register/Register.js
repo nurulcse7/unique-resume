@@ -195,7 +195,7 @@ const Register = () => {
                       Sign Up
                     </button>
                   </div>
-                  <div>
+                  <div className="py-4">
                     <p className="label-text text-center mt-2">
                       Already have an Account!
                       <Link
@@ -207,16 +207,6 @@ const Register = () => {
                     </p>
                   </div>
                 </form>
-                <div className="flex items-center w-full my-4">
-                  <hr className="w-full dark:text-gray-400" />
-                  <p className="px-3 dark:text-gray-400">OR</p>
-                  <hr className="w-full dark:text-gray-400" />
-                </div>
-                <div className="px-7">
-                  <button className="btn hover:bg-[#0077B6] mb-6 border-[#00B4D8] text-[#00B4D8] hover:text-white duration-300 border p-3 rounded-md w-full">
-                    CONTINUE WITH GOOGLE
-                  </button>
-                </div>
               </div>
             </div>
           </div>

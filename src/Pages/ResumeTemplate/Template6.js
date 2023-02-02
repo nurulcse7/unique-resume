@@ -186,7 +186,7 @@ const Template6 = ({ data }) => {
       ],
     },
   ];
-  return data?.map((d, i) => (
+  return (
     <section className="w-[21cm] m-10 border border-black rounded-md mx-auto text-left relative h-[29.7cm] shadow-2xl">
       <div className="flex w-full h-full ">
         <div className="w-[8cm] rounded-l-md  bg-gray-100 h-full ">
@@ -417,7 +417,7 @@ const Template6 = ({ data }) => {
         </div>
       </div>
     </section>
-  ));
+  );
 };
 
 export default Template6;

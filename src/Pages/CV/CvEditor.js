@@ -30,6 +30,8 @@ import { Button, Modal } from "antd";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import { resumeData } from "../../redux/action/resumeData";
+import Template5 from "../ResumeTemplate/Template5";
+import Template6 from "../ResumeTemplate/Template6";
 
 // .......................................
 
@@ -96,6 +98,7 @@ const CvTemplates = () => {
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
     });
+    console.log(data);
   };
   useEffect(() => {
     const userData = localStorage.getItem("userInfo");
@@ -115,6 +118,15 @@ const CvTemplates = () => {
       }
       case "3": {
         return <Template3 />;
+      }
+      case "4": {
+        return <Template4 data={TotalData} />;
+      }
+      case "5": {
+        return <Template5 />;
+      }
+      case "6": {
+        return <Template6 />;
       }
       default:
         return;

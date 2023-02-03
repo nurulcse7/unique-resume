@@ -1,21 +1,19 @@
-import React from "react";
-import { Form, Input, Button, message, DatePicker, Slider } from "antd";
+import { Button, Form, Input, message, DatePicker } from "antd";
+import TextArea from "antd/es/input/TextArea";
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { Confirm } from "notiflix";
+import React from "react";
 import dayjs from "dayjs";
-import TextArea from "antd/es/input/TextArea";
-
 const { RangePicker } = DatePicker;
 const dateFormat = "DD/MM/YYYY";
-
-function SkillsEducation() {
+const EmploymentHistory = () => {
   return (
     <div>
-      <h5 className="text-start text-xl">
-        <b>Education</b>
+      <h5 className="text-start text-xl py-3">
+        <b>Employment History</b>
       </h5>
       <hr />
-      <Form.List name="education">
+      <Form.List name="employmentHistory">
         {(fields, { add, remove }) => (
           <>
             <div>
@@ -25,27 +23,21 @@ function SkillsEducation() {
                     <div className="">
                       <Form.Item
                         {...restField}
-                        name={[name, "school"]}
-                        rules={[{ message: "Missing school" }]}
-                        label="school"
+                        name={[name, "jobTitle"]}
+                        rules={[{ message: "Job title" }]}
+                        label="Job title"
                       >
-                        <Input
-                          className="py-3 text-lg"
-                          placeholder="school eg. xyz govt college"
-                        />
+                        <Input className="py-3 text-lg" />
                       </Form.Item>
                     </div>
                     <div className="">
                       <Form.Item
                         {...restField}
-                        name={[name, "degree"]}
+                        name={[name, "employer"]}
                         rules={[{ message: "Missing degree" }]}
-                        label="Degree"
+                        label="Employer"
                       >
-                        <Input
-                          className="py-3 text-lg"
-                          placeholder="degree eg. HSC"
-                        />
+                        <Input className="py-3 text-lg" />
                       </Form.Item>
                     </div>
 
@@ -121,51 +113,82 @@ function SkillsEducation() {
                 block
                 icon={<PlusOutlined />}
               >
-                Add Education
+                Add Employment History
               </Button>
             </Form.Item>
           </>
         )}
       </Form.List>
-      <div className="text-start text-xl">
-        <h5>
-          <b>Skills</b>
-        </h5>
-        <hr />
-      </div>
-      <Form.List name="skills">
+      <h5 className="text-start text-xl py-3">
+        <b>Internships</b>
+      </h5>
+      <hr />
+
+      <Form.List name="internships">
         {(fields, { add, remove }) => (
           <>
-            <div className="w-full">
+            <div>
               {fields.map(({ key, name, ...restField }) => (
-                <div
-                  className="md:grid md:grid-cols-2 gap-2 flex justify-between md:gap-6"
-                  key={key}
-                >
-                  <div className=" w-full">
-                    <Form.Item {...restField} name={[name, "technology"]}>
-                      <Input
-                        placeholder="Technology"
-                        className="py-3 text-lg"
-                      />
-                    </Form.Item>
-                  </div>
-                  <div className=" w-full flex gap-1">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "level"]}
-                      className="flex-1"
-                    >
-                      <Slider
-                        defaultValue={30}
-                        tooltip={{
-                          open: true,
-                        }}
-                      />
-                    </Form.Item>
+                <>
+                  <div className="grid grid-cols-2  gap-2" key={key}>
                     <div className="">
+                      <Form.Item
+                        {...restField}
+                        name={[name, "jobTitle"]}
+                        rules={[{ message: "Job title" }]}
+                        label="Job title"
+                      >
+                        <Input className="py-3 text-lg" />
+                      </Form.Item>
+                    </div>
+                    <div className="">
+                      <Form.Item
+                        {...restField}
+                        name={[name, "employer"]}
+                        rules={[{ message: "Missing degree" }]}
+                        label="Employer"
+                      >
+                        <Input className="py-3 text-lg" />
+                      </Form.Item>
+                    </div>
+
+                    <div className=" text-start w-full flex flex-col gap-2">
+                      <label>Start & End Date</label>
+                      <Form.Item {...restField} name={[name, "date"]}>
+                        <RangePicker
+                          defaultValue={[
+                            dayjs("03/02/2023", dateFormat),
+                            dayjs("03/02/2023", dateFormat),
+                          ]}
+                          format={dateFormat}
+                          className="py-3 text-lg w-full"
+                        />
+                      </Form.Item>
+                    </div>
+
+                    <div className="">
+                      <Form.Item
+                        {...restField}
+                        name={[name, "city"]}
+                        rules={[{ message: "Missing city" }]}
+                        label="City"
+                      >
+                        <Input placeholder="city" className="py-3 text-lg" />
+                      </Form.Item>
+                    </div>
+                    <div className="">
+                      <Form.Item
+                        {...restField}
+                        name={[name, "description"]}
+                        rules={[{ message: "Missing description" }]}
+                        label="Description"
+                      >
+                        <TextArea rows={4} />
+                      </Form.Item>
+                    </div>
+                    <div className="mt-5 py-5 flex items-center justify-start align-middle md:py-0 md:mt-0 ">
                       <DeleteOutlined
-                        className="-mt-1 text-red-500 text-2xl"
+                        className="-mt-5 md:-mt-1 text-red-500 text-2xl"
                         onClick={() =>
                           Confirm.show(
                             "Please Confirm!",
@@ -190,7 +213,7 @@ function SkillsEducation() {
                       />
                     </div>
                   </div>
-                </div>
+                </>
               ))}
             </div>
 
@@ -201,7 +224,7 @@ function SkillsEducation() {
                 block
                 icon={<PlusOutlined />}
               >
-                Add Skill
+                Add Internships
               </Button>
             </Form.Item>
           </>
@@ -209,6 +232,6 @@ function SkillsEducation() {
       </Form.List>
     </div>
   );
-}
+};
 
-export default SkillsEducation;
+export default EmploymentHistory;

@@ -40,6 +40,10 @@ const Navbar = ({ iaAuthenticated }) => {
     dispatch(signOut());
   };
 
+  const token = localStorage.getItem("token");
+
+  console.log(token);
+
   useEffect(() => {
     if (message === "Logged out successfully") {
       navigate("/login");
@@ -91,7 +95,7 @@ const Navbar = ({ iaAuthenticated }) => {
                   </li>
                 ))}
 
-                {iaAuthenticated ? (
+                {token && iaAuthenticated ? (
                   <>
                     <li>
                       <NavLink

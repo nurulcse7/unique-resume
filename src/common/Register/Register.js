@@ -7,6 +7,9 @@ import { register } from "../../redux/action/user";
 import Loader from "../../components/Loader/Loader";
 const Register = () => {
   const navigate = useNavigate();
+  // abdur Rahman
+  const token = localStorage.getItem("token");
+  // Abdur Rahman
   const { iaAuthenticated, loading } = useSelector((state) => state.user);
   const [viewPassword, setViewPassword] = useState(false);
   const [userInfo, setUserInfo] = useState({
@@ -21,8 +24,8 @@ const Register = () => {
     dispatch(register(userInfo));
   };
   useEffect(() => {
-    iaAuthenticated && navigate("/");
-  }, [iaAuthenticated, navigate]);
+    token && navigate("/"); // Abdur Rahman
+  }, [navigate, token]);
   return (
     <section
       className={`py-[20%] md:py-[10%] w-full text-left bg-gray-100  flex justify-center items-center`}

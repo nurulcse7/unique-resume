@@ -10,6 +10,7 @@ const Login = () => {
   const [viewPassword, setViewPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const token = localStorage.getItem("token"); // abdur Rahman
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -22,8 +23,8 @@ const Login = () => {
     dispatch(login(userInfo)).then({});
   };
   useEffect(() => {
-    iaAuthenticated && navigate(from, { replace: true });
-  }, [from, iaAuthenticated, navigate]);
+    token && navigate(from, { replace: true });
+  }, [from, token, navigate]);
 
   return (
     <section className=" py-[20%] md:py-[10%]  w-full text-left bg-gray-100  flex justify-center items-center">

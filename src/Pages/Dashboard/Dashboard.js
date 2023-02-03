@@ -1,13 +1,18 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { updateProfile } from "../../redux/action/user";
+import axiosInstance from "../../utils/axiosInstance";
 
 const Dashboard = () => {
   const { user } = useSelector((state) => state.user);
 
-  console.log(user);
+  // console.log(user);
 
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   // for update form
   const handleUpdateForm = (event) => {
@@ -28,7 +33,27 @@ const Dashboard = () => {
 
   // for Delete user Account
   const handleDeleteUser = (id) => {
-    console.log(id);
+    const confirm = window.confirm("Do You want to Delete Your account?");
+
+    console.log(confirm);
+
+    if (confirm) {
+      axiosInstance
+        .delete("/api/user-delete", {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res) => {
+          if (res.data) {
+            toast.success("Delete Account SuccessFull");
+            localStorage.removeItem("token");
+            navigate("/register");
+          }
+        });
+    } else {
+      return;
+    }
   };
 
   return (

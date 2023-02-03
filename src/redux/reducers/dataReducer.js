@@ -9,7 +9,7 @@ export const dataReducer = createReducer(
 
     cvDataSuccess: (state, action) => {
       state.loading = false;
-      state.data = action.payload;
+      state.data = action.payload.template;
     },
     cvDataFail: (state, action) => {
       state.loading = false;
@@ -22,9 +22,21 @@ export const dataReducer = createReducer(
 
     cvTemplateSuccess: (state, action) => {
       state.loading = false;
-      state.data = action.payload;
+      state.data = action.payload.template;
     },
     cvTemplateFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    coverTemplateReq: (state, action) => {
+      state.loading = true;
+    },
+
+    coverTemplateSuccess: (state, action) => {
+      state.loading = false;
+      state.data = action.payload.template;
+    },
+    coverTemplateFail: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },

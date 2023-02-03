@@ -30,4 +30,18 @@ export const cvTemplate = () => async (dispatch) => {
     dispatch({ type: "cvTemplateFail", payload: error.response.data });
   }
 };
+export const coverTemplate = () => async (dispatch) => {
+  try {
+    dispatch({ type: "coverTemplateReq" });
+    const { data } = await axiosInstance.get(`/api/getcoverletter`, {
+      headers: {
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    dispatch({ type: "coverTemplateSuccess", payload: data });
+  } catch (error) {
+    console.log(error.response);
+    dispatch({ type: "coverTemplateFail", payload: error.response.data });
+  }
+};
 // Abdur Rahman

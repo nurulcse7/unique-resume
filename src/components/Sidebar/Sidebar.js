@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   FaRegAddressCard,
   FaThLarge,
@@ -6,10 +7,12 @@ import {
   FaRegFileImage,
   FaSignOutAlt,
 } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { signOut } from "../../redux/action/user";
 const Sidebar = () => {
+  const { user } = useSelector((state) => state.user);
+
   const dispatch = useDispatch();
   const logOut = () => {
     dispatch(signOut());
@@ -21,12 +24,16 @@ const Sidebar = () => {
         <div>
           <div className=" text-center">
             <img
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              src={`${
+                user?.imgUrl
+                  ? `${user.imgUrl}`
+                  : "https://source.unsplash.com/40x40/?portrait?1"
+              }`}
               alt=""
               className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"
             />
             <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">
-              Cynthia J. Watts
+              {user?.name && user.name}
             </h5>
           </div>
 
@@ -34,19 +41,20 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/dashboard"
-                className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
+                // onMouseLeave={() => setIsActive(false)}
               >
                 <span>
                   {" "}
                   <FaThLarge />{" "}
                 </span>
-                <span className="-mr-1 font-medium">Dashboard</span>
+                <span className="-mr-1 font-medium">My Account</span>
               </Link>
             </li>
             <li>
               <Link
                 to="/dashboard/resume"
-                className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
               >
                 <span>
                   {" "}
@@ -58,7 +66,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/dashboard/cv"
-                className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
               >
                 <span>
                   {" "}
@@ -71,7 +79,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/dashboard/coverletter"
-                className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
               >
                 <span>
                   <FaRegFilePdf />

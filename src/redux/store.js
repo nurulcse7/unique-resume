@@ -7,6 +7,7 @@ const store = configureStore({
   reducer: {
     user: userReducer,
     cvdata: dataReducer,
+    coverletter: dataReducer,
     resumeData: resumeDataReducer,
   },
 });

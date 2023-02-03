@@ -71,7 +71,7 @@ const CVpage = () => {
             className=" grid md:grid-cols-3 grid-cols-1 gap-5"
           >
             {filterWork?.map((work, index) => (
-              <Link to="/cv-template">
+              <Link to={`/cv-template/${work.id}`}>
                 <div className="border rounded-md border-primary" key={index}>
                   <div className="app__work-img ">
                     <img src={work.image} alt={work.type} />

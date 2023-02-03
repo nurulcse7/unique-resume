@@ -48,8 +48,7 @@ function SkillsEducation() {
                         />
                       </Form.Item>
                     </div>
-
-                    <div className=" text-start w-full flex flex-col gap-2">
+                    {/* <div className=" text-start w-full flex flex-col gap-2">
                       <label>Start & End Date</label>
                       <Form.Item {...restField} name={[name, "date"]}>
                         <RangePicker
@@ -61,8 +60,7 @@ function SkillsEducation() {
                           className="py-3 text-lg w-full"
                         />
                       </Form.Item>
-                    </div>
-
+                    </div> */}
                     <div className="">
                       <Form.Item
                         {...restField}

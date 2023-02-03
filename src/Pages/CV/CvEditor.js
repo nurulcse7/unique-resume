@@ -30,6 +30,8 @@ import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import Template4 from "../ResumeTemplate/Template4";
 import { resumeData } from "../../redux/action/resumeData";
+import Template5 from "../ResumeTemplate/Template5";
+import Template6 from "../ResumeTemplate/Template6";
 
 // .......................................
 
@@ -55,32 +57,34 @@ const CvTemplates = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  const TotalData = {
-    email: user?.email,
-    personalInformation: [personalInformation],
+  const TotalData = [
+    {
+      email: user?.email,
+      personalInformation: [personalInformation],
 
-    photoUrl: [fileList[0]?.thumbUrl],
+      photoUrl: [fileList[0]?.thumbUrl],
 
-    professionalSummary: [professionalSummary],
+      professionalSummary: [professionalSummary],
 
-    employmentHistory: [employmentHistory],
+      employmentHistory: [employmentHistory],
 
-    educationHistory: [educationHistory],
+      educationHistory: [educationHistory],
 
-    websiteAndSocialLinks: [websiteAndSocialLinks],
+      websiteAndSocialLinks: [websiteAndSocialLinks],
 
-    skills: [skills],
+      skills: [skills],
 
-    hobbies: [hobbies],
+      hobbies: [hobbies],
 
-    courses: [courses],
+      courses: [courses],
 
-    internShips: [internShips],
+      internShips: [internShips],
 
-    languages: [languages],
+      languages: [languages],
 
-    references: [references],
-  };
+      references: [references],
+    },
+  ];
 
   const dispatch = useDispatch();
   // const [mainData, setMainData] = useState("");
@@ -96,6 +100,7 @@ const CvTemplates = () => {
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
     });
+    console.log(data);
   };
   useEffect(() => {
     const userData = localStorage.getItem("userInfo");
@@ -118,6 +123,12 @@ const CvTemplates = () => {
       }
       case "13": {
         return <Template4 data={TotalData} />;
+      }
+      case "5": {
+        return <Template5 />;
+      }
+      case "6": {
+        return <Template6 />;
       }
       default:
         return;

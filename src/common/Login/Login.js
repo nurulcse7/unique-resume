@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import logo from "../../assets/hero1.png";
+import logo from "../../assets/unique resume favicon.png";
 import resume from "../../assets/resume.png";
 import Loader from "../../components/Loader/Loader";
 import { login } from "../../redux/action/user";
+import styles from "../../style";
 
 const Login = () => {
   const [viewPassword, setViewPassword] = useState(false);
@@ -27,17 +28,21 @@ const Login = () => {
   }, [from, token, navigate]);
 
   return (
-    <section className=" py-[20%] md:py-[10%]  w-full text-left bg-gray-100  flex justify-center items-center">
+    <section
+      className={`${styles.padding} py-[20%]   w-full text-left bg-gray-100  flex justify-center items-center`}
+    >
       {loading ? (
         <Loader />
       ) : (
-        <div className=" bg-[#7889B9] md:border-2 border-black shadow-xl rounded-3xl grid grid-cols-2">
+        <div
+          className={`bg-[#7889B9] md:border-2 border-black shadow-xl rounded-3xl grid grid-cols-2`}
+        >
           <div className="px-6 py-4 hidden md:block">
             <a href="/" className="flex items-center">
               <img
                 src={logo}
                 className="mr-3 h-14 sm:h-12"
-                alt="Flowbite Logo"
+                alt="unique resume Logo"
               />
               <button data-text="Awesome" className="button">
                 <span className="actual-text">&nbsp;UniqueResume&nbsp;</span>
@@ -46,7 +51,7 @@ const Login = () => {
                 </span>
               </button>
             </a>
-            <div className="h-full w-full flex justify-center items-center">
+            <div className=" rounded-sm w-full flex justify-center items-center">
               <img src={resume} alt="Resume" className="w-full md:w-[450px]" />
             </div>
           </div>

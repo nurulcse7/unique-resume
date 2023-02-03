@@ -16,7 +16,6 @@ const CVpage = () => {
       setWorks(res.data);
     });
   }, []);
-
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);

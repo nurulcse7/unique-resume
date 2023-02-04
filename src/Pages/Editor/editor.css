@@ -4,3 +4,12 @@ input {
 textarea {
   border: 1px solid #0077b6 !important;
 }
+.ant-picker.ant-picker-range.css-dev-only-do-not-override-sk7ap8 {
+  border: 1px solid #0077b6 !important;
+}
+button.ant-btn.css-dev-only-do-not-override-sk7ap8.ant-btn-default.bg-primary.px-5.text-white.py-5.flex.items-center.hover\:text-white:active {
+  color: white !important;
+}
+button.ant-btn.css-dev-only-do-not-override-sk7ap8.ant-btn-default.bg-primary.px-5.text-white.py-5.flex.items-center.hover\:text-white:hover {
+  color: white !important;
+}

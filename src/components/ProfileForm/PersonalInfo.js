@@ -5,7 +5,7 @@ const { TextArea } = Input;
 function PersonalInfo() {
   return (
     <div>
-      <div className="grid md:grid-cols-2  gap-1 ">
+      <div className="grid md:grid-cols-2 grid-cols-1  gap-1 ">
         <div className="">
           <Form.Item name="jobTitle" label="Wanted Job Title">
             <Input className="py-3 text-lg" />

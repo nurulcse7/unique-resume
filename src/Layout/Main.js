@@ -16,7 +16,7 @@ const Main = () => {
       <Footer />
       <MessengerCustomerChat
         pageId='109422248585811'
-        appId='742975253909874'
+        appId='590659769567651'
         //   htmlRef="<REF_STRING>"
       />
     </div>
@@ -25,6 +25,7 @@ const Main = () => {
 
 export default Main;
 //appId= 742975253909874 unique Resume Chat
+//appId= 590659769567651 unique Resume 
 
 // pageId='109422248585811' Learn with Nurul Islam
 // appId='1552485545263244' messenger chat

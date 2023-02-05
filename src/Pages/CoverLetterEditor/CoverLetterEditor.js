@@ -8,6 +8,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import CoverLetterTemplate1 from "../../components/CoverLetterTemplates/CoverLetterTemplate1";
 import CoverLetterTemplate2 from "../../components/CoverLetterTemplates/CoverLetterTemplate2";
+import CoverLetterTemplate3 from "../../components/CoverLetterTemplates/CoverLetterTemplate3";
 import { coverTemplate } from "../../redux/action/data";
 import styles from "../../style";
 import axiosInstance from "../../utils/axiosInstance";
@@ -45,6 +46,9 @@ const CoverLetterEditor = () => {
       }
       case "2": {
         return <CoverLetterTemplate2 data={data} />;
+      }
+      case "3": {
+        return <CoverLetterTemplate3 data={data} />;
       }
 
       default:
@@ -127,7 +131,7 @@ const CoverLetterEditor = () => {
       </div>
       <>
         <div
-          className="btn-body fixed bottom-0 right-0"
+          className="btn-body absolute bottom-0 right-0"
           onClick={() => setOpen(true)}
         >
           <button className="btn btn-hover">

@@ -9,6 +9,7 @@ import { useReactToPrint } from "react-to-print";
 import CoverLetterTemplate1 from "../../components/CoverLetterTemplates/CoverLetterTemplate1";
 import CoverLetterTemplate2 from "../../components/CoverLetterTemplates/CoverLetterTemplate2";
 import CoverLetterTemplate3 from "../../components/CoverLetterTemplates/CoverLetterTemplate3";
+import CoverLetterTemplate4 from "../../components/CoverLetterTemplates/CoverLetterTemplate4";
 import { coverTemplate } from "../../redux/action/data";
 import styles from "../../style";
 import axiosInstance from "../../utils/axiosInstance";
@@ -49,6 +50,9 @@ const CoverLetterEditor = () => {
       }
       case "3": {
         return <CoverLetterTemplate3 data={data} />;
+      }
+      case "4": {
+        return <CoverLetterTemplate4 data={data} />;
       }
 
       default:

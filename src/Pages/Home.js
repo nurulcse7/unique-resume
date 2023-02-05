@@ -5,7 +5,6 @@ import HowToWork from "../components/HowToWork/HowToWork";
 import Slider from "../components/Slider/Slider";
 import Faq from "../components/FAQ/Faq";
 import HeroSection from "../components/HeroSection";
-import MeetOurTeam from "../components/MeetOurTeam/MeetOurTeam";
 
 const Home = () => {
   return (
@@ -16,7 +15,7 @@ const Home = () => {
       <CallToAction />
       <Features />
       <Faq></Faq>
-      <MeetOurTeam />
+      
     </div>
   );
 };

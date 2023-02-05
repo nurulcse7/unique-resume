@@ -30,10 +30,6 @@ const menuItems = [
     path: "/contact",
     id: 5,
   },
-  {
-    name: "Dashboard",
-    path: "/dashboard",
-  },
 ];
 const Navbar = ({ iaAuthenticated }) => {
   const navigate = useNavigate();
@@ -43,6 +39,10 @@ const Navbar = ({ iaAuthenticated }) => {
   const logOut = () => {
     dispatch(signOut());
   };
+
+  const token = localStorage.getItem("token");
+
+  console.log(token);
 
   useEffect(() => {
     if (message === "Logged out successfully") {
@@ -94,15 +94,27 @@ const Navbar = ({ iaAuthenticated }) => {
                     </NavLink>
                   </li>
                 ))}
-                {iaAuthenticated ? (
-                  <button
-                    onClick={logOut}
-                    className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                  >
-                    Log Out
-                  </button>
+
+                {token && iaAuthenticated ? (
+                  <>
+                    <li>
+                      <NavLink
+                        to="/dashboard"
+                        className={` block py-2 pr-4 pl-3 font-medium text-sm text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
+                        aria-current="page"
+                      >
+                        Darshboard
+                      </NavLink>
+                    </li>
+                    <button
+                      onClick={logOut}
+                      className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                      data-mdb-ripple="true"
+                      data-mdb-ripple-color="light"
+                    >
+                      Log Out
+                    </button>
+                  </>
                 ) : (
                   <>
                     <Link to="/login">

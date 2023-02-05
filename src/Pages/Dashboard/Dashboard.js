@@ -1,15 +1,70 @@
 import React from "react";
+import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { updateProfile } from "../../redux/action/user";
+import axiosInstance from "../../utils/axiosInstance";
 
 const Dashboard = () => {
+  const { user } = useSelector((state) => state.user);
+
+  // console.log(user);
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  // for update form
+  const handleUpdateForm = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    // const email = form.email.value;
+    // console.log(name, email);
+
+    dispatch(updateProfile(name));
+  };
+
+  // for get user Information
+
+  const handleRequestData = (id) => {
+    console.log(id);
+  };
+
+  // for Delete user Account
+  const handleDeleteUser = (id) => {
+    const confirm = window.confirm("Do You want to Delete Your account?");
+
+    console.log(confirm);
+
+    if (confirm) {
+      axiosInstance
+        .delete("/api/user-delete", {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res) => {
+          if (res.data) {
+            toast.success("Delete Account SuccessFull");
+            localStorage.removeItem("token");
+            navigate("/register");
+          }
+        });
+    } else {
+      return;
+    }
+  };
+
   return (
     <div className="w-[70%] mx-auto  mt-7">
       <h1 className="text-5xl font-bold my-5">My Account</h1>
-      <form className="w-[90%] mx-auto">
+      <form onSubmit={handleUpdateForm} className="w-[90%] mx-auto">
         <div>
           <label htmlFor="name">
             {" "}
             <input
-              placeholder="Your Name"
+              placeholder={user?.name}
               className="w-full pt-2 pb-1 px-3 my-2 border-b border-white bg-inherit focus:outline-none "
               type="text"
               name="name"
@@ -19,14 +74,14 @@ const Dashboard = () => {
           <label htmlFor="email">
             {" "}
             <input
-              placeholder="  arif@gmail.com"
+              placeholder={user?.email}
               className="w-full pt-2 pb-1 px-3 my-2 border-b border-white bg-inherit focus:outline-none "
               type="email"
               name="email"
               id="email"
               readOnly
               disabled
-              defaultValue="arif@gmail.com"
+              defaultValue={user?.email}
             />
           </label>
 
@@ -53,14 +108,20 @@ const Dashboard = () => {
             </p>
           </div>
           <div>
-            <button className="px-2 py-3 uppercase rounded-md border-white border-4">
+            <button
+              onClick={() => handleRequestData(2)}
+              className="px-2 py-3 uppercase rounded-md border-white border-4"
+            >
               Request Your Data
             </button>
           </div>
         </div>
 
         <div className="mt-7">
-          <button className="font-bold text-sky-500 underline">
+          <button
+            onClick={() => handleDeleteUser(2)}
+            className="font-bold text-sky-500 underline"
+          >
             {" "}
             Delete Your Account
           </button>

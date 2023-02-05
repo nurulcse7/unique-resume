@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./CvTemplates.css";
 import {
   ApartmentOutlined,
@@ -19,7 +19,6 @@ import Hobbies from "./Hobbies/Hobbies";
 import Languages from "./Languages/Languages";
 import References from "./References/References";
 import InternShips from "./InternShips/InternShips";
-import Template4 from "../ResumeTemplate/Template4";
 import styles from "../../style";
 import { useDispatch, useSelector } from "react-redux";
 import { cvTemplate } from "../../redux/action/data";
@@ -29,6 +28,10 @@ import Template1 from "../ResumeTemplate/Template1";
 import { Button, Modal } from "antd";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
+import Template4 from "../ResumeTemplate/Template4";
+import { resumeData } from "../../redux/action/resumeData";
+import Template5 from "../ResumeTemplate/Template5";
+import Template6 from "../ResumeTemplate/Template6";
 
 // .......................................
 
@@ -82,6 +85,7 @@ const CvTemplates = () => {
       references: [references],
     },
   ];
+
   const dispatch = useDispatch();
   // const [mainData, setMainData] = useState("");
   const [data, setData] = useState(null);
@@ -89,31 +93,42 @@ const CvTemplates = () => {
     localStorage.setItem("userInfo", JSON.stringify(TotalData));
   }
   console.log(TotalData);
-  useEffect(() => {
-    const userData = localStorage.getItem("userInfo");
-    dispatch(cvTemplate());
-    setData(userData);
-  }, [dispatch]);
-
   const userSubmit = async () => {
-    const { data } = await axiosInstance.post(`/api/cvinformation`, TotalData, {
+    const { data } = await axiosInstance.post(`/api/resumeinfo`, TotalData, {
       headers: {
         "Content-Type": "application/json",
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
     });
+    console.log(data);
   };
+  useEffect(() => {
+    const userData = localStorage.getItem("userInfo");
+    dispatch(cvTemplate());
+    dispatch(resumeData());
+    setData(userData);
+  }, [dispatch]);
+
   const params = useParams();
   const gettemplate = () => {
     switch (params.id) {
       case "1": {
-        return <Template1 />;
+        return <Template1 data={TotalData} />;
       }
       case "2": {
-        return <Template2 />;
+        return <Template2 data={TotalData} />;
       }
       case "3": {
-        return <Template3 />;
+        return <Template3 data={TotalData} />;
+      }
+      case "13": {
+        return <Template4 data={TotalData} />;
+      }
+      case "5": {
+        return <Template5 />;
+      }
+      case "6": {
+        return <Template6 />;
       }
       default:
         return;
@@ -289,7 +304,7 @@ const CvTemplates = () => {
             className="btn-body fixed bottom-0 right-0"
             onClick={() => setOpen(true)}
           >
-            <button className="btn btn-hover">
+            <button onClick={userSubmit} className="btn btn-hover">
               <span className="btn-text">Preview & Download</span>
             </button>
           </div>
@@ -307,9 +322,15 @@ const CvTemplates = () => {
               >
                 Back
               </Button>
-              <Button className="mx-5" onClick={handlePrint}>
-                Print
-              </Button>
+              {user.role === "user" ? (
+                <Link to="/select-plan">
+                  <Button>print</Button>
+                </Link>
+              ) : (
+                <Button className="mx-5" onClick={handlePrint}>
+                  Print
+                </Button>
+              )}
             </div>
             <div className="px-12 h-[100%] bg-white" ref={componentRef}>
               {gettemplate()}

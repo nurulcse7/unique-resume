@@ -1,5 +1,5 @@
-import Link from "antd/es/typography/Link";
 import React from "react";
+import { useState } from "react";
 import {
   FaRegAddressCard,
   FaThLarge,
@@ -7,39 +7,54 @@ import {
   FaRegFileImage,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { signOut } from "../../redux/action/user";
 const Sidebar = () => {
+  const { user } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+  const logOut = () => {
+    dispatch(signOut());
+  };
+
   return (
     <div className="">
       <aside className="   border-r py-4 px-3 ">
         <div>
           <div className=" text-center">
             <img
-              src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp"
+              src={`${
+                user?.imgUrl
+                  ? `${user.imgUrl}`
+                  : "https://source.unsplash.com/40x40/?portrait?1"
+              }`}
               alt=""
               className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"
             />
             <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">
-              Cynthia J. Watts
+              {user?.name && user.name}
             </h5>
           </div>
 
           <ul className="space-y-2 tracking-wide mt-8">
             <li>
               <Link
-                href="/dashboard"
-                className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400"
+                to="/dashboard"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
+                // onMouseLeave={() => setIsActive(false)}
               >
                 <span>
                   {" "}
                   <FaThLarge />{" "}
                 </span>
-                <span className="-mr-1 font-medium">Dashboard</span>
+                <span className="-mr-1 font-medium">My Account</span>
               </Link>
             </li>
             <li>
               <Link
-                href="/dashboard/resume"
-                className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+                to="/dashboard/resume"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
               >
                 <span>
                   {" "}
@@ -50,8 +65,8 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                href="/dashboard/cv"
-                className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+                to="/dashboard/cv"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
               >
                 <span>
                   {" "}
@@ -63,8 +78,8 @@ const Sidebar = () => {
 
             <li>
               <Link
-                href="/dashboard/coverletter"
-                className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+                to="/dashboard/coverletter"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
               >
                 <span>
                   <FaRegFilePdf />
@@ -76,7 +91,10 @@ const Sidebar = () => {
           </ul>
         </div>
         <div className="border-t">
-          <button className="px-4 py-3  flex items-center space-x-4 rounded-md text-gray-600 group">
+          <button
+            onClick={logOut}
+            className="px-4 py-3  flex items-center space-x-4 rounded-md text-gray-600 group"
+          >
             <span>
               <FaSignOutAlt />
             </span>

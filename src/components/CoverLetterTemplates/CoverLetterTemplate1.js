@@ -1,7 +1,7 @@
 import React from "react";
 
 const CoverLetterTemplate1 = ({ data }) => {
-  console.log(data);
+  console.log("coverLetterTemplate1", data);
   return (
     <div className="flex w-[800px] mx-auto my-10 ">
       <div

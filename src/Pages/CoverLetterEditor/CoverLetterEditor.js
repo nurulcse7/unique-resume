@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import CoverLetterTemplate1 from "../../components/CoverLetterTemplates/CoverLetterTemplate1";
+import CoverLetterTemplate2 from "../../components/CoverLetterTemplates/CoverLetterTemplate2";
 import { coverTemplate } from "../../redux/action/data";
 import styles from "../../style";
 import axiosInstance from "../../utils/axiosInstance";
@@ -15,6 +16,7 @@ const CoverLetterEditor = () => {
   const dispatch = useDispatch();
 
   const [open, setOpen] = useState(false);
+
   const { user } = useSelector((state) => state.user);
   const { data } = useSelector((state) => state.coverletter);
   const componentRef = useRef();
@@ -37,8 +39,11 @@ const CoverLetterEditor = () => {
   const params = useParams();
   const gettemplate = () => {
     switch (params.id) {
-      case "13": {
+      case "1": {
         return <CoverLetterTemplate1 data={data} />;
+      }
+      case "2": {
+        return <CoverLetterTemplate2 data={data} />;
       }
 
       default:
@@ -49,11 +54,13 @@ const CoverLetterEditor = () => {
   return (
     <div>
       <div className={`${styles.padding} md:max-w-[70%] `}>
-        <h4 className="text-start font-semibold text-xl">Personal Details</h4>
+        <h4 className="text-start font-semibold text-xl mb-3">
+          Personal Details
+        </h4>
         <Form layout="vertical" onFinish={onFinish} initialValues={data}>
-          <div className={` grid md:grid-cols-2  gap-1 `}>
+          <div className={` grid md:grid-cols-2  gap-5 `}>
             <div className="">
-              <Form.Item name="fullname" label="full Name">
+              <Form.Item name="fullname" label="Full Name">
                 <Input className="py-3 text-lg" />
               </Form.Item>
             </div>
@@ -80,7 +87,7 @@ const CoverLetterEditor = () => {
             </div>
           </div>
           <h4 className="text-start font-semibold text-xl">Employer Details</h4>
-          <div className="grid md:grid-cols-2 gap-1">
+          <div className="grid md:grid-cols-2 gap-5">
             <div className="">
               <Form.Item name="companyName" label="Company Name">
                 <Input className="py-3 text-lg" />

@@ -25,6 +25,7 @@ const CoverLetterEditor = () => {
     content: () => componentRef.current,
   });
   const onFinish = async (values) => {
+    console.log("value", values);
     await axiosInstance.post("/api/coverletterinfo", values, {
       headers: {
         "content-type": "application/json",
@@ -98,8 +99,13 @@ const CoverLetterEditor = () => {
                 <Input className="py-3 text-lg" />
               </Form.Item>
             </div>
-
-            <div className="">
+            {/* <div className="">
+              <Form.Item name="companyAddress" label="Address">
+                <Input className="py-3 text-lg" />
+              </Form.Item>
+            </div>{" "}
+            <br /> */}
+            <div>
               <h4 className="text-start font-semibold text-xl">
                 Letter Details
               </h4>
@@ -109,12 +115,14 @@ const CoverLetterEditor = () => {
             </div>
           </div>
 
-          <Button
-            htmlType="submit"
-            className="bg-primary focus:text-white hover:text-white active:text-white flex items-center text-white py-5 px-5"
-          >
-            UPDATE
-          </Button>
+          <div>
+            <Button
+              htmlType="submit"
+              className="bg-primary focus:text-white hover:text-white active:text-white flex items-center text-white py-5 px-5"
+            >
+              UPDATE
+            </Button>
+          </div>
         </Form>
       </div>
       <>

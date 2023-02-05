@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 import useTitle from '../../hooks/useTitle';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-hot-toast';
@@ -960,7 +961,11 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      
+      <MessengerCustomerChat
+      pageId='109422248585811'
+      appId='1552485545263244'
+      //   htmlRef="<REF_STRING>"
+    />
     </section>
   );
 };

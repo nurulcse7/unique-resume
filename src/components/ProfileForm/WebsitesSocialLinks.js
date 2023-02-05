@@ -68,7 +68,7 @@ const WebsitesSocialLinks = () => {
               ))}
             </div>
 
-            <Form.Item className="w-1/2">
+            <Form.Item className="w-1/3">
               <Button
                 type="dashed"
                 onClick={() => add()}

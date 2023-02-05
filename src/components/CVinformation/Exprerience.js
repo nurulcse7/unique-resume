@@ -1,65 +1,64 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
-import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
+import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { Confirm, Notify } from "notiflix";
 const { TextArea } = Input;
 function ExperienceProjects() {
   return (
     <div>
-      <h5>
+      <h5 className="text-start text-semibold text-xl">
         <b>Experience</b>
       </h5>
-      <hr />
+
       <Form.List name="experience">
         {(fields, { add, remove }) => (
           <>
             <div className="row">
               {fields.map(({ key, name, ...restField }) => (
-                <div className="grid md:grid-cols-5 md:gap-6" key={key}>
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "company"]}
-                      rules={[
-                        { required: true, message: "Missing company name" },
-                      ]}
-                    >
-                      <Input placeholder="Company Name" />
-                    </Form.Item>
-                  </div>
+                <div className="flex">
+                  <div className="flex-1">
+                    <h5 className="text-start text-semibold text-md">
+                      Experience Details
+                    </h5>
+                    <div className="grid md:grid-cols-2 gap-2" key={key}>
+                      <div className="">
+                        <Form.Item {...restField} name={[name, "company"]}>
+                          <Input placeholder="Company Name" className="py-3" />
+                        </Form.Item>
+                      </div>
 
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "years"]}
-                      rules={[{ required: true, message: "Missing years" }]}
-                    >
-                      <Input placeholder="Years" />
-                    </Form.Item>
-                  </div>
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "years"]}
+                          rules={[{ message: "Missing years" }]}
+                        >
+                          <Input placeholder="Years" className="py-3" />
+                        </Form.Item>
+                      </div>
 
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "place"]}
-                      rules={[{ required: true, message: "Missing place" }]}
-                    >
-                      <Input placeholder="Place" />
-                    </Form.Item>
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "place"]}
+                          rules={[{ message: "Missing place" }]}
+                        >
+                          <Input placeholder="Place" className="py-3" />
+                        </Form.Item>
+                      </div>
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "range"]}
+                          rules={[{ message: "Missing year range" }]}
+                        >
+                          <Input placeholder="Year Range" className="py-3" />
+                        </Form.Item>
+                      </div>
+                    </div>
                   </div>
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "range"]}
-                      rules={[
-                        { required: true, message: "Missing year range" },
-                      ]}
-                    >
-                      <Input placeholder="Year Range" />
-                    </Form.Item>
-                  </div>
-                  <div className="-mt-5 py-5 md:py-0 md:mt-0 ">
-                    <MinusCircleOutlined
+                  <div className="flex items-center md:py-0 md:mt-0 ">
+                    <DeleteOutlined
                       className="-mt-1 text-red-500 text-2xl"
                       onClick={() =>
                         Confirm.show(
@@ -88,7 +87,7 @@ function ExperienceProjects() {
               ))}
             </div>
 
-            <Form.Item>
+            <Form.Item className="w-1/3">
               <Button
                 type="dashed"
                 onClick={() => add()}
@@ -116,7 +115,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "title"]}
-                      rules={[{ required: true, message: "Missing title" }]}
+                      rules={[{ message: "Missing title" }]}
                     >
                       <Input placeholder="Title" />
                     </Form.Item>
@@ -126,9 +125,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "description"]}
-                      rules={[
-                        { required: true, message: "Missing description" },
-                      ]}
+                      rules={[{ message: "Missing description" }]}
                     >
                       <TextArea placeholder="Description" />
                     </Form.Item>
@@ -137,7 +134,7 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "link"]}
-                      rules={[{ required: true, message: "Missing link" }]}
+                      rules={[{ message: "Missing link" }]}
                     >
                       <Input placeholder="Link" />
                     </Form.Item>
@@ -147,16 +144,14 @@ function ExperienceProjects() {
                     <Form.Item
                       {...restField}
                       name={[name, "range"]}
-                      rules={[
-                        { required: true, message: "Missing year range" },
-                      ]}
+                      rules={[{ message: "Missing year range" }]}
                     >
                       <Input placeholder="Year Range" />
                     </Form.Item>
                   </div>
 
                   <div className="-mt-5 py-5 md:py-0 md:mt-0 ">
-                    <MinusCircleOutlined
+                    <DeleteOutlined
                       className="-mt-1 text-red-500 text-2xl"
                       onClick={() =>
                         Confirm.show(

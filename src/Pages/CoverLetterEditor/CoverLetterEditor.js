@@ -1,4 +1,4 @@
-import { Button, Form, Input, Modal } from "antd";
+import { Button, Form, Input, message, Modal } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React, { useRef } from "react";
 import { useEffect } from "react";
@@ -8,6 +8,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import CoverLetterTemplate1 from "../../components/CoverLetterTemplates/CoverLetterTemplate1";
 import { coverTemplate } from "../../redux/action/data";
+import styles from "../../style";
 import axiosInstance from "../../utils/axiosInstance";
 
 const CoverLetterEditor = () => {
@@ -28,6 +29,7 @@ const CoverLetterEditor = () => {
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
     });
+    message.success("Update successfully");
   };
   useEffect(() => {
     dispatch(coverTemplate());
@@ -46,55 +48,68 @@ const CoverLetterEditor = () => {
 
   return (
     <div>
-      <Form layout="vertical" onFinish={onFinish} initialValues={data}>
-        <div className="grid md:grid-cols-2 max-w-[70%] mx-auto gap-1 ">
-          <div className="">
-            <Form.Item name="fullname" label="full Name">
-              <Input className="py-3 text-lg" />
-            </Form.Item>
+      <div className={`${styles.padding} md:max-w-[70%] `}>
+        <h4 className="text-start font-semibold text-xl">Personal Details</h4>
+        <Form layout="vertical" onFinish={onFinish} initialValues={data}>
+          <div className={` grid md:grid-cols-2  gap-1 `}>
+            <div className="">
+              <Form.Item name="fullname" label="full Name">
+                <Input className="py-3 text-lg" />
+              </Form.Item>
+            </div>
+            <div className="">
+              <Form.Item name="jobTitle" label="Wanted Job Title">
+                <Input className="py-3 text-lg" />
+              </Form.Item>
+            </div>
+
+            <div className="">
+              <Form.Item name="address" label="Address">
+                <Input className="py-3 text-lg" />
+              </Form.Item>
+            </div>
+            <div className="">
+              <Form.Item name="email" label="Email">
+                <Input className="py-3 text-lg" />
+              </Form.Item>
+            </div>
+            <div className="">
+              <Form.Item name="mobileNumber" label="Mobile Number">
+                <Input className="py-3 text-lg" />
+              </Form.Item>
+            </div>
           </div>
-          <div className="">
-            <Form.Item name="jobTitle" label="Wanted Job Title">
-              <Input className="py-3 text-lg" />
-            </Form.Item>
+          <h4 className="text-start font-semibold text-xl">Employer Details</h4>
+          <div className="grid md:grid-cols-2 gap-1">
+            <div className="">
+              <Form.Item name="companyName" label="Company Name">
+                <Input className="py-3 text-lg" />
+              </Form.Item>
+            </div>
+            <div className="">
+              <Form.Item name="hiringManagerName" label="Hiring Manager Name">
+                <Input className="py-3 text-lg" />
+              </Form.Item>
+            </div>
+
+            <div className="">
+              <h4 className="text-start font-semibold text-xl">
+                Letter Details
+              </h4>
+              <Form.Item name="letterDetails">
+                <TextArea />
+              </Form.Item>
+            </div>
           </div>
 
-          <div className="">
-            <Form.Item name="address" label="Address">
-              <Input className="py-3 text-lg" />
-            </Form.Item>
-          </div>
-          <div className="">
-            <Form.Item name="email" label="Email">
-              <Input className="py-3 text-lg" />
-            </Form.Item>
-          </div>
-          <div className="">
-            <Form.Item name="mobileNumber" label="Mobile Number">
-              <Input className="py-3 text-lg" />
-            </Form.Item>
-          </div>
-
-          <div className="col-md-12">
-            <Form.Item name="companyName" label="Company Name">
-              <Input className="py-3 text-lg" />
-            </Form.Item>
-          </div>
-          <div className="col-md-12">
-            <Form.Item name="hiringManagerName" label="Hiring Manager Name">
-              <Input className="py-3 text-lg" />
-            </Form.Item>
-          </div>
-          <div className="col-md-12">
-            <Form.Item name="letterDetails" label="Letter Details">
-              <TextArea />
-            </Form.Item>
-          </div>
-        </div>
-        <Button htmlType="submit" type="primary" className="bg-blue-500 px-5">
-          UPDATE
-        </Button>
-      </Form>
+          <Button
+            htmlType="submit"
+            className="bg-primary focus:text-white hover:text-white active:text-white flex items-center text-white py-5 px-5"
+          >
+            UPDATE
+          </Button>
+        </Form>
+      </div>
       <>
         <div
           className="btn-body fixed bottom-0 right-0"

@@ -14,9 +14,9 @@ import Template1 from "../Pages/ResumeTemplate/Template1";
 import Template3 from "../Pages/ResumeTemplate/Template3";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard";
-import DashboardResume from "../Pages/DashboardResume/DashboardResume";
-import DashboardCv from "../Pages/DashboardCv/DashboardCv";
-import DashboardCoverLetter from "../Pages/DashboardCoverLetter/DashboardCoverLetter";
+import DashboardResume from "../Pages/Dashboard/DashboardResume/DashboardResume";
+import DashboardCv from "../Pages/Dashboard/DashboardCv/DashboardCv";
+import DashboardCoverLetter from "../Pages/Dashboard/DashboardCoverLetter/DashboardCoverLetter";
 import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
 import PrivetRoute from "./PrivetRoute";
 import CoverEditor from "../Pages/CoverLetter/CoverEditor/CoverEditor";
@@ -29,6 +29,7 @@ import CVEditor from "../Pages/CVEditor/CVEditor";
 import CvTemplate1 from "../components/CvTemplates/Cvtemplate1";
 import Cvtemplate2 from "../components/CvTemplates/Cvtemplate2";
 import CoverLetterEditor from "../Pages/CoverLetterEditor/CoverLetterEditor";
+import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 
 export const router = createBrowserRouter([
   {
@@ -172,6 +173,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/coverletter",
         element: <DashboardCoverLetter />,
+      },
+      {
+        path: "/dashboard/all-user",
+        element: <AllUser />,
       },
     ],
   },

@@ -18,95 +18,103 @@ const EmploymentHistory = () => {
           <>
             <div>
               {fields.map(({ key, name, ...restField }) => (
-                <>
-                  <div className="grid grid-cols-2  gap-2" key={key}>
-                    <div className="">
-                      <Form.Item
-                        {...restField}
-                        name={[name, "jobTitle"]}
-                        rules={[{ message: "Job title" }]}
-                        label="Job title"
-                      >
-                        <Input className="py-3 text-lg" />
-                      </Form.Item>
-                    </div>
-                    <div className="">
-                      <Form.Item
-                        {...restField}
-                        name={[name, "employer"]}
-                        rules={[{ message: "Missing degree" }]}
-                        label="Employer"
-                      >
-                        <Input className="py-3 text-lg" />
-                      </Form.Item>
-                    </div>
+                <div className="flex">
+                  <div className="flex-1">
+                    <div
+                      className="grid md:grid-cols-2 grid-cols-1 gap-2"
+                      key={key}
+                    >
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "jobTitle"]}
+                          rules={[{ message: "Job title" }]}
+                          label="Job title"
+                        >
+                          <Input className="py-3 text-lg" />
+                        </Form.Item>
+                      </div>
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "employer"]}
+                          rules={[{ message: "Missing degree" }]}
+                          label="Employer"
+                        >
+                          <Input className="py-3 text-lg" />
+                        </Form.Item>
+                      </div>
 
-                    <div className=" text-start w-full flex flex-col gap-2">
-                      <label>Start & End Date</label>
-                      <Form.Item {...restField} name={[name, "date"]}>
-                        <RangePicker
-                          defaultValue={[
-                            dayjs("03/02/2023", dateFormat),
-                            dayjs("03/02/2023", dateFormat),
-                          ]}
-                          format={dateFormat}
-                          className="py-3 text-lg w-full"
-                        />
-                      </Form.Item>
-                    </div>
+                      <div className=" text-start w-full flex flex-col gap-2">
+                        <label>Start & End Date</label>
+                        <Form.Item {...restField} name={[name, "date"]}>
+                          <RangePicker
+                            defaultValue={[
+                              dayjs("03/02/2023", dateFormat),
+                              dayjs("03/02/2023", dateFormat),
+                            ]}
+                            format={dateFormat}
+                            className="py-3 text-lg w-full"
+                          />
+                        </Form.Item>
+                      </div>
 
-                    <div className="">
-                      <Form.Item
-                        {...restField}
-                        name={[name, "city"]}
-                        rules={[{ message: "Missing city" }]}
-                        label="City"
-                      >
-                        <Input placeholder="city" className="py-3 text-lg" />
-                      </Form.Item>
-                    </div>
-                    <div className="">
-                      <Form.Item
-                        {...restField}
-                        name={[name, "description"]}
-                        rules={[{ message: "Missing description" }]}
-                        label="Description"
-                      >
-                        <TextArea rows={4} />
-                      </Form.Item>
-                    </div>
-                    <div className="mt-5 py-5 flex items-center justify-start align-middle md:py-0 md:mt-0 ">
-                      <DeleteOutlined
-                        className="-mt-5 md:-mt-1 text-red-500 text-2xl"
-                        onClick={() =>
-                          Confirm.show(
-                            "Please Confirm!",
-                            "Do you agree Remove this field",
-                            "Yes",
-                            "No",
-                            () => {
-                              remove(name);
-                            },
-                            () => {
-                              message.warning("cancel remove");
-                            },
-                            {
-                              width: "320px",
-                              borderRadius: "8px",
-                              titleColor: "#03045e",
-                              okButtonBackground: "#03045e",
-                              cssAnimationStyle: "zoom",
-                            }
-                          )
-                        }
-                      />
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "city"]}
+                          rules={[{ message: "Missing city" }]}
+                          label="City"
+                        >
+                          <Input placeholder="city" className="py-3 text-lg" />
+                        </Form.Item>
+                      </div>
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "description"]}
+                          rules={[{ message: "Missing description" }]}
+                          label="Description"
+                        >
+                          <TextArea />
+                        </Form.Item>
+                      </div>
                     </div>
                   </div>
-                </>
+                  <div
+                    className=" flex items-center 
+                   align-middle "
+                  >
+                    <DeleteOutlined
+                      className="-mt-5 md:-mt-1 text-red-500 text-2xl"
+                      onClick={() =>
+                        Confirm.show(
+                          "Please Confirm!",
+                          "Do you agree Remove this field",
+                          "Yes",
+                          "No",
+                          () => {
+                            remove(name);
+                          },
+                          () => {
+                            message.warning("cancel remove");
+                          },
+                          {
+                            width: "320px",
+                            borderRadius: "8px",
+                            titleColor: "#03045e",
+                            okButtonBackground: "#03045e",
+                            cssAnimationStyle: "zoom",
+                          }
+                        )
+                      }
+                    />
+                  </div>
+                </div>
               ))}
             </div>
 
-            <Form.Item className="w-1/2">
+            <Form.Item className="w-1/3">
               <Button
                 type="dashed"
                 onClick={() => add()}
@@ -129,95 +137,97 @@ const EmploymentHistory = () => {
           <>
             <div>
               {fields.map(({ key, name, ...restField }) => (
-                <>
-                  <div className="grid grid-cols-2  gap-2" key={key}>
-                    <div className="">
-                      <Form.Item
-                        {...restField}
-                        name={[name, "jobTitle"]}
-                        rules={[{ message: "Job title" }]}
-                        label="Job title"
-                      >
-                        <Input className="py-3 text-lg" />
-                      </Form.Item>
-                    </div>
-                    <div className="">
-                      <Form.Item
-                        {...restField}
-                        name={[name, "employer"]}
-                        rules={[{ message: "Missing degree" }]}
-                        label="Employer"
-                      >
-                        <Input className="py-3 text-lg" />
-                      </Form.Item>
-                    </div>
+                <div className="flex">
+                  <div className="flex-1">
+                    <div className="grid md:grid-cols-2   gap-2" key={key}>
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "jobTitle"]}
+                          rules={[{ message: "Job title" }]}
+                          label="Job title"
+                        >
+                          <Input className="py-3 text-lg" />
+                        </Form.Item>
+                      </div>
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "employer"]}
+                          rules={[{ message: "Missing degree" }]}
+                          label="Employer"
+                        >
+                          <Input className="py-3 text-lg" />
+                        </Form.Item>
+                      </div>
 
-                    <div className=" text-start w-full flex flex-col gap-2">
-                      <label>Start & End Date</label>
-                      <Form.Item {...restField} name={[name, "date"]}>
-                        <RangePicker
-                          defaultValue={[
-                            dayjs("03/02/2023", dateFormat),
-                            dayjs("03/02/2023", dateFormat),
-                          ]}
-                          format={dateFormat}
-                          className="py-3 text-lg w-full"
-                        />
-                      </Form.Item>
-                    </div>
+                      <div className=" text-start w-full flex flex-col gap-2">
+                        <label>Start & End Date</label>
+                        <Form.Item {...restField} name={[name, "date"]}>
+                          <RangePicker
+                            defaultValue={[
+                              dayjs("03/02/2023", dateFormat),
+                              dayjs("03/02/2023", dateFormat),
+                            ]}
+                            format={dateFormat}
+                            className="py-3 text-lg w-full"
+                          />
+                        </Form.Item>
+                      </div>
 
-                    <div className="">
-                      <Form.Item
-                        {...restField}
-                        name={[name, "city"]}
-                        rules={[{ message: "Missing city" }]}
-                        label="City"
-                      >
-                        <Input placeholder="city" className="py-3 text-lg" />
-                      </Form.Item>
-                    </div>
-                    <div className="">
-                      <Form.Item
-                        {...restField}
-                        name={[name, "description"]}
-                        rules={[{ message: "Missing description" }]}
-                        label="Description"
-                      >
-                        <TextArea rows={4} />
-                      </Form.Item>
-                    </div>
-                    <div className="mt-5 py-5 flex items-center justify-start align-middle md:py-0 md:mt-0 ">
-                      <DeleteOutlined
-                        className="-mt-5 md:-mt-1 text-red-500 text-2xl"
-                        onClick={() =>
-                          Confirm.show(
-                            "Please Confirm!",
-                            "Do you agree Remove this field",
-                            "Yes",
-                            "No",
-                            () => {
-                              remove(name);
-                            },
-                            () => {
-                              message.warning("cancel remove");
-                            },
-                            {
-                              width: "320px",
-                              borderRadius: "8px",
-                              titleColor: "#03045e",
-                              okButtonBackground: "#03045e",
-                              cssAnimationStyle: "zoom",
-                            }
-                          )
-                        }
-                      />
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "city"]}
+                          rules={[{ message: "Missing city" }]}
+                          label="City"
+                        >
+                          <Input placeholder="city" className="py-3 text-lg" />
+                        </Form.Item>
+                      </div>
+                      <div className="">
+                        <Form.Item
+                          {...restField}
+                          name={[name, "description"]}
+                          rules={[{ message: "Missing description" }]}
+                          label="Description"
+                        >
+                          <TextArea />
+                        </Form.Item>
+                      </div>
                     </div>
                   </div>
-                </>
+                  <div className=" flex items-center justify-start align-middle md:py-0 md:mt-0 ">
+                    <DeleteOutlined
+                      className="-mt-5 md:-mt-1 text-red-500 text-2xl"
+                      onClick={() =>
+                        Confirm.show(
+                          "Please Confirm!",
+                          "Do you agree Remove this field",
+                          "Yes",
+                          "No",
+                          () => {
+                            remove(name);
+                          },
+                          () => {
+                            message.warning("cancel remove");
+                          },
+                          {
+                            width: "320px",
+                            borderRadius: "8px",
+                            titleColor: "#03045e",
+                            okButtonBackground: "#03045e",
+                            cssAnimationStyle: "zoom",
+                          }
+                        )
+                      }
+                    />
+                  </div>
+                </div>
               ))}
             </div>
 
-            <Form.Item className="w-1/2">
+            <Form.Item className="w-1/3 ">
               <Button
                 type="dashed"
                 onClick={() => add()}

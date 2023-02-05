@@ -20,6 +20,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { resumeData } from "../../redux/action/resumeData";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
+import styles from "../../style";
 const Editor = () => {
   const dispatch = useDispatch();
 
@@ -70,7 +71,7 @@ const Editor = () => {
   };
 
   return (
-    <div className="update-profile md:max-w-[70%] mx-auto px-6">
+    <div className={`${styles.padding} update-profile md:max-w-[70%]  px-6`}>
       <div className="">
         <div>
           <Form layout="vertical" onFinish={onFinish} initialValues={data}>
@@ -107,14 +108,19 @@ const Editor = () => {
 
             <Button
               htmlType="submit"
-              type="primary"
-              className="bg-blue-500 px-5"
+              className="bg-primary px-5 text-white py-5 flex items-center hover:text-white"
             >
               UPDATE
             </Button>
           </Form>
         </div>
         <>
+          <div>
+            {" "}
+            <div className="px-12 h-[100%] bg-white" ref={componentRef}>
+              {gettemplate()}
+            </div>
+          </div>
           <div
             className="btn-body fixed bottom-0 right-0"
             onClick={() => setOpen(true)}

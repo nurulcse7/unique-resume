@@ -5,7 +5,7 @@ const { TextArea } = Input;
 function PersonalInfo() {
   return (
     <div>
-      <div className="grid md:grid-cols-3 md:gap-2 ">
+      <div className="grid md:grid-cols-2 md:gap-2 ">
         <div className="">
           <Form.Item name="name" label="Full Name">
             <Input className="py-3" />
@@ -74,7 +74,7 @@ function PersonalInfo() {
 
         <div className="col-md-12">
           <Form.Item name="carrierObjective" label="Carrier Objective">
-            <TextArea className="py-3" />
+            <TextArea />
           </Form.Item>
         </div>
         <div className="col-md-12">

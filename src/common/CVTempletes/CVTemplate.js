@@ -27,7 +27,7 @@ const CVTemplate = () => {
           </button>
         </Link>
       </div>
-      <div className="grid grid-cols-4 gap-10 m-20">
+      <div className="grid grid-cols-4 gap-5 m-20">
         <Link to="/cv-templetes">
           {" "}
           <Card

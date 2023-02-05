@@ -184,7 +184,7 @@ const CvTemplates = () => {
 
             {/* add section */}
             <section>
-              <h1 className="text-3xl font-semibold">Add Section</h1>
+              <h1 className="text-2xl mt-5 font-semibold">Add Section</h1>
               <div className="form-control mt-5 w-full ">
                 <p className="label text-gray-400 mb-3 text-base "></p>
               </div>
@@ -263,6 +263,25 @@ const CvTemplates = () => {
                   </span>
                   <span className="ml-3 text-xl hover:text-blue-400">
                     References
+                  </span>
+                </h3>
+                <h3
+                  id="referenceTitle"
+                  onClick={() =>
+                    (document.getElementById("referenceTitle").style.display =
+                      "none")(
+                      (document.getElementById(
+                        "referenceDetails"
+                      ).style.display = "block")
+                    )
+                  }
+                  className=" font-semibold items-center "
+                >
+                  <span className="text-4xl text-blue-400 hover:text-blue-900">
+                    <ContactsOutlined />
+                  </span>
+                  <span className="ml-3 text-xl hover:text-blue-400">
+                    Extra-curricular Activities
                   </span>
                 </h3>
               </div>

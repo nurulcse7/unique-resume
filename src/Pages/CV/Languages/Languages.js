@@ -16,12 +16,12 @@ const Languages = ({ languages, setLanguages }) => {
     <div>
       <form onChange={handleSubmit(onSubmit)}>
         <section id="laguageDetails" className="hidden">
-          <h1 className="text-3xl font-semibold">Langulage</h1>
-          <div className="form-control mt-5 w-full ">
-            <p className="label text-gray-400 mb-3 text-base "></p>
+          <h1 className="text-xl font-semibold">Langulage</h1>
+          <div className="form-control mt-2 w-full ">
+            <p className="label text-gray-400 mb-3 text-xs "></p>
           </div>
           <details className="mb-4 border p-5 text-left border-b-2 py-3 ">
-            <summary className="font-semibold text-xl ">
+            <summary className="font-semibold text-lg ">
               {languages?.languageName ? (
                 <>{languages?.languageName}</>
               ) : (
@@ -36,12 +36,12 @@ const Languages = ({ languages, setLanguages }) => {
               </p>
             </summary>
 
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* Job Title */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">
+                  <span className="label text-gray-400  text-xs ">
                     Langualge
                   </span>
                 </label>
@@ -52,10 +52,10 @@ const Languages = ({ languages, setLanguages }) => {
                 />
               </div>
               {/*  Employer */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">Level</span>
+                  <span className="label text-gray-400  text-xs ">Level</span>
                 </label>
                 <select
                   {...register("languageLevel", {
@@ -72,12 +72,12 @@ const Languages = ({ languages, setLanguages }) => {
                 </select>
               </div>
             </div>
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* Job Title */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">
+                  <span className="label text-gray-400  text-xs ">
                     Langualge
                   </span>
                 </label>
@@ -88,10 +88,10 @@ const Languages = ({ languages, setLanguages }) => {
                 />
               </div>
               {/*  Employer */}
-              <div className="form-control mt-5 w-full max-w-xs">
+              <div className="form-control mt-2 w-full max-w-xs">
                 <label className="label">
                   {" "}
-                  <span className="label text-gray-400  text-lg ">Level</span>
+                  <span className="label text-gray-400  text-xs ">Level</span>
                 </label>
                 <select
                   {...register("languageLevel1", {

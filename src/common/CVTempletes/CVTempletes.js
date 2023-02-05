@@ -144,7 +144,7 @@ const CVTempletes = () => {
                 </Upload>
               </div>
             </div>
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* First Name */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">
@@ -176,7 +176,7 @@ const CVTempletes = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* email */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">
@@ -204,7 +204,7 @@ const CVTempletes = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-10">
+            <div className="flex gap-5">
               {/* Country */}
               <div className="form-control mt-5 w-full max-w-xs">
                 <label className="label">
@@ -233,7 +233,7 @@ const CVTempletes = () => {
               </div>
             </div>
             <section id="demo1" className="hidden">
-              <div className="flex gap-10">
+              <div className="flex gap-5">
                 {/* address */}
                 <div className="form-control mt-5 w-full max-w-xs">
                   <label className="label">
@@ -263,7 +263,7 @@ const CVTempletes = () => {
                   />
                 </div>
               </div>
-              <div className="flex gap-10">
+              <div className="flex gap-5">
                 {/* Nationality */}
                 <div className="form-control mt-5 w-full max-w-xs">
                   <label className="label">
@@ -346,7 +346,7 @@ const CVTempletes = () => {
                   )}
                 </summary>
 
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -376,7 +376,7 @@ const CVTempletes = () => {
                     />
                   </div>
                 </div>
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -458,7 +458,7 @@ const CVTempletes = () => {
                             />
                           </summary>
 
-                          <div className="flex gap-10">
+                          <div className="flex gap-5">
                             {/* Job Title */}
                             <div className="form-control mt-5 w-full max-w-xs">
                               <label className="label">
@@ -488,7 +488,7 @@ const CVTempletes = () => {
                               />
                             </div>
                           </div>
-                          <div className="flex gap-10">
+                          <div className="flex gap-5">
                             {/* Job Title */}
                             <div className="form-control mt-5 w-full max-w-xs">
                               <label className="label">
@@ -583,7 +583,7 @@ const CVTempletes = () => {
                   )}
                 </summary>
 
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -613,7 +613,7 @@ const CVTempletes = () => {
                     />
                   </div>
                 </div>
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -689,7 +689,7 @@ const CVTempletes = () => {
                   </p>
                 </summary>
 
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -743,7 +743,7 @@ const CVTempletes = () => {
                   </p>
                 </summary>
 
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -806,7 +806,7 @@ const CVTempletes = () => {
                   </p>
                 </summary>
 
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -864,7 +864,7 @@ const CVTempletes = () => {
                   </p>
                 </summary>
 
-                <div className="flex  gap-10">
+                <div className="flex  gap-5">
                   {/* References */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -894,7 +894,7 @@ const CVTempletes = () => {
                     />
                   </div>
                 </div>
-                <div className="flex  gap-10">
+                <div className="flex  gap-5">
                   {/*  Phone */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -941,7 +941,7 @@ const CVTempletes = () => {
                   )}
                 </summary>
 
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">
@@ -971,7 +971,7 @@ const CVTempletes = () => {
                     />
                   </div>
                 </div>
-                <div className="flex gap-10">
+                <div className="flex gap-5">
                   {/* Job Title */}
                   <div className="form-control mt-5 w-full max-w-xs">
                     <label className="label">

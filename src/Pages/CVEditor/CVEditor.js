@@ -93,7 +93,7 @@ function CVEditor() {
 
           <>
             <div
-              className="btn-body fixed bottom-0 right-0"
+              className="btn-body absolute bottom-0 right-0"
               onClick={() => setOpen(true)}
             >
               <button className="btn btn-hover">

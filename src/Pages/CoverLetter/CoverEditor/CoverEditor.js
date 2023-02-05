@@ -44,7 +44,14 @@ const CoverEditor = () => {
               <EmployerDetails />
               <LetterDetails />
             </div>
+            <button
+              type="submit"
+              className="inline-block my-5 px-5 py-3 border-2 hover:bg-primary bg-secondary border-white text-white font-medium text-sm leading-snug uppercase rounded-md  focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+            >
+              Submit
+            </button>
           </div>
+
           <>
             <div
               className="btn-body fixed bottom-0 right-0"

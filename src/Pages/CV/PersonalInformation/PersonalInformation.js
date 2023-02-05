@@ -20,8 +20,6 @@ const PersonalInformation = ({
     setPersonalInformation(data);
   };
 
-  //   image
-
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
@@ -54,13 +52,13 @@ const PersonalInformation = ({
   return (
     <div>
       <form onChange={handleSubmit(onSubmit)}>
-        <h1 className="text-3xl font-semibold">Personal Details</h1>
+        <h1 className="text-xl font-semibold">Personal Details</h1>
         <div className="flex justify-items-stretch">
           {/* Job Title */}
-          <div className="form-control pt-5 w-full max-w-xs">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label className="label">
               {" "}
-              <span className="label text-gray-400  text-lg ">Job Title</span>
+              <span className="label text-gray-400  text-xs ">Job Title</span>
             </label>
             <input
               type="text"
@@ -83,12 +81,12 @@ const PersonalInformation = ({
             </Upload>
           </div> */}
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-5">
           {/* First Name */}
-          <div className="form-control mt-5 w-full max-w-xs">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label className="label">
               {" "}
-              <span className="label text-gray-400  text-lg ">First Name</span>
+              <span className="label text-gray-400  text-xs ">First Name</span>
             </label>
             <input
               type="text"
@@ -99,10 +97,10 @@ const PersonalInformation = ({
             />
           </div>
           {/* Last Name */}
-          <div className="form-control mt-5 w-full max-w-xs">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label className="label">
               {" "}
-              <span className="label text-gray-400  text-lg ">Last Name</span>
+              <span className="label text-gray-400  text-xs ">Last Name</span>
             </label>
             <input
               type="text"
@@ -111,12 +109,12 @@ const PersonalInformation = ({
             />
           </div>
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-5">
           {/* email */}
-          <div className="form-control mt-5 w-full max-w-xs">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label className="label">
               {" "}
-              <span className="label text-gray-400  text-lg ">E-mail</span>
+              <span className="label text-gray-400  text-xs ">E-mail</span>
             </label>
             <input
               type="text"
@@ -127,10 +125,10 @@ const PersonalInformation = ({
             />
           </div>
           {/* Phone */}
-          <div className="form-control mt-5 w-full max-w-xs">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label className="label">
               {" "}
-              <span className="label text-gray-400  text-lg ">Phone</span>
+              <span className="label text-gray-400  text-xs ">Phone</span>
             </label>
             <input
               type="text"
@@ -139,12 +137,12 @@ const PersonalInformation = ({
             />
           </div>
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-5">
           {/* Country */}
-          <div className="form-control mt-5 w-full max-w-xs">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label className="label">
               {" "}
-              <span className="label text-gray-400  text-lg ">Country</span>
+              <span className="label text-gray-400  text-xs ">Country</span>
             </label>
             <input
               type="text"
@@ -155,10 +153,10 @@ const PersonalInformation = ({
             />
           </div>
           {/* City */}
-          <div className="form-control mt-5 w-full max-w-xs">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label className="label">
               {" "}
-              <span className="label text-gray-400  text-lg ">City</span>
+              <span className="label text-gray-400  text-xs ">City</span>
             </label>
             <input
               type="text"
@@ -168,12 +166,12 @@ const PersonalInformation = ({
           </div>
         </div>
         <section id="demo1" className="hidden">
-          <div className="flex gap-10">
+          <div className="flex gap-5">
             {/* address */}
-            <div className="form-control mt-5 w-full max-w-xs">
+            <div className="form-control mt-2 w-full max-w-xs">
               <label className="label">
                 {" "}
-                <span className="label text-gray-400  text-lg ">Address</span>
+                <span className="label text-gray-400  text-xs ">Address</span>
               </label>
               <input
                 type="text"
@@ -182,10 +180,10 @@ const PersonalInformation = ({
               />
             </div>
             {/* postal code */}
-            <div className="form-control mt-5 w-full max-w-xs">
+            <div className="form-control mt-2 w-full max-w-xs">
               <label className="label">
                 {" "}
-                <span className="label text-gray-400  text-lg ">
+                <span className="label text-gray-400  text-xs ">
                   Postal Code
                 </span>
               </label>
@@ -196,12 +194,12 @@ const PersonalInformation = ({
               />
             </div>
           </div>
-          <div className="flex gap-10">
+          <div className="flex gap-5">
             {/* Nationality */}
-            <div className="form-control mt-5 w-full max-w-xs">
+            <div className="form-control mt-2 w-full max-w-xs">
               <label className="label">
                 {" "}
-                <span className="label text-gray-400  text-lg ">
+                <span className="label text-gray-400  text-xs ">
                   Nationality
                 </span>
               </label>
@@ -214,10 +212,10 @@ const PersonalInformation = ({
               />
             </div>
             {/* Date of Birth */}
-            <div className="form-control mt-5 w-full max-w-xs">
+            <div className="form-control mt-2 w-full max-w-xs">
               <label className="label">
                 {" "}
-                <span className="label text-gray-400  text-lg ">
+                <span className="label text-gray-400  text-xs ">
                   Date of Birth
                 </span>
               </label>

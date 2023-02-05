@@ -29,7 +29,10 @@ import CVEditor from "../Pages/CVEditor/CVEditor";
 import CvTemplate1 from "../components/CvTemplates/Cvtemplate1";
 import Cvtemplate2 from "../components/CvTemplates/Cvtemplate2";
 import CoverLetterEditor from "../Pages/CoverLetterEditor/CoverLetterEditor";
+import CoverLetterTemplate2 from "../components/CoverLetterTemplates/CoverLetterTemplate2";
+import CoverLetterTemplate3 from "../components/CoverLetterTemplates/CoverLetterTemplate3";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
+
 
 export const router = createBrowserRouter([
   {
@@ -116,6 +119,18 @@ export const router = createBrowserRouter([
         path: "/cover-letter",
         element: <CoverLetterPage />,
       },
+      // {
+      //   path: "/cover-1",
+      //   element: <CoverLetterTemplate1 />,
+      // },
+      // {
+      //   path: "/cover-2",
+      //   element: <CoverLetterTemplate2 />,
+      // },
+      // {
+      //   path: "/cover-3",
+      //   element: <CoverLetterTemplate3 />,
+      // },
       {
         path: "/editor",
         element: <Editor />,

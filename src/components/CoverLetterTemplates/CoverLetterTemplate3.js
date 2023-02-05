@@ -37,7 +37,7 @@ const CoverLetterTemplate3 = ({ data }) => {
             {/* <span>{data?.jobTitle}</span> */}
           </div>
           <div className="flex flex-col items-start p-6">
-            <span>Dear: {data?.hiringManagerName}</span>
+            <span>Dear {data?.hiringManagerName}</span>
             <p className=" text-justify max-w-[450px]">{data?.letterDetails}</p>
 
             <p className=" text-lg capitalize mt-10">sincerly</p>

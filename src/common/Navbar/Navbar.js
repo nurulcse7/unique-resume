@@ -42,8 +42,6 @@ const Navbar = ({ iaAuthenticated }) => {
 
   const token = localStorage.getItem("token");
 
-  console.log(token);
-
   useEffect(() => {
     if (message === "Logged out successfully") {
       navigate("/login");

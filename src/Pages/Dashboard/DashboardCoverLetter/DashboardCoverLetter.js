@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../../utils/axiosInstance";
 
 const DashboardCoverLetter = () => {
   const [data, setData] = useState([]);
@@ -125,30 +125,17 @@ const DashboardCoverLetter = () => {
 
                       <div className="  max-w-[380px] p-8 h-full">
                         <div>
-                          {template?.personalDetails.map((p) => (
-                            <h3 className="text-semibold text-[#0f5b31] text-xl">
-                              {p.jobTitle}
-                            </h3>
-                          ))}
+                          <h3 className="text-semibold text-[#0f5b31] text-xl">
+                            {template?.jobTitle}
+                          </h3>
 
                           <div className="grid grid-cols-2 leading-none">
-                            {template?.personalDetails.map((p) => (
-                              <p>
-                                <small>
-                                  <i className="fa-solid pr-1 fa-phone"></i>{" "}
-                                  {p.phone}
-                                </small>
-                              </p>
-                            ))}
-
-                            {template?.personalDetails.map((p) => (
-                              <p>
-                                <small className="flex">
-                                  <i className="fa-solid pr-1 fa-at"></i>
-                                  {p.userEmail}
-                                </small>
-                              </p>
-                            ))}
+                            <p>
+                              <small>
+                                <i className="fa-solid pr-1 fa-phone"></i>{" "}
+                                {template?.mobileNumber}
+                              </small>
+                            </p>
                           </div>
 
                           <div className="grid grid-cols-2 leading-none">

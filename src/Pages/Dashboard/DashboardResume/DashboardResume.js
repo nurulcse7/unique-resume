@@ -8,7 +8,7 @@ import {
   FaCloudDownloadAlt,
   FaCompress,
 } from "react-icons/fa";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../../utils/axiosInstance";
 import { toast } from "react-hot-toast";
 const DashboardResume = () => {
   const [data, setData] = useState([]);
@@ -72,7 +72,7 @@ const DashboardResume = () => {
                   <section
                     onMouseEnter={() => setIsMove(!ismove)}
                     onMouseLeave={() => setIsMove(!ismove)}
-                    className=" w-[600px] h-[255px] my-4 border hover:-z-0  rounded-md mx-auto text-left relative bg-gray-50  shadow-2xl"
+                    className=" w-[600px] h-[241px] my-4 border hover:-z-0  rounded-md mx-auto text-left relative bg-gray-50  shadow-2xl"
                   >
                     <div className="flex">
                       <div className=" bg-[#0f5b31]  text-white p-4">
@@ -130,16 +130,6 @@ const DashboardResume = () => {
                                   type="range"
                                   className="w-full"
                                   value="60"
-                                />
-                              </div>
-                              <div className="">
-                                <p className="">
-                                  <small>Partnerships</small>
-                                </p>
-                                <input
-                                  type="range"
-                                  className="w-full"
-                                  value="90"
                                 />
                               </div>
                             </div>
@@ -214,7 +204,7 @@ const DashboardResume = () => {
                     </div>
 
                     <div className={`${ismove ? "  delay-[10s]  " : "hidden"}`}>
-                      <div className="absolute w-[600px] h-[255px]  bg-black hover:z-10 justify-center opacity-75 flex top-0 rounded-sm left-0">
+                      <div className="absolute w-[600px] h-[241px]  bg-black hover:z-10 justify-center opacity-75 flex top-0 rounded-sm left-0">
                         <button className="flex items-center space-x-2  ">
                           {" "}
                           <span className=" text-sky-600 text-xl">

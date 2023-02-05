@@ -45,3 +45,18 @@ export const coverTemplate = () => async (dispatch) => {
   }
 };
 // Abdur Rahman
+
+export const getAllUsers = () => async (dispatch) => {
+  try {
+    dispatch({ type: "getAllUsersReq" });
+    const { data } = await axiosInstance.get(`/api/allusers`, {
+      headers: {
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    dispatch({ type: "getAllUsersSuccess", payload: data });
+  } catch (error) {
+    console.log(error.response);
+    dispatch({ type: "getAllUsersFail", payload: error.response.data });
+  }
+};

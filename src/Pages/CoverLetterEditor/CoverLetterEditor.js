@@ -115,12 +115,12 @@ const CoverLetterEditor = () => {
                 <Input className="py-3 text-lg" />
               </Form.Item>
             </div>
-            {/* <div className="">
+            <div className="">
               <Form.Item name="companyAddress" label="Address">
                 <Input className="py-3 text-lg" />
               </Form.Item>
             </div>{" "}
-            <br /> */}
+            <br />
             <div>
               <h4 className="text-start font-semibold text-xl">
                 Letter Details

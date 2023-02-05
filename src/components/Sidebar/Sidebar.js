@@ -6,6 +6,7 @@ import {
   FaRegFilePdf,
   FaRegFileImage,
   FaSignOutAlt,
+  FaUsers,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -51,6 +52,20 @@ const Sidebar = () => {
                 <span className="-mr-1 font-medium">My Account</span>
               </Link>
             </li>
+
+            <li>
+              <Link
+                to="/dashboard/all-user"
+                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
+              >
+                <span>
+                  {" "}
+                  <FaUsers />{" "}
+                </span>
+                <span className="group-hover:text-gray-700">All Users</span>
+              </Link>
+            </li>
+
             <li>
               <Link
                 to="/dashboard/resume"
@@ -63,6 +78,7 @@ const Sidebar = () => {
                 <span className="group-hover:text-gray-700">Resume</span>
               </Link>
             </li>
+
             <li>
               <Link
                 to="/dashboard/cv"

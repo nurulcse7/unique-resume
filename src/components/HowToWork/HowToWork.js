@@ -17,11 +17,10 @@ const HowToWork = () => {
               Working Process of UNIQUE RESUME
             </p>
             <p className="text-sm md:text-base mb-4">
-              Here’s your guide to the tech UNIQUE RESUME 2021 process. Go
-              through all the steps to know the exact process of the fest.
+            Here's your guide to making a Resume, CV, and Cover letter. Go through all the steps to know the exact function of the stage.
             </p>
             <Link
-              to="/home"
+              to="/resume-templates"
               className="bg-primary mx-auto cursor-pointer  text-white  rounded shadow hover:shadow-lg py-2 z-10 px-4 border border-primary hover:border-transparent"
             >
               Explore Now

@@ -14,28 +14,28 @@ const featureContent = [
     title: " Easy online resume builder",
     icon: <FaAccusoft />,
     description:
-      "Create an awesome resume, cover letter or online profile without leaving your web browser.",
+      "Create an awesome resume without leaving your web browser",
   },
   {
     id: 2,
-    title: " Automatic spell-checker",
+    title: " Easy online CV builder",
     icon: <FaLeanpub />,
     description:
-      "Our built-in spell-checker takes care of the grammar for you. Create a resume with zero typos or errors.",
+      "Create an awesome CV without leaving your web browser",
   },
   {
     id: 3,
-    title: " Your data is safe",
-    icon: <FaHandshake />,
+    title: "Easy online Cover Letter builder",
+    icon: <FaChalkboardTeacher />,
     description:
-      "Your data is kept private and protected by strong 256-bit encryption.",
+      "Create an awesome Cover Letter without leaving your web browser",
   },
   {
     id: 4,
     title: "Automatic summary generator",
     icon: <FaHeadSideVirus />,
     description:
-      "Create a powerful resume profile or cover letter in one click. Writer’s block is no longer an obstacle.",
+      "Create a powerful resume profile or cover letter in one click. Writer's block is no longer an obstacle.",
   },
   {
     id: 5,
@@ -46,10 +46,10 @@ const featureContent = [
   },
   {
     id: 6,
-    title: " Job tracking",
-    icon: <FaChalkboardTeacher />,
+    title: " Your data is safe",
+    icon: <FaHandshake />,
     description:
-      "We’ll keep you ahead of the competition by tracking the employers and jobs you apply to.",
+      "Your data is kept private and protected",
   },
 ];
 

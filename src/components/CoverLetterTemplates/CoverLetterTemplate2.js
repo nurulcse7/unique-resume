@@ -5,7 +5,6 @@ const CoverLetterTemplate2 = ({ data }) => {
 
   let currentDate = new Date().toLocaleDateString();
   return (
-    // <div className="w-[800px] ">
     <div className="py-10 px-5  ">
       <h1 className="md:text-3xl text-right text-xl uppercase font-semibold ">
         {data?.fullname}

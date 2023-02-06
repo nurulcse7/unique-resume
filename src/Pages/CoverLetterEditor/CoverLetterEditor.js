@@ -12,6 +12,9 @@ import CoverLetterTemplate3 from "../../components/CoverLetterTemplates/CoverLet
 import CoverLetterTemplate4 from "../../components/CoverLetterTemplates/CoverLetterTemplate4";
 import CoverLetterTemplate5 from "../../components/CoverLetterTemplates/CoverLetterTemplate5";
 import CoverLetterTemplate6 from "../../components/CoverLetterTemplates/CoverLetterTemplate6";
+import CoverLetterTemplate7 from "../../components/CoverLetterTemplates/CoverLetterTemplate7";
+import CoverLetterTemplate8 from "../../components/CoverLetterTemplates/CoverLetterTemplate8";
+import CoverLetterTemplate9 from "../../components/CoverLetterTemplates/CoverLetterTemplate9";
 import { coverTemplate } from "../../redux/action/data";
 import styles from "../../style";
 import axiosInstance from "../../utils/axiosInstance";
@@ -61,6 +64,15 @@ const CoverLetterEditor = () => {
       }
       case "6": {
         return <CoverLetterTemplate6 data={data} />;
+      }
+      case "7": {
+        return <CoverLetterTemplate7 data={data} />;
+      }
+      case "8": {
+        return <CoverLetterTemplate8 data={data} />;
+      }
+      case "9": {
+        return <CoverLetterTemplate9 data={data} />;
       }
 
       default:

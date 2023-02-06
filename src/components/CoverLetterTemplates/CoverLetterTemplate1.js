@@ -31,7 +31,8 @@ const CoverLetterTemplate1 = ({ data }) => {
       <div className="w-[80%]">
         <div className=" p-6">
           <h1 className="font-semibold">{data?.hiringManagerName}</h1>
-          <h1>{data?.companyName}</h1>
+          <p>{data?.companyName}</p>
+          <p>{data?.companyAddress}</p>
         </div>
         <div className="flex flex-col items-start p-6">
           <span>Dear: {data?.hiringManagerName}</span>

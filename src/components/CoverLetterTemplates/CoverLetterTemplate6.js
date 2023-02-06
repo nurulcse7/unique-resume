@@ -11,7 +11,7 @@ const CoverLetterTemplate6 = ({ data }) => {
         <h1 className="md:text-3xl text-left text-amber-500 text-xl uppercase font-semibold ">
           {data?.fullname}
         </h1>
-        <p className="md:text-[15px] font-semibold text-left text-amber-500 text-[12px]">
+        <p className="md:text-2xl font-semibold text-left text-amber-500 text-lg mb-4">
           {data?.jobTitle}
         </p>
         <div className="flex justify-center">
@@ -42,8 +42,8 @@ const CoverLetterTemplate6 = ({ data }) => {
         </div>
 
         <div className="">
-          <div className="flex gap-2 flex-col items-start ">
-            <span className="my-5">Date: {currentDate}</span>
+          <div className="flex  flex-col items-start ">
+            <span className="mb-2 mt-10">Date: {currentDate}</span>
 
             <h1 className="font-semibold">{data?.hiringManagerName}</h1>
             <h1>{data?.companyName}</h1>
@@ -55,7 +55,9 @@ const CoverLetterTemplate6 = ({ data }) => {
 
             <p className="my-5"> Thank you for your time and consideration.</p>
             <p className=" text-lg capitalize mt-10">sincerly</p>
-            <p className="font-semibold text-amber-500">{data?.fullname}</p>
+            <p className="font-semibold text-amber-500 text-lg">
+              {data?.fullname}
+            </p>
           </div>
         </div>
       </div>

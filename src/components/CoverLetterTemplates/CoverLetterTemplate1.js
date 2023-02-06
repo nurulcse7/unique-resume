@@ -3,7 +3,7 @@ import React from "react";
 const CoverLetterTemplate1 = ({ data }) => {
   console.log("coverLetterTemplate1", data);
   return (
-    <div className="flex w-[800px] mx-auto my-10 ">
+    <div className="flex  mx-auto my-10 ">
       <div
         className={`py-6 text-white gap-3 px-5 bg-gray-500 md:w-[30%] w-[30%] flex flex-col justify-start items-start `}
       >
@@ -31,8 +31,8 @@ const CoverLetterTemplate1 = ({ data }) => {
       <div className="w-[80%]">
         <div className=" p-6">
           <h1 className="font-semibold">{data?.hiringManagerName}</h1>
-          <h1>{data?.companyName}</h1>
-          {/* <span>{data?.jobTitle}</span> */}
+          <p>{data?.companyName}</p>
+          <p>{data?.companyAddress}</p>
         </div>
         <div className="flex flex-col items-start p-6">
           <span>Dear: {data?.hiringManagerName}</span>

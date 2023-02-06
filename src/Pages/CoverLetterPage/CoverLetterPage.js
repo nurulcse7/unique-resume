@@ -12,7 +12,7 @@ const CoverLetterPage = () => {
   const [works, setWorks] = useState(null);
 
   useEffect(() => {
-    axiosInstance.get("/api/cv").then((res) => {
+    axiosInstance.get("/api/allcoverletter").then((res) => {
       setFilterWork(res.data);
       setWorks(res.data);
     });

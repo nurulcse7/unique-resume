@@ -19,10 +19,14 @@ const CoverLetterTemplate5 = ({ data }) => {
             <h1 className="">To</h1>
             <h1 className="font-semibold">{data?.hiringManagerName}</h1>
             <h1>{data?.companyName}</h1>
+            <h1>{data?.companyAddress}</h1>
           </div>
           <div className="flex flex-col items-start py-6">
             <span>Dear {data?.hiringManagerName}</span>
             <p className=" text-justify max-w-[450px]">{data?.letterDetails}</p>
+            <p className=" text-justify max-w-[450px] mt-5">
+              Thank you for your time and consideration.
+            </p>
 
             <p className=" text-lg capitalize mt-10">sincerly</p>
             <h2>{data?.fullname}</h2>
@@ -35,19 +39,19 @@ const CoverLetterTemplate5 = ({ data }) => {
             <p className="md:text-xl text-[12px]">Details</p>
 
             <div className="flex items-center my-2 gap-5">
-              <p className=" text-xl">
+              <p className=" text-xl text-yellow-400">
                 <FaSearchLocation />
               </p>
               <p>{data?.address}</p>
             </div>
             <div className="flex items-center my-2 gap-5">
-              <p className=" text-xl">
+              <p className=" text-xl  text-yellow-400">
                 <FaMailBulk />
               </p>
               <p> {data?.email}</p>
             </div>
             <div className="flex items-center my-2 gap-5">
-              <p className=" text-xl">
+              <p className=" text-xl  text-yellow-400">
                 <FaPhoneAlt />
               </p>
               <p> {data?.mobileNumber}</p>

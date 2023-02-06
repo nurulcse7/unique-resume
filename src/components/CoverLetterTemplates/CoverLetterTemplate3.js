@@ -3,7 +3,7 @@ import React from "react";
 const CoverLetterTemplate3 = ({ data }) => {
   console.log("coverLetterTemplate3", data);
   return (
-    <div className="">
+    <div className="py-10 px-5">
       <h1 className="md:text-3xl text-start text-xl uppercase font-semibold ">
         {data?.fullname}
       </h1>
@@ -12,7 +12,7 @@ const CoverLetterTemplate3 = ({ data }) => {
       <div className="flex my-10 ">
         <div className="border-2 border-yellow-400 absolute  w-5/6 rounded-sm"></div>
         <div
-          className={`py-6  gap-3 px-5  md:w-[30%] w-[30%] flex flex-col justify-start items-start `}
+          className={`py-6  gap-3   md:w-[30%] w-[30%] flex flex-col justify-start items-start `}
         >
           <div className="text-start">
             <p className="md:text-[15px] text-[12px]">To</p>

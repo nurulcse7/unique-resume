@@ -3,13 +3,15 @@ import React from "react";
 const CoverLetterTemplate7 = ({ data }) => {
   console.log("coverLetterTemplate7", data);
   return (
-    <div className="">
-      <h1 className="md:text-3xl text-right text-xl uppercase font-semibold ">
-        {data?.fullname}
-      </h1>
-      <p className="md:text-xl text-right text-lg font-semibold">
-        {data?.jobTitle}
-      </p>
+    <div className="py-10 px-5">
+      <div className="bg-blue-200 p-5">
+        <h1 className="md:text-3xl text-right text-xl uppercase font-semibold ">
+          {data?.fullname}
+        </h1>
+        <p className="md:text-xl text-right text-lg font-semibold">
+          {data?.jobTitle}
+        </p>
+      </div>
 
       <div className="flex my-10 ">
         {/* <div className="border-2 border-yellow-400 absolute  w-5/6 rounded-sm"></div> */}

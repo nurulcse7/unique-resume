@@ -4,7 +4,7 @@ import { FaMailBulk, FaPhoneAlt, FaSearchLocation } from "react-icons/fa";
 const CoverLetterTemplate5 = ({ data }) => {
   console.log("coverLetterTemplate5", data);
   return (
-    <div className="w-[800px]">
+    <div className="my-10 mx-5 ">
       <h1 className="md:text-4xl text-start text-xl uppercase font-semibold ">
         {data?.fullname}
       </h1>
@@ -12,9 +12,9 @@ const CoverLetterTemplate5 = ({ data }) => {
         {data?.jobTitle}
       </span>
       <div className="border-2 border-yellow-400 absolute mt-5  w-5/6 rounded-sm"></div>
-      <div className="border-8 border-yellow-400  mt-3  w-3/6 rounded-sm"></div>
+      <div className="border-8 border-yellow-400  mt-3 md:w-[65%] w-[70%] rounded-sm"></div>
       <div className="flex my-10 ">
-        <div className="w-[70%]">
+        <div className="w-[80%]">
           <div className=" ">
             <h1 className="">To</h1>
             <h1 className="font-semibold">{data?.hiringManagerName}</h1>
@@ -31,7 +31,7 @@ const CoverLetterTemplate5 = ({ data }) => {
         <div
           className={`  gap-3   md:w-[30%] w-[30%] flex flex-col justify-start items-start `}
         >
-          <div className="text-start ">
+          <div className="text-start md:m-10 mx-10">
             <p className="md:text-xl text-[12px]">Details</p>
 
             <div className="flex items-center my-2 gap-5">

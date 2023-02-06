@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "type": "free",
+    "image": "https://i.ibb.co/5cvhW3c/Unique-Resume-1-1.jpg"
+  },
+  {
+    "id": "2",
+    "type": "free",
+    "image": "https://i.ibb.co/WvWQYWn/Unique-Resume-2-1.jpg"
+  },
+  {
+    "id": "3",
+    "type": "premium",
+    "image": "https://i.ibb.co/vcyqVSv/Unique-Resume-3-1.jpg"
+  },
+  {
+    "id": "4",
+    "type": "free",
+    "image": "https://i.ibb.co/QYh2wFy/Unique-Resume-4-1.jpg"
+  },
+  {
+    "id": "5",
+    "type": "premium",
+    "image": "https://i.ibb.co/TY3cP3x/Unique-Resume-5-1.jpg"
+  },
+  {
+    "id": "6",
+    "type": "free",
+    "image": "https://i.ibb.co/FbCNLCF/Unique-Resume-6-1.jpg"
+  },
+  {
+    "id": "7",
+    "type": "free",
+    "image": "https://i.ibb.co/L684GQM/Unique-Resume-7-1.jpg"
+  },
+  {
+    "id": "8",
+    "type": "premium",
+    "image": "https://i.ibb.co/y6yJh1p/Unique-Resume-8-1.jpg"
+  },
+  {
+    "id": "9",
+    "type": "free",
+    "image": "https://i.ibb.co/5YNS7mM/Unique-Resume-9-1.jpg"
+  }
+]

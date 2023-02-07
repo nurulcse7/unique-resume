@@ -13,7 +13,8 @@ Live website [Click here](https://unique-resume.vercel.app/)
 <!-- GitHub [Click here](https://github.com/nurulcse7/unique-resume) -->
 
 client-side [Click here](https://github.com/nurulcse7/unique-resume)
-server-side [Click here]()
+<!-- server-side [Click here]() -->
+server-side [Click here](https://github.com/coderrabbi/unique-resume-server)
 
 ### Description
 

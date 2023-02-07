@@ -11,8 +11,8 @@ const CoverLetterTemplate5 = ({ data }) => {
       <span className="md:text-2xl text-lg font-semibold">
         {data?.jobTitle}
       </span>
-      <div className="border-2 border-yellow-400 absolute mt-5  w-5/6 rounded-sm"></div>
-      <div className="border-8 border-yellow-400  mt-3 md:w-[65%] w-[70%] rounded-sm"></div>
+      <div className="border-4 border-2 border-yellow-400   mt-5  w-full rounded-sm"></div>
+
       <div className="flex my-10 ">
         <div className="w-[80%]">
           <div className=" ">
@@ -28,12 +28,12 @@ const CoverLetterTemplate5 = ({ data }) => {
               Thank you for your time and consideration.
             </p>
 
-            <p className=" text-lg capitalize mt-10">sincerly</p>
+            <p className=" text-lg capitalize mt-10">Yours sincerly</p>
             <h2>{data?.fullname}</h2>
           </div>
         </div>
         <div
-          className={`  gap-3   md:w-[30%] w-[30%] flex flex-col justify-start items-start `}
+          className={`  gap-3   md:w-[40%] w-[40%] flex flex-col justify-start items-start `}
         >
           <div className="text-start md:m-10 mx-10">
             <p className="md:text-xl text-[12px]">Details</p>

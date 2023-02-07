@@ -28,7 +28,7 @@ function CVEditor() {
   const params = useParams();
   const gettemplate = () => {
     switch (params.id) {
-      case "6": {
+      case "1": {
         return <CvTemplate1 />;
       }
       case "2": {
@@ -49,13 +49,20 @@ function CVEditor() {
   };
   useEffect(() => {
     dispatch(cvTemplate());
-  }, [dispatch]);
+  }, [dispatch, data]);
   return (
-    <div>
-      <div className={`${styles.padding} update-profile max-w-[70%] `}>
+    <div className="relative">
+      <div
+        className={`${styles.padding} update-profile  md:max-w-[70%] w-full `}
+      >
         <div>
           <div>
-            <Form layout="vertical" onFinish={onFinish} initialValues={data}>
+            <Form
+              layout="vertical"
+              onFinish={onFinish}
+              onChange={onFinish}
+              initialValues={data}
+            >
               <Tabs
                 defaultActiveKey="1"
                 items={[
@@ -67,17 +74,17 @@ function CVEditor() {
                   {
                     label: `Skills and Education`,
                     key: "2",
-                    children: <SkillsEducation />,
+                    children: <SkillsEducation onFinish={onFinish} />,
                   },
                   {
                     label: `Experience or Projects`,
                     key: "3",
-                    children: <ExperienceProjects />,
+                    children: <ExperienceProjects onFinish={onFinish} />,
                   },
                   {
                     label: `Additional Info`,
                     key: "4",
-                    children: <Address />,
+                    children: <Address onFinish={onFinish} />,
                   },
                 ]}
               />
@@ -93,7 +100,7 @@ function CVEditor() {
 
           <>
             <div
-              className="btn-body absolute bottom-0 right-0"
+              className="btn-body absolute md:bottom-0 bottom-0 right-[10px] md:right-[50px]"
               onClick={() => setOpen(true)}
             >
               <button className="btn btn-hover">

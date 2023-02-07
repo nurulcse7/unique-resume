@@ -6,14 +6,16 @@ const CoverLetterTemplate6 = ({ data }) => {
   let currentDate = new Date().toLocaleDateString();
   return (
     <div className="py-10 px-5 ">
-      <div className="border-2 border-amber-500 absolute  w-5/6 rounded-sm"></div>
+      <p className="border-2 border-amber-500   w-full rounded-sm"></p>
       <div className="py-10 ">
-        <h1 className="md:text-3xl text-left text-amber-500 text-xl uppercase font-semibold ">
-          {data?.fullname}
-        </h1>
-        <p className="md:text-2xl font-semibold text-left text-amber-500 text-lg mb-4">
-          {data?.jobTitle}
-        </p>
+        <div>
+          <h1 className="md:text-3xl text-left text-amber-500 text-xl uppercase font-semibold ">
+            {data?.fullname}
+          </h1>
+          <p className="md:text-2xl font-semibold text-left text-amber-500 text-lg mb-4">
+            {data?.jobTitle}
+          </p>
+        </div>
         <div className="flex justify-center">
           <div className="mt-5 border-x-4 border-amber-500">
             <p className="md:text-[13px] mx-5 text-left text-[10px] font-semibold">

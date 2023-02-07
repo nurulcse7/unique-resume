@@ -82,7 +82,7 @@ const CoverLetterEditor = () => {
 
   return (
     <div>
-      <div className={`${styles.padding} md:max-w-[70%] `}>
+      <div className={`${styles.padding} md:max-w-[70%]  `}>
         <h4 className="text-start font-semibold text-xl mb-3">
           Personal Details
         </h4>
@@ -142,6 +142,44 @@ const CoverLetterEditor = () => {
               </Form.Item>
             </div>
           </div>
+          <>
+            <div
+              className="btn-body fixed bottom-0 right-0"
+              onClick={() => setOpen(true)}
+            >
+              <button className="btn btn-hover">
+                <span className="btn-text">Preview & Download</span>
+              </button>
+            </div>
+            <Modal
+              centered
+              open={open}
+              onOk={() => setOpen(false)}
+              onCancel={() => setOpen(false)}
+              width={1000}
+            >
+              <div className="flex justify-end my-5 mx-5 px-12 pb-5">
+                <Button
+                  className="back-btn"
+                  onClick={() => navigate("/resume-templates")}
+                >
+                  Back
+                </Button>
+                {user.role === "user" ? (
+                  <Link to="/select-plan">
+                    <Button>print</Button>
+                  </Link>
+                ) : (
+                  <Button className="mx-5" onClick={handlePrint}>
+                    Print
+                  </Button>
+                )}
+              </div>
+              <div className="px-12 h-[100%] bg-white" ref={componentRef}>
+                {gettemplate()}
+              </div>
+            </Modal>
+          </>
 
           <div>
             <Button
@@ -153,44 +191,13 @@ const CoverLetterEditor = () => {
           </div>
         </Form>
       </div>
-      <>
-        <div
-          className="btn-body absolute bottom-0 right-0"
-          onClick={() => setOpen(true)}
-        >
-          <button className="btn btn-hover">
-            <span className="btn-text">Preview & Download</span>
-          </button>
-        </div>
-        <Modal
-          centered
-          open={open}
-          onOk={() => setOpen(false)}
-          onCancel={() => setOpen(false)}
-          width={1000}
-        >
-          <div className="flex justify-end my-5 mx-5 px-12 pb-5">
-            <Button
-              className="back-btn"
-              onClick={() => navigate("/resume-templates")}
-            >
-              Back
-            </Button>
-            {user.role === "user" ? (
-              <Link to="/select-plan">
-                <Button>print</Button>
-              </Link>
-            ) : (
-              <Button className="mx-5" onClick={handlePrint}>
-                Print
-              </Button>
-            )}
-          </div>
-          <div className="px-12 h-[100%] bg-white" ref={componentRef}>
-            {gettemplate()}
-          </div>
-        </Modal>
-      </>
+
+      <div
+        className="px-12 text-left mx-auto h-[29.7cm] hidden md:block w-[21cm] border-red-700 border-2 bg-gray-100"
+        ref={componentRef}
+      >
+        <p>{gettemplate()}</p>
+      </div>
     </div>
   );
 };

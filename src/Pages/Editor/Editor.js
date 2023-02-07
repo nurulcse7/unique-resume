@@ -26,12 +26,13 @@ const Editor = () => {
 
   const [open, setOpen] = useState(false);
   const { user } = useSelector((state) => state.user);
+  const { data } = useSelector((state) => state.resumeData);
   const componentRef = useRef();
   const navigate = useNavigate();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  const { data } = useSelector((state) => state.resumeData);
+
   const onFinish = async (values) => {
     await axiosInstance.post("/api/resumeinfo", values, {
       headers: {
@@ -51,16 +52,16 @@ const Editor = () => {
         return <Template1 />;
       }
       case "2": {
-        return <Template2 />;
+        return <Template2 data={data} />;
       }
       case "3": {
         return <Template3 />;
       }
-      case "13": {
-        return <Template4 />;
+      case "4": {
+        return <Template4 data={data} />;
       }
       case "5": {
-        return <Template5 />;
+        return <Template5 data={data} />;
       }
       case "6": {
         return <Template6 data={data} />;
@@ -88,6 +89,7 @@ const Editor = () => {
                   key: "2",
                   children: <SkillsEducation />,
                 },
+
                 {
                   label: `Employment History`,
                   key: "3",
@@ -116,8 +118,10 @@ const Editor = () => {
         </div>
         <>
           <div>
-            {" "}
-            <div className="px-12 h-[100%] bg-white" ref={componentRef}>
+            <div
+              className="px-12 h-[100%] hidden md:block bg-white"
+              ref={componentRef}
+            >
               {gettemplate()}
             </div>
           </div>
@@ -153,6 +157,7 @@ const Editor = () => {
                 </Button>
               )}
             </div>
+
             <div className="px-12 h-[100%] bg-white" ref={componentRef}>
               {gettemplate()}
             </div>

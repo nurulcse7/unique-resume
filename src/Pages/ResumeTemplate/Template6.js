@@ -114,16 +114,6 @@ const Template6 = ({ data }) => {
                         {/* <p>{skill.level}</p> */}
                       </>
                     ))}
-                    {/* <p>Active Listening</p>
-                    <p>Communication Skills</p>
-                    <p>Reading Comprehension</p>
-                    <p>Critical Thinking</p>
-                    <p>Time Management</p>
-                    <p>Information Ordering</p>
-                    <p>Reading Comprehension</p>
-                    <p>Category Flexibility</p>
-                    <p>Organizational Skills</p>
-                    <p>Project Management</p> */}
                   </div>
                 </div>
               </div>

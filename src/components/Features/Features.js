@@ -32,17 +32,17 @@ const featureContent = [
   },
   {
     id: 4,
-    title: "Automatic summary generator",
-    icon: <FaHeadSideVirus />,
+    title: "Templates",
+    icon: <FaFileSignature />,
     description:
-      "Create a powerful resume profile or cover letter in one click. Writer's block is no longer an obstacle.",
+      "A range of professional templates to choose from here",
   },
   {
     id: 5,
-    title: " Approved templates",
-    icon: <FaFileSignature />,
+    title: "Customization",
+    icon: <FaHeadSideVirus />,
     description:
-      "Professionally-designed resume templates and examples (+guides). Just edit and download in 5 minutes.",
+      "The ability to customize templates and create a unique design for your resume or CV.",
   },
   {
     id: 6,

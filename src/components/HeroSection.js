@@ -36,7 +36,7 @@ const HeroSection = () => {
                 <Link to='/contact'>
                   <button
                     type='button'
-                    className='inline-block px-5 py-3 border-[1px] border-white text-white font-medium text-sm leading-snug uppercase rounded-md hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out'
+                    className='md:text-[15px] text-[12px]  inline-block px-5 py-2 border-[1px] border-white text-white  leading-snug uppercase rounded-md hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out'
                     data-mdb-ripple='true'
                     data-mdb-ripple-color='light'
                   >

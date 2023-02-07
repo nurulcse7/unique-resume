@@ -1,12 +1,12 @@
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 import React from "react";
-import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
+import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { Confirm, Notify } from "notiflix";
 
-const Address = () => {
+const Address = ({ onFinish }) => {
   return (
     <div>
-      <h5>
+      <h5 className="text-start">
         <b>Present Address</b>
       </h5>
       <hr />
@@ -15,75 +15,84 @@ const Address = () => {
           <>
             <div>
               {fields.map(({ key, name, ...restField }) => (
-                <div className="grid md:grid-cols-5 md:gap-6" key={key}>
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "village"]}
-                      rules={[{ required: true, message: "Missing Village" }]}
-                    >
-                      <Input placeholder="Village" />
-                    </Form.Item>
-                  </div>
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "post"]}
-                      rules={[{ required: true, message: "Missing Post" }]}
-                    >
-                      <Input placeholder="Post" />
-                    </Form.Item>
-                  </div>
+                <div>
+                  <h4 className="text-start"> Address Details</h4>
+                  <div className="flex">
+                    <div className="flex-1">
+                      <div className="grid md:grid-cols-2  gap-3" key={key}>
+                        <div className="">
+                          <Form.Item
+                            {...restField}
+                            name={[name, "village"]}
+                            rules={[{ message: "Missing Village" }]}
+                          >
+                            <Input className="py-3" placeholder="Village " />
+                          </Form.Item>
+                        </div>
+                        <div className="">
+                          <Form.Item
+                            {...restField}
+                            name={[name, "post"]}
+                            rules={[{ message: "Missing Post" }]}
+                          >
+                            <Input className="py-3" placeholder="Post" />
+                          </Form.Item>
+                        </div>
 
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "ps"]}
-                      rules={[{ required: true, message: "Missing P.S" }]}
-                    >
-                      <Input placeholder="P.S" />
-                    </Form.Item>
-                  </div>
+                        <div className="">
+                          <Form.Item
+                            {...restField}
+                            name={[name, "ps"]}
+                            rules={[{ message: "Missing P.S" }]}
+                          >
+                            <Input className="py-3" placeholder="P.S" />
+                          </Form.Item>
+                        </div>
 
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "district"]}
-                      rules={[{ required: true, message: "Missing district" }]}
-                    >
-                      <Input placeholder="District" />
-                    </Form.Item>
-                  </div>
-                  <div className="-mt-5 py-5 md:py-0 md:mt-0 ">
-                    <MinusCircleOutlined
-                      className="-mt-1 text-red-500 text-2xl"
-                      onClick={() =>
-                        Confirm.show(
-                          "Please Confirm!",
-                          "Do you agree Remove this field",
-                          "Yes",
-                          "No",
-                          () => {
-                            remove(name);
-                          },
-                          () => {
-                            Notify.info("cancel remove");
-                          },
-                          {
-                            width: "320px",
-                            borderRadius: "8px",
-                            titleColor: "#fb923c",
-                            okButtonBackground: "#fb923c",
-                            cssAnimationStyle: "zoom",
-                          }
-                        )
-                      }
-                    />
+                        <div className="">
+                          <Form.Item
+                            {...restField}
+                            name={[name, "district"]}
+                            rules={[{ message: "Missing district" }]}
+                          >
+                            <Input className="py-3" placeholder="District" />
+                          </Form.Item>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="-mt-5 py-5 md:py-0 md:mt-0 flex items-center ml-5 ">
+                      <DeleteOutlined
+                        className="-mt-1 text-red-500 text-2xl"
+                        onClick={() =>
+                          Confirm.show(
+                            "Please Confirm!",
+                            "Do you agree Remove this field",
+                            "Yes",
+                            "No",
+                            () => {
+                              remove(name);
+
+                              message.success("items remove");
+                            },
+                            () => {
+                              message.warning("cancel remove");
+                            },
+                            {
+                              width: "320px",
+                              borderRadius: "8px",
+                              titleColor: "#132579",
+                              okButtonBackground: "#132579",
+                              cssAnimationStyle: "zoom",
+                            }
+                          )
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
-            <Form.Item>
+            <Form.Item className=" md:w-1/3 w-full">
               <Button
                 type="dashed"
                 onClick={() => add()}
@@ -96,7 +105,7 @@ const Address = () => {
           </>
         )}
       </Form.List>
-      <h5>
+      <h5 className="text-start">
         <b>Permanent Address</b>
       </h5>
       <hr />
@@ -105,75 +114,83 @@ const Address = () => {
           <>
             <div>
               {fields.map(({ key, name, ...restField }) => (
-                <div className="grid md:grid-cols-5 md:gap-6" key={key}>
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "village"]}
-                      rules={[{ required: true, message: "Missing Village" }]}
-                    >
-                      <Input placeholder="Village" />
-                    </Form.Item>
-                  </div>
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "post"]}
-                      rules={[{ required: true, message: "Missing Post" }]}
-                    >
-                      <Input placeholder="Post" />
-                    </Form.Item>
-                  </div>
+                <div>
+                  <h4 className="text-start"> Address Details</h4>
+                  <div className="flex">
+                    <div className="flex-1">
+                      <div className="grid md:grid-cols-2 md:gap-3" key={key}>
+                        <div className="">
+                          <Form.Item
+                            {...restField}
+                            name={[name, "village"]}
+                            rules={[{ message: "Missing Village" }]}
+                          >
+                            <Input className="py-3" placeholder="Village" />
+                          </Form.Item>
+                        </div>
+                        <div className="">
+                          <Form.Item
+                            {...restField}
+                            name={[name, "post"]}
+                            rules={[{ message: "Missing Post" }]}
+                          >
+                            <Input className="py-3" placeholder="Post" />
+                          </Form.Item>
+                        </div>
 
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "ps"]}
-                      rules={[{ required: true, message: "Missing P.S" }]}
-                    >
-                      <Input placeholder="P.S" />
-                    </Form.Item>
-                  </div>
+                        <div className="">
+                          <Form.Item
+                            {...restField}
+                            name={[name, "ps"]}
+                            rules={[{ message: "Missing P.S" }]}
+                          >
+                            <Input className="py-3" placeholder="P.S" />
+                          </Form.Item>
+                        </div>
 
-                  <div className="">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "district"]}
-                      rules={[{ required: true, message: "Missing district" }]}
-                    >
-                      <Input placeholder="District" />
-                    </Form.Item>
-                  </div>
-                  <div className="-mt-5 py-5 md:py-0 md:mt-0 ">
-                    <MinusCircleOutlined
-                      className="-mt-1 text-red-500 text-2xl"
-                      onClick={() =>
-                        Confirm.show(
-                          "Please Confirm!",
-                          "Do you agree Remove this field",
-                          "Yes",
-                          "No",
-                          () => {
-                            remove(name);
-                          },
-                          () => {
-                            Notify.info("cancel remove");
-                          },
-                          {
-                            width: "320px",
-                            borderRadius: "8px",
-                            titleColor: "#fb923c",
-                            okButtonBackground: "#fb923c",
-                            cssAnimationStyle: "zoom",
-                          }
-                        )
-                      }
-                    />
+                        <div className="">
+                          <Form.Item
+                            {...restField}
+                            name={[name, "district"]}
+                            rules={[{ message: "Missing district" }]}
+                          >
+                            <Input className="py-3" placeholder="District" />
+                          </Form.Item>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="-mt-5 py-5 md:py-0 md:mt-0 flex items-center ml-5 ">
+                      <DeleteOutlined
+                        className="-mt-1 text-red-500 text-2xl"
+                        onClick={() =>
+                          Confirm.show(
+                            "Please Confirm!",
+                            "Do you agree Remove this field",
+                            "Yes",
+                            "No",
+                            () => {
+                              remove(name);
+                              message.success("items remove");
+                            },
+                            () => {
+                              message.warning("cancel remove");
+                            },
+                            {
+                              width: "320px",
+                              borderRadius: "8px",
+                              titleColor: "#132579",
+                              okButtonBackground: "#132579",
+                              cssAnimationStyle: "zoom",
+                            }
+                          )
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
-            <Form.Item>
+            <Form.Item className="md:w-1/3 w-full">
               <Button
                 type="dashed"
                 onClick={() => add()}
@@ -187,7 +204,7 @@ const Address = () => {
         )}
       </Form.List>
 
-      <h5>
+      <h5 className="text-start">
         <b>Language Skills</b>
       </h5>
       <hr />
@@ -196,51 +213,54 @@ const Address = () => {
           <>
             <div className="w-full">
               {fields.map(({ key, name, ...restField }) => (
-                <div
-                  className="md:grid md:grid-cols-2 gap-2 flex justify-between md:gap-6"
-                  key={key}
-                >
-                  <div className=" w-full">
-                    <Form.Item
-                      {...restField}
-                      name={[name, "language"]}
-                      rules={[{ required: true, message: "Missing language" }]}
-                    >
-                      <Input placeholder="Language" />
-                    </Form.Item>
-                  </div>
+                <div>
+                  <div
+                    className="md:grid md:grid-cols-2 gap-2 flex justify-between md:gap-6"
+                    key={key}
+                  >
+                    <div className=" w-full ">
+                      <Form.Item
+                        {...restField}
+                        name={[name, "language"]}
+                        rules={[{ message: "Missing language" }]}
+                      >
+                        <Input className="py-3" placeholder="Language" />
+                      </Form.Item>
+                    </div>
 
-                  <div className="">
-                    <MinusCircleOutlined
-                      className="-mt-1 text-red-500 text-2xl"
-                      onClick={() =>
-                        Confirm.show(
-                          "Please Confirm!",
-                          "Do you agree Remove this field",
-                          "Yes",
-                          "No",
-                          () => {
-                            remove(name);
-                          },
-                          () => {
-                            Notify.info("cancel remove");
-                          },
-                          {
-                            width: "320px",
-                            borderRadius: "8px",
-                            titleColor: "#fb923c",
-                            okButtonBackground: "#fb923c",
-                            cssAnimationStyle: "zoom",
-                          }
-                        )
-                      }
-                    />
+                    <div className=" flex items-center ml-5 ">
+                      <DeleteOutlined
+                        className="-mt-1 text-red-500 text-2xl"
+                        onClick={() =>
+                          Confirm.show(
+                            "Please Confirm!",
+                            "Do you agree Remove this field",
+                            "Yes",
+                            "No",
+                            () => {
+                              remove(name);
+                              message.success("items remove");
+                            },
+                            () => {
+                              message.warning("cancel remove");
+                            },
+                            {
+                              width: "320px",
+                              borderRadius: "8px",
+                              titleColor: "#132579",
+                              okButtonBackground: "#132579",
+                              cssAnimationStyle: "zoom",
+                            }
+                          )
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <Form.Item>
+            <Form.Item className="md:w-1/3 w-full">
               <Button
                 type="dashed"
                 onClick={() => add()}
@@ -253,7 +273,7 @@ const Address = () => {
           </>
         )}
       </Form.List>
-      <h5>
+      <h5 className="text-start">
         <b>Personal Skills</b>
       </h5>
       <hr />
@@ -277,12 +297,12 @@ const Address = () => {
                         },
                       ]}
                     >
-                      <Input placeholder="Personal Skill" />
+                      <Input className="py-3" placeholder="Personal Skill" />
                     </Form.Item>
                   </div>
 
-                  <div className="">
-                    <MinusCircleOutlined
+                  <div className="flex items-center ml-5">
+                    <DeleteOutlined
                       className="-mt-1 text-red-500 text-2xl"
                       onClick={() =>
                         Confirm.show(
@@ -292,15 +312,16 @@ const Address = () => {
                           "No",
                           () => {
                             remove(name);
+                            message.success("items remove");
                           },
                           () => {
-                            Notify.info("cancel remove");
+                            message.warning("cancel remove");
                           },
                           {
                             width: "320px",
                             borderRadius: "8px",
-                            titleColor: "#fb923c",
-                            okButtonBackground: "#fb923c",
+                            titleColor: "#132579",
+                            okButtonBackground: "#132579",
                             cssAnimationStyle: "zoom",
                           }
                         )
@@ -311,7 +332,7 @@ const Address = () => {
               ))}
             </div>
 
-            <Form.Item>
+            <Form.Item className="md:w-1/3 w-full">
               <Button
                 type="dashed"
                 onClick={() => add()}

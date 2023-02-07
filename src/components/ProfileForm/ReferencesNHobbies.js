@@ -20,8 +20,8 @@ const ReferencesNHobbies = () => {
                       <div className=" w-full">
                         <Form.Item
                           {...restField}
-                          name={[name, "referent'sFullName"]}
-                          label="Referent's Full Name"
+                          name={[name, "fullName"]}
+                          label="Full Name"
                         >
                           <Input
                             placeholder="Full Name"

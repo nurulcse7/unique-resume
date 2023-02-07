@@ -9,8 +9,6 @@ const CoverLetterTemplate3 = ({ data }) => {
       </h1>
       <span className="md:text-xl text-lg font-semibold">{data?.jobTitle}</span>
 
-      {/* <div className="border-2 border-yellow-400  mt-5  w-full rounded-sm"></div> */}
-      {/* <div className="border-2 border-yellow-400 relative md:left-[35%] lg:left-[30%] xl:left-[28%] left-[37%] h-2/3 rounded-sm"></div> */}
       <div className="flex my-10 ">
         <div
           className={`py-6  gap-3  border-t-4 border-r-4 border-sky-400 md:w-[30%] w-[30%] flex flex-col justify-start items-start `}
@@ -21,7 +19,7 @@ const CoverLetterTemplate3 = ({ data }) => {
             <p>{data?.companyName}</p>
             <p>{data?.companyAddress}</p>
           </div>
-          {/* <div className="border-2 border-yellow-400 absolute md:left-[35%] lg:left-[30%] xl:left-[28%] left-[37%] h-2/3 rounded-sm"></div> */}
+
           <div className="text-start mt-10">
             <p className="md:text-[15px] text-[12px]">From</p>
             <h1 className="font-semibold">{data?.fullname}</h1>

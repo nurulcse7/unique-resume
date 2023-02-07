@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook, FaGithub, FaLink, FaLinkedin } from "react-icons/fa";
 
 const Template5 = ({ data }) => {
+  console.log("Template5", data);
   return (
     <div className="py-10 px-5 h=full">
       <section className="  lg:m-10 border border-black rounded-md mx-auto text-left  bg-gray-50  shadow-2xl">

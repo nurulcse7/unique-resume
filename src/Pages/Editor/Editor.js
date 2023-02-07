@@ -57,8 +57,8 @@ const Editor = () => {
       case "3": {
         return <Template3 />;
       }
-      case "13": {
-        return <Template4 />;
+      case "4": {
+        return <Template4 data={data} />;
       }
       case "5": {
         return <Template5 data={data} />;

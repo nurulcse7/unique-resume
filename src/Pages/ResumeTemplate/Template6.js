@@ -1,7 +1,7 @@
 import React from "react";
 
 const Template6 = ({ data }) => {
-  console.log(data);
+  console.log("Template6", data);
   return (
     <section className="w-[21cm] m-10 border border-black rounded-md mx-auto text-left relative h-[29.7cm] shadow-2xl">
       <div className="flex w-full h-full ">
@@ -14,24 +14,32 @@ const Template6 = ({ data }) => {
                   <br /> {data?.lname}
                 </p>
 
-                <p className="mt-3 text-xl font-semibold uppercase">
-                  market specialist
-                </p>
+                <p className="mt-3 text-lg font-semibold ">{data?.jobTitle}</p>
               </div>
 
-              <div className="py-8">
+              <div className="py-8 text-left">
                 <div className="leading-none pt-8 border-t-2 border-gray-600">
-                  <p className="capitalize">868-397-9079</p>
+                  <p className="capitalize">
+                    {" "}
+                    <strong>Phone: </strong>
+                    {data?.mobileNumber}
+                  </p>
                 </div>
                 <div className="leading-none pt-3 ">
-                  <p className="capitalize">victoriayoung@gmail.com</p>
+                  <p className="capitalize">
+                    <strong>Email: </strong>
+                    {data?.email}
+                  </p>
                 </div>
 
-                <div className="leading-none pt-3">
+                {/* <div className="leading-none pt-3">
                   <p>Sreet Name </p>
-                </div>
+                </div> */}
                 <div className="leading-none pt-3">
-                  <p>City, State, Zip Code </p>
+                  <p>
+                    <strong>Address: </strong>
+                    {data?.address}{" "}
+                  </p>
                 </div>
               </div>
 
@@ -84,16 +92,9 @@ const Template6 = ({ data }) => {
               </div>
 
               <div>
-                <div className="leading-none pt-3">
-                  <small className="capitalize">
-                    my name is Jennifer Anderson. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Quae reprehenderit
-                    necessitatibus repellendus a, aut dolorum unde ullam nostrum
-                    perferendis hic vel quos labore odio atque at, earum velit
-                    tenetur quasi explicabo incidunt vero officiis maiores autem
-                    consectetur. Sequi ad culpa vero commodi blanditiis at,
-                    veritatis officiis iusto neque sit, esse aut aspernatur
-                    explicabo. Amet, ipsam illo molestiae.
+                <div className="leading-none pt-3 text-justify">
+                  <small className="capitalize ">
+                    {data?.professionalSummary}
                   </small>
                 </div>
               </div>
@@ -107,7 +108,13 @@ const Template6 = ({ data }) => {
               <div>
                 <div className="leading-none pt-3">
                   <div className="font-semibold grid grid-cols-2 gap-4 ">
-                    <p>Active Listening</p>
+                    {data?.skills.map((skill) => (
+                      <>
+                        <p>{skill.technology}</p>
+                        {/* <p>{skill.level}</p> */}
+                      </>
+                    ))}
+                    {/* <p>Active Listening</p>
                     <p>Communication Skills</p>
                     <p>Reading Comprehension</p>
                     <p>Critical Thinking</p>
@@ -116,7 +123,7 @@ const Template6 = ({ data }) => {
                     <p>Reading Comprehension</p>
                     <p>Category Flexibility</p>
                     <p>Organizational Skills</p>
-                    <p>Project Management</p>
+                    <p>Project Management</p> */}
                   </div>
                 </div>
               </div>

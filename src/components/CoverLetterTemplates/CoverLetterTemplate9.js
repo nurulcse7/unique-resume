@@ -10,7 +10,7 @@ const CoverLetterTemplate9 = ({ data }) => {
         <h1 className="md:text-3xl w-1/4 text-sky-400 text-left text-xl uppercase  ">
           {data?.fullname}
         </h1>
-        <div className="border-2  border-sky-400 absolute  w-2/5 rounded-sm"></div>
+        <div className="border-2  border-sky-400   w-full rounded-sm"></div>
         {/* <p className="md:text-xl  text-left text-[12px]">{data?.jobTitle}</p> */}
         <p className="md:text-[13px] mt-2 text-left text-[10px]">
           {data?.mobileNumber} | {data?.address} | {data?.email}

@@ -1,6 +1,7 @@
 import React from "react";
 
 const Template2 = ({ data }) => {
+  console.log("ResumeTemplate2", data);
   return data?.map((d) => (
     <section className="lg:w-[21cm] w-[100vw] lg:m-10 border border-black rounded-md mx-auto text-left relative bg-white lg:h-[29.7cm] shadow-2xl lg:p-6 p-3">
       <div className=" w-full leading-none flex">

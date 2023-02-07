@@ -192,11 +192,8 @@ const Template5 = ({ data }) => {
       ],
     },
   ];
-  return data?.map((d, i) => (
-    <section
-      key={i}
-      className="lg:w-[21cm] w-[100vw]  lg:m-10 border border-black rounded-md mx-auto text-left relative bg-gray-50 lg:h-[29.7cm] shadow-2xl"
-    >
+  return (
+    <section className="lg:w-[21cm] w-[100vw]  lg:m-10 border border-black rounded-md mx-auto text-left relative bg-gray-50 lg:h-[29.7cm] shadow-2xl">
       <div className="flex">
         <div className="lg:w-[8cm] w-[40%]  lg:h-[29.7cm]">
           <div className="p-6 flex justify-center items-center lg:h-[7cm]">
@@ -219,7 +216,7 @@ const Template5 = ({ data }) => {
                   contact
                 </p>
               </div>
-              {d?.personalInformation?.map((info, i) => (
+              {/* {data?.personalInformation?.map((info, i) => (
                 <div key={i}>
                   <div className="leading-none pt-3">
                     <p>Address: </p>
@@ -238,9 +235,9 @@ const Template5 = ({ data }) => {
                     <small className="">{info.email}</small>
                   </div>
                 </div>
-              ))}
+              ))} */}
 
-              {d?.websiteAndSocialLinks?.map((link, i) => (
+              {/* {data?.websiteAndSocialLinks?.map((link, i) => (
                 <div key={i}>
                   <div className="leading-none pt-3">
                     <p>{link.label}: </p>
@@ -249,7 +246,7 @@ const Template5 = ({ data }) => {
                     </a>
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
 
             <div className="mt-3">
@@ -265,11 +262,11 @@ const Template5 = ({ data }) => {
               </div>
 
               <div>
-                {d?.skills?.map((skill, i) => (
+                {/* {data?.skills?.map((skill, i) => (
                   <div key={i} className="leading-none pt-3">
                     <small className="capitalize">{skill.Skill}</small>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
 
@@ -286,7 +283,7 @@ const Template5 = ({ data }) => {
               </div>
 
               <div>
-                {d?.references?.map((reff, i) => (
+                {/* {data?.references?.map((reff, i) => (
                   <div key={i} className="leading-none pt-3">
                     <p className="font-semibold capitalize">{reff?.name}</p>
                     <p>
@@ -299,7 +296,7 @@ const Template5 = ({ data }) => {
                       <small className="">{reff?.email}</small>
                     </p>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
@@ -307,7 +304,7 @@ const Template5 = ({ data }) => {
 
         <div className="">
           <div className="lg:w-[13cm] w-[60%] h-[115px] lg:px-10 lg:h-[7cm]  flex items-center  justify-center ">
-            {d?.personalInformation?.map((info, i) => (
+            {/* {data?.personalInformation?.map((info, i) => (
               <div key={i} className=" text-center ">
                 <h2 className="lg:text-4xl text-2xl uppercase font-bold leading-none">
                   {info?.fname} {info?.lname}
@@ -316,7 +313,7 @@ const Template5 = ({ data }) => {
                   <small> {info?.jobTitle}</small>
                 </p>
               </div>
-            ))}
+            ))} */}
           </div>
 
           <div className=" lg:px-8 lg:w-[13cm] px-4  w-[60%]  lg:h-[22.7cm] text-gray-700 ">
@@ -333,12 +330,8 @@ const Template5 = ({ data }) => {
               </div>
 
               <div>
-                <div className="leading-none pt-3">
-                  {d?.professionalSummary?.map((summ, i) => (
-                    <small key={i} className="capitalize">
-                      {summ}
-                    </small>
-                  ))}
+                <div className=" pt-3">
+                  <p className=" ">{data?.professionalSummary}</p>
                 </div>
               </div>
             </div>
@@ -357,32 +350,25 @@ const Template5 = ({ data }) => {
 
               <div>
                 <div className="leading-none pt-3">
-                  {d?.employmentHistory?.map((experiences, i) => (
-                    <div key={i}>
-                      <div className="flex text-black items-center font-semibold lg:text-xl">
-                        <p className="lg:w-[200px] w-[100px] capitalize">
-                          {experiences?.jobTitle}
-                        </p>
-                        <p className="capitalize">{experiences?.employer}</p>
-                      </div>
+                  {data?.employmentHistory.map((employ) => (
+                    <>
+                      <div>
+                        <div className="flex text-black items-start  text-base">
+                          <p className="w-[50%]">{employ?.jobTitle}</p>
+                          <p className="w-[50%]">{employ?.employer}</p>
+                        </div>
 
-                      <div className="flex items-center mt-1">
-                        <p className="lg:w-[380px] w-[300px] ">
-                          {experiences?.startDate} - {experiences?.endDate}
-                        </p>
-                        <div className="">
-                          {experiences?.discription
-                            .slice(0, 2)
-                            ?.map((des, i) => (
-                              <p key={i}>
-                                <small key={des} className="text-gray-500">
-                                  {des}
-                                </small>
-                              </p>
-                            ))}
+                        <div className="flex items-center mt-2">
+                          <p className="w-[50%]">
+                            {employ?.date[0].slice(0, 4)} -
+                            {employ?.date[1].slice(0, 4)}
+                          </p>
+                          <p className="w-[50%] mb-3 text-justify">
+                            {employ?.description.slice(0, 100) + "..."}
+                          </p>
                         </div>
                       </div>
-                    </div>
+                    </>
                   ))}
                 </div>
               </div>
@@ -402,7 +388,33 @@ const Template5 = ({ data }) => {
 
               <div>
                 <div className="leading-none pt-3">
-                  {d?.educationHistory?.map((edu, i) => (
+                  {data?.education >= 0 ? (
+                    <></>
+                  ) : (
+                    <>
+                      {data?.education.map((edu) => (
+                        <>
+                          <div>
+                            <div className="flex text-black items-start  text-base">
+                              <p className="w-[50%]">{edu?.school}</p>
+                              <p className="w-[50%]">{edu?.degree}</p>
+                            </div>
+
+                            <div className="flex items-center mt-2">
+                              <p className="w-[50%]">
+                                {edu?.date[0].slice(0, 4)} -
+                                {edu?.date[1].slice(0, 4)}
+                              </p>
+                              <p className="w-[50%] mb-3 text-justify">
+                                {edu?.description.slice(0, 100) + "..."}
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      ))}
+                    </>
+                  )}
+                  {/* {data?.educationHistory?.map((edu, i) => (
                     <div key={i} className="mt-1 capitalize">
                       <div className="flex text-black items-center font-semibold lg:text-xl">
                         <p className="lg:w-[200px] w-[100px]">{edu?.school}</p>
@@ -418,7 +430,7 @@ const Template5 = ({ data }) => {
                         </small>
                       </div>
                     </div>
-                  ))}
+                  ))} */}
                 </div>
               </div>
             </div>
@@ -426,7 +438,7 @@ const Template5 = ({ data }) => {
         </div>
       </div>
     </section>
-  ));
+  );
 };
 
 export default Template5;

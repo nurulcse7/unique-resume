@@ -25,7 +25,7 @@ const CoverLetterTemplate4 = ({ data }) => {
           <p className="md:text-[13px] text-right text-[10px]">{data?.email}</p>
         </div>
       </div>
-      <div className="border-2 border-yellow-400 absolute mt-5  w-5/6 rounded-sm"></div>
+      <div className="border-2 border-gray-400  mt-5  w-full rounded-sm"></div>
 
       <div className="">
         <div className="flex gap-2 flex-col items-start py-6">
@@ -38,8 +38,8 @@ const CoverLetterTemplate4 = ({ data }) => {
         <div className=" py-6">
           <span>Dear {data?.hiringManagerName}</span>
           <p className=" text-justify">{data?.letterDetails}</p>
-          <p className=" text-lg capitalize mt-10">sincerly</p>
-          <h2>{data?.fullname}</h2>
+          <p className=" text-lg capitalize mt-10">Kind regards</p>
+          <h2 className="font-serif mt-10">{data?.fullname}</h2>
         </div>
       </div>
     </div>

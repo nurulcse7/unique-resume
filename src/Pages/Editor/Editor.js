@@ -26,12 +26,13 @@ const Editor = () => {
 
   const [open, setOpen] = useState(false);
   const { user } = useSelector((state) => state.user);
+  const { data } = useSelector((state) => state.resumeData);
   const componentRef = useRef();
   const navigate = useNavigate();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  const { data } = useSelector((state) => state.resumeData);
+
   const onFinish = async (values) => {
     await axiosInstance.post("/api/resumeinfo", values, {
       headers: {
@@ -51,7 +52,7 @@ const Editor = () => {
         return <Template1 />;
       }
       case "2": {
-        return <Template2 />;
+        return <Template2 data={data} />;
       }
       case "3": {
         return <Template3 />;

@@ -28,7 +28,7 @@ function CVEditor() {
   const params = useParams();
   const gettemplate = () => {
     switch (params.id) {
-      case "6": {
+      case "1": {
         return <CvTemplate1 />;
       }
       case "2": {

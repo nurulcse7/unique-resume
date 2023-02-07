@@ -7,13 +7,15 @@ import {
   FaCompress,
   FaPencilAlt,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axiosInstance from "../../../utils/axiosInstance";
 
 const DashboardCoverLetter = () => {
   const [data, setData] = useState([]);
   const [ismove, setIsMove] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosInstance
@@ -43,6 +45,10 @@ const DashboardCoverLetter = () => {
           toast.success("Cover Letter Deleted SuccessFully");
         }
       });
+  };
+
+  const handleUpdateCoverLetter = (id) => {
+    navigate(`/cover-letter-editor/${id}`);
   };
 
   return (
@@ -190,7 +196,10 @@ const DashboardCoverLetter = () => {
                         {" "}
                         <FaPencilAlt />{" "}
                       </span>
-                      <button className=" text-black  text-sm font-bold  hover:text-sky-500">
+                      <button
+                        onClick={() => handleUpdateCoverLetter(template?._id)}
+                        className=" text-black  text-sm font-bold  hover:text-sky-500"
+                      >
                         {" "}
                         Edit Cover Letter{" "}
                       </button>

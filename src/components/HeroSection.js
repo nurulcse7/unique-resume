@@ -39,6 +39,7 @@ const HeroSection = () => {
                     className="bg-transparent md:text-[15px] text-[12px] uppercase cursor-pointer   text-white  rounded shadow hover:shadow-lg py-1 md:py-2 z-10 px-4 border border-white "
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
+
                   >
                     Contact Us
                   </button>

@@ -255,15 +255,7 @@ const Template6 = ({ data }) => {
                                   <p className="w-[50%]">{reference?.email}</p>
                                 </div>
 
-                                <div className="flex items-center mt-2">
-                                  {/* <p className="w-[50%]">
-                                {reference?.date[0].slice(0, 4)} -
-                                {reference?.date[1].slice(0, 4)}
-                              </p> */}
-                                  {/* <small className="w-[50%] mb-3 text-gray-500 text-justify">
-                                {reference?.description.slice(0, 100) + "..."}
-                              </small> */}
-                                </div>
+                                <div className="flex items-center mt-2"></div>
                               </div>
                             </>
                           ))}

@@ -118,7 +118,6 @@ const Editor = () => {
         </div>
         <>
           <div>
-            {" "}
             <div
               className="px-12 h-[100%] hidden md:block bg-white"
               ref={componentRef}

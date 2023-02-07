@@ -159,65 +159,126 @@ const Template6 = ({ data }) => {
             </div>
 
             <div className="mt-3">
-              <div className="flex py-2  items-center border-b-2 border-gray-300">
-                <p className="text-2xl font-bold uppercase">experiences </p>
-              </div>
+              {/* Experiences */}
+              {data?.employmentHistory >= 0 ? (
+                <></>
+              ) : (
+                <>
+                  <div>
+                    <div className="flex py-2  items-center border-b-2 border-gray-300">
+                      <p className="text-2xl font-bold uppercase">
+                        Experiences{" "}
+                      </p>
+                    </div>
 
-              <div>
-                <div className="leading-none pt-3">
-                  {data.employmentHistory.map((employ) => (
-                    <>
-                      <div>
-                        <div className="flex text-black items-start  text-base">
-                          <p className="w-[50%]">{employ?.jobTitle}</p>
-                          <p className="w-[50%]">{employ?.employer}</p>
-                        </div>
+                    <div>
+                      <div className="leading-none pt-3">
+                        {data?.employmentHistory.map((employ) => (
+                          <>
+                            <div>
+                              <div className="flex text-black items-start  text-base">
+                                <p className="w-[50%]">{employ?.jobTitle}</p>
+                                <p className="w-[50%]">{employ?.employer}</p>
+                              </div>
 
-                        <div className="flex items-center mt-2">
-                          <p className="w-[50%]">
-                            {employ?.date[0].slice(0, 4)} -
-                            {employ?.date[1].slice(0, 4)}
-                          </p>
-                          <small className="w-[50%] mb-3 text-gray-500 text-justify">
-                            {employ?.description.slice(0, 100) + "..."}
-                          </small>
-                        </div>
+                              <div className="flex items-center mt-2">
+                                <p className="w-[50%]">
+                                  {employ?.date[0].slice(0, 4)} -
+                                  {employ?.date[1].slice(0, 4)}
+                                </p>
+                                <small className="w-[50%] mb-3 text-gray-500 text-justify">
+                                  {employ?.description.slice(0, 100) + "..."}
+                                </small>
+                              </div>
+                            </div>
+                          </>
+                        ))}
                       </div>
-                    </>
-                  ))}
-                </div>
-              </div>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="mt-2">
-              <div className="flex items-center border-b-2 border-gray-300">
-                <p className="text-xl font-bold uppercase">Education </p>
-              </div>
+              {/* Education */}
 
-              <div>
-                <div className="leading-none pt-3">
-                  {data?.education.map((edu) => (
-                    <>
-                      <div>
-                        <div className="flex text-black items-start  text-base">
-                          <p className="w-[50%]">{edu?.school}</p>
-                          <p className="w-[50%]">{edu?.degree}</p>
-                        </div>
+              {data?.education >= 0 ? (
+                <></>
+              ) : (
+                <>
+                  <div>
+                    <div className="flex items-center border-b-2 border-gray-300">
+                      <p className="text-xl font-bold uppercase">Education </p>
+                    </div>
+                    <div className="leading-none pt-3">
+                      {data?.education.map((edu) => (
+                        <>
+                          <div>
+                            <div className="flex text-black items-start  text-base">
+                              <p className="w-[50%]">{edu?.school}</p>
+                              <p className="w-[50%]">{edu?.degree}</p>
+                            </div>
 
-                        <div className="flex items-center mt-2">
-                          <p className="w-[50%]">
-                            {edu?.date[0].slice(0, 4)} -
-                            {edu?.date[1].slice(0, 4)}
-                          </p>
-                          <small className="w-[50%] mb-3 text-gray-500 text-justify">
-                            {edu?.description.slice(0, 100) + "..."}
-                          </small>
-                        </div>
-                      </div>
-                    </>
-                  ))}
-                </div>
-              </div>
+                            <div className="flex items-center mt-2">
+                              <p className="w-[50%]">
+                                {edu?.date[0].slice(0, 4)} -
+                                {edu?.date[1].slice(0, 4)}
+                              </p>
+                              <small className="w-[50%] mb-3 text-gray-500 text-justify">
+                                {edu?.description.slice(0, 100) + "..."}
+                              </small>
+                            </div>
+                          </div>
+                        </>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
+
+              {/* References */}
+              {data?.references >= 0 ? (
+                <></>
+              ) : (
+                <>
+                  <div>
+                    <div className="flex items-center border-b-2 border-gray-300">
+                      <p className="text-xl font-bold uppercase">Reference </p>
+                    </div>
+                    <div className="leading-none pt-3">
+                      {data?.references.map((reference) => (
+                        <>
+                          <div>
+                            <div className="flex text-black items-start  text-base">
+                              <p className="w-[50%]">{reference?.fullName}</p>
+                              <p className="w-[50%]">{reference?.company}</p>
+                            </div>
+                            <div className="flex text-black items-start  text-base">
+                              <p className="w-[50%]">Phone Number :</p>
+                              <p className="w-[50%]">{reference?.phone}</p>
+                            </div>
+                            <div className="flex text-black items-start  text-base">
+                              <p className="w-[50%]">E-mail :</p>
+                              <p className="w-[50%]">{reference?.email}</p>
+                            </div>
+
+                            <div className="flex items-center mt-2">
+                              {/* <p className="w-[50%]">
+                                {reference?.date[0].slice(0, 4)} -
+                                {reference?.date[1].slice(0, 4)}
+                              </p> */}
+                              {/* <small className="w-[50%] mb-3 text-gray-500 text-justify">
+                                {reference?.description.slice(0, 100) + "..."}
+                              </small> */}
+                            </div>
+                          </div>
+                        </>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

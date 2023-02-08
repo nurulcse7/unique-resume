@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaPencilAlt,
   FaArchive,
@@ -12,7 +12,7 @@ import axiosInstance from "../../../utils/axiosInstance";
 import { toast } from "react-hot-toast";
 const DashboardResume = () => {
   const [data, setData] = useState([]);
-
+  const navigate = useNavigate();
   const [ismove, setIsMove] = useState(false);
 
   useEffect(() => {
@@ -43,7 +43,10 @@ const DashboardResume = () => {
         }
       });
   };
-
+  const handleUpdateResume = (id) => {
+    // console.log(id);
+    navigate(`/resume-templates/${id}`);
+  };
   const { template } = data;
 
   return (
@@ -77,7 +80,7 @@ const DashboardResume = () => {
                     <div className="flex">
                       <div className=" bg-[#0f5b31]  text-white p-4">
                         <div className="leading-none">
-                          {template?.personalInformation.map((p) => (
+                          {template?.personalInformation?.map((p) => (
                             <h2 className=" leading-none uppercase text-3xl font-semibold">
                               {p.fname} <br></br>
                               {p.lname}
@@ -92,14 +95,27 @@ const DashboardResume = () => {
                             <div>
                               <div className="flex justify-between items-center">
                                 <small className="">
-                                  {template?.skills.map((s, index) => (
-                                    <span>
+                                  {template.skills.length < 0 ? (
+                                    <>
+                                      {template?.skills?.map((s, index) => (
+                                        <span>
+                                          <span className="text-xl font-bold px-1">
+                                            •
+                                          </span>
+                                          {s.skill}
+                                        </span>
+                                      ))}
+                                    </>
+                                  ) : (
+                                    <>
                                       <span className="text-xl font-bold px-1">
                                         •
                                       </span>
-                                      {s.skill}
-                                    </span>
-                                  ))}
+                                      <span className="text-xl font-bold px-1">
+                                        •
+                                      </span>
+                                    </>
+                                  )}
                                 </small>
                               </div>
                             </div>
@@ -139,18 +155,18 @@ const DashboardResume = () => {
 
                       <div className="  max-w-[380px] p-8 h-full">
                         <div>
-                          {template?.personalInformation.map((p) => (
+                          {template?.personalInformation?.map((p) => (
                             <h3 className="text-semibold text-[#0f5b31] text-xl">
                               {p.jobTitle}
                             </h3>
                           ))}
 
                           <div className="grid grid-cols-2 leading-none">
-                            {template?.personalInformation.map((p) => (
+                            {template?.personalInformation?.map((p) => (
                               <p>
                                 <small>
                                   <i className="fa-solid pr-1 fa-phone"></i>{" "}
-                                  {p.phone}
+                                  {p.phone && p.phone}
                                 </small>
                               </p>
                             ))}
@@ -170,7 +186,7 @@ const DashboardResume = () => {
                                 linkedin.com/in/timothy
                               </small>
                             </p>
-                            {template?.personalInformation.map((p) =>
+                            {template?.personalInformation?.map((p) =>
                               p ? (
                                 <p>
                                   <small>
@@ -227,7 +243,10 @@ const DashboardResume = () => {
                         {" "}
                         <FaPencilAlt />{" "}
                       </span>
-                      <button className=" text-black  text-sm font-bold  hover:text-sky-500">
+                      <button
+                        onClick={() => handleUpdateResume(template?._id)}
+                        className=" text-black  text-sm font-bold  hover:text-sky-500"
+                      >
                         {" "}
                         Edit Resume{" "}
                       </button>

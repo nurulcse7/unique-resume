@@ -28,7 +28,7 @@ const AllUser = () => {
       });
   };
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div>

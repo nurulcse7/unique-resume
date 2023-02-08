@@ -14,6 +14,7 @@ import { signOut } from "../../redux/action/user";
 const Sidebar = () => {
   const { user } = useSelector((state) => state.user);
 
+  console.log(user.role);
   const dispatch = useDispatch();
   const logOut = () => {
     dispatch(signOut());
@@ -53,18 +54,20 @@ const Sidebar = () => {
               </Link>
             </li>
 
-            <li>
-              <Link
-                to="/dashboard/all-user"
-                className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
-              >
-                <span>
-                  {" "}
-                  <FaUsers />{" "}
-                </span>
-                <span className="group-hover:text-gray-700">All Users</span>
-              </Link>
-            </li>
+            {user.role === "pro" && (
+              <li>
+                <Link
+                  to="/dashboard/all-user"
+                  className="px-4 py-3 flex items-center  space-x-4 rounded-xl text-black focus:text-white focus:bg-gradient-to-r  focus:from-sky-600 focus:to-cyan-400"
+                >
+                  <span>
+                    {" "}
+                    <FaUsers />{" "}
+                  </span>
+                  <span className="group-hover:text-gray-700">All Users</span>
+                </Link>
+              </li>
+            )}
 
             <li>
               <Link

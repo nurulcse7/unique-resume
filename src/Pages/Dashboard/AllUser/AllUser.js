@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "../../../redux/action/data";
 import { FaTrashAlt, FaUserCog } from "react-icons/fa";
+import axiosInstance from "../../../utils/axiosInstance";
+import { toast } from "react-toastify";
 const AllUser = () => {
   const data = useSelector((state) => state.allUserData.data);
 
@@ -12,7 +14,18 @@ const AllUser = () => {
   }, [dispatch]);
 
   const handleDeleteUser = (id) => {
-    console.log(id);
+    axiosInstance
+      .delete(`/api/delete-user/${id}`, {
+        headers: {
+          authorization: `bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        if (res.data) {
+          toast.success("User Deleted SuccessFully");
+          dispatch(getAllUsers());
+        }
+      });
   };
 
   console.log(data);

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../../style";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { cvData } from "../../redux/action/data";
 import Loader from "../../components/Loader/Loader";
 import axiosInstance from "../../utils/axiosInstance";
 
@@ -13,7 +11,7 @@ const ResumePage = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState();
   useEffect(() => {
-    axiosInstance.get("/api/cv").then((res) => {
+    axiosInstance.get("/api/resumes").then((res) => {
       setFilterWork(res.data);
       setWorks(res.data);
     });

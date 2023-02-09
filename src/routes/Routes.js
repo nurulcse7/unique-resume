@@ -1,50 +1,50 @@
-import { createBrowserRouter } from 'react-router-dom';
-import Login from '../common/Login/Login';
-import Register from '../common/Register/Register';
-import Main from '../Layout/Main';
-import About from '../Pages/About/About';
-import Contact from '../Pages/Contact/Contact';
-import Home from '../Pages/Home';
-import NotFound from '../Pages/NotFound/NotFound';
-import ForgotPassword from '../Pages/ForgotPassword/ForgotPassword';
-import CVpage from '../Pages/CVpage/CVpage';
-import ResumePage from '../Pages/ResumePage/ResumePage';
-import CoverLetterPage from '../Pages/CoverLetterPage/CoverLetterPage';
-import Template1 from '../Pages/ResumeTemplate/Template1';
-import Template3 from '../Pages/ResumeTemplate/Template3';
-import DashboardLayout from '../Layout/DashboardLayout';
-import Dashboard from '../Pages/Dashboard/Dashboard';
-import DashboardResume from '../Pages/Dashboard/DashboardResume/DashboardResume';
-import DashboardCv from '../Pages/Dashboard/DashboardCv/DashboardCv';
-import DashboardCoverLetter from '../Pages/Dashboard/DashboardCoverLetter/DashboardCoverLetter';
-import ExploreTeamMember from '../components/MeetOurTeam/ExploreTeamMember';
-import PrivetRoute from './PrivetRoute';
-import CoverEditor from '../Pages/CoverLetter/CoverEditor/CoverEditor';
-import PricingTable from '../Pages/PricingTable/PricingTable';
-import Success from '../Pages/PricingTable/Success';
-import Faq from '../components/FAQ/Faq';
-import Editor from '../Pages/Editor/Editor';
-import CVEditor from '../Pages/CVEditor/CVEditor';
-import CvTemplate1 from '../components/CvTemplates/Cvtemplate1';
-import Cvtemplate2 from '../components/CvTemplates/Cvtemplate2';
-import CoverLetterEditor from '../Pages/CoverLetterEditor/CoverLetterEditor';
-import AllUser from '../Pages/Dashboard/AllUser/AllUser';
+import { createBrowserRouter } from "react-router-dom";
+import Login from "../common/Login/Login";
+import Register from "../common/Register/Register";
+import Main from "../Layout/Main";
+import About from "../Pages/About/About";
+import Contact from "../Pages/Contact/Contact";
+import Home from "../Pages/Home";
+import NotFound from "../Pages/NotFound/NotFound";
+import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
+import CVpage from "../Pages/CVpage/CVpage";
+import ResumePage from "../Pages/ResumePage/ResumePage";
+import CoverLetterPage from "../Pages/CoverLetterPage/CoverLetterPage";
+import Template1 from "../Pages/ResumeTemplate/Template1";
+import Template3 from "../Pages/ResumeTemplate/Template3";
+import DashboardLayout from "../Layout/DashboardLayout";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import DashboardResume from "../Pages/Dashboard/DashboardResume/DashboardResume";
+import DashboardCv from "../Pages/Dashboard/DashboardCv/DashboardCv";
+import DashboardCoverLetter from "../Pages/Dashboard/DashboardCoverLetter/DashboardCoverLetter";
+import ExploreTeamMember from "../components/MeetOurTeam/ExploreTeamMember";
+import PrivetRoute from "./PrivetRoute";
+import CoverEditor from "../Pages/CoverLetter/CoverEditor/CoverEditor";
+import PricingTable from "../Pages/PricingTable/PricingTable";
+import Success from "../Pages/PricingTable/Success";
+import Faq from "../components/FAQ/Faq";
+import Editor from "../Pages/Editor/Editor";
+import CVEditor from "../Pages/CVEditor/CVEditor";
+import CvTemplate1 from "../components/CvTemplates/Cvtemplate1";
+import Cvtemplate2 from "../components/CvTemplates/Cvtemplate2";
+import CoverLetterEditor from "../Pages/CoverLetterEditor/CoverLetterEditor";
+import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 
 export const router = createBrowserRouter([
   {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   },
   {
-    path: '/',
+    path: "/",
     element: <Main />,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home />,
       },
       {
-        path: '/cv-template/:id',
+        path: "/cv-template/:id",
         element: (
           <PrivetRoute>
             <CVEditor />
@@ -52,11 +52,11 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/cv-templates',
+        path: "/cv-templates",
         element: <CVpage />,
       },
       {
-        path: '/select-plan',
+        path: "/select-plan",
         element: (
           <PrivetRoute>
             <PricingTable />
@@ -64,7 +64,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/cover-letter-editor/:id',
+        path: "/cover-letter-editor/:id",
         element: (
           <PrivetRoute>
             <CoverLetterEditor />
@@ -72,47 +72,47 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/resume-templates',
+        path: "/resume-templates",
         element: <ResumePage />,
       },
       {
-        path: '/cv-2',
+        path: "/cv-2",
         element: <Cvtemplate2 />,
       },
       {
-        path: '/cv-1',
+        path: "/cv-1",
         element: <CvTemplate1 />,
       },
       {
-        path: '/checkout/:id',
+        path: "/checkout/:id",
         element: <Success />,
       },
       {
-        path: '/resume-template4',
+        path: "/resume-template4",
         element: <Template1 />,
       },
       {
-        path: '/resume-template3',
+        path: "/resume-template3",
         element: <Template3 />,
       },
       {
-        path: '/about',
+        path: "/about",
         element: <About />,
       },
       {
-        path: '/about-team-member',
+        path: "/about-team-member",
         element: <ExploreTeamMember />,
       },
       {
-        path: '/contact',
+        path: "/contact",
         element: <Contact />,
       },
       {
-        path: '/faq',
+        path: "/faq",
         element: <Faq />,
       },
       {
-        path: '/cover-letter',
+        path: "/cover-letter",
         element: <CoverLetterPage />,
       },
       // {
@@ -128,11 +128,11 @@ export const router = createBrowserRouter([
       //   element: <CoverLetterTemplate3 />,
       // },
       {
-        path: '/editor',
+        path: "/editor",
         element: <Editor />,
       },
       {
-        path: '/resume-templates/:id',
+        path: "/resume-templates/:id",
         element: (
           <PrivetRoute>
             <Editor />
@@ -140,29 +140,33 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/cover-letter',
+        path: "/cover-letter",
         element: <CoverLetterPage />,
       },
       {
-        path: '/cover-letter-editors',
+        path: "/cover-letter-editors",
         element: <CoverEditor />,
       },
       {
-        path: '/forgot-password',
+        path: "/forgot-password",
         element: <ForgotPassword />,
       },
       {
-        path: '/register',
+        path: "/template",
+        element: <CvTemplate1 />,
+      },
+      {
+        path: "/register",
         element: <Register />,
       },
       {
-        path: '/login',
+        path: "/login",
         element: <Login />,
       },
     ],
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: (
       <PrivetRoute>
         <DashboardLayout />
@@ -170,23 +174,23 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/dashboard',
+        path: "/dashboard",
         element: <Dashboard></Dashboard>,
       },
       {
-        path: '/dashboard/resume',
+        path: "/dashboard/resume",
         element: <DashboardResume></DashboardResume>,
       },
       {
-        path: '/dashboard/cv',
+        path: "/dashboard/cv",
         element: <DashboardCv />,
       },
       {
-        path: '/dashboard/coverletter',
+        path: "/dashboard/coverletter",
         element: <DashboardCoverLetter />,
       },
       {
-        path: '/dashboard/all-user',
+        path: "/dashboard/all-user",
         element: <AllUser />,
       },
     ],

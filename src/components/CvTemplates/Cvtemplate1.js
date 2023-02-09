@@ -13,11 +13,14 @@ const CvTemplate1 = () => {
   return (
     <div className="py-10 px-5 ">
       <div className="flex justify-between">
-        <h1 className="text-4xl uppercase">{data?.name}</h1>
-        <div className="text-gray-500">
-          <p className="text-lg">{data.email}</p>
+        <h1 className="md:text-4xl text-xl uppercase">{data?.name}</h1>
+        <div className="text-gray-500 text-right">
+          <p className="md:text-lg text-sm">{data?.email}</p>
           <p>{data?.address}</p>
           <p>{data?.mobileNumber}</p>
+          {data?.websites.map((w, i) => (
+            <p>{w.Link}</p>
+          ))}
         </div>
       </div>
       <div>
@@ -103,6 +106,58 @@ const CvTemplate1 = () => {
         <div className="w-full h-[2px] bg-gray-500 my-4" />
         <div className="mt-5">
           <h3 className="text-xl py-2 font-bold border-b border-gray-300">
+            Personal Information
+          </h3>
+          <div>
+            <p className="text-lg ">
+              <span className="font-semibold"> Name: </span>
+              <span className="font-[300px]">{data?.name}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Name of Father:</span>
+              <span className="font-[300px]">{data?.fathersName}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Name of Mother:</span>
+              <span className="font-[300px]">{data?.mothersName}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Date of Birth: </span>
+              <span className="font-[300px]">{data?.dateOfBirth}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Address: </span>
+              <span className="font-[300px]">{data?.address}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Marital Status:</span>
+              <span className="font-[300px]">{data?.maritalStatus}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Gender: </span>
+              <span className="font-[300px]">{data?.sex}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Religion: </span>
+              <span className="font-[300px]">{data?.religion}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Nationality: </span>
+              <span className="font-[300px]">{data?.nationality}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> Blood Group: </span>
+              <span className="font-[300px]">{data?.blood}</span>
+            </p>
+            <p className="text-lg ">
+              <span className="font-semibold"> NID: </span>
+              <span className="font-[300px]">{data?.nid}</span>
+            </p>
+          </div>
+        </div>
+        <div className="w-full h-[2px] bg-gray-500 my-4" />
+        <div className="mt-5">
+          <h3 className="text-xl py-2 font-bold border-b border-gray-300">
             Skills
           </h3>
 
@@ -115,6 +170,19 @@ const CvTemplate1 = () => {
                 <h6>
                   <b>{exp.technology}</b>
                 </h6>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-5">
+          <h3 className="text-xl py-2 font-bold border-b border-gray-300">
+            Languages
+          </h3>
+
+          <div className="text-sm flex flex-col items-start justify-start gap-3  flex-wrap">
+            {data?.languageSkills?.map((lan, index) => (
+              <div className="" key={index}>
+                <h6>{lan.language}</h6>
               </div>
             ))}
           </div>

@@ -309,3 +309,9 @@ button.ant-btn.css-dev-only-do-not-override-sk7ap8.ant-btn-default.bg-primary.fo
 button.ant-btn.css-dev-only-do-not-override-sk7ap8.ant-btn-default.bg-primary.focus\:text-white.hover\:text-white.active\:text-white.flex.items-center.text-white.py-5.px-5:hover {
   color: white !important;
 }
+input#education_0_startDate {
+  border: none !important;
+}
+input#education_0_endDate {
+  border: none !important;
+}

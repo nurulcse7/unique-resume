@@ -32,7 +32,7 @@ const Editor = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-
+  console.log(data);
   const onFinish = async (values) => {
     await axiosInstance.post("/api/resumeinfo", values, {
       headers: {

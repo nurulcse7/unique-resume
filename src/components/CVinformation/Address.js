@@ -1,7 +1,7 @@
 import { Button, Form, Input, message } from "antd";
 import React from "react";
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
-import { Confirm, Notify } from "notiflix";
+import { Confirm } from "notiflix";
 
 const Address = ({ onFinish }) => {
   return (

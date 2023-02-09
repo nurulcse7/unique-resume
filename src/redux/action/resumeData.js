@@ -11,7 +11,6 @@ export const resumeData = () => async (dispatch) => {
     });
     dispatch({ type: "resumeDataSuccess", payload: data });
   } catch (error) {
-    console.log(error.response);
-    dispatch({ type: "resumeDataFail", payload: error.response.data });
+    dispatch({ type: "resumeDataFail", payload: error.response });
   }
 };

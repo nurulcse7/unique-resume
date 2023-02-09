@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, Form, Modal, Tabs } from "antd";
+import { Button, Form, message, Modal, Tabs } from "antd";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import PersonalInfo from "../../components/CVinformation/PersonalInfo";
 import SkillsEducation from "../../components/CVinformation/SkillsEducation";
@@ -25,6 +25,7 @@ function CVEditor() {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
   const params = useParams();
   const gettemplate = () => {
     switch (params.id) {
@@ -46,6 +47,7 @@ function CVEditor() {
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
     });
+    message.success("Update successfully");
   };
   useEffect(() => {
     dispatch(cvTemplate());
@@ -74,17 +76,17 @@ function CVEditor() {
                   {
                     label: `Skills and Education`,
                     key: "2",
-                    children: <SkillsEducation onFinish={onFinish} />,
+                    children: <SkillsEducation />,
                   },
                   {
                     label: `Experience or Projects`,
                     key: "3",
-                    children: <ExperienceProjects onFinish={onFinish} />,
+                    children: <ExperienceProjects />,
                   },
                   {
                     label: `Additional Info`,
                     key: "4",
-                    children: <Address onFinish={onFinish} />,
+                    children: <Address />,
                   },
                 ]}
               />

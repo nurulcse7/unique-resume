@@ -132,7 +132,7 @@ const EmploymentHistory = () => {
       </h5>
       <hr />
 
-      <Form.List name="internships">
+      <Form.List name="internShips">
         {(fields, { add, remove }) => (
           <>
             <div>

@@ -63,30 +63,6 @@ const Template4 = ({ data }) => {
             </div>
 
             <div className="w-full mt-4 ">
-              {/* <p className="font-bold uppercase">industry expertise</p> */}
-              {/* <hr className="border-t-2 border-white" /> */}
-
-              {/* <div className="">
-                <div className="mt-2">
-                  <p className="">
-                    <small>Sales Training</small>
-                  </p>
-                  <input type="range" className="w-full" value="90" />
-                </div>
-                <div className="">
-                  <p className="">
-                    <small>Product-led Growth</small>
-                  </p>
-                  <input type="range" className="w-full" value="60" />
-                </div>
-                <div className="">
-                  <p className="">
-                    <small>Partnerships</small>
-                  </p>
-                  <input type="range" className="w-full" value="90" />
-                </div>
-              </div> */}
-
               <div className="w-full mt-2 ">
                 <p className="font-bold ">LANGUAGES</p>
                 <hr className="border-t-2 border-white" />
@@ -107,16 +83,8 @@ const Template4 = ({ data }) => {
                             <p className="my-2"> {language?.level}</p>
                           </>
                         ))}
-                        {/* <span className="text-xl font-bold ml-1">•••••</span> */}
                       </div>
                     </div>
-                    {/* <div className="flex items-center justify-between">
-                      <small>English</small>
-                      <small>
-                        Fully Proficient {""}
-                        <span className="text-xl font-bold ml-1">•••••</span>
-                      </small>
-                    </div> */}
                   </div>
                 </div>
               </div>
@@ -205,7 +173,7 @@ const Template4 = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="w-full  ">
+            {/* <div className="w-full  ">
               <div className=" my-5 w-full">
                 <p className="font-bold uppercase border-b-2 border-black">
                   Intern Ship
@@ -230,7 +198,7 @@ const Template4 = ({ data }) => {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="w-full my-5 ">
               <p className="font-bold uppercase border-b-2 border-black">
                 Education

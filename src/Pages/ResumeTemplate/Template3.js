@@ -1,14 +1,11 @@
 import React from "react";
 
 const Template3 = ({ data }) => {
-  return data?.map((d, i) => (
-    <section
-      key={i}
-      className=" m-10 border border-black rounded-md mx-auto text-left relative bg-white  shadow-2xl p-8"
-    >
+  return (
+    <section className=" m-10 border border-black rounded-md mx-auto text-left relative bg-white  shadow-2xl p-8">
       <div className="leading-none flex justify-between">
         <div>
-          {d?.personalInformation?.map((info, i) => (
+          {/* {d?.personalInformation?.map((info, i) => (
             <h2 className="md:text-3xl uppercase text-xl font-bold">
               {info?.fname} {info?.lname}
             </h2>
@@ -27,9 +24,9 @@ const Template3 = ({ data }) => {
               </span>{" "}
               {info?.email}
             </small>
-          ))}
+          ))} */}
 
-          {d?.websiteAndSocialLinks?.map((link, i) => (
+          {/* {d?.websiteAndSocialLinks?.map((link, i) => (
             <small className="mx-2 md:text-sm text-[10px]">
               <span>
                 <i className="fa-solid fa-link"></i>
@@ -47,7 +44,7 @@ const Template3 = ({ data }) => {
               </span>{" "}
               {info?.city}, {info?.country}
             </small>
-          ))}
+          ))} */}
         </div>
       </div>
 
@@ -57,7 +54,7 @@ const Template3 = ({ data }) => {
             <p className="font-bold">EXPERIENCE</p>
             <hr className="border-t border-black" />
 
-            {d?.employmentHistory?.map((experience, i) => (
+            {/* {d?.employmentHistory?.map((experience, i) => (
               <div key={i}>
                 <p className="font-semibold capitalize mt-2">
                   {experience?.jobTitle}
@@ -89,13 +86,13 @@ const Template3 = ({ data }) => {
                   </p>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
 
           <div className=" mr-10 mt-2 ">
             <p className="font-bold">EDUCATION</p>
             <hr className="border-t border-black" />
-            {d?.educationHistory?.map((education, i) => (
+            {/* {d?.educationHistory?.map((education, i) => (
               <div key={i} className="leading-none">
                 <p className="font-semibold mt-2">{education?.school}</p>
                 <div className="flex justify-between items-center">
@@ -114,7 +111,7 @@ const Template3 = ({ data }) => {
                   <small>{education?.discription}</small>
                 </p>
               </div>
-            ))}
+            ))} */}
           </div>
 
           <div className=" mr-10 mt-2 ">
@@ -149,11 +146,11 @@ const Template3 = ({ data }) => {
 
             <div>
               <div className="leading-none mt-2">
-                {d?.professionalSummary?.map((summ, i) => (
+                {/* {d?.professionalSummary?.map((summ, i) => (
                   <p>
                     <small>{summ}</small>
                   </p>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
@@ -223,11 +220,11 @@ const Template3 = ({ data }) => {
 
             <div>
               <div className="leading-none mt-2 grid grid-cols-3 gap-3 text-center">
-                {d?.skills?.map((skill, i) => (
+                {/* {d?.skills?.map((skill, i) => (
                   <small className="p-1 border-b border-black">
                     {skill?.Skill}
                   </small>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
@@ -238,7 +235,7 @@ const Template3 = ({ data }) => {
 
             <div>
               <div className="leading-none mt-2">
-                {d?.languages?.map((lang, i) => (
+                {/* {d?.languages?.map((lang, i) => (
                   <div key={i} className="flex items-center justify-between">
                     <small>{lang?.language}</small>
                     <small>
@@ -246,7 +243,7 @@ const Template3 = ({ data }) => {
                       <span className="text-xl font-bold ml-1">•••••</span>
                     </small>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
@@ -287,7 +284,7 @@ const Template3 = ({ data }) => {
         </div>
       </div>
     </section>
-  ));
+  );
 };
 
 export default Template3;

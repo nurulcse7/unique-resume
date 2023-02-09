@@ -58,11 +58,11 @@ const Editor = () => {
       case "3": {
         return <Template3 />;
       }
-      case "13": {
-        return <Template4 />;
+      case "4": {
+        return <Template4 data={data} />;
       }
       case "5": {
-        return <Template5 />;
+        return <Template5 data={data} />;
       }
       case "6": {
         return <Template6 data={data} />;
@@ -90,6 +90,7 @@ const Editor = () => {
                   key: "2",
                   children: <SkillsEducation />,
                 },
+
                 {
                   label: `Employment History`,
                   key: "3",
@@ -118,8 +119,10 @@ const Editor = () => {
         </div>
         <>
           <div>
-            {" "}
-            <div className="px-12 h-[100%] bg-white" ref={componentRef}>
+            <div
+              className="px-12 h-[100%] hidden md:block bg-white"
+              ref={componentRef}
+            >
               {gettemplate()}
             </div>
           </div>
@@ -155,6 +158,7 @@ const Editor = () => {
                 </Button>
               )}
             </div>
+
             <div className="px-12 h-[100%] bg-white" ref={componentRef}>
               {gettemplate()}
             </div>

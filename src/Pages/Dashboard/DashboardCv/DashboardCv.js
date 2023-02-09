@@ -8,16 +8,17 @@ import {
   FaCompress,
   FaPencilAlt,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../../utils/axiosInstance";
 
 const DashboardCv = () => {
   const [data, setData] = useState([]);
   const [ismove, setIsMove] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosInstance
-      .get("/api/getcoverletter", {
+      .get("/api/getcv", {
         headers: {
           authorization: `bearer ${localStorage.getItem("token")}`,
         },
@@ -42,6 +43,11 @@ const DashboardCv = () => {
           toast.success("CV Deleted SuccessFully");
         }
       });
+  };
+
+  const handleUpdateCv = (id) => {
+    // console.log(id);
+    navigate(`/cv-template/${id}`);
   };
 
   console.log(template);
@@ -189,7 +195,10 @@ const DashboardCv = () => {
                         {" "}
                         <FaPencilAlt />{" "}
                       </span>
-                      <button className=" text-black  text-sm font-bold  hover:text-sky-500">
+                      <button
+                        onClick={() => handleUpdateCv(template?._id)}
+                        className=" text-black  text-sm font-bold  hover:text-sky-500"
+                      >
                         {" "}
                         Edit CV{" "}
                       </button>

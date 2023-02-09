@@ -29,10 +29,7 @@ import CvTemplate1 from "../components/CvTemplates/Cvtemplate1";
 import Cvtemplate2 from "../components/CvTemplates/Cvtemplate2";
 import CoverLetterEditor from "../Pages/CoverLetterEditor/CoverLetterEditor";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
-<<<<<<< HEAD
-=======
 import AdminRoute from "./AdminRoute";
->>>>>>> b25e53f0c4f47a1a27133d61a38779688eeeb9ee
 
 export const router = createBrowserRouter([
   {
@@ -156,13 +153,6 @@ export const router = createBrowserRouter([
         element: <ForgotPassword />,
       },
       {
-<<<<<<< HEAD
-        path: "/template",
-        element: <CvTemplate1 />,
-      },
-      {
-=======
->>>>>>> b25e53f0c4f47a1a27133d61a38779688eeeb9ee
         path: "/register",
         element: <Register />,
       },
@@ -198,15 +188,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/all-user",
-<<<<<<< HEAD
-        element: <AllUser />,
-=======
         element: (
           <AdminRoute>
             <AllUser />
           </AdminRoute>
         ),
->>>>>>> b25e53f0c4f47a1a27133d61a38779688eeeb9ee
       },
     ],
   },

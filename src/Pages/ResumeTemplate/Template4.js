@@ -93,11 +93,9 @@ const Template4 = ({ data }) => {
                 <p className="font-bold uppercase ">Hobbies</p>
                 <hr className="border-t-2 border-white" />
 
-                <div>
-                  <div className="leading-none mt-2">
-                    <div className="">
-                      <p className="block">{data?.hobbies}</p>
-                    </div>
+                <div className="leading-none mt-2">
+                  <div className="">
+                    <p className="block">{data?.hobbies}</p>
                   </div>
                 </div>
               </div>

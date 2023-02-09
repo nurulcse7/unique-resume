@@ -1,4 +1,4 @@
-import { Button, Form, Modal, Tabs } from "antd";
+import { Button, Form, message, Modal, Tabs } from "antd";
 import React from "react";
 import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
@@ -40,6 +40,7 @@ const Editor = () => {
         authorization: `bearer ${localStorage.getItem("token")}`,
       },
     });
+    message.success("Update successfully");
   };
   useEffect(() => {
     dispatch(resumeData());

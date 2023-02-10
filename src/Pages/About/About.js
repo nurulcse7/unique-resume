@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MeetOurTeam from '../../components/MeetOurTeam/MeetOurTeam';
+import useTitle from '../../hooks/useTitle';
 // import Background from '../../assets/wave.png'
 
 const AboutPage = ({ UniqueResume }) => {
+  useTitle('AboutUs');
   return (
     <div className='font-serif bg-secondary text-white'>
       <div className='min-h-screen '>

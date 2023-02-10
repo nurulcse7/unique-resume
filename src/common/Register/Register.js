@@ -5,11 +5,13 @@ import resume from "../../assets/resume.png";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/action/user";
 import Loader from "../../components/Loader/Loader";
+import useTitle from "../../hooks/useTitle";
+
 const Register = () => {
+  useTitle('Register');
   const navigate = useNavigate();
-  // abdur Rahman
+
   const token = localStorage.getItem("token");
-  // Abdur Rahman
   const { iaAuthenticated, loading } = useSelector((state) => state.user);
   const [viewPassword, setViewPassword] = useState(false);
   const [userInfo, setUserInfo] = useState({
@@ -25,7 +27,7 @@ const Register = () => {
     dispatch(register(userInfo));
   };
   useEffect(() => {
-    token && navigate("/"); // Abdur Rahman
+    token && navigate("/"); 
   }, [navigate, token]);
   return (
     <section

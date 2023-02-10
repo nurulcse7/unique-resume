@@ -6,12 +6,14 @@ import resume from "../../assets/resume.png";
 import Loader from "../../components/Loader/Loader";
 import { login } from "../../redux/action/user";
 import styles from "../../style";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
+  useTitle('Login');
   const [viewPassword, setViewPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const token = localStorage.getItem("token"); // abdur Rahman
+  const token = localStorage.getItem("token");
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",

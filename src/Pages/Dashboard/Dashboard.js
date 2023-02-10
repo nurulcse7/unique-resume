@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import axiosInstance from "../../utils/axiosInstance";
 const Dashboard = () => {
   const { user } = useSelector((state) => state.user);
 
-  // console.log(user);
+  console.log(user);
 
   const dispatch = useDispatch();
 
@@ -19,10 +19,18 @@ const Dashboard = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    // const email = form.email.value;
+    const address = form.address.value;
+    const mobileNumber = form.number.value;
+
+    const userInfo = {
+      name: name,
+      address: address,
+      mobileNumber: mobileNumber,
+    };
+
     // console.log(name, email);
 
-    dispatch(updateProfile(name));
+    dispatch(updateProfile(userInfo));
   };
 
   // for get user Information
@@ -71,6 +79,33 @@ const Dashboard = () => {
               id="name"
             />
           </label>
+          <label htmlFor="address">
+            {" "}
+            <input
+              placeholder={
+                user?.address ? `${user.address}` : "your address here"
+              }
+              className="w-full pt-2 pb-1 px-3 my-2 border-b border-white bg-inherit focus:outline-none "
+              type="text"
+              name="address"
+              id="address"
+            />
+          </label>
+          <label htmlFor="number">
+            {" "}
+            <input
+              placeholder={
+                user?.mobileNumber
+                  ? `${user.mobileNumber}`
+                  : `Your Phone number herer`
+              }
+              className="w-full pt-2 pb-1 px-3 my-2 border-b border-white bg-inherit focus:outline-none "
+              type="number"
+              name="number"
+              id="number"
+            />
+          </label>
+
           <label htmlFor="email">
             {" "}
             <input

@@ -15,6 +15,7 @@ const Register = () => {
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
+    imgUrl: "",
     name: "",
     userName: "",
   });
@@ -85,7 +86,10 @@ const Register = () => {
                 </div>
                 <form onSubmit={handleSubmit} className="w-full pt-7 px-6">
                   <div className="space-y-1 my-3 text-sm">
-                    <label for="username" className="block dark:text-gray-400">
+                    <label
+                      htmlFor="username"
+                      className="block dark:text-gray-400"
+                    >
                       Full Name
                     </label>
                     <input
@@ -100,7 +104,10 @@ const Register = () => {
                     />
                   </div>
                   <div className="space-y-1 my-3 text-sm">
-                    <label for="username" className="block dark:text-gray-400">
+                    <label
+                      htmlFor="username"
+                      className="block dark:text-gray-400"
+                    >
                       User Name
                     </label>
                     <input
@@ -115,7 +122,10 @@ const Register = () => {
                     />
                   </div>
                   <div className="space-y-1 my-3 text-sm">
-                    <label for="username" className="block dark:text-gray-400">
+                    <label
+                      htmlFor="username"
+                      className="block dark:text-gray-400"
+                    >
                       Email
                     </label>
                     <input
@@ -126,6 +136,24 @@ const Register = () => {
                       }
                       required
                       placeholder="Email"
+                      className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
+                    />
+                  </div>
+                  <div className="space-y-1 my-3 text-sm">
+                    <label
+                      htmlFor="imgUrl"
+                      className="block dark:text-gray-400"
+                    >
+                      Photo
+                    </label>
+                    <input
+                      type="text"
+                      name="imgUrl"
+                      onChange={(e) =>
+                        setUserInfo({ ...userInfo, imgUrl: e.target.value })
+                      }
+                      required
+                      placeholder="Your Photo Url"
                       className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                     />
                   </div>

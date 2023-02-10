@@ -3,7 +3,6 @@ import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import React from "react";
 import { Confirm } from "notiflix";
 const { TextArea } = Input;
-
 function PersonalInfo() {
   return (
     <div>

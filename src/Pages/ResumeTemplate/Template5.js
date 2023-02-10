@@ -4,16 +4,10 @@ import { FaFacebook, FaGithub, FaLink, FaLinkedin } from "react-icons/fa";
 const Template5 = ({ data }) => {
   console.log("Template5", data);
   return (
-    <div className="py-10 px-5 h=full">
+    <div className="py-10 px-5 h-full">
       <section className="  lg:m-10 border border-black rounded-md mx-auto text-left  bg-gray-50  shadow-2xl">
         <div>
           <div className="grid grid-cols-2">
-            <img
-              className="rounded-full w-3/6"
-              src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt=""
-            />
-
             <div className="py-3 mx-5  ">
               <h1 className="md:text-3xl text-start text-xl uppercase font-semibold ">
                 {data?.fname} {data?.lname}

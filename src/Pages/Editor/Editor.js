@@ -23,7 +23,6 @@ import { useReactToPrint } from "react-to-print";
 import styles from "../../style";
 const Editor = () => {
   const dispatch = useDispatch();
-
   const [open, setOpen] = useState(false);
   const { user } = useSelector((state) => state.user);
   const { data } = useSelector((state) => state.resumeData);
@@ -32,7 +31,6 @@ const Editor = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  console.log(data);
   const onFinish = async (values) => {
     await axiosInstance.post("/api/resumeinfo", values, {
       headers: {
@@ -50,7 +48,7 @@ const Editor = () => {
   const gettemplate = () => {
     switch (params.id) {
       case "1": {
-        return <Template1 />;
+        return <Template1 data={data} />;
       }
       case "2": {
         return <Template2 data={data} />;
@@ -119,12 +117,12 @@ const Editor = () => {
         </div>
         <>
           <div>
-            <div
+            {/* <div
               className="px-12 h-[100%] hidden md:block bg-white"
               ref={componentRef}
             >
               {gettemplate()}
-            </div>
+            </div> */}
           </div>
           <div
             className="btn-body fixed bottom-0 right-0"

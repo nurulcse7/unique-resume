@@ -25,7 +25,6 @@ function CVEditor() {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-
   const params = useParams();
   const gettemplate = () => {
     switch (params.id) {
@@ -35,11 +34,14 @@ function CVEditor() {
       case "2": {
         return <Cvtemplate2 />;
       }
+      case "13": {
+        return <Cvtemplate2 />;
+      }
+
       default:
         return;
     }
   };
-
   const onFinish = async (values) => {
     await axiosInstance.post("/api/cvinformation", values, {
       headers: {

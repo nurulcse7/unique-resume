@@ -3,9 +3,9 @@ import React from "react";
 const Template1 = ({ data }) => {
   console.log("Template1", data);
   return (
-    <section className=" text-left relative shadow-2xl">
+    <section className=" text-left relative">
       <div className="flex">
-        <div className={`w-[30%] h-[29.7cm]  bg-gray-100 relative`}>
+        <div className={`w-[30%] h-[29.7cm]   relative`}>
           <div className="lg:px-6 p-4 mt-2">
             <h3 className="lg:text-2xl text-lg uppercase ">Details</h3>
             <hr className="border-2 my-2 border-black" />

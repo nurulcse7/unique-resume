@@ -21,6 +21,7 @@ import { resumeData } from "../../redux/action/resumeData";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import styles from "../../style";
+import Template7 from "../ResumeTemplate/Template7";
 const Editor = () => {
   const dispatch = useDispatch();
 
@@ -66,6 +67,9 @@ const Editor = () => {
       }
       case "6": {
         return <Template6 data={data} />;
+      }
+      case "7": {
+        return <Template7 data={data} />;
       }
       default:
         return;

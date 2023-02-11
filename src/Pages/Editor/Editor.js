@@ -22,6 +22,7 @@ import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import styles from "../../style";
 import Template7 from "../ResumeTemplate/Template7";
+import Template8 from "../ResumeTemplate/Template8";
 const Editor = () => {
   const dispatch = useDispatch();
 
@@ -70,6 +71,9 @@ const Editor = () => {
       }
       case "7": {
         return <Template7 data={data} />;
+      }
+      case "8": {
+        return <Template8 data={data} />;
       }
       default:
         return;

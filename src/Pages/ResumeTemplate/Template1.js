@@ -1,20 +1,16 @@
 import React from "react";
 
 const Template1 = ({ data }) => {
-  const themes = "#132579";
-
-  const resumeData = null;
-
-  // console.log(data);
+  console.log("Template1", data);
   return (
-    <section className=" text-left relative bg-white shadow-2xl">
+    <section className=" text-left relative shadow-2xl">
       <div className="flex">
-        <div className={`lg:w-[600px] lg:h-[29.7cm] bg-gray-100 relative`}>
+        <div className={`w-[30%] h-[29.7cm]  bg-gray-100 relative`}>
           <div
-            className={`absolute bg-[${themes}] bottom-0  right-0 lg:w-2 w-1  rounded-tl-full h-[200px] `}
+            className={`absolute  bottom-0  right-0 lg:w-2 w-1  rounded-tl-full h-[200px] `}
           ></div>
           <div
-            className={`w-[10%] lg:w-[50px] text-white flex flex-col lg:text-2xl items-center bottom-0 lg:h-[500px] h-[34.5%] bg-[${themes}] absolute top-0 left-0 justify-end`}
+            className={`w-[10%] lg:w-[50px] text-white flex flex-col lg:text-2xl items-center bottom-0 lg:h-[500px] h-[34.5%] absolute top-0 left-0 justify-end`}
           >
             <div className="flex items-center py-1 lg:p-2 ">
               <i className="fa-solid fa-envelope "></i>
@@ -47,6 +43,8 @@ const Template1 = ({ data }) => {
 
           <div className="lg:px-10 pt-6 lg:pt-0 lg:p-1">
             <div className=" mt-1  lg:m-1 lg:mt-0 mx-2 ">
+              hi
+              <p className="lg:text-lg mx-4 lg:pt-5 ">{data?.email}</p>
               {/* {d?.personalInformation?.map((info) => (
                 <p className="lg:text-lg mx-4 lg:pt-5 ">{info?.email}</p>
               ))} */}
@@ -144,20 +142,19 @@ const Template1 = ({ data }) => {
           </div>
         </div>
 
-        <div className="lg:w-full  bg-white">
+        <div className="w-[70%]  ">
           <div className="w-full h-full">
-            {/* {d?.personalInformation?.map((info) => (
-              <div className="relative my-8 flex flex-col justify-center items-center">
-                <h2
-                  className={`lg:text-3xl text-xl w-[200px] mx-12 lg:mx-0  lg:w-[80%] text-center lg:py-3 pb-4 lg:border-2 border border-black uppercase font-semibold text-gray-900`}
-                >
-                  {info?.fname} {info?.lname}
-                </h2>
-                <h2 className="font-semibold absolute capitalize -bottom-3 lg:bottom-[-20px] bg-white px-3 py-1 lg:text-2xl text-black">
-                  {info?.jobTitle}
-                </h2>
-              </div>
-            ))} */}
+            <div className="relative my-8 flex flex-col justify-center items-center">
+              <h2
+                className={`lg:text-3xl text-xl mx-12 lg:mx-0  lg:w-[80%] text-center lg:py-3 py-5 lg:border-2 border border-black uppercase font-semibold text-gray-900`}
+              >
+                {data?.fname} <br />
+                {data?.lname}
+              </h2>
+              <h2 className="font-semibold absolute capitalize -bottom-3 lg:bottom-[-20px] bg-white px-3 py-1 lg:text-xl text-black">
+                {data?.jobTitle}
+              </h2>
+            </div>
 
             <div className="">
               <div className="pt-4 px-6">
@@ -169,7 +166,7 @@ const Template1 = ({ data }) => {
               <div className="pt-2 relative px-6">
                 <h3 className="lg:text-2xl text-lg uppercase">project</h3>
                 <hr className=" lg:my-2 w-[70px] lg:w-[100px] border-t-2 border-black" />
-                {resumeData?.projects.map((project, i) => (
+                {/* {resumeData?.projects.map((project, i) => (
                   <div className="flex mt-1">
                     <p className="font-bold mr-2">{i + 1}.</p>
                     <div>
@@ -223,7 +220,7 @@ const Template1 = ({ data }) => {
                       </p>
                     </div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>

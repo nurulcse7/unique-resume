@@ -69,7 +69,7 @@ const Template2 = ({ data }) => {
                 <div className="flex justify-between">
                   <p className=" my-2 ">{edu.school}</p>
                   <p>
-                    {edu?.date[0].slice(0, 4)} -{edu?.date[1].slice(0, 4)}
+                    {edu?.startDate.slice(0, 4)} -{edu?.endDate.slice(0, 4)}
                   </p>
                 </div>
                 <h3 className="font-semibold italic">Description:</h3>

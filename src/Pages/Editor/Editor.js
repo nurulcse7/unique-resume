@@ -50,7 +50,7 @@ const Editor = () => {
   const gettemplate = () => {
     switch (params.id) {
       case "1": {
-        return <Template1 />;
+        return <Template1 data={data} />;
       }
       case "2": {
         return <Template2 data={data} />;

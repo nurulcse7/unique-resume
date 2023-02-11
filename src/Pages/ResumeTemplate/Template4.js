@@ -159,7 +159,7 @@ const Template4 = ({ data }) => {
                           {employee.jobTitle}
                         </p>
                         <p>
-                          {employee.date[0].slice(0, 4)} to{" "}
+                          {employee.date[0].slice(0, 4)} -{" "}
                           {employee.date[1].slice(0, 4)}
                         </p>
                       </div>

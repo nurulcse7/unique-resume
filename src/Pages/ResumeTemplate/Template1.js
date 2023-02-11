@@ -6,8 +6,8 @@ const Template1 = ({ data }) => {
   const resumeData = null;
 
   // console.log(data);
-  return data.map((d, i) => (
-    <section key={i} className=" text-left relative bg-white shadow-2xl">
+  return (
+    <section className=" text-left relative bg-white shadow-2xl">
       <div className="flex">
         <div className={`lg:w-[600px] lg:h-[29.7cm] bg-gray-100 relative`}>
           <div
@@ -47,30 +47,30 @@ const Template1 = ({ data }) => {
 
           <div className="lg:px-10 pt-6 lg:pt-0 lg:p-1">
             <div className=" mt-1  lg:m-1 lg:mt-0 mx-2 ">
-              {d?.personalInformation?.map((info) => (
+              {/* {d?.personalInformation?.map((info) => (
                 <p className="lg:text-lg mx-4 lg:pt-5 ">{info?.email}</p>
-              ))}
+              ))} */}
             </div>
             <div className=" mt-  lg:m-1 lg:mt-0 mx-2 ">
-              {d?.personalInformation?.map((info) => (
+              {/* {d?.personalInformation?.map((info) => (
                 <p className="lg:text-lg mx-4 lg:pt-2 ">{info?.phone}</p>
-              ))}
+              ))} */}
             </div>
 
-            {d?.websiteAndSocialLinks?.map((link) => (
+            {/* {d?.websiteAndSocialLinks?.map((link) => (
               <div className=" lg:m-1 lg:mt-0 mx-2 lg:pt-2">
                 <a className="lg:text-lg mx-4 capitalize " href={link?.link}>
                   {link?.label} Profile
                 </a>
               </div>
-            ))}
+            ))} */}
 
             <div className="  lg:m-1 lg:mt-0 mx-2  ">
-              {d?.personalInformation?.map((info) => (
+              {/* {d?.personalInformation?.map((info) => (
                 <p className="lg:text-lg mx-4  lg:pt-3 ">
                   {info?.city}, {info?.country}
                 </p>
-              ))}
+              ))} */}
             </div>
           </div>
 
@@ -78,7 +78,7 @@ const Template1 = ({ data }) => {
             <div className="mt-2">
               <h3 className="lg:text-2xl text-lg uppercase ">Skills</h3>
               <div className="p-1">
-                {d?.skills?.map((skill) => (
+                {/* {d?.skills?.map((skill) => (
                   <div key={skill?.Skill} className="flex items-center">
                     <p className="font-bold small lg:pr-3 w-[130px]">
                       {skill?.Skill}
@@ -92,7 +92,7 @@ const Template1 = ({ data }) => {
                       </div>
                     </div>
                   </div>
-                ))}
+                ))} */}
               </div>
               <hr className="border-2 my-2 border-black" />
             </div>
@@ -100,7 +100,7 @@ const Template1 = ({ data }) => {
             <div className="mt-4">
               <h3 className="lg:text-2xl text-lg uppercase ">Education</h3>
               <div className="p-1">
-                {d?.educationHistory?.map((education, i) => (
+                {/* {d?.educationHistory?.map((education, i) => (
                   <div key={i} className="flex mt-1 ">
                     <p className="font-bold">{i + 1}.</p>
                     <div className="lg:text-lg ml-3">
@@ -115,7 +115,7 @@ const Template1 = ({ data }) => {
                       </p>
                     </div>
                   </div>
-                ))}
+                ))} */}
               </div>
 
               <hr className="border-2 my-2 border-black" />
@@ -123,7 +123,7 @@ const Template1 = ({ data }) => {
 
             <div className="mt-4">
               <h3 className="lg:text-2xl text-lg uppercase ">Langause</h3>
-              {d?.languages?.map((lang) => (
+              {/* {d?.languages?.map((lang) => (
                 <div className="p-1">
                   <div key={lang?.language} className="flex items-center">
                     <p className="font-bold capitalize pr-3 w-[130px]">
@@ -139,14 +139,14 @@ const Template1 = ({ data }) => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
 
         <div className="lg:w-full  bg-white">
           <div className="w-full h-full">
-            {d?.personalInformation?.map((info) => (
+            {/* {d?.personalInformation?.map((info) => (
               <div className="relative my-8 flex flex-col justify-center items-center">
                 <h2
                   className={`lg:text-3xl text-xl w-[200px] mx-12 lg:mx-0  lg:w-[80%] text-center lg:py-3 pb-4 lg:border-2 border border-black uppercase font-semibold text-gray-900`}
@@ -157,13 +157,13 @@ const Template1 = ({ data }) => {
                   {info?.jobTitle}
                 </h2>
               </div>
-            ))}
+            ))} */}
 
             <div className="">
               <div className="pt-4 px-6">
                 <h3 className="lg:text-2xl text-lg uppercase">Profile</h3>
                 <hr className=" lg:my-2 w-[70px] lg:w-[100px] border-t-2 border-black" />
-                <p>{d?.professionalSummary[0]}</p>
+                {/* <p>{d?.professionalSummary[0]}</p> */}
               </div>
 
               <div className="pt-2 relative px-6">
@@ -230,7 +230,7 @@ const Template1 = ({ data }) => {
         </div>
       </div>
     </section>
-  ));
+  );
 };
 
 export default Template1;

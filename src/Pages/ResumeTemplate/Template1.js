@@ -1,148 +1,191 @@
 import React from "react";
 
 const Template1 = ({ data }) => {
-  // console.log(data);
+  console.log("Template1", data);
   return (
-    <section className=" text-left relative bg-white shadow-2xl">
+    <section className=" text-left relative">
       <div className="flex">
-        <div className={`lg:w-[600px] lg:h-[29.7cm] bg-gray-100 relative`}>
-          <div
-            className={`w-[10%] lg:w-[50px] text-black flex flex-col lg:text-2xl items-center bottom-0 lg:h-[500px] h-[34.5%]  absolute top-5 left-0 justify-start`}
-          >
-            <div className="flex items-center py-1 text-[18px] lg:p-2 ">
-              <i className="fa-solid fa-envelope "></i>
-            </div>
-            <div className="flex items-center py-1 text-[18px] lg:p-2 ">
-              <i className="fa-solid fa-phone"></i>
-            </div>
-            <div className="flex items-center py-1 text-[18px] lg:p-2 ">
-              <i className="fa-brands fa-github"></i>
-            </div>
-            <div className="flex items-center py-1 text-[18px] lg:p-2 ">
-              <i className="fa-brands fa-linkedin"></i>
-            </div>
-            <div className="flex items-center py-1 text-[18px] lg:p-2  ">
-              <i className="fa-solid fa-earth-americas"></i>
-            </div>
-            <div className="flex items-center py-1 text-[18px] lg:p-2 lg:pb-6 pb-2 ">
-              <i class="fa-sharp fa-solid fa-location-dot"></i>
-            </div>
+        <div className={`w-[30%] h-[29.7cm]   relative`}>
+          <div className="lg:px-6 p-4 mt-2">
+            <h3 className="lg:text-2xl text-lg uppercase ">Details</h3>
+            <hr className="border-2 my-2 border-black" />
+            <p className=" ">{data?.email}</p>
+            <p className=" ">{data?.mobileNumber}</p>
+            <p className=" ">{data?.address}</p>
           </div>
 
-          <div className="lg:px-10 pt-6 lg:pt-0 lg:p-1">
-            <div className=" mt-1  lg:m-1 lg:mt-0 mx-2 ">
-              <p className="lg:text-lg mx-4 lg:pt-5 ">{data?.email}</p>
-            </div>
-            <div className=" mt-  lg:m-1 lg:mt-0 mx-2 ">
-              <p className="lg:text-lg mx-4 lg:pt-2 ">{data?.mobileNumber}</p>
-            </div>
-
-            {data?.websites?.map((link) => (
-              <div className=" lg:m-1 lg:mt-0 mx-2 lg:pt-2">
-                <a className="lg:text-lg mx-4 capitalize " href={link?.Link}>
-                  {link?.label} Profile
-                </a>
-              </div>
-            ))}
-
-            <div className="  lg:m-1 lg:mt-0 mx-2  ">
-              <p className="lg:text-lg mx-4  lg:pt-3 ">
-                {data?.city}, {data?.country}
-              </p>
-            </div>
-          </div>
-
-          <div className="lg:p-6 p-4">
+          <div className="lg:px-6 p-4">
             <div className="mt-2">
               <h3 className="lg:text-2xl text-lg uppercase ">Skills</h3>
+              <hr className="border-2 my-2 border-black" />
               <div className="p-1">
-                {data?.skills?.map((skill, i) => (
-                  <div key={i} className="flex items-center">
-                    <p className="font-bold small lg:pr-3 w-[130px]">
-                      {skill?.technology}
-                    </p>
-                    <div class="w-full bg-gray-200 rounded-full ">
-                      <div
-                        class={`bg-black text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full w-[${skill?.level}%]`}
-                      >
-                        {skill?.level}%
-                      </div>
+                {data?.skills.map((skill) => (
+                  <>
+                    <div className=" gap-2">
+                      <p className="small lg:pr-3">{skill.technology}</p>
+                      <input
+                        type="range"
+                        className="w-full"
+                        value={skill.level}
+                      />
                     </div>
-                  </div>
+                  </>
                 ))}
               </div>
-              <hr className="border-2 my-2 border-black" />
             </div>
-
-            <div className="mt-4">
-              <h3 className="lg:text-2xl text-lg uppercase ">Education</h3>
-              <div className="p-1">
-                {data?.education?.map((education, i) => (
-                  <div key={i} className="flex mt-1 ">
-                    <p className="font-bold">{i + 1}.</p>
-                    <div className="lg:text-lg ml-3">
-                      <p className="font-semibold capitalize">
-                        {education?.degree}
-                        <p className="font-light">
-                          {education?.startDate} - {education?.endDate}
-                        </p>
-                        <p className="font-light italic ">
-                          {education?.school} - <span>{education?.city}</span>
-                        </p>
+            <div className="mt-2">
+              <h3 className="lg:text-2xl text-lg uppercase ">Langause</h3>
+              <hr className="border-2 my-2 border-black" />
+              <div>
+                <div className="leading-none mt-2">
+                  <div className="flex items-center gap-5 justify-between">
+                    <div className="">
+                      {data?.languages.map((language) => (
+                        <>
+                          <p className="my-2">{language?.language}</p>
+                        </>
+                      ))}
+                    </div>
+                    <div>
+                      {data?.languages.map((language) => (
+                        <>
+                          <p className="my-2"> {language?.level}</p>
+                        </>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-2">
+              <h3 className="lg:text-2xl text-lg uppercase ">hobbies</h3>
+              <hr className="border-2 my-2 border-black" />
+              <div className="leading-none mt-2">
+                <div className="">
+                  <p className="block">{data?.hobbies}</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-2">
+              <h3 className="lg:text-2xl text-lg uppercase ">Reference</h3>
+              <hr className="border-2 my-2 border-black" />
+              <div>
+                <div className="leading-none mt-2">
+                  <div className="flex">
+                    <div>
+                      <p className="font-semibold">
+                        {data?.references.map((reference) => (
+                          <>{reference.company}</>
+                        ))}
                       </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <hr className="border-2 my-2 border-black" />
-            </div>
-
-            <div className="mt-4">
-              <h3 className="lg:text-2xl text-lg uppercase ">languages</h3>
-              {data?.languages?.map((lang, i) => (
-                <div className="p-1">
-                  <div key={i} className="flex items-center">
-                    <p className="font-bold capitalize pr-3 w-[130px]">
-                      {lang?.language}
-                    </p>
-                    <div class="w-full bg-gray-200 rounded-full ">
-                      <div
-                        class={`bg-black text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full`}
-                      >
-                        {lang?.level}
+                      <div>
+                        {data?.references.map((reference) => (
+                          <>
+                            <div>
+                              <p className="my-1">{reference.fullName}</p>
+                              <p className="my-1">{reference.phone}</p>
+                              <p className="my-1">{reference.email}</p>
+                            </div>
+                          </>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="lg:w-full  bg-white">
+        <div className="w-[70%]  ">
           <div className="w-full h-full">
             <div className="relative my-8 flex flex-col justify-center items-center">
               <h2
-                className={`lg:text-3xl text-xl w-[200px] mx-12 lg:mx-0  lg:w-[80%] text-center lg:py-3 pb-4 lg:border-2 border border-black uppercase font-semibold text-gray-900`}
+                className={`lg:text-3xl text-xl mx-12 lg:mx-0  lg:w-[80%] text-center lg:py-3 py-5 lg:border-2 border border-black uppercase font-semibold text-gray-900`}
               >
-                {data?.fname} {data?.lname}
+                {data?.fname} <br />
+                {data?.lname}
               </h2>
-              <h2 className="font-semibold absolute capitalize -bottom-3 lg:bottom-[-20px] bg-white px-3 py-1 lg:text-2xl text-black">
+              <h2 className="font-semibold absolute capitalize -bottom-3 lg:bottom-[-20px] bg-white px-3 py-1 lg:text-xl text-black">
                 {data?.jobTitle}
               </h2>
             </div>
 
             <div className="">
               <div className="pt-4 px-6">
-                <h3 className="lg:text-2xl text-lg uppercase">Profile</h3>
-                <hr className=" lg:my-2 w-[70px] lg:w-[100px] border-t-2 border-black" />
-                <p>{data?.professionalSummary}</p>
+                <h3 className="lg:text-2xl text-lg  uppercase">SUMMARY</h3>
+                <hr className=" lg:my-2 w-full  border-t-2 border-black" />
+                <p className="text-justify">{data?.professionalSummary}</p>
               </div>
 
               <div className="pt-2 relative px-6">
-                <h3 className="lg:text-2xl text-lg uppercase">project</h3>
-                <hr className=" lg:my-2 w-[70px] lg:w-[100px] border-t-2 border-black" />
+                <h3 className="lg:text-2xl text-lg uppercase">EDUCATION</h3>
+                <hr className=" lg:my-2 w-full  border-t-2 border-black" />
+                <div>
+                  {data?.education.map((edu) => (
+                    <>
+                      <div className="my-3">
+                        <p className=" font-semibold">{edu.degree}</p>
+                        <div className="flex justify-between">
+                          <p className=" ">{edu.school}</p>
+                          <p>
+                            {edu?.startDate.slice(0, 4)} -
+                            {edu?.endDate.slice(0, 4)}
+                          </p>
+                        </div>
+                        <h3 className="font-semibold italic">Description:</h3>
+
+                        <p className=" mb-3 text-justify">{edu?.description}</p>
+                      </div>
+                    </>
+                  ))}
+                </div>
+                <h3 className="lg:text-2xl text-lg uppercase">EXPERIENCE</h3>
+                <hr className=" lg:my-2 w-full  border-t-2 border-black" />
+                <div>
+                  {data?.employmentHistory.map((employee) => (
+                    <>
+                      <div>
+                        <p className="font-semibold mt-2">
+                          {employee.jobTitle}
+                        </p>
+                        <div className="flex justify-between items-center">
+                          <p className="">{employee.employer}</p>
+                          <p>
+                            {employee.date[0].slice(0, 4)} -{" "}
+                            {employee.date[1].slice(0, 4)}
+                          </p>
+                        </div>
+
+                        <p className="">{employee.description}</p>
+                      </div>
+                    </>
+                  ))}
+                </div>
+                <h3 className="lg:text-2xl mt-2 text-lg uppercase">
+                  internship
+                </h3>
+                <hr className=" lg:my-2 w-full  border-t-2 border-black" />
+                <div>
+                  {data?.internShips.map((internShip) => (
+                    <>
+                      <div>
+                        <p className="font-semibold mt-2">
+                          {internShip.jobTitle}
+                        </p>
+                        <div className="flex justify-between items-center">
+                          <p className="">{internShip.employer}</p>
+                          <p>
+                            {internShip.date[0].slice(0, 4)} -{" "}
+                            {internShip.date[1].slice(0, 4)}
+                          </p>
+                        </div>
+
+                        <p className="">{internShip?.description}</p>
+                      </div>
+                    </>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

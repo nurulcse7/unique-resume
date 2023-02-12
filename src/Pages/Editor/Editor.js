@@ -21,6 +21,8 @@ import { resumeData } from "../../redux/action/resumeData";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import styles from "../../style";
+import Template7 from "../ResumeTemplate/Template7";
+import Template8 from "../ResumeTemplate/Template8";
 const Editor = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -65,103 +67,109 @@ const Editor = () => {
       case "6": {
         return <Template6 data={data} />;
       }
+      case "7": {
+        return <Template7 data={data} />;
+      }
+      case "8": {
+        return <Template8 data={data} />;
+      }
       default:
         return;
     }
   };
 
   return (
-    <div className={`${styles.padding} update-profile md:max-w-[70%]  px-6`}>
-      <div className="">
-        <div>
-          <Form layout="vertical" onFinish={onFinish} initialValues={data}>
-            <Tabs
-              defaultActiveKey="1"
-              items={[
-                {
-                  label: `Personal Info`,
-                  key: "1",
-                  children: <PersonalInfo />,
-                },
-                {
-                  label: `Skills and Education`,
-                  key: "2",
-                  children: <SkillsEducation />,
-                },
-
-                {
-                  label: `Employment History`,
-                  key: "3",
-                  children: <EmploymentHistory />,
-                },
-                {
-                  label: `Websites & Social Links`,
-                  key: "4",
-                  children: <WebsitesSocialLinks />,
-                },
-                {
-                  label: `References And Hobbies`,
-                  key: "5",
-                  children: <ReferencesNHobbies />,
-                },
-              ]}
-            />
-
-            <Button
-              htmlType="submit"
-              className="bg-primary px-5 text-white py-5 flex items-center hover:text-white"
-            >
-              UPDATE
-            </Button>
-          </Form>
-        </div>
-        <>
+    <div>
+      <div className={`${styles.padding} update-profile md:max-w-[70%]  px-6`}>
+        <div className="">
           <div>
-            {/* <div
-              className="px-12 h-[100%] hidden md:block bg-white"
-              ref={componentRef}
-            >
-              {gettemplate()}
-            </div> */}
-          </div>
-          <div
-            className="btn-body fixed bottom-0 right-0"
-            onClick={() => setOpen(true)}
-          >
-            <button className="btn btn-hover">
-              <span className="btn-text">Preview & Download</span>
-            </button>
-          </div>
-          <Modal
-            centered
-            open={open}
-            onOk={() => setOpen(false)}
-            onCancel={() => setOpen(false)}
-            width={1000}
-          >
-            <div className="flex justify-end my-5 mx-5 px-12 pb-5">
-              <Button
-                className="back-btn"
-                onClick={() => navigate("/resume-templates")}
-              >
-                Back
-              </Button>
-              {user.role === "user" ? (
-                <Link to="/select-plan">
-                  <Button>print</Button>
-                </Link>
-              ) : (
-                <Button className="mx-5" onClick={handlePrint}>
-                  Print
-                </Button>
-              )}
-            </div>
+            <Form layout="vertical" onFinish={onFinish} initialValues={data}>
+              <Tabs
+                defaultActiveKey="1"
+                items={[
+                  {
+                    label: `Personal Info`,
+                    key: "1",
+                    children: <PersonalInfo />,
+                  },
+                  {
+                    label: `Skills and Education`,
+                    key: "2",
+                    children: <SkillsEducation />,
+                  },
 
-            <div className="px-12 h-[100%] bg-white" ref={componentRef}>
-              {gettemplate()}
+                  {
+                    label: `Employment History`,
+                    key: "3",
+                    children: <EmploymentHistory />,
+                  },
+                  {
+                    label: `Websites & Social Links`,
+                    key: "4",
+                    children: <WebsitesSocialLinks />,
+                  },
+                  {
+                    label: `References And Hobbies`,
+                    key: "5",
+                    children: <ReferencesNHobbies />,
+                  },
+                ]}
+              />
+
+              <Button
+                htmlType="submit"
+                className="bg-primary px-5 text-white py-5 flex items-center hover:text-white"
+              >
+                UPDATE
+              </Button>
+            </Form>
+          </div>
+          <>
+            <div
+              className="btn-body fixed bottom-0 right-0"
+              onClick={() => setOpen(true)}
+            >
+              <button className="btn btn-hover">
+                <span className="btn-text">Preview & Download</span>
+              </button>
             </div>
-          </Modal>
-        </>
+            <Modal
+              centered
+              open={open}
+              onOk={() => setOpen(false)}
+              onCancel={() => setOpen(false)}
+              width={1000}
+            >
+              <div className="flex justify-end my-5 mx-5 px-12 pb-5">
+                <Button
+                  className="back-btn"
+                  onClick={() => navigate("/resume-templates")}
+                >
+                  Back
+                </Button>
+                {user.role === "user" ? (
+                  <Link to="/select-plan">
+                    <Button>print</Button>
+                  </Link>
+                ) : (
+                  <Button className="mx-5" onClick={handlePrint}>
+                    Print
+                  </Button>
+                )}
+              </div>
+
+              <div className="px-12 h-[100%] bg-white" ref={componentRef}>
+                {gettemplate()}
+              </div>
+            </Modal>
+          </>
+        </div>
+      </div>
+      <div
+        className="px-12 text-left mx-auto h-[29.7cm] hidden md:block w-[21cm] border-red-700 border-2 bg-gray-100"
+        ref={componentRef}
+      >
+        {gettemplate()}
       </div>
     </div>
   );

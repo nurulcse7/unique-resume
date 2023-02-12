@@ -1,15 +1,11 @@
 import React from "react";
 
 const Template2 = ({ data }) => {
-  console.log("ResumeTemplate2", data);
   return (
     <section className=" text-left relative my-10">
       <div className=" w-full leading-none flex">
         <div className="w-[20px] bg-black"></div>
         <div className="ml-4">
-          <h3 className="text-3xl font-bold">
-            {data?.fname} {data?.lname}
-          </h3>
           <h3 className="text-xl font-medium">{data?.jobTitle}</h3>
           <p>{data?.email}</p>
           <p>{data?.mobileNumber}</p>

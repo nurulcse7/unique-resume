@@ -46,7 +46,7 @@ const Template5 = ({ data }) => {
             <div className="flex mt-2">
               {data?.websites.map((website) => (
                 <>
-                  {website?.label == "Facebook" ? (
+                  {website?.label === "Facebook" ? (
                     <>
                       {" "}
                       <a
@@ -60,7 +60,7 @@ const Template5 = ({ data }) => {
                   ) : (
                     <></>
                   )}
-                  {website?.label == "GitHub" ? (
+                  {website?.label === "GitHub" ? (
                     <>
                       {" "}
                       <a
@@ -74,7 +74,7 @@ const Template5 = ({ data }) => {
                   ) : (
                     <></>
                   )}
-                  {website?.label == "Portfolio" ? (
+                  {website?.label === "Portfolio" ? (
                     <>
                       {" "}
                       <a
@@ -88,7 +88,7 @@ const Template5 = ({ data }) => {
                   ) : (
                     <></>
                   )}
-                  {website?.label == "LinkedId" ? (
+                  {website?.label === "LinkedId" ? (
                     <>
                       {" "}
                       <a

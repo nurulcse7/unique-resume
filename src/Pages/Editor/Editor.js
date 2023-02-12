@@ -25,7 +25,6 @@ import Template7 from "../ResumeTemplate/Template7";
 import Template8 from "../ResumeTemplate/Template8";
 const Editor = () => {
   const dispatch = useDispatch();
-
   const [open, setOpen] = useState(false);
   const { user } = useSelector((state) => state.user);
   const { data } = useSelector((state) => state.resumeData);
@@ -34,7 +33,6 @@ const Editor = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  console.log(data);
   const onFinish = async (values) => {
     await axiosInstance.post("/api/resumeinfo", values, {
       headers: {

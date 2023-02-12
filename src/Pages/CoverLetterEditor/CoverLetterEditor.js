@@ -32,7 +32,6 @@ const CoverLetterEditor = () => {
     content: () => componentRef.current,
   });
   const onFinish = async (values) => {
-    console.log("value", values);
     await axiosInstance.post("/api/coverletterinfo", values, {
       headers: {
         "content-type": "application/json",
@@ -144,7 +143,7 @@ const CoverLetterEditor = () => {
           </div>
           <>
             <div
-              className="btn-body fixed bottom-0 right-0"
+              className="btn-body absolute md:bottom-0 bottom-0 right-[10px] md:right-[50px]"
               onClick={() => setOpen(true)}
             >
               <button className="btn btn-hover">

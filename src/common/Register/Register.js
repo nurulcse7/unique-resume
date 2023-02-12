@@ -4,6 +4,8 @@ import logo from "../../assets/unique resume favicon.png";
 import resume from "../../assets/resume.png";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/action/user";
+import { GrEmoji } from "react-icons/gr";
+import { HiOutlinePhotograph } from "react-icons/hi";
 import Loader from "../../components/Loader/Loader";
 import useTitle from "../../hooks/useTitle";
 
@@ -14,18 +16,37 @@ const Register = () => {
   const token = localStorage.getItem("token");
   const { iaAuthenticated, loading } = useSelector((state) => state.user);
   const [viewPassword, setViewPassword] = useState(false);
+  const [img, setImg] = useState("");
+  const [imgUrl, setImgUrl] = useState("");
+  console.log(imgUrl);
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
     imgUrl: "",
     name: "",
     userName: "",
+    imgUrl: imgUrl,
   });
+  console.log(userInfo);
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("image", img);
+    const url = `https://api.imgbb.com/1/upload?key=4e617bff24500ed4669c6e33ea216faa`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => setImgUrl(data.data.url));
+
     dispatch(register(userInfo));
   };
+  const handleChange = (e) => {
+    setImg(e.target.files[0]);
+  };
+
   useEffect(() => {
     token && navigate("/"); 
   }, [navigate, token]);
@@ -87,6 +108,17 @@ const Register = () => {
                   </div>
                 </div>
                 <form onSubmit={handleSubmit} className="w-full pt-7 px-6">
+                  <div className="flex items-center gap-2">
+                    <label>
+                      <input
+                        onChange={handleChange}
+                        name="file"
+                        required
+                        type="file"
+                      />
+                    </label>
+                  </div>
+
                   <div className="space-y-1 my-3 text-sm">
                     <label
                       htmlFor="username"

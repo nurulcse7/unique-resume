@@ -23,6 +23,7 @@ import { useReactToPrint } from "react-to-print";
 import styles from "../../style";
 import Template7 from "../ResumeTemplate/Template7";
 import Template8 from "../ResumeTemplate/Template8";
+import Template9 from "../ResumeTemplate/Template9";
 const Editor = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -72,6 +73,9 @@ const Editor = () => {
       }
       case "8": {
         return <Template8 data={data} />;
+      }
+      case "9": {
+        return <Template9 data={data} />;
       }
       default:
         return;

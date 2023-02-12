@@ -1,30 +1,32 @@
+import { Progress } from "antd";
 import React from "react";
 
 const Template7 = ({ data }) => {
   console.log("ResumeTemplate2", data);
   return (
     <section className=" text-left relative my-10">
-      <div className=" w-full leading-none flex">
-        <div className="">
-          <h3 className="text-3xl font-bold">
-            {data?.fname} {data?.lname}
-          </h3>
-          <h3 className="text-xl font-medium">{data?.jobTitle}</h3>
-          <div className="flex gap-10">
+      <div className=" w-full leading-none ">
+        <div className="flex justify-between">
+          <div>
+            <h3 className="text-3xl font-bold">
+              {data?.fname} {data?.lname}
+            </h3>
+            <h3 className="text-xl font-medium">{data?.jobTitle}</h3>
+          </div>
+          <div className="text-right">
             <div>
-              <p className="my-2">
-                {" "}
-                <span className="font-semibold">E-mail : </span> {data?.email}
+              <p className="my-2 ">
+                {data?.email} <span className="font-semibold">: E-mail </span>
               </p>
               <p className="my-2">
-                <span className="font-semibold">Phone : </span>
                 {data?.mobileNumber}
+                <span className="font-semibold"> : Phone </span>
               </p>
             </div>
             <div>
               <p className="my-2">
-                <span className="font-semibold">Address : </span>
                 {data?.address}
+                <span className="font-semibold"> : Address </span>
               </p>
             </div>
           </div>
@@ -35,19 +37,6 @@ const Template7 = ({ data }) => {
         <p className="text-justify">{data?.professionalSummary}</p>
       </div>
 
-      {/* <div className="my-3 leading-none">
-        <p className="text-xl font-bold">Skills</p>
-        <hr className="border-t border-black" />
-
-        <p className="">
-          {data?.skills.map((skill) => (
-            <>
-              <p className=" my-1">{skill.technology}</p>
-            </>
-          ))}
-        </p>
-      </div> */}
-
       <div className="my-3 leading-none">
         <p className="text-xl font-bold">Experience</p>
         <hr className="border-t border-black" />
@@ -55,14 +44,14 @@ const Template7 = ({ data }) => {
           {data?.employmentHistory.map((employee) => (
             <>
               <div className="flex mt-2 items-start">
-                <div className="w-[40%]">
+                <div className="w-[20%]">
                   {" "}
                   <p>
-                    {employee.date[0].slice(0, 4)} to{" "}
+                    {employee.date[0].slice(0, 4)} -{" "}
                     {employee.date[1].slice(0, 4)}
                   </p>
                 </div>
-                <div>
+                <div className="w-[80%]">
                   <p className="font-semibold ">{employee.jobTitle}</p>
                   <p className="my-3">{employee.employer}</p>
                   <p className="italic my-2 font-semibold">Description:</p>
@@ -81,12 +70,12 @@ const Template7 = ({ data }) => {
           {data?.education.map((edu) => (
             <>
               <div className="flex mt-2 items-start">
-                <div className="w-[40%]">
+                <div className="w-[20%]">
                   <p>
                     {edu?.startDate.slice(0, 4)} -{edu?.endDate.slice(0, 4)}
                   </p>
                 </div>
-                <div>
+                <div className="w-[80%]">
                   <p className=" font-semibold underline">{edu.degree}</p>
                   <p className=" my-2 ">{edu.school}</p>
                   <p className="italic my-2 font-semibold">Description:</p>
@@ -103,15 +92,15 @@ const Template7 = ({ data }) => {
         <hr className="border-t border-black" />
         <div>
           <div className="leading-none mt-2">
-            <div className="flex items-start  gap-5 ">
-              <div className="w-[30%]">
+            <div className="flex items-start   ">
+              <div className="w-[20%]">
                 {data?.languages.map((language) => (
                   <>
                     <p className="my-2 text-left ">{language?.language}</p>
                   </>
                 ))}
               </div>
-              <div className="w-[60%]  text-left">
+              <div className="w-[80%]  text-left">
                 {data?.languages.map((language) => (
                   <>
                     <p className="my-2  text-left"> {language?.level}</p>
@@ -121,6 +110,28 @@ const Template7 = ({ data }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="my-3 leading-none">
+        <p className="text-xl font-bold">Skills</p>
+        <hr className="border-t border-black" />
+
+        <p className="">
+          {data?.skills.map((skill) => (
+            <>
+              <div className="flex ">
+                <p className="w-[20%] my-1">{skill.technology}</p>
+                <p className="w-[80%] my-1">
+                  <Progress
+                    percent={skill?.level}
+                    steps={5}
+
+                    //   strokeColor={[green[6], green[6], red[5]]}
+                  />
+                </p>
+              </div>
+            </>
+          ))}
+        </p>
       </div>
 
       <div>

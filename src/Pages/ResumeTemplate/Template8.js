@@ -14,19 +14,21 @@ const Template8 = ({ data }) => {
         </h3>
         <h3 className="text-xl text-center font-medium">{data?.jobTitle}</h3>
       </div>
-      <div className=" w-full  flex">
+      <div className=" w-full text-center ">
         <div className="flex justify-between">
           <div className="my-2">
             {" "}
             <span className="font-semibold">E-mail : </span>
+            <br />
             {data?.email}
           </div>
           <div className="my-2">
-            <span className="font-semibold">Phone : </span>
+            <span className="font-semibold">Phone : </span> <br />
             {data?.mobileNumber}
           </div>
-          <div className="my-2">
+          <div className="my-2 ">
             <span className="font-semibold">Address : </span>
+            <br />
             {data?.address}
           </div>
         </div>

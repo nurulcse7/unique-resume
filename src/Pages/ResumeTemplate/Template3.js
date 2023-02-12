@@ -1,9 +1,10 @@
+import Link from "antd/es/typography/Link";
 import React from "react";
 
 const Template3 = ({ data }) => {
   console.log("Template3", data);
   return (
-    <section className=" m-10 border border-black rounded-md mx-auto text-left relative bg-white  shadow-2xl p-8">
+    <section className=" text-left relative my-10">
       <div className="leading-none flex justify-between">
         <div>
           <h2 className="md:text-3xl uppercase text-xl font-bold">
@@ -37,7 +38,7 @@ const Template3 = ({ data }) => {
 
       <div className=" my-4 flex justify-between">
         <div className=" w=[30%] mr-5">
-          <div className="mr-5 ">
+          <div className="mb-5 ">
             <p className="font-bold">SKILL</p>
             <hr className="border-t border-black" />
             <p className="">
@@ -57,7 +58,7 @@ const Template3 = ({ data }) => {
               </span>
             </p>
           </div>
-          <div className="mr-5 ">
+          <div className="my-5 ">
             <p className="font-bold">LANGUAGE</p>
             <hr className="border-t border-black" />
 
@@ -81,20 +82,40 @@ const Template3 = ({ data }) => {
             </div>
           </div>
 
-          <div className="mr-5 ">
+          <div className="my-5 ">
             <p className="font-bold">HOBBIES</p>
             <hr className="border-t border-black" />
 
             <div className="leading-none mt-2">
               <div className="">
-                <p className="block">{data?.hobbies}</p>
+                <div className="flex ">{data?.hobbies}</div>
+              </div>
+            </div>
+          </div>
+          <div className="my-5 ">
+            <p className="font-bold">SOCIAL LINK</p>
+            <hr className="border-t border-black" />
+
+            <div className="leading-none mt-2">
+              <div className="">
+                <p className="block">
+                  {data?.websites.map((website) => (
+                    <>
+                      <div className="flex mt-2">
+                        <a href={website?.Link} rel="noopener">
+                          {website?.label}
+                        </a>
+                      </div>
+                    </>
+                  ))}
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         <div className=" w-[80%]">
-          <div className=" ">
+          <div className=" mb-5">
             <p className="font-bold ">SUMMARY</p>
             <hr className="border-t border-black" />
 
@@ -105,7 +126,7 @@ const Template3 = ({ data }) => {
             </div>
           </div>
 
-          <div className="w-full mt-2 ">
+          <div className="w-full mb-5 ">
             <p className="font-bold ">EDUCATION</p>
             <hr className="border-t border-black" />
 
@@ -117,7 +138,7 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{edu.school}</p>
                       <p>
-                        {edu?.date[0].slice(0, 4)} -{edu?.date[1].slice(0, 4)}
+                        {edu?.startDate.slice(0, 4)} -{edu?.endDate.slice(0, 4)}
                       </p>
                     </div>
 
@@ -128,7 +149,7 @@ const Template3 = ({ data }) => {
             </div>
           </div>
 
-          <div className="w-full mt-2 ">
+          <div className="w-full mb-5 ">
             <p className="font-bold ">EXPERIENCE</p>
             <hr className="border-t border-black" />
 
@@ -140,7 +161,7 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{employee.employer}</p>
                       <p>
-                        {employee.date[0].slice(0, 4)} to{" "}
+                        {employee.date[0].slice(0, 4)}{" "}
                         {employee.date[1].slice(0, 4)}
                       </p>
                     </div>
@@ -153,8 +174,33 @@ const Template3 = ({ data }) => {
               ))}
             </div>
           </div>
+          <div className="w-full mb-5 ">
+            <p className="font-bold ">INTERNSHIPS</p>
+            <hr className="border-t border-black" />
 
-          <div className="w-full mt-2 ">
+            <div>
+              {data?.internShips.map((internShip) => (
+                <>
+                  <div className="leading-none mt-2">
+                    <p className="font-bold">{internShip.jobTitle}</p>
+                    <div className="flex my-2 justify-between">
+                      <p className=" ">{internShip.employer}</p>
+                      <p>
+                        {internShip.date[0].slice(0, 4)}{" "}
+                        {internShip.date[1].slice(0, 4)}
+                      </p>
+                    </div>
+
+                    <p className=" mb-3 text-justify">
+                      {internShip?.description}
+                    </p>
+                  </div>
+                </>
+              ))}
+            </div>
+          </div>
+
+          <div className="w-full mb-5 ">
             <p className="font-bold ">REFERENCE</p>
             <hr className="border-t border-black" />
 

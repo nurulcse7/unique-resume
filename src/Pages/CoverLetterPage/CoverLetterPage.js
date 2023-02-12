@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import axiosInstance from "../../utils/axiosInstance";
 import Loader from "../../components/Loader/Loader";
+import useTitle from "../../hooks/useTitle";
+
 const CoverLetterPage = () => {
+  useTitle('CoverLetter');
   const [filterWork, setFilterWork] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });

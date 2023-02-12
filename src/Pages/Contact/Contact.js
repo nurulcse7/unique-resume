@@ -962,10 +962,10 @@ const Contact = () => {
         </div>
       </div>
       <MessengerCustomerChat
-      pageId='109422248585811'
-      appId='1552485545263244'
-      //   htmlRef="<REF_STRING>"
-    />
+        pageId='109422248585811'
+        appId='1552485545263244'
+        //   htmlRef="<REF_STRING>"
+      />
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebook, FaGithub, FaLink, FaLinkedin } from "react-icons/fa";
 
 const CvTemplate1 = ({ data }) => {
   console.log("cvTemplate1", data);
@@ -10,9 +11,68 @@ const CvTemplate1 = ({ data }) => {
           <p className="md:text-lg text-sm">{data?.email}</p>
           <p>{data?.address}</p>
           <p>{data?.mobileNumber}</p>
-          {/* {data?.websites.map((w, i) => (
-            <p>{w.Link}</p>
-          ))} */}
+          <div className="flex justify-end ">
+            {data?.websites.map((website) => (
+              <>
+                {website?.label === "Facebook" ? (
+                  <>
+                    {" "}
+                    <a
+                      rel="noreferrer"
+                      href={website.Link}
+                      className="p-2 text-xl"
+                    >
+                      <FaFacebook />
+                    </a>
+                  </>
+                ) : (
+                  <></>
+                )}
+                {website?.label === "GitHub" ? (
+                  <>
+                    {" "}
+                    <a
+                      rel="noreferrer"
+                      href={website.Link}
+                      className="p-2 text-xl"
+                    >
+                      <FaGithub />
+                    </a>
+                  </>
+                ) : (
+                  <></>
+                )}
+                {website?.label === "Portfolio" ? (
+                  <>
+                    {" "}
+                    <a
+                      rel="noreferrer"
+                      href={website.Link}
+                      className="p-2 text-xl"
+                    >
+                      <FaLink />
+                    </a>
+                  </>
+                ) : (
+                  <></>
+                )}
+                {website?.label === "LinkedIn" ? (
+                  <>
+                    {" "}
+                    <a
+                      rel="noreferrer"
+                      href={website.Link}
+                      className="p-2 text-xl"
+                    >
+                      <FaLinkedin />
+                    </a>
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            ))}
+          </div>
         </div>
       </div>
       <div>
@@ -43,12 +103,21 @@ const CvTemplate1 = ({ data }) => {
                   <p className="w-[80%]">: {edu.group}</p>
                 </div>
                 <div className="flex justify-start gap-2">
-                  <p className="w-[20%]">Year </p>
+                  <p className="w-[20%]">Passing Year </p>
                   <p className="w-[80%]">: {edu.passingYear}</p>
                 </div>
                 <div className="flex justify-start gap-2">
                   <p className="w-[20%]">Result </p>
-                  <p className="w-[80%]">: {edu.grade} (Out of 5.0)</p>
+                  <p className="w-[80%]">
+                    : {edu.grade}
+                    {edu.level.slice(0, 1) === "H" ||
+                    edu.level.slice(0, 1) === "S" ||
+                    edu.level.slice(0, 1) === "J" ? (
+                      <> (Out of 5.0)</>
+                    ) : (
+                      <> (Out of 4.0)</>
+                    )}
+                  </p>
                 </div>
               </div>
             ))}
@@ -72,7 +141,7 @@ const CvTemplate1 = ({ data }) => {
                 <div className="flex justify-start gap-2">
                   <p className="w-[20%]">Experience </p>
                   <p className="w-[80%]">
-                    : {exp.years} {exp?.years == "1" ? <>Year</> : <>Years</>}
+                    : {exp.years} {exp?.years === "1" ? <>Year</> : <>Years</>}
                   </p>
                 </div>
                 <div className="flex justify-start gap-2">
@@ -86,24 +155,6 @@ const CvTemplate1 = ({ data }) => {
               </div>
             ))}
           </div>
-
-          {/* <div className="text-sm">
-            {data?.experience?.map((exp, index) => (
-              <div className="py-2" key={index}>
-                <h6>
-                  <b>{exp.years}</b>
-                </h6>
-                <div className="flex justify-start gap-2 py-1">
-                  <span>Place: </span>
-                  <p>{exp.place}</p>
-                </div>
-                <div className="flex justify-start gap-2">
-                  <span>Duration: </span>
-                  <p>{exp.range}</p>
-                </div>
-              </div>
-            ))}
-          </div> */}
         </div>
 
         <div className="mt-5">
@@ -112,19 +163,27 @@ const CvTemplate1 = ({ data }) => {
           </h3>
 
           <div className="text-sm ">
-            {data?.projects?.map((exp, index) => (
+            {data?.projects?.map((project, index) => (
               <div className="py-2" key={index}>
-                <h6>
-                  <b>{exp.range}</b>
-                </h6>
-                <div className="flex justify-start gap-2 py-1">
-                  <span>Title: </span>
-                  <p>{exp.description}</p>
+                <div className="flex justify-between items-center ">
+                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                  <p>{project.range}</p>
                 </div>
-                <div className="flex justify-start gap-2">
-                  <span>Link: </span>
-                  <a href={exp.link}>{exp.link}</a>
+
+                <div className="">
+                  <p className="italic">Decription : </p>
+                  <h3 className="inline-block text-justify">
+                    {project.description.split("•")}
+                  </h3>
                 </div>
+
+                <a
+                  rel="noreferrer"
+                  href={project.link}
+                  className="underline text-blue-600 font-semibold"
+                >
+                  Live Link
+                </a>
               </div>
             ))}
           </div>
@@ -135,11 +194,6 @@ const CvTemplate1 = ({ data }) => {
             Personal Information
           </h3>
           <div>
-            {/* <div className="flex justify-start gap-2">
-              <p className="w-[20%]">Institution </p>
-              <p className="w-[80%]">: {edu.institution}</p>
-            </div> */}
-
             <div className="flex justify-start gap-2">
               <p className="w-[20%]"> Name </p>
               <p className="w-[80%]">: {data?.name}</p>
@@ -234,6 +288,24 @@ const CvTemplate1 = ({ data }) => {
               >
                 <h6>
                   <b>{exp.technology}</b>
+                </h6>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-5">
+          <h3 className="text-xl py-2 font-bold border-b border-gray-300">
+            Personal Skills
+          </h3>
+
+          <div className="text-sm flex justify-start gap-3 flex-row flex-wrap">
+            {data?.personalSkills?.map((exp, index) => (
+              <div
+                className="p-2 mt-2 rounded border border-dotted border-gray-400"
+                key={index}
+              >
+                <h6>
+                  <b>{exp.personalSkill}</b>
                 </h6>
               </div>
             ))}

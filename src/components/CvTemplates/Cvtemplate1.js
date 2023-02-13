@@ -324,6 +324,11 @@ const CvTemplate1 = ({ data }) => {
             ))}
           </div>
         </div>
+        <div>
+          <p className=" capitalize my-10">Sincerly</p>
+
+          <h2 className="text-lg overline ">{data?.name}</h2>
+        </div>
       </div>
     </div>
   );

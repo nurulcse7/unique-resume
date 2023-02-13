@@ -29,7 +29,7 @@ function CVEditor() {
   const gettemplate = () => {
     switch (params.id) {
       case "1": {
-        return <CvTemplate1 />;
+        return <CvTemplate1 data={data} />;
       }
       case "2": {
         return <Cvtemplate2 />;
@@ -141,6 +141,12 @@ function CVEditor() {
             </Modal>
           </>
         </div>
+      </div>
+      <div
+        className="px-12 text-left mx-auto h-[29.7cm] hidden md:block w-[21cm] border-red-700 border-2 bg-gray-100"
+        ref={componentRef}
+      >
+        <p>{gettemplate()}</p>
       </div>
     </div>
   );

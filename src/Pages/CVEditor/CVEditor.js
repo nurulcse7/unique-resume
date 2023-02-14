@@ -32,7 +32,7 @@ function CVEditor() {
         return <CvTemplate1 data={data} />;
       }
       case "2": {
-        return <Cvtemplate2 />;
+        return <Cvtemplate2 data={data} />;
       }
       case "13": {
         return <Cvtemplate2 />;

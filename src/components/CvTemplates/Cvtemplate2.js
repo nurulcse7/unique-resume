@@ -47,48 +47,50 @@ const Cvtemplate2 = ({ data }) => {
           Education Qualification
         </h2>
 
-        {data?.education && (
-          <div className="py-2">
-            {data?.education.map((edu) => (
-              <div className="py-2">
-                <h2 className="text-lg font-bold  pt-1 pb-2 px-1">
-                  <span className="w-fit ">
-                    {edu.level.toLowerCase() === "hsc"
-                      ? `Higher Secondary Certificate(H.S.C):`
-                      : edu.level.toLowerCase() === "ssc"
-                      ? `Secondary School Certificate(S.S.C):`
-                      : ` ${edu.level}:`}
-                  </span>
-                </h2>
-                <div className="flex justify-between">
-                  <p className="w-[30%] ">Group</p>
-                  <p className="w-[70%] text-left ">: {edu.group}</p>
+        <div>
+          {data?.education && (
+            <div className="py-2">
+              {data?.education.map((edu) => (
+                <div className="py-2">
+                  <h2 className="text-lg font-bold  pt-1 pb-2 px-1">
+                    <span className="w-fit ">
+                      {edu.level.toLowerCase() === "hsc"
+                        ? `Higher Secondary Certificate(H.S.C):`
+                        : edu.level.toLowerCase() === "ssc"
+                        ? `Secondary School Certificate(S.S.C):`
+                        : ` ${edu.level}:`}
+                    </span>
+                  </h2>
+                  <div className="flex justify-between">
+                    <p className="w-[30%] ">Group</p>
+                    <p className="w-[70%] text-left ">: {edu.group}</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <p className="w-[30%] ">Passing Year</p>
+                    <p className="w-[70%] text-left ">: {edu.passingYear}</p>
+                  </div>
+                  <div className="flex justify-between">
+                    <p className="w-[30%] ">Achievement</p>
+                    <p className="w-[70%] text-left ">
+                      : {edu.grade}{" "}
+                      {edu.level.slice(0, 1) === "H" ||
+                      edu.level.slice(0, 1) === "S" ||
+                      edu.level.slice(0, 1) === "J" ? (
+                        <> (Out of 5.0)</>
+                      ) : (
+                        <> (Out of 4.0)</>
+                      )}
+                    </p>
+                  </div>
+                  <div className="flex justify-between">
+                    <p className="w-[30%] ">Institution</p>
+                    <p className="w-[70%] text-left ">: {edu.board}</p>
+                  </div>
                 </div>
-                <div className="flex justify-between">
-                  <p className="w-[30%] ">Passing Year</p>
-                  <p className="w-[70%] text-left ">: {edu.passingYear}</p>
-                </div>
-                <div className="flex justify-between">
-                  <p className="w-[30%] ">Achievement</p>
-                  <p className="w-[70%] text-left ">
-                    : {edu.grade}{" "}
-                    {edu.level.slice(0, 1) === "H" ||
-                    edu.level.slice(0, 1) === "S" ||
-                    edu.level.slice(0, 1) === "J" ? (
-                      <> (Out of 5.0)</>
-                    ) : (
-                      <> (Out of 4.0)</>
-                    )}
-                  </p>
-                </div>
-                <div className="flex justify-between">
-                  <p className="w-[30%] ">Institution</p>
-                  <p className="w-[70%] text-left ">: {edu.board}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
       {/*    Experience */}
       <div>
@@ -287,65 +289,7 @@ const Cvtemplate2 = ({ data }) => {
           </div>
         </div>
       </div>
-      {/*      
-      {data?.permanentAdd && (
-        <div className="py-2">
-          <h2 className="text-3xl font-bold bg-blue-200 pt-1 pb-2 px-1">
-            <span className="w-fit border-b-2 border-gray-500">
-              Parmanent Address
-            </span>
-          </h2>
-          {data?.permanentAdd?.map((add, index) => (
-            <div key={index}>
-              <div className="flex justify-between">
-                <p className="w-[50%] py-1">Village</p>
-                <p className="w-[50%] text-left py-1">: {add.village}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="w-[50%] py-1">Post</p>
-                <p className="w-[50%] text-left py-1">: {add.post}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="w-[50%] py-1">P.S</p>
-                <p className="w-[50%] text-left py-1">: {add.ps}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="w-[50%] py-1">District</p>
-                <p className="w-[50%] text-left py-1">: {add.district}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-      {data?.presentAdd && (
-        <div className="py-2">
-          <h2 className="text-3xl font-bold bg-blue-200 pt-1 pb-2 px-1">
-            <span className="w-fit border-b-2 border-gray-500">
-              Present Address
-            </span>
-          </h2>
-          {data?.presentAdd?.map((add, index) => (
-            <div key={index}>
-              <div className="flex justify-between">
-                <p className="w-[50%] py-1">Village</p>
-                <p className="w-[50%] text-left py-1">: {add.village}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="w-[50%] py-1">Post</p>
-                <p className="w-[50%] text-left py-1">: {add.post}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="w-[50%] py-1">P.S</p>
-                <p className="w-[50%] text-left py-1">: {add.ps}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="w-[50%] py-1">District</p>
-                <p className="w-[50%] text-left py-1">: {add.district}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      )} */}
+
       <div className="py-4">
         <p>Singature</p>
         <br />

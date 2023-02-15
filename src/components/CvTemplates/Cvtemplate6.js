@@ -30,15 +30,15 @@ const Cvtemplate6 = ({ data }) => {
         ))}
       </div>
       {/*     Career Objective */}
-      <div className="py-2">
+      {/* <div className="py-2">
         <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">
           Career Objective
         </h2>
         <p className="text-base py-2">{data?.carrierObjective}</p>
-      </div>
+      </div> */}
       {/*       Education Qualification */}
       <div>
-        <h2 className="text-xl font-bold bg-gray-200 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">
           Education Qualification
         </h2>
 
@@ -89,7 +89,7 @@ const Cvtemplate6 = ({ data }) => {
       </div>
       {/*    Experience */}
       <div>
-        <h2 className="text-xl font-bold bg-gray-200 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">
           Experience
         </h2>
         <div className="">
@@ -121,12 +121,14 @@ const Cvtemplate6 = ({ data }) => {
         </div>
       </div>
       <div className="mt-5">
-        <h2 className="text-xl font-bold bg-gray-200 pt-1 pb-2 px-1">Skills</h2>
+        <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">
+          Skills
+        </h2>
 
         <div className="text-sm flex justify-start gap-3 flex-row flex-wrap">
           {data?.skills?.map((exp, index) => (
             <div
-              className="p-2 mt-2 rounded border border-dotted border-gray-400"
+              className="p-2 mt-2 rounded border border-dotted bg-rose-900  text-white border-rose-900"
               key={index}
             >
               <h6>
@@ -137,14 +139,14 @@ const Cvtemplate6 = ({ data }) => {
         </div>
       </div>
       <div className="mt-5">
-        <h2 className="text-xl font-bold bg-gray-200 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">
           Personal Skills
         </h2>
 
         <div className="text-sm flex justify-start gap-3 flex-row flex-wrap">
           {data?.personalSkills?.map((exp, index) => (
             <div
-              className="p-2 mt-2 rounded border border-dotted border-gray-400"
+              className="p-2 mt-2 rounded border border-dotted bg-rose-900  text-white border-rose-900"
               key={index}
             >
               <h6>
@@ -155,20 +157,23 @@ const Cvtemplate6 = ({ data }) => {
         </div>
       </div>
       <div className="mt-5">
-        <h2 className="text-xl font-bold bg-gray-200 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">
           Languages
         </h2>
 
         <div className="text-sm flex flex-col items-start justify-start gap-3  flex-wrap">
           {data?.languageSkills?.map((lan, index) => (
-            <div className="" key={index}>
+            <div
+              className="p-2 mt-2 rounded border border-dotted bg-rose-900  text-white border-rose-900"
+              key={index}
+            >
               <h6>{lan.language}</h6>
             </div>
           ))}
         </div>
       </div>
       <div className="mt-5">
-        <h2 className="text-xl font-bold bg-gray-200 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">
           Projects
         </h2>
 
@@ -176,7 +181,9 @@ const Cvtemplate6 = ({ data }) => {
           {data?.projects?.map((project, index) => (
             <div className="py-2" key={index}>
               <div className="flex justify-between items-center ">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
+                <h3 className="text-lg font-semibold text-rose-700">
+                  {project.title}
+                </h3>
                 <p>{project.range}</p>
               </div>
 
@@ -200,7 +207,7 @@ const Cvtemplate6 = ({ data }) => {
       </div>
 
       <div className="mt-5">
-        <h2 className="text-xl font-bold bg-gray-200 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">
           Personal Information
         </h2>
         <div>
@@ -286,10 +293,9 @@ const Cvtemplate6 = ({ data }) => {
       </div>
 
       <div className="py-4">
-        <p>Singature</p>
+        <p className="font-bold">Singature</p>
         <br />
-        <p>({data?.name})</p>
-        <p>Date..............................</p>
+        <p className="text-rose-900 font-bold">{data?.name}</p>
       </div>
     </div>
   );

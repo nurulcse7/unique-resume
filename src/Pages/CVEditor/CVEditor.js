@@ -15,6 +15,7 @@ import CvTemplate1 from "../../components/CvTemplates/Cvtemplate1";
 import Cvtemplate2 from "../../components/CvTemplates/Cvtemplate2";
 import styles from "../../style";
 import Cvtemplate3 from "../../components/CvTemplates/Cvtemplate3";
+import Cvtemplate4 from "../../components/CvTemplates/Cvtemplate4";
 
 function CVEditor() {
   const { data } = useSelector((state) => state.cvdata);
@@ -37,6 +38,9 @@ function CVEditor() {
       }
       case "3": {
         return <Cvtemplate3 data={data} />;
+      }
+      case "4": {
+        return <Cvtemplate4 data={data} />;
       }
 
       default:

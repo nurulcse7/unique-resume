@@ -173,7 +173,10 @@ const DashboardCv = () => {
 
                     <div className={`${ismove ? "  delay-[10s]  " : "hidden"}`}>
                       <div className="absolute w-[600px] h-[238px]  bg-black hover:z-10 justify-center opacity-75 flex top-0 rounded-sm left-0">
-                        <button className="flex items-center space-x-2  ">
+                        <button
+                          onClick={() => handleUpdateCv(template?._id)}
+                          className="flex items-center space-x-2  "
+                        >
                           {" "}
                           <span className=" text-sky-600 text-xl">
                             <FaCompress />{" "}
@@ -222,7 +225,10 @@ const DashboardCv = () => {
                         {" "}
                         <FaCloudDownloadAlt />{" "}
                       </span>
-                      <button className=" text-black  text-sm font-bold  hover:text-sky-500">
+                      <button
+                        onClick={() => handleUpdateCv(template?._id)}
+                        className=" text-black  text-sm font-bold  hover:text-sky-500"
+                      >
                         {" "}
                         Download CV{" "}
                       </button>

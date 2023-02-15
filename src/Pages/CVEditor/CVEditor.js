@@ -14,6 +14,7 @@ import { useReactToPrint } from "react-to-print";
 import CvTemplate1 from "../../components/CvTemplates/Cvtemplate1";
 import Cvtemplate2 from "../../components/CvTemplates/Cvtemplate2";
 import styles from "../../style";
+import Cvtemplate3 from "../../components/CvTemplates/Cvtemplate3";
 
 function CVEditor() {
   const { data } = useSelector((state) => state.cvdata);
@@ -29,13 +30,13 @@ function CVEditor() {
   const gettemplate = () => {
     switch (params.id) {
       case "1": {
-        return <CvTemplate1 />;
+        return <CvTemplate1 data={data} />;
       }
       case "2": {
-        return <Cvtemplate2 />;
+        return <Cvtemplate2 data={data} />;
       }
-      case "13": {
-        return <Cvtemplate2 />;
+      case "3": {
+        return <Cvtemplate3 data={data} />;
       }
 
       default:
@@ -144,6 +145,12 @@ function CVEditor() {
           </>
         </div>
       </div>
+      {/* <div
+        className="px-12 text-left mx-auto h-[29.7cm] hidden md:block w-[21cm] border-red-700 border-2 bg-gray-100"
+        ref={componentRef}
+      >
+        <p>{gettemplate()}</p>
+      </div> */}
     </div>
   );
 }

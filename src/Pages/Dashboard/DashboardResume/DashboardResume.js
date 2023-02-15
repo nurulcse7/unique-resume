@@ -8,7 +8,7 @@ import {
   FaCloudDownloadAlt,
   FaCompress,
 } from "react-icons/fa";
-import axiosInstance from "../../../utils/axiosInstance";
+import axiosInstance from "../../../utils/axiosInstance.js";
 import { toast } from "react-hot-toast";
 const DashboardResume = () => {
   const [data, setData] = useState([]);

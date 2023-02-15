@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import styles from "../../style";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../utils/axiosInstance.js";
 import Loader from "../../components/Loader/Loader";
 import useTitle from "../../hooks/useTitle";
 
 const CoverLetterPage = () => {
-  useTitle('CoverLetter');
+  useTitle("CoverLetter");
   const [filterWork, setFilterWork] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });

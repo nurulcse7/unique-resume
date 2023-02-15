@@ -5,7 +5,7 @@ import PersonalInfo from "../../components/CVinformation/PersonalInfo";
 import SkillsEducation from "../../components/CVinformation/SkillsEducation";
 import ExperienceProjects from "../../components/CVinformation/Exprerience";
 import Address from "../../components/CVinformation/Address";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../utils/axiosInstance.js";
 import { useDispatch, useSelector } from "react-redux";
 import { cvTemplate } from "../../redux/action/data";
 import { useState } from "react";
@@ -50,7 +50,9 @@ function CVEditor() {
       },
     });
     message.success("Update successfully");
+    console.log(values);
   };
+
   useEffect(() => {
     dispatch(cvTemplate());
   }, [dispatch, data]);
@@ -73,7 +75,7 @@ function CVEditor() {
                   {
                     label: `Personal Info`,
                     key: "1",
-                    children: <PersonalInfo />,
+                    children: <PersonalInfo info={data} />,
                   },
                   {
                     label: `Skills and Education`,

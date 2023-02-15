@@ -4,30 +4,27 @@ import logo from "../../assets/unique resume favicon.png";
 import resume from "../../assets/resume.png";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/action/user";
-import { GrEmoji } from "react-icons/gr";
-import { HiOutlinePhotograph } from "react-icons/hi";
 import Loader from "../../components/Loader/Loader";
 import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
-  useTitle('Register');
+  useTitle("Register");
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
-  const { iaAuthenticated, loading } = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.user);
   const [viewPassword, setViewPassword] = useState(false);
   const [img, setImg] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
-  console.log(imgUrl);
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
-    imgUrl: "",
     name: "",
     userName: "",
-    imgUrl: imgUrl,
+    imgUrl: "",
   });
-  console.log(userInfo);
+  const handleChange = (e) => {
+    setImg(e.target.files[0]);
+  };
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,16 +36,13 @@ const Register = () => {
       body: formData,
     })
       .then((res) => res.json())
-      .then((data) => setImgUrl(data.data.url));
+      .then((data) => setUserInfo({ ...userInfo, imgUrl: data.data.url }));
 
     dispatch(register(userInfo));
   };
-  const handleChange = (e) => {
-    setImg(e.target.files[0]);
-  };
 
   useEffect(() => {
-    token && navigate("/"); 
+    token && navigate("/");
   }, [navigate, token]);
   return (
     <section
@@ -173,7 +167,7 @@ const Register = () => {
                       className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                     />
                   </div>
-                  <div className="space-y-1 my-3 text-sm">
+                  {/* <div className="space-y-1 my-3 text-sm">
                     <label
                       htmlFor="imgUrl"
                       className="block dark:text-gray-400"
@@ -190,7 +184,7 @@ const Register = () => {
                       placeholder="Your Photo Url"
                       className="w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none"
                     />
-                  </div>
+                  </div> */}
                   <div className="relative space-y-1 text-sm my-2">
                     <label className="label">
                       <span className="label-text">Password</span>

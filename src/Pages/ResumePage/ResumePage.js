@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import styles from '../../style';
-import { Link } from 'react-router-dom';
-import Loader from '../../components/Loader/Loader';
-import axiosInstance from '../../utils/axiosInstance';
-import useTitle from '../../hooks/useTitle';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import styles from "../../style";
+import { Link } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
+import axiosInstance from "../../utils/axiosInstance.js";
+import useTitle from "../../hooks/useTitle";
 
 const ResumePage = () => {
-  useTitle('Resume');
+  useTitle("Resume");
   const [filterWork, setFilterWork] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState();
   useEffect(() => {
-    axiosInstance.get('/api/resumes').then((res) => {
+    axiosInstance.get("/api/resumes").then((res) => {
       setFilterWork(res.data);
       setWorks(res.data);
     });
@@ -25,7 +25,7 @@ const ResumePage = () => {
     setTimeout(() => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
 
-      if (item === 'All templates') {
+      if (item === "All templates") {
         setFilterWork(works);
       } else {
         setFilterWork(works.filter((work) => work.type.includes(item)));
@@ -34,27 +34,27 @@ const ResumePage = () => {
   };
   return (
     <div className={`${styles.padding}`}>
-      <section className=' relative    '>
-        <div class='bg-white  '>
-          <div class='text-center w-full mx-auto py-4 px-4 sm:px-6 lg:py-4lg:px-8 z-20'>
-            <h2 class='text-2xl font-extrabold text-black sm:text-4xl'>
-              <span class='block'>Need to make a resume but </span>
-              <span class='block text-secondary'>
+      <section className=" relative    ">
+        <div class="bg-white  ">
+          <div class="text-center w-full mx-auto py-4 px-4 sm:px-6 lg:py-4lg:px-8 z-20">
+            <h2 class="text-2xl font-extrabold text-black sm:text-4xl">
+              <span class="block">Need to make a resume but </span>
+              <span class="block text-secondary">
                 don't know how to make it?
               </span>
             </h2>
-            <p class='text-lg mt-4 max-w-md mx-auto text-gray-400'>
+            <p class="text-lg mt-4 max-w-md mx-auto text-gray-400">
               Select a template and customize your resume. <br /> Freshers &
               experienced Both people can create resume.
             </p>
-            <div class='lg:mt-0 lg:flex-shrink-0'>
+            <div class="lg:mt-0 lg:flex-shrink-0">
               <div className={`${styles.padding} flex gap-4 justify-center`}>
-                {['All templates', 'premium', 'free'].map((item, index) => (
+                {["All templates", "premium", "free"].map((item, index) => (
                   <div
                     key={index}
                     onClick={() => handleWorkFilter(item)}
                     className={`app__work-filter-item  md:py-3 md:px-4  py-2 px-3 bg-primary hover:bg-secondary focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white md:w-[20%]  transition ease-in duration-200 text-center md:text-base text-[15px] font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg  uppercase  cursor-pointer ${
-                      activeFilter === item ? 'item-active' : ''
+                      activeFilter === item ? "item-active" : ""
                     }`}
                   >
                     {item}
@@ -70,35 +70,35 @@ const ResumePage = () => {
           <motion.div
             animate={animateCard}
             transition={{ duration: 0.5, delayChildren: 0.5 }}
-            className=' grid md:grid-cols-3 grid-cols-1 gap-5'
+            className=" grid md:grid-cols-3 grid-cols-1 gap-5"
           >
             {filterWork?.map((work, index) => (
               <Link to={`/resume-templates/${work.id}`} key={index}>
-                <div className='border rounded-md border-primary'>
-                  <div className='app__work-img '>
+                <div className="border rounded-md border-primary">
+                  <div className="app__work-img ">
                     <img src={work.image} alt={work.type} />
                     <motion.div
                       whileHover={{ opacity: [0, 1] }}
                       transition={{
                         duration: 0.25,
-                        ease: 'easeInOut',
+                        ease: "easeInOut",
                         staggerChildren: 0.5,
                       }}
-                      className='app__work-hover flex justify-center items-center '
+                      className="app__work-hover flex justify-center items-center "
                     >
                       <a
                         href={work.projectLink}
-                        target='_blank'
-                        rel='noreferrer'
+                        target="_blank"
+                        rel="noreferrer"
                       >
                         <motion.div
                           whileInView={{ scale: [0, 1] }}
                           whileHover={{ scale: [1, 0.9] }}
                           transition={{ duration: 0.25 }}
-                          className=' flex justify-center items-center'
+                          className=" flex justify-center items-center"
                         >
-                          <button className='bg-primary capitalize font-semibold px-3 py-2 rounded'>
-                            {' '}
+                          <button className="bg-primary capitalize font-semibold px-3 py-2 rounded">
+                            {" "}
                             Use {work.type} Template
                           </button>
                         </motion.div>

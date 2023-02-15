@@ -27,7 +27,7 @@ const Cvtemplate3 = ({ data }) => {
           </div>
         </div>
 
-        <p className=" border-b border-4 border-gray-300"></p>
+        {/* <p className=" border-b border-4 border-gray-300"></p> */}
       </div>
       <div className="mt-10">
         <h2 className="text-xl font-bold uppercase border-b-4 border-gray-300 pt-1 pb-2 px-1">

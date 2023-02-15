@@ -1,7 +1,7 @@
 import React from "react";
 
 const Cvtemplate4 = ({ data }) => {
-  console.log("cvTemplate3", data);
+  console.log("cvTemplate4", data);
   return (
     <div>
       <div className="">
@@ -10,19 +10,19 @@ const Cvtemplate4 = ({ data }) => {
         </div>
         <div className="text-lg">
           <div className="flex">
-            <p className="w-[20%] font-bold">
+            <p className="w-[20%] font-bold text-sky-900">
               <i class="fa-solid fa-location-dot"></i> Address{" "}
             </p>{" "}
             <p className="w-[80%]">: {data?.address}</p>
           </div>
           <div className="flex">
-            <p className="w-[20%] font-bold">
+            <p className="w-[20%] font-bold text-sky-900">
               <i class="fa-solid fa-phone"></i> Phone{" "}
             </p>{" "}
             <p className="w-[80%]">: {data?.mobileNumber}</p>
           </div>
           <div className="flex">
-            <p className="w-[20%] font-bold">
+            <p className="w-[20%] font-bold text-sky-900">
               {" "}
               <i class="fa-solid fa-envelope"></i> Email{" "}
             </p>{" "}
@@ -207,7 +207,7 @@ const Cvtemplate4 = ({ data }) => {
         <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
           <i class="fa-solid fa-network-wired"></i> Experience
         </h2>
-        <div className="text-lg">
+        <div className="">
           {data?.experience?.map((exp, index) => (
             <div className="py-2" key={index}>
               <div className="flex justify-between  ">
@@ -231,8 +231,8 @@ const Cvtemplate4 = ({ data }) => {
         </div>
       </div>
       <div className="mt-5 text-lg">
-        <h2 className="text-xl font-bold uppercase border-b-2 border-gray-300 pt-1 px-1">
-          Skills
+        <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
+          <i class="fa-solid fa-puzzle-piece"></i> Skills
         </h2>
 
         <div className="text-sm flex justify-start gap-3 flex-row flex-wrap">
@@ -248,43 +248,30 @@ const Cvtemplate4 = ({ data }) => {
           ))}
         </div>
       </div>
+
       <div className="mt-5 text-lg">
-        <h2 className="text-xl font-bold uppercase border-b-2 border-gray-300 pt-1 px-1">
-          Personal Skills
+        <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
+          <i class="fa-solid fa-language"></i> Languages
         </h2>
 
         <div className="text-sm flex justify-start gap-3 flex-row flex-wrap">
-          {data?.personalSkills?.map((exp, index) => (
+          {data?.languageSkills?.map((lan, index) => (
             <div
               className="p-2 mt-2 rounded border border-dotted border-gray-400"
               key={index}
             >
               <h6>
-                <b>{exp.personalSkill}</b>
+                <b>{lan.language}</b>
               </h6>
             </div>
           ))}
         </div>
       </div>
-      <div className="mt-5 text-lg">
-        <h2 className="text-xl font-bold uppercase border-b-2 border-gray-300 pt-1 px-1">
-          Languages
-        </h2>
 
-        <div className="text-sm flex flex-col items-start justify-start gap-3  flex-wrap">
-          {data?.languageSkills?.map((lan, index) => (
-            <div className="" key={index}>
-              <h6>{lan.language}</h6>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="py-4 text-lg">
+      <div className="py-4 mt-5 text-lg  text-sky-900">
         <p>Best Regards</p>
         <br />
-        <p>({data?.name})</p>
-        <p>Date..............................</p>
+        <p className="text-xl font-bold text-sky-900 ">{data?.name}</p>
       </div>
     </div>
   );

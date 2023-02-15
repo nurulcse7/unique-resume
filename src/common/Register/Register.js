@@ -12,9 +12,11 @@ const Register = () => {
   const navigate = useNavigate();
   const {formState: { errors },} = useForm();
   const token = localStorage.getItem('token');
-  const { iaAuthenticated, loading } = useSelector((state) => state.user);
+  // const { iaAuthenticated, loading } = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.user);
   const [viewPassword, setViewPassword] = useState(false);
-  const [img, setImg] = useState('');
+  // const [img, setImg] = useState('');
+  const [img] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   console.log(imgUrl);
   const [userInfo, setUserInfo] = useState({
@@ -40,9 +42,9 @@ const Register = () => {
 
     dispatch(register(userInfo));
   };
-  const handleChange = (e) => {
-    setImg(e.target.files[0]);
-  };
+  // const handleChange = (e) => {
+  //   setImg(e.target.files[0]);
+  // };
 
   useEffect(() => {
     token && navigate('/');
@@ -77,7 +79,7 @@ const Register = () => {
                 <form onSubmit={handleSubmit} className='w-full pt-7 px-6'>
                 <div className='form-control w-full max-w-xs'>
                 <label className='label'>
-                  <span className='label-text'>Photo</span>
+                  <span className='label-text text-xl'>Photo</span>
                 </label>
                 <input
                   type='file'

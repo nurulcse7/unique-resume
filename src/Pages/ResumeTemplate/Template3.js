@@ -1,4 +1,3 @@
-import Link from "antd/es/typography/Link";
 import React from "react";
 
 const Template3 = ({ data }) => {

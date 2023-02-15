@@ -51,7 +51,7 @@ const Template6 = ({ data }) => {
                 <div className="w-full  ">
                   {data?.websites.map((website) => (
                     <>
-                      {website?.label == "Facebook" ? (
+                      {website?.label === "Facebook" ? (
                         <>
                           <div className="flex justify-start gap-5 text-left items-center">
                             {" "}
@@ -68,7 +68,7 @@ const Template6 = ({ data }) => {
                       ) : (
                         <></>
                       )}
-                      {website?.label == "GitHub" ? (
+                      {website?.label === "GitHub" ? (
                         <>
                           <div className="flex justify-start gap-5 mt-2 text-left items-center">
                             {" "}
@@ -85,7 +85,7 @@ const Template6 = ({ data }) => {
                       ) : (
                         <></>
                       )}
-                      {website?.label == "Portfolio" ? (
+                      {website?.label === "Portfolio" ? (
                         <>
                           <div className="flex justify-start gap-5 mt-2 text-left items-center">
                             {" "}
@@ -102,7 +102,7 @@ const Template6 = ({ data }) => {
                       ) : (
                         <></>
                       )}
-                      {website?.label == "LinkedId" ? (
+                      {website?.label === "LinkedId" ? (
                         <>
                           <div className="flex justify-start gap-5 mt-2 text-left items-center">
                             {" "}

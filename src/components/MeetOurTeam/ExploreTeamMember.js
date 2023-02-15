@@ -10,7 +10,7 @@ const ExploreTeamMember = () => {
     fetch('members.json')
       .then((res) => res.json())
       .then((data) => {
-        setSelectMember(data.find((memebrs) => memebrs.id == id));
+        setSelectMember(data.find((memebrs) => memebrs.id === id));
       });
   }, []);
 

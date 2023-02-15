@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -35,9 +35,9 @@ const Dashboard = () => {
 
   // for get user Information
 
-  const handleRequestData = (id) => {
-    console.log(id);
-  };
+  // const handleRequestData = (id) => {
+  //   console.log(id);
+  // };
 
   // for Delete user Account
   const handleDeleteUser = (id) => {

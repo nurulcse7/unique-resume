@@ -17,7 +17,8 @@ const Login = () => {
     email: '',
     password: '',
   });
-  const { iaAuthenticated, loading } = useSelector((state) => state.user);
+  // const { iaAuthenticated, loading } = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.user);
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
   const handleLogin = (e) => {

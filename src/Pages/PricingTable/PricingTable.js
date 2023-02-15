@@ -1,5 +1,5 @@
 import React from "react";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../utils/axiosInstance.js";
 
 const PricingTable = () => {
   const handleClick = async (priceId) => {

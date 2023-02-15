@@ -4,8 +4,7 @@ import { useLocation, Navigate } from "react-router-dom";
 import Loader from "../components/Loader/Loader";
 
 const PrivetRoute = ({ children }) => {
-  const { loading, iaAuthenticated, role } = useSelector((state) => state.user);
-  console.log(role);
+  const { loading, iaAuthenticated } = useSelector((state) => state.user);
   const location = useLocation();
   if (loading) return <Loader />;
   if (iaAuthenticated) {

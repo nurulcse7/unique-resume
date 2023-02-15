@@ -14,7 +14,7 @@ import Template3 from "../ResumeTemplate/Template3";
 import Template4 from "../ResumeTemplate/Template4";
 import Template5 from "../ResumeTemplate/Template5";
 import Template6 from "../ResumeTemplate/Template6";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../utils/axiosInstance.js";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { resumeData } from "../../redux/action/resumeData";

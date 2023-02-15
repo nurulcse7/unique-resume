@@ -128,10 +128,10 @@ const Template1 = ({ data }) => {
                         <p className=" font-semibold">{edu.degree}</p>
                         <div className="flex justify-between">
                           <p className=" ">{edu.school}</p>
-                          <p>
+                          {/* <p>
                             {edu?.startDate.slice(0, 4)} -
                             {edu?.endDate.slice(0, 4)}
-                          </p>
+                          </p> */}
                         </div>
                         <h3 className="font-semibold italic">Description:</h3>
 
@@ -151,10 +151,10 @@ const Template1 = ({ data }) => {
                         </p>
                         <div className="flex justify-between items-center">
                           <p className="">{employee.employer}</p>
-                          <p>
+                          {/* <p>
                             {employee.date[0].slice(0, 4)} -{" "}
                             {employee.date[1].slice(0, 4)}
-                          </p>
+                          </p> */}
                         </div>
 
                         <p className="">{employee.description}</p>
@@ -175,10 +175,10 @@ const Template1 = ({ data }) => {
                         </p>
                         <div className="flex justify-between items-center">
                           <p className="">{internShip.employer}</p>
-                          <p>
+                          {/* <p>
                             {internShip.date[0].slice(0, 4)} -{" "}
                             {internShip.date[1].slice(0, 4)}
-                          </p>
+                          </p> */}
                         </div>
 
                         <p className="">{internShip?.description}</p>

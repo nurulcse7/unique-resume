@@ -3,7 +3,7 @@ import React from "react";
 const Cvtemplate4 = ({ data }) => {
   console.log("cvTemplate4", data);
   return (
-    <div>
+    <div className="my-10 px-5  ">
       <div className="">
         <div className="text-3xl uppercase text-sky-900 my-5">
           <p className="font-bold">{data?.name}</p>
@@ -29,7 +29,13 @@ const Cvtemplate4 = ({ data }) => {
             <p className="w-[80%]">: {data?.email}</p>
           </div>
         </div>
+        <div className="top-20 right-10 absolute mr-5">
+          <img width="140" height="190" src={data?.imageUrl} alt="" />
+        </div>
       </div>
+      <br />
+      <br />
+
       <div className="mt-10 ">
         <p className="text-lg py-2">{data?.carrierObjective}</p>
       </div>

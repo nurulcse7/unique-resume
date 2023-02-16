@@ -3,7 +3,7 @@ import React from "react";
 const Cvtemplate3 = ({ data }) => {
   console.log("cvTemplate3", data);
   return (
-    <div>
+    <div className="py-10 px-5  ">
       <div className="">
         <h2 className="text-4xl underline text-center font-bold mb-5">
           CURRICULUM VITAE
@@ -26,8 +26,9 @@ const Cvtemplate3 = ({ data }) => {
             <p className="w-[80%]">: {data?.email}</p>
           </div>
         </div>
-
-        {/* <p className=" border-b border-4 border-gray-300"></p> */}
+        <div className="top-20 right-10 absolute mr-5">
+          <img width="140" height="190" src={data?.imageUrl} alt="" />
+        </div>
       </div>
       <div className="mt-10">
         <h2 className="text-xl font-bold uppercase border-b-2 border-gray-300 pt-1 px-1">

@@ -12,7 +12,8 @@ const Register = () => {
   const navigate = useNavigate();
   const {formState: { errors },} = useForm();
   const token = localStorage.getItem('token');
-  const { iaAuthenticated, loading } = useSelector((state) => state.user);
+  // const { iaAuthenticated, loading } = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.user);
   const [viewPassword, setViewPassword] = useState(false);
   const [img, setImg] = useState('');
   const [imgUrl, setImgUrl] = useState('');
@@ -40,9 +41,9 @@ const Register = () => {
 
     dispatch(register(userInfo));
   };
-  const handleChange = (e) => {
-    setImg(e.target.files[0]);
-  };
+  // const handleChange = (e) => {
+  //   setImg(e.target.files[0]);
+  // };
 
   useEffect(() => {
     token && navigate('/');

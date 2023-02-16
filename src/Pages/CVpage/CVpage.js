@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../../style";
 import { Link } from "react-router-dom";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../utils/axiosInstance.js";
 import Loader from "../../components/Loader/Loader";
 import useTitle from "../../hooks/useTitle";
 
 const CVpage = () => {
-  useTitle('CV');
+  useTitle("CV");
   const [works, setWorks] = useState();
   const [filterWork, setFilterWork] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");

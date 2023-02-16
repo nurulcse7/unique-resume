@@ -17,7 +17,7 @@ import CoverLetterTemplate8 from "../../components/CoverLetterTemplates/CoverLet
 import CoverLetterTemplate9 from "../../components/CoverLetterTemplates/CoverLetterTemplate9";
 import { coverTemplate } from "../../redux/action/data";
 import styles from "../../style";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../utils/axiosInstance.js";
 
 const CoverLetterEditor = () => {
   const dispatch = useDispatch();

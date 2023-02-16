@@ -9,7 +9,7 @@ import {
   FaPencilAlt,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import axiosInstance from "../../../utils/axiosInstance";
+import axiosInstance from "../../../utils/axiosInstance.js";
 
 const DashboardCv = () => {
   const [data, setData] = useState([]);

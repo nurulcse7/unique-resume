@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import resume from '../../assets/resume.png';
@@ -8,7 +9,7 @@ import useTitle from '../../hooks/useTitle';
 import { useForm } from 'react-hook-form';
 
 const Register = () => {
-  useTitle('Register');
+  useTitle("Register");
   const navigate = useNavigate();
   const {formState: { errors },} = useForm();
   const token = localStorage.getItem('token');
@@ -26,7 +27,9 @@ const Register = () => {
     userName: '',
     imgUrl: imgUrl,
   });
-  console.log(userInfo);
+  const handleChange = (e) => {
+    setImg(e.target.files[0]);
+  };
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,13 +41,16 @@ const Register = () => {
       body: formData,
     })
       .then((res) => res.json())
-      .then((data) => setImgUrl(data.data.url));
+      .then((data) => setUserInfo({ ...userInfo, imgUrl: data.data.url }));
 
     dispatch(register(userInfo));
   };
+<<<<<<< HEAD
   // const handleChange = (e) => {
   //   setImg(e.target.files[0]);
   // };
+=======
+>>>>>>> bb039a82943c7fa19082d320a3680ea070a567b1
 
   useEffect(() => {
     token && navigate('/');

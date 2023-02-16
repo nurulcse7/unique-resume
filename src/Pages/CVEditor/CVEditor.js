@@ -5,7 +5,7 @@ import PersonalInfo from "../../components/CVinformation/PersonalInfo";
 import SkillsEducation from "../../components/CVinformation/SkillsEducation";
 import ExperienceProjects from "../../components/CVinformation/Exprerience";
 import Address from "../../components/CVinformation/Address";
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../utils/axiosInstance.js";
 import { useDispatch, useSelector } from "react-redux";
 import { cvTemplate } from "../../redux/action/data";
 import { useState } from "react";
@@ -15,6 +15,9 @@ import CvTemplate1 from "../../components/CvTemplates/Cvtemplate1";
 import Cvtemplate2 from "../../components/CvTemplates/Cvtemplate2";
 import styles from "../../style";
 import Cvtemplate3 from "../../components/CvTemplates/Cvtemplate3";
+import Cvtemplate4 from "../../components/CvTemplates/Cvtemplate4";
+import Cvtemplate5 from "../../components/CvTemplates/Cvtemplate5";
+import Cvtemplate6 from "../../components/CvTemplates/Cvtemplate6";
 
 function CVEditor() {
   const { data } = useSelector((state) => state.cvdata);
@@ -38,6 +41,15 @@ function CVEditor() {
       case "3": {
         return <Cvtemplate3 data={data} />;
       }
+      case "4": {
+        return <Cvtemplate4 data={data} />;
+      }
+      case "5": {
+        return <Cvtemplate5 data={data} />;
+      }
+      case "6": {
+        return <Cvtemplate6 data={data} />;
+      }
 
       default:
         return;
@@ -51,7 +63,9 @@ function CVEditor() {
       },
     });
     message.success("Update successfully");
+    console.log(values);
   };
+
   useEffect(() => {
     dispatch(cvTemplate());
   }, [dispatch, data]);
@@ -74,7 +88,7 @@ function CVEditor() {
                   {
                     label: `Personal Info`,
                     key: "1",
-                    children: <PersonalInfo />,
+                    children: <PersonalInfo info={data} />,
                   },
                   {
                     label: `Skills and Education`,

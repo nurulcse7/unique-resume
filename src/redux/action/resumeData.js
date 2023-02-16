@@ -1,4 +1,4 @@
-import axiosInstance from "../../utils/axiosInstance";
+import axiosInstance from "../../utils/axiosInstance.js";
 
 export const resumeData = () => async (dispatch) => {
   try {

@@ -19,6 +19,8 @@ import Cvtemplate4 from "../../components/CvTemplates/Cvtemplate4";
 import Cvtemplate5 from "../../components/CvTemplates/Cvtemplate5";
 import Cvtemplate6 from "../../components/CvTemplates/Cvtemplate6";
 import Cvtemplate7 from "../../components/CvTemplates/Cvtemplate7";
+import Cvtemplate8 from "../../components/CvTemplates/Cvtemplate8";
+import Cvtemplate9 from "../../components/CvTemplates/Cvtemplate9";
 
 function CVEditor() {
   const { data } = useSelector((state) => state.cvdata);
@@ -53,6 +55,12 @@ function CVEditor() {
       }
       case "7": {
         return <Cvtemplate7 data={data} />;
+      }
+      case "8": {
+        return <Cvtemplate8 data={data} />;
+      }
+      case "9": {
+        return <Cvtemplate9 data={data} />;
       }
 
       default:

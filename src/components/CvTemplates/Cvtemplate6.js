@@ -3,8 +3,8 @@ import React from "react";
 const Cvtemplate6 = ({ data }) => {
   console.log("cvTemplate6", data);
   return (
-    <div>
-      <div className="mb-5 text-center">
+    <div className="my-10 px-5  ">
+      <div className="mb-5 mt-20 text-center">
         <h3 className="text-3xl text-rose-900 uppercase font-bold">
           {data?.name}
         </h3>
@@ -12,7 +12,12 @@ const Cvtemplate6 = ({ data }) => {
         <p className=" ">{data?.mobileNumber}</p>
         <p className=" ">{data?.email}</p>{" "}
       </div>
-      <div className="w-[80%] mx-auto">
+      <div className="top-20 right-10 absolute -mt-1 mr-5">
+        <img width="140" height="190" src={data?.imageUrl} alt="" />
+      </div>
+      <br />
+      <br />
+      <div className="">
         <p className="text-base text-center py-2">{data?.carrierObjective}</p>
       </div>
       {/*   Present Address */}
@@ -29,6 +34,7 @@ const Cvtemplate6 = ({ data }) => {
           </div>
         ))}
       </div>
+
       {/*     Career Objective */}
       {/* <div className="py-2">
         <h2 className="text-xl font-bold text-rose-900  border-b-2 border-rose-900 my-2">

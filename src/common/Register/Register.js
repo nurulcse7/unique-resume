@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import resume from '../../assets/resume.png';
@@ -9,15 +8,13 @@ import useTitle from '../../hooks/useTitle';
 import { useForm } from 'react-hook-form';
 
 const Register = () => {
-  useTitle("Register");
+  useTitle('Register');
   const navigate = useNavigate();
   const {formState: { errors },} = useForm();
   const token = localStorage.getItem('token');
-  // const { iaAuthenticated, loading } = useSelector((state) => state.user);
-  const { loading } = useSelector((state) => state.user);
+  const { iaAuthenticated, loading } = useSelector((state) => state.user);
   const [viewPassword, setViewPassword] = useState(false);
-  // const [img, setImg] = useState('');
-  const [img] = useState('');
+  const [img, setImg] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   console.log(imgUrl);
   const [userInfo, setUserInfo] = useState({
@@ -27,9 +24,7 @@ const Register = () => {
     userName: '',
     imgUrl: imgUrl,
   });
-  const handleChange = (e) => {
-    setImg(e.target.files[0]);
-  };
+  console.log(userInfo);
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,16 +36,13 @@ const Register = () => {
       body: formData,
     })
       .then((res) => res.json())
-      .then((data) => setUserInfo({ ...userInfo, imgUrl: data.data.url }));
+      .then((data) => setImgUrl(data.data.url));
 
     dispatch(register(userInfo));
   };
-<<<<<<< HEAD
-  // const handleChange = (e) => {
-  //   setImg(e.target.files[0]);
-  // };
-=======
->>>>>>> bb039a82943c7fa19082d320a3680ea070a567b1
+  const handleChange = (e) => {
+    setImg(e.target.files[0]);
+  };
 
   useEffect(() => {
     token && navigate('/');
@@ -85,7 +77,7 @@ const Register = () => {
                 <form onSubmit={handleSubmit} className='w-full pt-7 px-6'>
                 <div className='form-control w-full max-w-xs'>
                 <label className='label'>
-                  <span className='label-text text-xl'>Photo</span>
+                  <span className='label-text'>Photo</span>
                 </label>
                 <input
                   type='file'

@@ -6,7 +6,9 @@ const Cvtemplate7 = ({ data }) => {
     <div className="my-10 px-5  ">
       <div className="">
         <div className="text-3xl uppercase text-violet-900 my-5">
-          <p className="font-bold">{data?.name}</p>
+          <p className="font-bold border-b-4 border-violet-500 w-3/5">
+            {data?.name}
+          </p>
         </div>
         <div className="text-lg">
           <div className="flex">
@@ -41,7 +43,7 @@ const Cvtemplate7 = ({ data }) => {
       </div>
       {/*       Education Qualification */}
       <div>
-        <h2 className="text-xl font-bold text-violet-900 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-violet-900 pt-1 pb-2 px-1 ">
           <i class="fa-solid fa-user-graduate"></i> Education Qualification
         </h2>
 

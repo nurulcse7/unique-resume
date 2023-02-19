@@ -137,7 +137,8 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{edu.school}</p>
                       <p>
-                        {edu?.startDate.slice(0, 4)} -{edu?.endDate.slice(0, 4)}
+                        {edu?.startDate?.slice(0, 4)} -
+                        {edu?.endDate?.slice(0, 4)}
                       </p>
                     </div>
 
@@ -160,8 +161,8 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{employee.employer}</p>
                       <p>
-                        {employee.date[0].slice(0, 4)}{" "}
-                        {employee.date[1].slice(0, 4)}
+                        {employee?.date[0]?.slice(0, 4)}{" "}
+                        {employee?.date[1]?.slice(0, 4)}
                       </p>
                     </div>
 
@@ -185,8 +186,8 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{internShip.employer}</p>
                       <p>
-                        {internShip.date[0].slice(0, 4)}{" "}
-                        {internShip.date[1].slice(0, 4)}
+                        {internShip?.date[0]?.slice(0, 4)}{" "}
+                        {internShip?.date[1]?.slice(0, 4)}
                       </p>
                     </div>
 

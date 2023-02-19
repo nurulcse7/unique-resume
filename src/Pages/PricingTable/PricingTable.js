@@ -1,7 +1,5 @@
 import React from "react";
-import { useState } from "react";
 import axiosInstance from "../../utils/axiosInstance.js";
-import Success from "./Success.js";
 
 const PricingTable = () => {
   const handleClick = async (priceId) => {

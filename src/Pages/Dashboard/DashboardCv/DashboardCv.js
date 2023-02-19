@@ -31,7 +31,6 @@ const DashboardCv = () => {
   const { template } = data;
 
   const handleDelete = (id) => {
-    console.log(id);
     axiosInstance
       .delete(`/api/deletecv/${id}`, {
         headers: {
@@ -49,8 +48,6 @@ const DashboardCv = () => {
     // console.log(id);
     navigate(`/cv-template/${id}`);
   };
-
-  console.log(template);
 
   return (
     <div>

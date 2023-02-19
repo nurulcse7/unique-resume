@@ -31,8 +31,6 @@ const DashboardCoverLetter = () => {
 
   const { template } = data;
 
-  console.log(template);
-
   const handleDelete = (id) => {
     axiosInstance
       .delete(`/api/coverletter/${id}`, {

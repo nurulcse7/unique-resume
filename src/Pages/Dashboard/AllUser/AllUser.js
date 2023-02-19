@@ -28,8 +28,6 @@ const AllUser = () => {
       });
   };
 
-  // console.log(data);
-
   return (
     <div>
       <div className="w-[96%] mx-auto mt-2 mb-3">

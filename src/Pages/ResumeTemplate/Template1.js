@@ -101,7 +101,7 @@ const Template1 = ({ data }) => {
           <div className="w-full h-full">
             <div className="relative my-8 flex flex-col justify-center items-center">
               <h2
-                className={`lg:text-3xl text-xl mx-12 lg:mx-0  lg:w-[80%] text-center lg:py-3 py-5 lg:border-2 border border-black uppercase font-semibold text-gray-900`}
+                className={`sm:text-sl md:text-2xl lg:text-3xl xl:text-4xl text-xl mx-12 sm:w-[50%] md:w-[70%] lg:mx-0 lg:w-[80%] w-[60%] text-center lg:py-3 py-5 lg:border-4 border border-black uppercase font-semibold text-gray-900`}
               >
                 {data?.fname} <br />
                 {data?.lname}

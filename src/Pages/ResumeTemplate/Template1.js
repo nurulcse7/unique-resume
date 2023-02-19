@@ -175,6 +175,7 @@ const Template1 = ({ data }) => {
                         </p>
                         <div className="flex justify-between items-center">
                           <p className="">{internShip.employer}</p>
+
                           <p>
                             {internShip?.date[0]?.slice(0, 4)} -{" "}
                             {internShip?.date[1]?.slice(0, 4)}

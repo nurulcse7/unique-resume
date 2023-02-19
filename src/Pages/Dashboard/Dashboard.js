@@ -7,11 +7,7 @@ import axiosInstance from "../../utils/axiosInstance.js";
 
 const Dashboard = () => {
   const { user } = useSelector((state) => state.user);
-
-  console.log(user);
-
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   // for update form
@@ -35,15 +31,13 @@ const Dashboard = () => {
 
   // for get user Information
 
-  const handleRequestData = (id) => {
-    console.log(id);
-  };
+  // const handleRequestData = (id) => {
+  //   console.log(id);
+  // };
 
   // for Delete user Account
   const handleDeleteUser = (id) => {
     const confirm = window.confirm("Do You want to Delete Your account?");
-
-    console.log(confirm);
 
     if (confirm) {
       axiosInstance

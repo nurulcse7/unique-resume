@@ -18,7 +18,6 @@ import Cvtemplate3 from "../../components/CvTemplates/Cvtemplate3";
 import Cvtemplate4 from "../../components/CvTemplates/Cvtemplate4";
 import Cvtemplate5 from "../../components/CvTemplates/Cvtemplate5";
 import Cvtemplate6 from "../../components/CvTemplates/Cvtemplate6";
-
 function CVEditor() {
   const { data } = useSelector((state) => state.cvdata);
   const dispatch = useDispatch();

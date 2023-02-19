@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
 import { signOut } from "../../redux/action/user";
-import { DownOutlined } from "@ant-design/icons";
+import { DownOutlined, UserOutlined } from "@ant-design/icons";
 
 const menuItems = [
   {
@@ -149,7 +149,13 @@ const Navbar = ({ iaAuthenticated }) => {
                         <Space>
                           <Avatar
                             size={44}
-                            icon={user && user.imgUrl ? user.imgUrl : null}
+                            icon={
+                              user && user.imgUrl ? (
+                                user.imgUrl
+                              ) : (
+                                <UserOutlined />
+                              )
+                            }
                           />
 
                           <DownOutlined />

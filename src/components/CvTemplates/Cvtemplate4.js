@@ -67,9 +67,9 @@ const Cvtemplate4 = ({ data }) => {
                     <p className="w-[20%] "></p>
                     <p className="w-[80%] text-left ">
                       <span className="font-bold">Grade</span>: {edu.grade}{" "}
-                      {edu.level.slice(0, 1) === "H" ||
-                      edu.level.slice(0, 1) === "S" ||
-                      edu.level.slice(0, 1) === "J" ? (
+                      {edu?.level?.slice(0, 1) === "H" ||
+                      edu?.level?.slice(0, 1) === "S" ||
+                      edu?.level?.slice(0, 1) === "J" ? (
                         <> (Out of 5.0)</>
                       ) : (
                         <> (Out of 4.0)</>

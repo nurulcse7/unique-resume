@@ -101,9 +101,9 @@ const Cvtemplate3 = ({ data }) => {
                         <td className="w-[15%] text-center border-2 border-black p-3">
                           {edu.grade}.0
                           <br />{" "}
-                          {edu.level.slice(0, 1) === "H" ||
-                          edu.level.slice(0, 1) === "S" ||
-                          edu.level.slice(0, 1) === "J" ? (
+                          {edu?.level?.slice(0, 1) === "H" ||
+                          edu?.level?.slice(0, 1) === "S" ||
+                          edu?.level?.slice(0, 1) === "J" ? (
                             <> (Out of 5.0)</>
                           ) : (
                             <> (Out of 4.0)</>

@@ -47,8 +47,8 @@ const Template7 = ({ data }) => {
                 <div className="w-[20%]">
                   {" "}
                   <p>
-                    {employee.date[0].slice(0, 4)} -{" "}
-                    {employee.date[1].slice(0, 4)}
+                    {employee?.date[0]?.slice(0, 4)} -{" "}
+                    {employee?.date[1]?.slice(0, 4)}
                   </p>
                 </div>
                 <div className="w-[80%]">
@@ -72,7 +72,7 @@ const Template7 = ({ data }) => {
               <div className="flex mt-2 items-start">
                 <div className="w-[20%]">
                   <p>
-                    {edu?.startDate.slice(0, 4)} -{edu?.endDate.slice(0, 4)}
+                    {edu?.startDate?.slice(0, 4)} -{edu?.endDate.slice(0, 4)}
                   </p>
                 </div>
                 <div className="w-[80%]">

@@ -192,11 +192,11 @@ const Template6 = ({ data }) => {
 
                               <div className="flex items-center mt-2">
                                 <p className="w-[50%]">
-                                  {employ?.date[0].slice(0, 4)} -
-                                  {employ?.date[1].slice(0, 4)}
+                                  {employ?.date[0]?.slice(0, 4)} -
+                                  {employ?.date[1]?.slice(0, 4)}
                                 </p>
                                 <p className="w-[50%] mb-3 text-justify">
-                                  {employ?.description.slice(0, 100) + "..."}
+                                  {employ?.description?.slice(0, 100) + "..."}
                                 </p>
                               </div>
                             </div>
@@ -230,11 +230,11 @@ const Template6 = ({ data }) => {
 
                             <div className="flex items-center mt-2">
                               <p className="w-[50%]">
-                                {edu?.startDate.slice(0, 4)} -
-                                {edu?.endDate.slice(0, 4)}
+                                {edu?.startDate?.slice(0, 4)} -
+                                {edu?.endDate?.slice(0, 4)}
                               </p>
                               <p className="w-[50%] mb-3 text-justify">
-                                {edu?.description.slice(0, 100) + "..."}
+                                {edu?.description?.slice(0, 100) + "..."}
                               </p>
                             </div>
                           </div>

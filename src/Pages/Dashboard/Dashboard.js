@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import { toast } from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { updateProfile } from "../../redux/action/user";
-import axiosInstance from "../../utils/axiosInstance.js";
+import React from 'react';
+import { toast } from 'react-hot-toast';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { updateProfile } from '../../redux/action/user';
+import axiosInstance from '../../utils/axiosInstance';
 
 const Dashboard = () => {
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   // for update form
   const handleUpdateForm = (event) => {
     event.preventDefault();
@@ -17,14 +16,11 @@ const Dashboard = () => {
     const name = form.name.value;
     const address = form.address.value;
     const mobileNumber = form.number.value;
-
     const userInfo = {
       name: name,
       address: address,
       mobileNumber: mobileNumber,
-    };
-
-    // console.log(name, email);
+    };  // console.log(name, email);
 
     dispatch(updateProfile(userInfo));
   };
@@ -32,7 +28,6 @@ const Dashboard = () => {
   // for get user Information
 
   // const handleRequestData = (id) => {
-  //   console.log(id);
   // };
 
   // for Delete user Account
@@ -109,9 +104,7 @@ const Dashboard = () => {
               defaultValue={user?.email}
             />
           </label>
-
           <p>
-            {" "}
             <button
               className="bg-primary md:text-[15px] text-[12px] mt-2 uppercase cursor-pointer   text-white  rounded shadow hover:shadow-lg py-1 md:py-2 z-10 px-4 border border-primary hover:border-transparent"
               type="submit"
@@ -127,7 +120,6 @@ const Dashboard = () => {
           onClick={() => handleDeleteUser(2)}
           className="font-bold text-sky-500 underline"
         >
-          {" "}
           Delete Your Account
         </button>
       </div>
@@ -137,22 +129,3 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-// <div className="w-[90%] mx-auto py-6  mt-7">
-//         <div className="flex justify-around items-center">
-//           <div>
-//             <h1 className="text-left font-bold text-4xl mb-2">
-//               Account Options{" "}
-//             </h1>
-//             <p className="text-left font-bold text-lg">
-//               Get a copy of your data
-//             </p>
-//           </div>
-//           <div>
-//             <button
-//               onClick={() => handleRequestData(2)}
-//               className="px-2 py-3 uppercase rounded-md border-white border-4"
-//             >
-//               Request Your Data
-//             </button>
-//           </div>
-//         </div>

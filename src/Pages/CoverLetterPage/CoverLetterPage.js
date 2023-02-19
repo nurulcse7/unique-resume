@@ -38,19 +38,19 @@ const CoverLetterPage = () => {
   return (
     <div className={`${styles.padding}`}>
       <section className=" relative    ">
-        <div class="bg-white  ">
-          <div class="text-center w-full mx-auto py-4 px-4 sm:px-6 lg:py-4lg:px-8 z-20">
-            <h2 class="text-2xl font-extrabold text-black sm:text-4xl">
-              <span class="block">Need to make a cover-letter but </span>
-              <span class="block text-secondary">
+        <div className="bg-white  ">
+          <div className="text-center w-full mx-auto py-4 px-4 sm:px-6 lg:py-4lg:px-8 z-20">
+            <h2 className="text-2xl font-extrabold text-black sm:text-4xl">
+              <span className="block">Need to make a cover-letter but </span>
+              <span className="block text-secondary">
                 don't know how to make it?
               </span>
             </h2>
-            <p class="text-lg mt-4 max-w-md mx-auto text-gray-400">
+            <p className="text-lg mt-4 max-w-md mx-auto text-gray-400">
               Select a template and customize your cover-letter. <br /> Freshers
               & experienced Both people can create cover-letter.
             </p>
-            <div class="lg:mt-0 lg:flex-shrink-0">
+            <div className="lg:mt-0 lg:flex-shrink-0">
               <div className={`${styles.padding} flex gap-4 justify-center`}>
                 {["All templates", "premium", "free"].map((item, index) => (
                   <div

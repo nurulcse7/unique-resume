@@ -1,31 +1,34 @@
 import React from "react";
 
-const Cvtemplate4 = ({ data }) => {
+const Cvtemplate7 = ({ data }) => {
+  console.log("cvTemplate7", data);
   return (
     <div className="my-10 px-5  ">
       <div className="">
-        <div className="text-3xl uppercase text-sky-900 my-5">
-          <p className="font-bold">{data?.name}</p>
+        <div className="text-3xl uppercase text-violet-900 my-5">
+          <p className="font-bold border-b-4 border-violet-500 w-3/5">
+            {data?.name}
+          </p>
         </div>
         <div className="text-lg">
           <div className="flex">
-            <p className="w-[20%] font-bold text-sky-900">
+            <p className="w-[30%] font-bold text-violet-900">
               <i class="fa-solid fa-location-dot"></i> Address{" "}
             </p>{" "}
-            <p className="w-[80%]">: {data?.address}</p>
+            <p className="w-[70%]">: {data?.address}</p>
           </div>
           <div className="flex">
-            <p className="w-[20%] font-bold text-sky-900">
+            <p className="w-[30%] font-bold text-violet-900">
               <i class="fa-solid fa-phone"></i> Phone{" "}
             </p>{" "}
-            <p className="w-[80%]">: {data?.mobileNumber}</p>
+            <p className="w-[70%]">: {data?.mobileNumber}</p>
           </div>
           <div className="flex">
-            <p className="w-[20%] font-bold text-sky-900">
+            <p className="w-[30%] font-bold text-violet-900">
               {" "}
               <i class="fa-solid fa-envelope"></i> Email{" "}
             </p>{" "}
-            <p className="w-[80%]">: {data?.email}</p>
+            <p className="w-[70%]">: {data?.email}</p>
           </div>
         </div>
         <div className="top-20 right-10 absolute mr-5">
@@ -40,7 +43,7 @@ const Cvtemplate4 = ({ data }) => {
       </div>
       {/*       Education Qualification */}
       <div>
-        <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-violet-900 pt-1 pb-2 px-1 ">
           <i class="fa-solid fa-user-graduate"></i> Education Qualification
         </h2>
 
@@ -49,10 +52,9 @@ const Cvtemplate4 = ({ data }) => {
             <div className="py-2">
               {data?.education.map((edu) => (
                 <div className="py-2">
-                  <div className="flex justify-between">
-                    <p className="w-[20%] ">{edu.passingYear}</p>
-                    <h2 className="text-lg w-[80%] font-bold  ">
-                      <span className="w-fit ">
+                  <div className="flex justify-between ">
+                    <h2 className="w-[30%] font-bold  ">
+                      <span className=" ">
                         {edu.level.toLowerCase() === "hsc"
                           ? `Higher Secondary Certificate(H.S.C)`
                           : edu.level.toLowerCase() === "ssc"
@@ -60,28 +62,34 @@ const Cvtemplate4 = ({ data }) => {
                           : ` ${edu.level}`}
                       </span>
                     </h2>
-                  </div>
 
-                  <div className="flex justify-between">
-                    <p className="w-[20%] "></p>
-                    <p className="w-[80%] text-left ">
-                      <span className="font-bold">Grade</span>: {edu.grade}{" "}
-                      {edu?.level?.slice(0, 1) === "H" ||
-                      edu?.level?.slice(0, 1) === "S" ||
-                      edu?.level?.slice(0, 1) === "J" ? (
-                        <> (Out of 5.0)</>
-                      ) : (
-                        <> (Out of 4.0)</>
-                      )}
-                    </p>
-                  </div>
-                  <div className="flex justify-between">
-                    <p className="w-[20%] "></p>
-                    <p className="w-[80%] text-left ">
-                      {" "}
-                      <span className="font-bold">Institution</span>:{" "}
-                      {edu.board}
-                    </p>
+                    <div className="w-[70%]">
+                      <div className="flex justify-between">
+                        <p className=" text-left ">
+                          {" "}
+                          <span className="font-bold">Institution</span>:{" "}
+                          {edu.institution}
+                        </p>
+                      </div>
+                      <p>
+                        {" "}
+                        <span className="font-bold">Passing Year</span>:{" "}
+                        {edu.passingYear}
+                      </p>
+
+                      <div className="flex justify-between">
+                        <p className="text-left ">
+                          <span className="font-bold">Grade</span>: {edu.grade}{" "}
+                          {edu?.level?.slice(0, 1) === "H" ||
+                          edu?.level?.slice(0, 1) === "S" ||
+                          edu?.level?.slice(0, 1) === "J" ? (
+                            <> (Out of 5.0)</>
+                          ) : (
+                            <> (Out of 4.0)</>
+                          )}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -91,7 +99,7 @@ const Cvtemplate4 = ({ data }) => {
       </div>
 
       <div className="mt-5">
-        <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-violet-900 pt-1 pb-2 px-1">
           <i class="fa-solid fa-diagram-project"></i> Projects
         </h2>
 
@@ -99,12 +107,17 @@ const Cvtemplate4 = ({ data }) => {
           {data?.projects?.map((project, index) => (
             <div className="py-2" key={index}>
               <div className="flex justify-between  ">
-                <p className="w-[20%]">{project.range}</p>
-                <div className=" w-[80%] ">
-                  <h2 className="font-bold text-lg">{project.title}</h2>
+                <div className="w-[30%]">
+                  <h2 className="font-bold ">{project.title}</h2>
+                </div>
+                <div className="w-[70%]">
+                  <p className="">
+                    <span className="font-bold italic"> Create : </span>
+                    {project.range}
+                  </p>
                   <div className="">
                     <p className=" text-justify">
-                      <span className="font-bold italic"> Decription :</span>{" "}
+                      <span className="font-bold italic"> Decription : </span>{" "}
                       {project.description.split("•")}
                     </p>
                   </div>
@@ -122,29 +135,29 @@ const Cvtemplate4 = ({ data }) => {
         </div>
       </div>
       <div className="mt-5">
-        <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-violet-900 pt-1 pb-2 px-1">
           <i class="fa-solid fa-person-circle-check"></i> Personal Information
         </h2>
         <div className="">
           <div className="flex justify-start ">
-            <p className="w-[20%]"> Name </p>
-            <p className="w-[80%] ">{data?.name}</p>
+            <p className="w-[30%]"> Name </p>
+            <p className="w-[70%] ">{data?.name}</p>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Father's Name</p>
-            <p className="w-[80%]">{data?.fathersName}</p>
+            <p className="w-[30%]"> Father's Name</p>
+            <p className="w-[70%]">{data?.fathersName}</p>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Mother's Name:</p>
-            <p className="w-[80%] ">{data?.mothersName}</p>
+            <p className="w-[30%]"> Mother's Name:</p>
+            <p className="w-[70%] ">{data?.mothersName}</p>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Date of Birth </p>
-            <p className="w-[80%]">{data?.dateOfBirth}</p>
+            <p className="w-[30%]"> Date of Birth </p>
+            <p className="w-[70%]">{data?.dateOfBirth}</p>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Permanent Address </p>
-            <div className="w-[80%] ">
+            <p className="w-[30%]"> Permanent Address </p>
+            <div className="w-[70%] ">
               {data?.permanentAdd.map((permanent) => (
                 <>
                   <div>
@@ -162,8 +175,8 @@ const Cvtemplate4 = ({ data }) => {
             </div>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Present Address </p>
-            <div className="w-[80%] ">
+            <p className="w-[30%]"> Present Address </p>
+            <div className="w-[70%] ">
               {data?.presentAdd.map((present) => (
                 <>
                   <div>
@@ -182,43 +195,49 @@ const Cvtemplate4 = ({ data }) => {
           </div>
 
           <div className="flex justify-start">
-            <p className="w-[20%]"> Gender </p>
-            <p className="w-[80%]"> {data?.sex}</p>
+            <p className="w-[30%]"> Gender </p>
+            <p className="w-[70%]"> {data?.sex}</p>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Religion </p>
-            <p className="w-[80%]"> {data?.religion}</p>
+            <p className="w-[30%]"> Religion </p>
+            <p className="w-[70%]"> {data?.religion}</p>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Marital Status</p>
-            <p className="w-[80%]"> {data?.maritalStatus}</p>
+            <p className="w-[30%]"> Marital Status</p>
+            <p className="w-[70%]"> {data?.maritalStatus}</p>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Blood Group </p>
-            <p className="w-[80%]"> {data?.blood}</p>
+            <p className="w-[30%]"> Blood Group </p>
+            <p className="w-[70%]"> {data?.blood}</p>
           </div>
           <div className="flex justify-start">
-            <p className="w-[20%]"> Nationality </p>
-            <p className="w-[80%]"> {data?.nationality}</p>
+            <p className="w-[30%]"> Nationality </p>
+            <p className="w-[70%]"> {data?.nationality}</p>
           </div>
 
           <div className="flex justify-start">
-            <p className="w-[20%]"> NID </p>
-            <p className="w-[80%]"> {data?.nid}</p>
+            <p className="w-[30%]"> NID </p>
+            <p className="w-[70%]"> {data?.nid}</p>
           </div>
         </div>
       </div>
       <div>
-        <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-violet-900 pt-1 pb-2 px-1">
           <i class="fa-solid fa-network-wired"></i> Experience
         </h2>
         <div className="">
           {data?.experience?.map((exp, index) => (
             <div className="py-2" key={index}>
               <div className="flex justify-between  ">
-                <p className="w-[20%]">{exp.range}</p>
-                <div className=" w-[80%] ">
-                  <h2 className="font-bold text-lg">{exp.company}</h2>
+                <div className="w-[30%]">
+                  {" "}
+                  <h2 className="font-bold ">{exp.company}</h2>
+                </div>
+                <div className="w-[70%]">
+                  <p>
+                    <span className="font-semibold"> Complate Year: </span>
+                    {exp.range}
+                  </p>
                   <p>
                     <span className="font-semibold"> Experience: </span>
                     <span>
@@ -236,7 +255,7 @@ const Cvtemplate4 = ({ data }) => {
         </div>
       </div>
       <div className="mt-5 text-lg">
-        <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-violet-900 pt-1 pb-2 px-1">
           <i class="fa-solid fa-puzzle-piece"></i> Skills
         </h2>
 
@@ -255,7 +274,7 @@ const Cvtemplate4 = ({ data }) => {
       </div>
 
       <div className="mt-5 text-lg">
-        <h2 className="text-xl font-bold text-sky-900 pt-1 pb-2 px-1">
+        <h2 className="text-xl font-bold text-violet-900 pt-1 pb-2 px-1">
           <i class="fa-solid fa-language"></i> Languages
         </h2>
 
@@ -273,13 +292,13 @@ const Cvtemplate4 = ({ data }) => {
         </div>
       </div>
 
-      <div className="py-4 mt-5 text-lg  text-sky-900">
+      <div className="py-4 mt-5 text-lg  text-violet-900">
         <p>Best Regards</p>
         <br />
-        <p className="text-xl font-bold text-sky-900 ">{data?.name}</p>
+        <p className="text-xl font-bold text-violet-900 ">{data?.name}</p>
       </div>
     </div>
   );
 };
 
-export default Cvtemplate4;
+export default Cvtemplate7;

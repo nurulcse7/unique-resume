@@ -3,20 +3,25 @@ import React from "react";
 const Cvtemplate2 = ({ data }) => {
   return (
     <div>
-      <div className="py-10 px-5 text-center">
-        <h2 className="text-4xl font-bold py-1">CURRICULUM VITAE</h2>
-        <h3 className="text-3xl font-bold">
-          of <br />
-          {data?.name}
-        </h3>
-        <p className="mt-1 text-lg">{data?.address}</p>
-        <p className="py-1 text-lg">
-          <samp className="font-semibold">Phone :</samp>
-          {data?.mobileNumber}
-        </p>
-        <p className=" text-lg">
-          <samp className="font-semibold">E-mail :</samp> {data?.email}
-        </p>{" "}
+      <div className="">
+        <div className=" py-10 px-5 text-center">
+          <h2 className="text-4xl font-bold py-1">CURRICULUM VITAE</h2>
+          <h3 className="text-3xl font-bold">
+            of <br />
+            {data?.name}
+          </h3>
+          <p className="mt-1 text-lg">{data?.address}</p>
+          <p className="py-1 text-lg">
+            <samp className="font-semibold">Phone :</samp>
+            {data?.mobileNumber}
+          </p>
+          <p className=" text-lg">
+            <samp className="font-semibold">E-mail :</samp> {data?.email}
+          </p>{" "}
+        </div>
+        <div className="top-20 right-10 absolute mr-5">
+          <img width="140" height="190" src={data?.imageUrl} alt="" />
+        </div>
       </div>
       {/*   Present Address */}
       <div className="py-2">
@@ -71,9 +76,9 @@ const Cvtemplate2 = ({ data }) => {
                     <p className="w-[30%] ">Achievement</p>
                     <p className="w-[70%] text-left ">
                       : {edu.grade}{" "}
-                      {edu.level.slice(0, 1) === "H" ||
-                      edu.level.slice(0, 1) === "S" ||
-                      edu.level.slice(0, 1) === "J" ? (
+                      {edu?.level?.slice(0, 1) === "H" ||
+                      edu?.level?.slice(0, 1) === "S" ||
+                      edu?.level?.slice(0, 1) === "J" ? (
                         <> (Out of 5.0)</>
                       ) : (
                         <> (Out of 4.0)</>

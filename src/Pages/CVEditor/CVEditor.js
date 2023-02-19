@@ -63,12 +63,11 @@ function CVEditor() {
       },
     });
     message.success("Update successfully");
-    console.log(values);
   };
 
   useEffect(() => {
     dispatch(cvTemplate());
-  }, [dispatch, data]);
+  }, [dispatch]);
   return (
     <div className="relative">
       <div
@@ -157,12 +156,6 @@ function CVEditor() {
           </>
         </div>
       </div>
-      {/* <div
-        className="px-12 text-left mx-auto h-[29.7cm] hidden md:block w-[21cm] border-red-700 border-2 bg-gray-100"
-        ref={componentRef}
-      >
-        <p>{gettemplate()}</p>
-      </div> */}
     </div>
   );
 }

@@ -12,7 +12,6 @@ function PersonalInfo({ info }) {
   const [previewImage, setPreviewImage] = useState("");
   const [previewTitle, setPreviewTitle] = useState("");
   const [img, setImg] = useState("");
-
   const handleCancel = () => setPreviewOpen(false);
 
   const handleCustom = async ({ file }) => {

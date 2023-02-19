@@ -1,7 +1,6 @@
 import React from "react";
 
 const Cvtemplate4 = ({ data }) => {
-  console.log("cvTemplate4", data);
   return (
     <div>
       <div className="">

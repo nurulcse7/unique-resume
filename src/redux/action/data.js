@@ -30,6 +30,21 @@ export const cvTemplate = () => async (dispatch) => {
     dispatch({ type: "cvTemplateFail", payload: error.response.data });
   }
 };
+export const cvInfo = (values) => async (dispatch) => {
+  try {
+    dispatch({ type: "cvInfoReq" });
+    const { data } = await axiosInstance.post("/api/cvinformation", values, {
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    dispatch({ type: "cvInfoSuccess", payload: data });
+  } catch (error) {
+    console.log(error.response);
+    dispatch({ type: "cvInfoFail", payload: error.response.data });
+  }
+};
 export const coverTemplate = () => async (dispatch) => {
   try {
     dispatch({ type: "coverTemplateReq" });

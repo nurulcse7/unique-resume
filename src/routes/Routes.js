@@ -30,6 +30,7 @@ import Cvtemplate2 from "../components/CvTemplates/Cvtemplate2";
 import CoverLetterEditor from "../Pages/CoverLetterEditor/CoverLetterEditor";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import AdminRoute from "./AdminRoute";
+import Chekout from "../Pages/PricingTable/Chekout";
 
 export const router = createBrowserRouter([
   {
@@ -88,6 +89,11 @@ export const router = createBrowserRouter([
         path: "/checkout/:id",
         element: <Success />,
       },
+      {
+        path: "/checkout",
+        element: <Chekout />,
+      },
+
       // {
       //   path: "/resume-template4",
       //   element: <Template1 />,

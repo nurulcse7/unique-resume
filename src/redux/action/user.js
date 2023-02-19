@@ -26,13 +26,13 @@ export const register = (userInfo) => async (dispatch) => {
       },
       withCredentials: true,
     });
+
     if (data.token) {
       localStorage.setItem("token", data.token);
     }
     dispatch({ type: "registerSuccess", payload: data });
   } catch (error) {
-    console.log(error.response);
-    dispatch({ type: "registerFail", payload: error.response.data.message });
+    dispatch({ type: "registerFail", payload: error.response.data.error });
   }
 };
 export const signOut = () => async (dispatch) => {

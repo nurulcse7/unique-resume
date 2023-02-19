@@ -2,7 +2,6 @@ import React from "react";
 import { FaFacebook, FaGithub, FaLink, FaLinkedin } from "react-icons/fa";
 
 const Cvtemplate5 = ({ data }) => {
-  console.log("cvTemplate5", data);
   return (
     <div className="py-10 px-5 ">
       <div className="flex justify-between">

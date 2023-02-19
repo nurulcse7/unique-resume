@@ -28,6 +28,18 @@ export const dataReducer = createReducer(
       state.loading = false;
       state.error = action.payload;
     },
+    cvInfoReq: (state, action) => {
+      state.loading = true;
+    },
+
+    cvInfoSuccess: (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+    },
+    cvInfoFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
     coverTemplateReq: (state, action) => {
       state.loading = true;
     },

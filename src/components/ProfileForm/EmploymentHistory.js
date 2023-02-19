@@ -47,16 +47,29 @@ const EmploymentHistory = () => {
 
                       <div className=" text-start w-full flex flex-col gap-2">
                         <label>Start & End Date</label>
-                        <Form.Item {...restField} name={[name, "date"]}>
-                          <RangePicker
-                            defaultValue={[
-                              dayjs("03/02/2023", dateFormat),
-                              dayjs("03/02/2023", dateFormat),
-                            ]}
-                            format={dateFormat}
-                            className="py-3 text-lg w-full"
-                          />
-                        </Form.Item>
+                        <div className="flex gap-2 ">
+                          <Form.Item {...restField} name={[name, "startDate"]}>
+                            <DatePicker
+                              status=""
+                              placeholder="Start Date"
+                              style={{
+                                width: "100%",
+                                borderColor: "#132579",
+                              }}
+                            />
+                          </Form.Item>
+
+                          <Form.Item {...restField} name={[name, "endDate"]}>
+                            <DatePicker
+                              status=""
+                              placeholder="End Date"
+                              style={{
+                                width: "100%",
+                                borderColor: "#132579",
+                              }}
+                            />
+                          </Form.Item>
+                        </div>
                       </div>
 
                       <div className="">

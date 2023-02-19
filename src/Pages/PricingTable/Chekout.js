@@ -1,4 +1,4 @@
-import { Elements } from "@stripe/react-stripe-js";
+import { Elements, useStripe } from "@stripe/react-stripe-js";
 import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import ChekoutForm from "./ChekoutForm";
@@ -15,7 +15,7 @@ const Chekout = () => {
   };
 
   return (
-    <Elements stripe={stripePromise} options={options}>
+    <Elements stripe={stripePromise}>
       <ChekoutForm />
     </Elements>
   );

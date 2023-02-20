@@ -61,7 +61,7 @@ function PersonalInfo({ info }) {
   return (
     <div>
       <div className="grid md:grid-cols-2 md:gap-2 ">
-        <div className="">
+        <div>
           <Upload
             customRequest={handleCustom}
             listType="picture-circle"
@@ -83,61 +83,64 @@ function PersonalInfo({ info }) {
               src={previewImage}
             />
           </Modal>
+        </div>
+        <div></div>
+        <div>
           <Form.Item name="name" label="Full Name">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="email" label="Email">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="mobileNumber" label="Mobile Number">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="fathersName" label="Father's Name">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="mothersName" label="Mother's Name">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="dateOfBirth" label="Date of Birth">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="sex" label="Sex" r>
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="blood" label="Blood Group">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="nationality" label="Nationality">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="religion" label="Religion">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="maritalStatus" label="Marital Status">
             <Input className="py-3" />
           </Form.Item>
         </div>
-        <div className="">
+        <div>
           <Form.Item name="nid" label="National ID NO">
             <Input className="py-3" />
           </Form.Item>

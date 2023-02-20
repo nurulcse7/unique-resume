@@ -23,7 +23,6 @@ const CoverLetterEditor = () => {
   const dispatch = useDispatch();
 
   const [open, setOpen] = useState(false);
-
   const { user } = useSelector((state) => state.user);
   const { data } = useSelector((state) => state.coverletter);
   const componentRef = useRef();

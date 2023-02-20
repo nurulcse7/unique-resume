@@ -161,8 +161,8 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{employee.employer}</p>
                       <p>
-                        {employee?.date[0]?.slice(0, 4)}{" "}
-                        {employee?.date[1]?.slice(0, 4)}
+                        {employee?.startDate?.slice(0, 4)} -{" "}
+                        {employee?.endDate?.slice(0, 4)}
                       </p>
                     </div>
 
@@ -185,10 +185,10 @@ const Template3 = ({ data }) => {
                     <p className="font-bold">{internShip.jobTitle}</p>
                     <div className="flex my-2 justify-between">
                       <p className=" ">{internShip.employer}</p>
-                      <p>
+                      {/* <p>
                         {internShip?.date[0]?.slice(0, 4)}{" "}
                         {internShip?.date[1]?.slice(0, 4)}
-                      </p>
+                      </p> */}
                     </div>
 
                     <p className=" mb-3 text-justify">

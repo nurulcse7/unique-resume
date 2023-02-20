@@ -7,6 +7,7 @@ import Loader from "../../components/Loader/Loader";
 import useTitle from "../../hooks/useTitle";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { message } from "antd";
 
 const Register = () => {
   useTitle("Register");
@@ -19,6 +20,7 @@ const Register = () => {
   const [viewPassword, setViewPassword] = useState(false);
   const [img, setImg] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = async (e) => {
     setImg(e.target.files[0]);
@@ -29,8 +31,9 @@ const Register = () => {
 
     try {
       const { data } = await axios.post(url, formData);
-      console.log(data.data.url);
-      setImageUrl(data.data.url);
+      if (data.success === true) {
+        setImageUrl(data.data.url);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -50,11 +53,12 @@ const Register = () => {
       userName: userName,
       imgUrl: imageUrl,
     };
-    dispatch(register(userInfo));
+    if (imageUrl) {
+      dispatch(register(userInfo));
+    } else {
+      message.info("Please Reupload your image");
+    }
   };
-  // const handleChange = (e) => {
-  //   setImg(e.target.files[0]);
-  // };
 
   useEffect(() => {
     token && navigate("/");
@@ -99,9 +103,6 @@ const Register = () => {
                       })}
                       className="input input-bordered w-full max-w-xs"
                     />
-                    {errors.img && (
-                      <p className="text-red-500">{errors.img.message}</p>
-                    )}
                   </div>
 
                   <div className="space-y-1 my-3 text-sm">

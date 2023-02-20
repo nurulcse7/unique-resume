@@ -13,7 +13,6 @@ import { signOut } from "../../redux/action/user";
 const Sidebar = () => {
   const { user } = useSelector((state) => state.user);
 
-  console.log(user.role);
   const dispatch = useDispatch();
   const logOut = () => {
     dispatch(signOut());
@@ -30,8 +29,8 @@ const Sidebar = () => {
                   ? `${user.imgUrl}`
                   : "https://source.unsplash.com/40x40/?portrait?1"
               }`}
-              alt=""
-              className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"
+              alt="user.name"
+              className="w-10 h-10 m-auto rounded-full  object-cover lg:w-28 lg:h-28"
             />
             <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">
               {user?.name && user.name}

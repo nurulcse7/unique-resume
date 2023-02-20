@@ -73,31 +73,19 @@ export const router = createBrowserRouter([
         path: "/resume-templates",
         element: <ResumePage />,
       },
-      // {
-      //   path: "/cv-2",
-      //   element: <Cvtemplate2 />,
-      // },
-      // {
-      //   path: "/cv-1",
-      //   element: <CvTemplate1 />,
-      // },
+
       {
         path: "/checkout/:id",
-        element: <Success />,
+        element: (
+          <PrivetRoute>
+            <Success />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/checkout",
         element: <Chekout />,
       },
-
-      // {
-      //   path: "/resume-template4",
-      //   element: <Template1 />,
-      // },
-      // {
-      //   path: "/resume-template3",
-      //   element: <Template3 />,
-      // },
       {
         path: "/about",
         element: <About />,
@@ -118,18 +106,6 @@ export const router = createBrowserRouter([
         path: "/cover-letter",
         element: <CoverLetterPage />,
       },
-      // {
-      //   path: "/cover-1",
-      //   element: <CoverLetterTemplate1 />,
-      // },
-      // {
-      //   path: "/cover-2",
-      //   element: <CoverLetterTemplate2 />,
-      // },
-      // {
-      //   path: "/cover-3",
-      //   element: <CoverLetterTemplate3 />,
-      // },
       {
         path: "/editor",
         element: <Editor />,
@@ -162,10 +138,6 @@ export const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
-      // {
-      //   path: "/cvtemplate",
-      //   element: <Cvtemplate2 />,
-      // },
     ],
   },
   {

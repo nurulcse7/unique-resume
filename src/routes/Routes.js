@@ -27,6 +27,7 @@ import CoverLetterEditor from "../Pages/CoverLetterEditor/CoverLetterEditor";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import AdminRoute from "./AdminRoute";
 import Chekout from "../Pages/PricingTable/Chekout";
+import Blog from "../Pages/Blog/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -97,6 +98,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
       {
         path: "/faq",

@@ -148,15 +148,23 @@ const Navbar = ({ iaAuthenticated }) => {
                       <Link onClick={(e) => e.preventDefault()}>
                         <Space>
                           <Avatar
-                            size={44}
-                            icon={
-                              user && user.imgUrl ? (
-                                user.imgUrl
-                              ) : (
-                                <UserOutlined />
-                              )
-                            }
-                          />
+                            style={{
+                              verticalAlign: "middle",
+                            }}
+                            size="large"
+                          >
+                            <img
+                              src={
+                                user && user.imgUrl ? (
+                                  user.imgUrl
+                                ) : (
+                                  <UserOutlined />
+                                )
+                              }
+                              alt="user"
+                              className="w-full object-cover "
+                            />
+                          </Avatar>
 
                           <DownOutlined />
                         </Space>

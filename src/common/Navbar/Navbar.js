@@ -28,9 +28,14 @@ const menuItems = [
     id: 4,
   },
   {
+    name: "Pricing",
+    path: "/select-plan",
+    id: 5,
+  },
+  {
     name: "Contact",
     path: "/contact",
-    id: 5,
+    id: 6,
   },
 ];
 const Navbar = ({ iaAuthenticated }) => {
@@ -147,15 +152,16 @@ const Navbar = ({ iaAuthenticated }) => {
                     >
                       <Link onClick={(e) => e.preventDefault()}>
                         <Space>
-                          <Avatar
-                            size={44}
-                            icon={
+                          <img
+                            src={
                               user && user.imgUrl ? (
                                 user.imgUrl
                               ) : (
                                 <UserOutlined />
                               )
                             }
+                            alt="user"
+                            className="border border-white w-10 h-10 m-auto rounded-full  object-cover "
                           />
 
                           <DownOutlined />

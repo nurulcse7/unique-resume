@@ -32,7 +32,7 @@ export const register = (userInfo) => async (dispatch) => {
     }
     dispatch({ type: "registerSuccess", payload: data });
   } catch (error) {
-    dispatch({ type: "registerFail", payload: error.response.data.error });
+    dispatch({ type: "registerFail" });
   }
 };
 export const signOut = () => async (dispatch) => {

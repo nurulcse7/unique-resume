@@ -1,9 +1,9 @@
-import React from 'react';
-import { toast } from 'react-hot-toast';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { updateProfile } from '../../redux/action/user';
-import axiosInstance from '../../utils/axiosInstance';
+import React from "react";
+import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { updateProfile } from "../../redux/action/user";
+import axiosInstance from "../../utils/axiosInstance";
 
 const Dashboard = () => {
   const { user } = useSelector((state) => state.user);
@@ -20,17 +20,11 @@ const Dashboard = () => {
       name: name,
       address: address,
       mobileNumber: mobileNumber,
-    };  // console.log(name, email);
+    };
 
     dispatch(updateProfile(userInfo));
   };
 
-  // for get user Information
-
-  // const handleRequestData = (id) => {
-  // };
-
-  // for Delete user Account
   const handleDeleteUser = (id) => {
     const confirm = window.confirm("Do You want to Delete Your account?");
 
@@ -128,4 +122,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-

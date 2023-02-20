@@ -315,3 +315,10 @@ input#education_0_startDate {
 input#education_0_endDate {
   border: none !important;
 }
+
+input#employmentHistory_0_startDate {
+  border: none !important;
+}
+input#employmentHistory_0_endDate {
+  border: none !important;
+}

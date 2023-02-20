@@ -27,8 +27,6 @@ const DashboardResume = () => {
       });
   }, []);
 
-  console.log(data);
-
   const handleDelete = (id) => {
     console.log(id);
     axiosInstance
@@ -44,7 +42,6 @@ const DashboardResume = () => {
       });
   };
   const handleUpdateResume = (id) => {
-    // console.log(id);
     navigate(`/resume-templates/${id}`);
   };
   const { template } = data;

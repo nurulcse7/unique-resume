@@ -1,8 +1,10 @@
+import { Avatar, Dropdown, Space } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/unique resume favicon.png";
 import { signOut } from "../../redux/action/user";
+import { DownOutlined, UserOutlined } from "@ant-design/icons";
 
 const menuItems = [
   {
@@ -34,7 +36,7 @@ const menuItems = [
 const Navbar = ({ iaAuthenticated }) => {
   const navigate = useNavigate();
   const [isMenu, setIsMenu] = useState(false);
-  const { message } = useSelector((state) => state.user);
+  const { message, user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const logOut = () => {
     dispatch(signOut());
@@ -51,6 +53,47 @@ const Navbar = ({ iaAuthenticated }) => {
   const toggleMenu = () => {
     setIsMenu(!isMenu);
   };
+
+  const items = [
+    {
+      label: (
+        <Link
+          to="/dashboard"
+          className="block py-2 pr-4 pl-3 font-medium text-sm text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white "
+        >
+          {" "}
+          Profile
+        </Link>
+      ),
+      key: "0",
+    },
+    {
+      label: (
+        <Link
+          to="/dashboard"
+          className="block py-2 pr-4 pl-3 font-medium text-sm text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white  "
+        >
+          {" "}
+          Dashboard
+        </Link>
+      ),
+      key: "1",
+    },
+    {
+      label: (
+        <button
+          onClick={logOut}
+          className="border border-secondary bg-primary inline-block px-4 py-2  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+          data-mdb-ripple="true"
+          data-mdb-ripple-color="light"
+        >
+          Log Out
+        </button>
+      ),
+      key: "3",
+    },
+  ];
+
   return (
     <div className="bg-primary sticky z-50 top-0">
       <header className="w-full mx-auto">
@@ -95,23 +138,30 @@ const Navbar = ({ iaAuthenticated }) => {
 
                 {token && iaAuthenticated ? (
                   <>
-                    <li>
-                      <NavLink
-                        to="/dashboard"
-                        className={` block py-2 pr-4 pl-3 font-medium text-sm text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
-                        aria-current="page"
-                      >
-                        Dashboard
-                      </NavLink>
-                    </li>
-                    <button
-                      onClick={logOut}
-                      className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
-                      data-mdb-ripple="true"
-                      data-mdb-ripple-color="light"
+                    <Dropdown
+                      className="px-5"
+                      menu={{
+                        items,
+                      }}
+                      trigger={["click"]}
                     >
-                      Log Out
-                    </button>
+                      <Link onClick={(e) => e.preventDefault()}>
+                        <Space>
+                          <Avatar
+                            size={44}
+                            icon={
+                              user && user.imgUrl ? (
+                                user.imgUrl
+                              ) : (
+                                <UserOutlined />
+                              )
+                            }
+                          />
+
+                          <DownOutlined />
+                        </Space>
+                      </Link>
+                    </Dropdown>
                   </>
                 ) : (
                   <>
@@ -192,14 +242,23 @@ const Navbar = ({ iaAuthenticated }) => {
                   ))}
                   <li>
                     {iaAuthenticated ? (
-                      <button
-                        onClick={logOut}
-                        className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
-                        data-mdb-ripple="true"
-                        data-mdb-ripple-color="light"
-                      >
-                        Log Out
-                      </button>
+                      <>
+                        <Link
+                          to="/dashboard"
+                          className={` block py-2 pr-4 pl-3 text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
+                          aria-current="page"
+                        >
+                          Dashboard
+                        </Link>
+                        <button
+                          onClick={logOut}
+                          className="border border-secondary bg-primary inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  text-white md:w-fit"
+                          data-mdb-ripple="true"
+                          data-mdb-ripple-color="light"
+                        >
+                          Log Out
+                        </button>
+                      </>
                     ) : (
                       <>
                         <span className="flex flex-col lg:flex-row md:w-fit w-full justify-between items-center gap-3">

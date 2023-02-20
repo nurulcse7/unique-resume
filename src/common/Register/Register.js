@@ -52,6 +52,9 @@ const Register = () => {
     };
     dispatch(register(userInfo));
   };
+  // const handleChange = (e) => {
+  //   setImg(e.target.files[0]);
+  // };
 
   useEffect(() => {
     token && navigate("/");
@@ -226,24 +229,3 @@ const Register = () => {
 };
 
 export default Register;
-
-/**
- <div className='space-y-1 my-3 text-sm'>
-                    <label
-                      htmlFor='imgUrl'
-                      className='block dark:text-gray-400'
-                    >
-                      Photo
-                    </label>
-                    <input
-                      type='text'
-                      name='imgUrl'
-                      onChange={(e) =>
-                        setUserInfo({ ...userInfo, imgUrl: e.target.value })
-                      }
-                      required
-                      placeholder='Your Photo Url'
-                      className='w-full px-4 py-3 border border-[#0077B6] rounded-md bg-gray-50 text-gray-800 focus:outline-none'
-                    />
-                  </div>
- */

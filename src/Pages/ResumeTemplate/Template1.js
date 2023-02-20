@@ -82,9 +82,9 @@ const Template1 = ({ data }) => {
                         {data?.references.map((reference) => (
                           <>
                             <div>
-                              <p className="my-1">{reference.fullName}</p>
-                              <p className="my-1">{reference.phone}</p>
-                              <p className="my-1">{reference.email}</p>
+                              <p className="my-1">{reference?.fullName}</p>
+                              <p className="my-1">{reference?.phone}</p>
+                              <p className="my-1">{reference?.email}</p>
                             </div>
                           </>
                         ))}
@@ -125,13 +125,13 @@ const Template1 = ({ data }) => {
                   {data?.education.map((edu) => (
                     <>
                       <div className="my-3">
-                        <p className=" font-semibold">{edu.degree}</p>
+                        <p className=" font-semibold">{edu?.degree}</p>
                         <div className="flex justify-between">
-                          <p className=" ">{edu.school}</p>
-                          {/* <p>
-                            {edu?.startDate.slice(0, 4)} -
-                            {edu?.endDate.slice(0, 4)}
-                          </p> */}
+                          <p className=" ">{edu?.school}</p>
+                          <p>
+                            {edu?.startDate?.slice(0, 4)} -
+                            {edu?.endDate?.slice(0, 4)}
+                          </p>
                         </div>
                         <h3 className="font-semibold italic">Description:</h3>
 
@@ -147,17 +147,17 @@ const Template1 = ({ data }) => {
                     <>
                       <div>
                         <p className="font-semibold mt-2">
-                          {employee.jobTitle}
+                          {employee?.jobTitle}
                         </p>
                         <div className="flex justify-between items-center">
                           <p className="">{employee.employer}</p>
-                          {/* <p>
-                            {employee.date[0].slice(0, 4)} -{" "}
-                            {employee.date[1].slice(0, 4)}
-                          </p> */}
+                          <p>
+                            {employee?.date[0]?.slice(0, 4)} -{" "}
+                            {employee?.date[1]?.slice(0, 4)}
+                          </p>
                         </div>
 
-                        <p className="">{employee.description}</p>
+                        <p className="">{employee?.description}</p>
                       </div>
                     </>
                   ))}
@@ -171,14 +171,15 @@ const Template1 = ({ data }) => {
                     <>
                       <div>
                         <p className="font-semibold mt-2">
-                          {internShip.jobTitle}
+                          {internShip?.jobTitle}
                         </p>
                         <div className="flex justify-between items-center">
                           <p className="">{internShip.employer}</p>
-                          {/* <p>
-                            {internShip.date[0].slice(0, 4)} -{" "}
-                            {internShip.date[1].slice(0, 4)}
-                          </p> */}
+
+                          <p>
+                            {internShip?.date[0]?.slice(0, 4)} -{" "}
+                            {internShip?.date[1]?.slice(0, 4)}
+                          </p>
                         </div>
 
                         <p className="">{internShip?.description}</p>

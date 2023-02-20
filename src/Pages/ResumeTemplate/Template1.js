@@ -152,8 +152,8 @@ const Template1 = ({ data }) => {
                         <div className="flex justify-between items-center">
                           <p className="">{employee.employer}</p>
                           <p>
-                            {employee?.date[0]?.slice(0, 4)} -{" "}
-                            {employee?.date[1]?.slice(0, 4)}
+                            {employee?.startDate?.slice(0, 4)} -{" "}
+                            {employee?.endDate?.slice(0, 4)}
                           </p>
                         </div>
 
@@ -176,10 +176,10 @@ const Template1 = ({ data }) => {
                         <div className="flex justify-between items-center">
                           <p className="">{internShip.employer}</p>
 
-                          <p>
-                            {internShip?.date[0]?.slice(0, 4)} -{" "}
-                            {internShip?.date[1]?.slice(0, 4)}
-                          </p>
+                          {/* <p>
+                            {internShip?.startDate?.slice(0, 4)} -{" "}
+                            {internShip?.endDate?.slice(0, 4)}
+                          </p> */}
                         </div>
 
                         <p className="">{internShip?.description}</p>

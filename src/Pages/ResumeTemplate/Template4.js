@@ -159,8 +159,8 @@ const Template4 = ({ data }) => {
                           {employee.jobTitle}
                         </p>
                         <p>
-                          {employee?.date[0]?.slice(0, 4)} -{" "}
-                          {employee?.date[1]?.slice(0, 4)}
+                          {employee?.startDate?.slice(0, 4)} -{" "}
+                          {employee?.endDate?.slice(0, 4)}
                         </p>
                       </div>
 
@@ -184,10 +184,10 @@ const Template4 = ({ data }) => {
                         <p className="font-semibold mt-2">
                           {internShips.jobTitle}
                         </p>
-                        <p>
+                        {/* <p>
                           {internShips?.date[0]?.slice(0, 4)} -{" "}
                           {internShips?.date[1]?.slice(0, 4)}
-                        </p>
+                        </p> */}
                       </div>
 
                       <p className="">{internShips.employer}</p>

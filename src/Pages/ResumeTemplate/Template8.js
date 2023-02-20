@@ -51,8 +51,8 @@ const Template8 = ({ data }) => {
                 <div className="w-[20%]">
                   {" "}
                   <p>
-                    {employee?.date[0]?.slice(0, 4)} to{" "}
-                    {employee?.date[1]?.slice(0, 4)}
+                    {employee?.startDate?.slice(0, 4)} -{" "}
+                    {employee?.endDate?.slice(0, 4)}
                   </p>
                 </div>
                 <div className="w-[80%]">

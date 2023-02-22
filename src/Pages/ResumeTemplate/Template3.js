@@ -1,7 +1,6 @@
 import React from "react";
 
 const Template3 = ({ data }) => {
-  console.log("Template3", data);
   return (
     <section className=" text-left relative my-10">
       <div className="leading-none flex justify-between">
@@ -137,8 +136,8 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{edu.school}</p>
                       <p>
-                        {edu?.startDate?.slice(0, 4)} -
-                        {edu?.endDate?.slice(0, 4)}
+                        {edu?.startDate?.slice(0, 7)} - {""}
+                        {edu?.endDate?.slice(0, 7)}
                       </p>
                     </div>
 
@@ -161,8 +160,8 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{employee.employer}</p>
                       <p>
-                        {employee?.date[0]?.slice(0, 4)}{" "}
-                        {employee?.date[1]?.slice(0, 4)}
+                        {employee?.startDate?.slice(0, 7)} - {""}
+                        {employee?.endDate?.slice(0, 7)}
                       </p>
                     </div>
 
@@ -186,8 +185,8 @@ const Template3 = ({ data }) => {
                     <div className="flex my-2 justify-between">
                       <p className=" ">{internShip.employer}</p>
                       <p>
-                        {internShip?.date[0]?.slice(0, 4)}{" "}
-                        {internShip?.date[1]?.slice(0, 4)}
+                        {internShip?.startDate?.slice(0, 7)} - {""}
+                        {internShip?.endDate?.slice(0, 7)}
                       </p>
                     </div>
 

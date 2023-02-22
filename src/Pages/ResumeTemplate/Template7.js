@@ -2,7 +2,6 @@ import { Progress } from "antd";
 import React from "react";
 
 const Template7 = ({ data }) => {
-  console.log("ResumeTemplate2", data);
   return (
     <section className=" text-left relative my-10">
       <div className=" w-full leading-none ">
@@ -47,8 +46,8 @@ const Template7 = ({ data }) => {
                 <div className="w-[20%]">
                   {" "}
                   <p>
-                    {employee?.date[0]?.slice(0, 4)} -{" "}
-                    {employee?.date[1]?.slice(0, 4)}
+                    {employee?.startDate?.slice(0, 7)} - {""}
+                    {employee?.endDate?.slice(0, 7)}
                   </p>
                 </div>
                 <div className="w-[80%]">
@@ -72,7 +71,8 @@ const Template7 = ({ data }) => {
               <div className="flex mt-2 items-start">
                 <div className="w-[20%]">
                   <p>
-                    {edu?.startDate?.slice(0, 4)} -{edu?.endDate.slice(0, 4)}
+                    {edu?.startDate?.slice(0, 7)} - {""}
+                    {edu?.endDate.slice(0, 7)}
                   </p>
                 </div>
                 <div className="w-[80%]">

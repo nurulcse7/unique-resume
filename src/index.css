@@ -322,3 +322,9 @@ input#employmentHistory_0_startDate {
 input#employmentHistory_0_endDate {
   border: none !important;
 }
+input#internShips_0_endDate {
+  border: none !important;
+}
+input#internShips_0_startDate {
+  border: none !important;
+}

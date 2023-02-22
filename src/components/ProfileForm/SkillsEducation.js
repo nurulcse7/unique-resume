@@ -53,6 +53,7 @@ function SkillsEducation() {
                         <div className="flex gap-2 ">
                           <Form.Item {...restField} name={[name, "startDate"]}>
                             <DatePicker
+                              picker="month"
                               status=""
                               placeholder="Start Date"
                               style={{
@@ -63,7 +64,7 @@ function SkillsEducation() {
                           </Form.Item>
                           <Form.Item {...restField} name={[name, "endDate"]}>
                             <DatePicker
-                              status=""
+                              picker="month"
                               placeholder="End Date"
                               style={{
                                 width: "100%",

@@ -3,9 +3,7 @@ import TextArea from "antd/es/input/TextArea";
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { Confirm } from "notiflix";
 import React from "react";
-import dayjs from "dayjs";
-const { RangePicker } = DatePicker;
-const dateFormat = "DD/MM/YYYY";
+
 const EmploymentHistory = () => {
   return (
     <div>
@@ -50,6 +48,7 @@ const EmploymentHistory = () => {
                         <div className="flex gap-2 ">
                           <Form.Item {...restField} name={[name, "startDate"]}>
                             <DatePicker
+                              picker="month"
                               status=""
                               placeholder="Start Date"
                               style={{
@@ -58,10 +57,9 @@ const EmploymentHistory = () => {
                               }}
                             />
                           </Form.Item>
-
                           <Form.Item {...restField} name={[name, "endDate"]}>
                             <DatePicker
-                              status=""
+                              picker="month"
                               placeholder="End Date"
                               style={{
                                 width: "100%",
@@ -176,16 +174,29 @@ const EmploymentHistory = () => {
 
                       <div className=" text-start w-full flex flex-col gap-2">
                         <label>Start & End Date</label>
-                        <Form.Item {...restField} name={[name, "date"]}>
-                          <RangePicker
-                            defaultValue={[
-                              dayjs("03/02/2023", dateFormat),
-                              dayjs("03/02/2023", dateFormat),
-                            ]}
-                            format={dateFormat}
-                            className="py-3 text-lg w-full"
-                          />
-                        </Form.Item>
+                        <div className="flex gap-2">
+                          <Form.Item {...restField} name={[name, "startDate"]}>
+                            <DatePicker
+                              picker="month"
+                              status=""
+                              placeholder="Start Date"
+                              style={{
+                                width: "100%",
+                                borderColor: "#132579",
+                              }}
+                            />
+                          </Form.Item>
+                          <Form.Item {...restField} name={[name, "endDate"]}>
+                            <DatePicker
+                              picker="month"
+                              placeholder="End Date"
+                              style={{
+                                width: "100%",
+                                borderColor: "#132579",
+                              }}
+                            />
+                          </Form.Item>
+                        </div>
                       </div>
 
                       <div className="">

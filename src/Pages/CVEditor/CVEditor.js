@@ -152,11 +152,11 @@ function CVEditor() {
                 </Button>
                 {user.role === "user" ? (
                   <Link to="/select-plan">
-                    <Button>print</Button>
+                    <Button>Download PDF</Button>
                   </Link>
                 ) : (
                   <Button className="mx-5" onClick={handlePrint}>
-                    Print
+                    Download PDF
                   </Button>
                 )}
               </div>

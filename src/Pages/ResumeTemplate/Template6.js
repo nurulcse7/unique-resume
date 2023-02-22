@@ -225,8 +225,8 @@ const Template6 = ({ data }) => {
 
                             <div className="flex items-center mt-2">
                               <p className="w-[50%]">
-                                {edu?.startDate?.slice(0, 4)} -
-                                {edu?.endDate?.slice(0, 4)}
+                                {edu?.startDate?.slice(0, 7)} -
+                                {edu?.endDate?.slice(0, 7)}
                               </p>
                               <p className="w-[50%] mb-3 text-justify">
                                 {edu?.description?.slice(0, 100) + "..."}

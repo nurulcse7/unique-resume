@@ -265,11 +265,7 @@ const Template9 = ({ data }) => {
                         <>
                           <div>
                             <p className="">{skill.technology}</p>
-                            <Progress
-                              percent={skill?.level}
-                              steps={5}
-                              //   strokeColor={[green[6], green[6], red[5]]}
-                            />
+                            <Progress percent={skill?.level} steps={5} />
                           </div>
                         </>
                       ))}

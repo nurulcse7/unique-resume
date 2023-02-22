@@ -20,7 +20,6 @@ const Register = () => {
   const [viewPassword, setViewPassword] = useState(false);
   const [img, setImg] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [error, setError] = useState("");
 
   const handleChange = async (e) => {
     setImg(e.target.files[0]);

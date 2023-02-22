@@ -3,7 +3,6 @@ import React from "react";
 import { FaFacebook, FaGithub, FaLink, FaLinkedin } from "react-icons/fa";
 
 const Template9 = ({ data }) => {
-  console.log("Template8", data);
   return (
     <section className=" text-left relative my-10 h-[29.7cm]">
       <div className="flex  ">
@@ -46,8 +45,9 @@ const Template9 = ({ data }) => {
 
                               <div className="flex items-center mt-2">
                                 <p className="w-[50%]">
-                                  {employ?.startDate.slice(0, 4)} -
-                                  {employ?.endDate.slice(0, 4)}
+                                  {employ?.startDate?.slice(0, 7)} - {""}
+                                  {employ?.endDate?.slice(0, 7)}
+
                                 </p>
                                 <p className="w-[50%] mb-3 text-justify">
                                   {employ?.description?.slice(0, 100) + "..."}
@@ -84,8 +84,8 @@ const Template9 = ({ data }) => {
 
                             <div className="flex items-center mt-2">
                               <p className="w-[50%]">
-                                {edu?.startDate?.slice(0, 4)} -
-                                {edu?.endDate?.slice(0, 4)}
+                                {edu?.startDate?.slice(0, 7)} - {""}
+                                {edu?.endDate?.slice(0, 7)}
                               </p>
                               <p className="w-[50%] mb-3 text-justify">
                                 {edu?.description?.slice(0, 100) + "..."}

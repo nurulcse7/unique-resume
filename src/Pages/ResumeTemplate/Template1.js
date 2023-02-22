@@ -1,7 +1,6 @@
 import React from "react";
 
 const Template1 = ({ data }) => {
-  console.log("Template1", data);
   return (
     <section className=" text-left relative">
       <div className="flex">
@@ -129,8 +128,8 @@ const Template1 = ({ data }) => {
                         <div className="flex justify-between">
                           <p className=" ">{edu?.school}</p>
                           <p>
-                            {edu?.startDate?.slice(0, 4)} -
-                            {edu?.endDate?.slice(0, 4)}
+                            {edu?.startDate?.slice(0, 7)} -{""}
+                            {edu?.endDate?.slice(0, 7)}
                           </p>
                         </div>
                         <h3 className="font-semibold italic">Description:</h3>
@@ -152,8 +151,9 @@ const Template1 = ({ data }) => {
                         <div className="flex justify-between items-center">
                           <p className="">{employee.employer}</p>
                           <p>
-                            {employee?.startDate?.slice(0, 4)} -{" "}
-                            {employee?.endDate?.slice(0, 4)}
+
+                            {employee?.startDate?.slice(0, 7)} - {""}
+                            {employee?.endDate?.slice(0, 7)}
                           </p>
                         </div>
 
@@ -176,10 +176,12 @@ const Template1 = ({ data }) => {
                         <div className="flex justify-between items-center">
                           <p className="">{internShip.employer}</p>
 
-                          {/* <p>
-                            {internShip?.startDate?.slice(0, 4)} -{" "}
-                            {internShip?.endDate?.slice(0, 4)}
-                          </p> */}
+
+                          <p>
+                            {internShip?.startDate?.slice(0, 7)} -{" "}
+                            {internShip?.endDate?.slice(0, 7)}
+                          </p>
+
                         </div>
 
                         <p className="">{internShip?.description}</p>

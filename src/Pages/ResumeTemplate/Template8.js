@@ -1,8 +1,6 @@
 import React from "react";
 
 const Template8 = ({ data }) => {
-  console.log("Template8", data);
-
   return (
     <section className=" text-left  my-10">
       <div
@@ -51,8 +49,8 @@ const Template8 = ({ data }) => {
                 <div className="w-[20%]">
                   {" "}
                   <p>
-                    {employee?.startDate?.slice(0, 4)} -{" "}
-                    {employee?.endDate?.slice(0, 4)}
+                    {employee?.startDate?.slice(0, 7)} - {""}
+                    {employee?.endDate?.slice(0, 7)}
                   </p>
                 </div>
                 <div className="w-[80%]">
@@ -76,7 +74,7 @@ const Template8 = ({ data }) => {
               <div className="flex mt-2 items-start">
                 <div className="w-[20%]">
                   <p>
-                    {edu?.startDate?.slice(0, 4)} -{edu?.endDate?.slice(0, 4)}
+                    {edu?.startDate?.slice(0, 7)} -{edu?.endDate?.slice(0, 7)}
                   </p>
                 </div>
                 <div className="w-[80%]">

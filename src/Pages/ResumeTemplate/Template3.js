@@ -162,6 +162,8 @@ const Template3 = ({ data }) => {
                       <p>
                         {employee?.startDate?.slice(0, 7)} - {""}
                         {employee?.endDate?.slice(0, 7)}
+
+
                       </p>
                     </div>
 
@@ -188,6 +190,7 @@ const Template3 = ({ data }) => {
                         {internShip?.startDate?.slice(0, 7)} - {""}
                         {internShip?.endDate?.slice(0, 7)}
                       </p>
+
                     </div>
 
                     <p className=" mb-3 text-justify">

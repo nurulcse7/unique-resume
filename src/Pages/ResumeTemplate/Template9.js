@@ -47,6 +47,7 @@ const Template9 = ({ data }) => {
                                 <p className="w-[50%]">
                                   {employ?.startDate?.slice(0, 7)} - {""}
                                   {employ?.endDate?.slice(0, 7)}
+
                                 </p>
                                 <p className="w-[50%] mb-3 text-justify">
                                   {employ?.description?.slice(0, 100) + "..."}

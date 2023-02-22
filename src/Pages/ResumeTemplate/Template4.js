@@ -159,6 +159,7 @@ const Template4 = ({ data }) => {
                         <p>
                           {employee?.startDate?.slice(0, 7)} - {""}
                           {employee?.endDate?.slice(0, 7)}
+
                         </p>
                       </div>
 
@@ -186,6 +187,7 @@ const Template4 = ({ data }) => {
                           {internShips?.startDate.slice(0, 7)} -{" "}
                           {internShips?.endDate?.slice(0, 7)}
                         </p>
+
                       </div>
 
                       <p className="">{internShips.employer}</p>

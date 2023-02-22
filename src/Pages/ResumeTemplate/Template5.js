@@ -201,12 +201,12 @@ const Template5 = ({ data }) => {
 
             <div>
               <div className="leading-none pt-3">
-                {data?.employmentHistory.map((employ) => (
+                {data?.employmentHistory.map((employee) => (
                   <>
                     <div>
                       <div className="flex text-black items-start  text-base">
-                        <p className="w-[50%]">{employ?.jobTitle}</p>
-                        <p className="w-[50%]">{employ?.employer}</p>
+                        <p className="w-[50%]">{employee?.jobTitle}</p>
+                        <p className="w-[50%]">{employee?.employer}</p>
                       </div>
 
                       <div className="flex items-center mt-2">
@@ -215,7 +215,7 @@ const Template5 = ({ data }) => {
                           {employ?.endDate?.slice(0, 7)}
                         </p>
                         <p className="w-[50%] mb-3 text-justify">
-                          {employ?.description}
+                          {employee?.description}
                         </p>
                       </div>
                     </div>

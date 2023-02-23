@@ -28,6 +28,12 @@ import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import AdminRoute from "./AdminRoute";
 import Chekout from "../Pages/PricingTable/Chekout";
 import Blog from "../Pages/Blog/Blog";
+import BlogLayout from "../Layout/BlogLayout";
+import HowToWrite from "../Pages/Blog/BlogElements/HowToWrite";
+import ResumeFormats from "../Pages/Blog/BlogElements/ResumeFormats";
+import ChoronicalResume from "../Pages/Blog/BlogElements/ChoronicalResume";
+import FunctionalResume from "../Pages/Blog/BlogElements/FunctionalResume";
+import ResumeElements from "../Pages/Blog/BlogElements/ResumeElements";
 
 export const router = createBrowserRouter([
   {
@@ -101,7 +107,29 @@ export const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog />,
+        element: <BlogLayout />,
+        children: [
+          {
+            path: "/blog",
+            element: <HowToWrite></HowToWrite>,
+          },
+          {
+            path: "/blog/resume-formats",
+            element: <ResumeFormats />,
+          },
+          {
+            path: "/blog/choronical-resume",
+            element: <ChoronicalResume />,
+          },
+          {
+            path: "/blog/functional-resume",
+            element: <FunctionalResume />,
+          },
+          {
+            path: "/blog/resume-elements",
+            element: <ResumeElements />,
+          },
+        ],
       },
       {
         path: "/faq",

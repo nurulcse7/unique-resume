@@ -1,4 +1,4 @@
-import { Avatar, Dropdown, Space } from "antd";
+import { Dropdown, Space } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -140,7 +140,13 @@ const Navbar = ({ iaAuthenticated }) => {
                     </NavLink>
                   </li>
                 ))}
-
+                {
+                  <li>
+                    <NavLink to="/select-plan">
+                      {user?.role === "user" ? "Pricing" : ""}
+                    </NavLink>
+                  </li>
+                }
                 {token && iaAuthenticated ? (
                   <>
                     <Dropdown

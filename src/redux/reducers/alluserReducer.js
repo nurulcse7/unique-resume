@@ -3,8 +3,6 @@ import { createReducer } from "@reduxjs/toolkit";
 export const allUserReducer = createReducer(
   {},
   {
-    // Abdur Rahman
-
     getAllUsersReq: (state, action) => {
       state.loading = true;
     },
@@ -18,7 +16,5 @@ export const allUserReducer = createReducer(
       state.loading = false;
       state.error = action.payload;
     },
-
-    // Abdur Rahman End
   }
 );

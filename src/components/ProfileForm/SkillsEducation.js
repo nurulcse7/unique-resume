@@ -52,24 +52,15 @@ function SkillsEducation() {
                         <label>Start & End Date</label>
                         <div className="flex gap-2 ">
                           <Form.Item {...restField} name={[name, "startDate"]}>
-                            <DatePicker
-                              picker="month"
-                              status=""
-                              placeholder="Start Date"
-                              style={{
-                                width: "100%",
-                                borderColor: "#132579",
-                              }}
+                            <Input
+                              className="py-3"
+                              placeholder="Passing Year eg. 2015"
                             />
                           </Form.Item>
                           <Form.Item {...restField} name={[name, "endDate"]}>
-                            <DatePicker
-                              picker="month"
-                              placeholder="End Date"
-                              style={{
-                                width: "100%",
-                                borderColor: "#132579",
-                              }}
+                            <Input
+                              className="py-3"
+                              placeholder="Passing Year eg. 2015"
                             />
                           </Form.Item>
                         </div>

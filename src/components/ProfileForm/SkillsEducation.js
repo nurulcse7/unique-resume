@@ -164,13 +164,7 @@ function SkillsEducation() {
                     <div className="w-[90%]  items-start">
                       <label className="text-start">Skill Level</label>
                       <Form.Item {...restField} name={[name, "level"]}>
-                        <Slider
-                          defaultValue={30}
-                          label="Skill Level"
-                          tooltip={{
-                            open: true,
-                          }}
-                        />
+                        <Slider defaultValue={30} label="Skill Level" />
                       </Form.Item>
                     </div>
                     <div className=" flex items-center">

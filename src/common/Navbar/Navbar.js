@@ -27,15 +27,11 @@ const menuItems = [
     path: "/about",
     id: 4,
   },
-  {
-    name: "Pricing",
-    path: "/select-plan",
-    id: 5,
-  },
+
   {
     name: "Contact",
     path: "/contact",
-    id: 6,
+    id: 5,
   },
 ];
 const Navbar = ({ iaAuthenticated }) => {
@@ -142,7 +138,10 @@ const Navbar = ({ iaAuthenticated }) => {
                 ))}
                 {
                   <li>
-                    <NavLink to="/select-plan">
+                    <NavLink
+                      to="/select-plan"
+                      className={` block py-2 pr-4 pl-3 font-medium text-sm text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
+                    >
                       {user?.role === "user" ? "Pricing" : ""}
                     </NavLink>
                   </li>

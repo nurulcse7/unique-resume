@@ -78,7 +78,7 @@ function CVEditor() {
 
   useEffect(() => {
     dispatch(cvTemplate());
-  }, [dispatch]);
+  }, [dispatch, data]);
   return (
     <div className="relative">
       <div

@@ -72,7 +72,7 @@ const DashboardResume = () => {
                   <section
                     onMouseEnter={() => setIsMove(!ismove)}
                     onMouseLeave={() => setIsMove(!ismove)}
-                    className=" w-[600px] h-[241px] my-4 border hover:-z-0  rounded-md mx-auto text-left relative bg-gray-50  shadow-2xl"
+                    className=" w-[600px] h-[212px] my-4 border hover:-z-0  rounded-md mx-auto text-left relative bg-gray-50  shadow-2xl"
                   >
                     <div className="flex">
                       <div className=" bg-[#0f5b31]  text-white p-4">
@@ -217,7 +217,7 @@ const DashboardResume = () => {
                     </div>
 
                     <div className={`${ismove ? "  delay-[10s]  " : "hidden"}`}>
-                      <div className="absolute w-[600px] h-[241px]  bg-black hover:z-10 justify-center opacity-75 flex top-0 rounded-sm left-0">
+                      <div className="absolute w-[600px] h-[212px] bg-black hover:z-10 justify-center opacity-75 flex top-0 rounded-sm left-0">
                         <button
                           onClick={() => handleUpdateResume(template?._id)}
                           className="flex items-center space-x-2  "

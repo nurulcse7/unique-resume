@@ -22,8 +22,8 @@ const AllUser = () => {
       })
       .then((res) => {
         if (res.data) {
-          toast.success("User Deleted SuccessFully");
           dispatch(getAllUsers());
+          toast.success("User Deleted SuccessFully");
         }
       });
   };

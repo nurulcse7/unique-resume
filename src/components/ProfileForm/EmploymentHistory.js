@@ -1,9 +1,12 @@
-import { Button, Form, Input, message, DatePicker } from "antd";
+import { Button, Form, Input, message, DatePicker, ConfigProvider } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { Confirm } from "notiflix";
 import React from "react";
 
+// import locale from "antd/es/date-picker/locale/en_US";
+import locale from "antd/locale/en_US";
+import "dayjs/locale/es-us";
 const EmploymentHistory = () => {
   return (
     <div>
@@ -47,25 +50,14 @@ const EmploymentHistory = () => {
                         <label>Start & End Date</label>
                         <div className="flex gap-2 ">
                           <Form.Item {...restField} name={[name, "startDate"]}>
-                            <DatePicker
-                              picker="month"
-                              status=""
-                              placeholder="Start Date"
-                              style={{
-                                width: "100%",
-                                borderColor: "#132579",
-                              }}
-                            />
+                            <ConfigProvider locale={locale}>
+                              <DatePicker />
+                            </ConfigProvider>
                           </Form.Item>
                           <Form.Item {...restField} name={[name, "endDate"]}>
-                            <DatePicker
-                              picker="month"
-                              placeholder="End Date"
-                              style={{
-                                width: "100%",
-                                borderColor: "#132579",
-                              }}
-                            />
+                            <ConfigProvider locale={locale}>
+                              <DatePicker />
+                            </ConfigProvider>
                           </Form.Item>
                         </div>
                       </div>
@@ -176,13 +168,14 @@ const EmploymentHistory = () => {
                         <label>Start & End Date</label>
                         <div className="flex gap-2">
                           <Form.Item {...restField} name={[name, "startDate"]}>
-                            <Input className="py-3" placeholder="ex: 2018" />
+                            <ConfigProvider locale={locale}>
+                              <DatePicker />
+                            </ConfigProvider>
                           </Form.Item>
                           <Form.Item {...restField} name={[name, "endDate"]}>
-                            <Input
-                              className="py-3 text-lg border border-primary"
-                              placeholder="ex: 2018"
-                            />
+                            <ConfigProvider locale={locale}>
+                              <DatePicker />
+                            </ConfigProvider>
                           </Form.Item>
                         </div>
                       </div>

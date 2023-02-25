@@ -5,10 +5,11 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
-
 import { Provider } from "react-redux";
+import { ConfigProvider } from "antd";
 import store from "./redux/store";
-
+import locale from "antd/locale/en_US";
+import "dayjs/locale/es-us";
 const container = document.getElementById("root");
 const root = createRoot(container);
 

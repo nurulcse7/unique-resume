@@ -1,9 +1,18 @@
 import React from "react";
-import { Form, Input, Button, message, DatePicker, Slider } from "antd";
+import {
+  Form,
+  Input,
+  Button,
+  message,
+  DatePicker,
+  Slider,
+  ConfigProvider,
+} from "antd";
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { Confirm } from "notiflix";
 import TextArea from "antd/es/input/TextArea";
-
+import locale from "antd/locale/en_US";
+import "dayjs/locale/es-us";
 function SkillsEducation() {
   return (
     <div>
@@ -52,16 +61,14 @@ function SkillsEducation() {
                         <label>Start & End Date</label>
                         <div className="flex gap-2 ">
                           <Form.Item {...restField} name={[name, "startDate"]}>
-                            <Input
-                              className="py-3"
-                              placeholder="Passing Year eg. 2015"
-                            />
+                            <ConfigProvider locale={locale}>
+                              <DatePicker />
+                            </ConfigProvider>
                           </Form.Item>
                           <Form.Item {...restField} name={[name, "endDate"]}>
-                            <Input
-                              className="py-3"
-                              placeholder="Passing Year eg. 2015"
-                            />
+                            <ConfigProvider locale={locale}>
+                              <DatePicker />
+                            </ConfigProvider>
                           </Form.Item>
                         </div>
                       </div>
@@ -157,13 +164,7 @@ function SkillsEducation() {
                     <div className="w-[90%]  items-start">
                       <label className="text-start">Skill Level</label>
                       <Form.Item {...restField} name={[name, "level"]}>
-                        <Slider
-                          defaultValue={30}
-                          label="Skill Level"
-                          tooltip={{
-                            open: true,
-                          }}
-                        />
+                        <Slider defaultValue={30} label="Skill Level" />
                       </Form.Item>
                     </div>
                     <div className=" flex items-center">

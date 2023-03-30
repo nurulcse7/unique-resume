@@ -27,7 +27,6 @@ import CoverLetterEditor from "../Pages/CoverLetterEditor/CoverLetterEditor";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import AdminRoute from "./AdminRoute";
 import Chekout from "../Pages/PricingTable/Chekout";
-import Blog from "../Pages/Blog/Blog";
 import BlogLayout from "../Layout/BlogLayout";
 import HowToWrite from "../Pages/Blog/BlogElements/HowToWrite";
 import ResumeFormats from "../Pages/Blog/BlogElements/ResumeFormats";
